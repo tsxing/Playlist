@@ -117,7 +117,7 @@ const playlist = {
     "夢と葉桜 - 青木月光": "夢と葉桜",
     "The Final Countdown Remix- Europe": "The_Final_Countdown_Remix_Europe",
     "I'll Do It - Heidi Montag": "Ill_Do_It_Heidi_Montag",
-    "Håll Om Mig - Nanne Grönvall":  "Hall_Om_Mig_Nanne_Grönvall",
+    "Håll Om Mig - Nanne Grönvall":  "Hall_Om_Mig_Nanne_Gronvall",
     "I'm Good (Blue)- Bebe Rexha & David Guetta": "Im_Good_Bebe_Rexha_David_Guetta",
     "DYNASTY x FICTION - Remix":"DYNASTY_x_FICTION_Remix",
     "Monody - TheFatRat": "Monody_TheFatRat",
