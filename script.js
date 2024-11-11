@@ -85,7 +85,7 @@ const playlist = {
     "Orbit - HWASA": "Orbit_HWASA",
     "monogram - Lucid Dream": "monogram_Lucid_Dream",
     "Once Again - Mad Clown & Kim Nayoung": "Once_Again_Mad_Clown",
-    "Done For_Me - Punch펀치 Hotel Del Luna OST": "Done_For_Me_펀치",
+    "Done For Me - Punch Hotel Del Luna OST": "Done_For_Me",
     "This Love - DAVICHI": "This_Love_DAVICHI",
     "Everytime - CHEN & Punch": "Everytime_CHEN_Punch",
     "Love Attack - Rescene": "Love_Attack_Rescene",
