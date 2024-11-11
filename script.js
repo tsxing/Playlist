@@ -97,6 +97,7 @@ const playlist = {
     "해바라기 Hey. Bae. Like It. - IZ*ONE": "Hey_Bae_Like_It_IZ*ONE",
     "Siren - Sunmi": "Siren_Sunmi",
     "Rollercoaster - Chungha": "Rollercoaster_Chungha",
+    "Bon Voyage - YooA":"Bon_Voyage_YooA",
     "Virtual Angel - ARTMS": "Virtual_Angel_ARTMS",
     "Girls Never Die - tripleS": "Girls_Never_Die_tripleS",
     "Rooftop - N.Flying": "Rooftop_NFlying",
