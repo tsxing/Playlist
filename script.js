@@ -129,6 +129,8 @@ const playlist = {
     "I'm Good (Blue)- Bebe Rexha & David Guetta": "Im_Good_Bebe_Rexha_David_Guetta",
     "DYNASTY x FICTION - Remix":"DYNASTY_x_FICTION_Remix",
     "Mimimi - Dramma":"Mimimi_Dramma",
+    "DaDaDa (Да да да)- Jarico":"DaDaDa_Jarico",
+    "Around The World (La La La) - ATC":"Around_The_World_LaLaLa_ATC",
     "Nevada - Vicetone": "Nevada_Vicetone",
     "Monody - TheFatRat": "Monody_TheFatRat",
     "Numb -  Linkin Park (Remix)": "Numb_Remix",
