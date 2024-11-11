@@ -100,7 +100,7 @@ const playlist = {
     "Virtual Angel - ARTMS": "Virtual_Angel_ARTMS",
     "Girls Never Die - tripleS": "Girls_Never_Die_tripleS",
     "LUNA - ONEUS": "LUNA_ONEUS",
-    "Valkyrie (발키리) - ONEUS":"Valkyrie_발키리_ONEUS",
+    "Valkyrie (발키리) - ONEUS":"Valkyrie_ONEUS",
     "To Be Or Not To Be - ONEUS":"To_Be_Or_Not_To_Be_ONEUS",
     "A Song Written Easily - ONEUS":"A_Song_Written_Easily_ONEUS",
     "Deja Vu - TOMORROW X TOGETHER": "Deja_Vu_TOMORROW_X_TOGETHER",
