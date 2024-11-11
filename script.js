@@ -99,6 +99,7 @@ const playlist = {
     "Rollercoaster - Chungha": "Rollercoaster_Chungha",
     "Virtual Angel - ARTMS": "Virtual_Angel_ARTMS",
     "Girls Never Die - tripleS": "Girls_Never_Die_tripleS",
+    "Rooftop - N.Flying": "Rooftop_NFlying",
     "LUNA - ONEUS": "LUNA_ONEUS",
     "Valkyrie (발키리) - ONEUS":"Valkyrie_ONEUS",
     "To Be Or Not To Be - ONEUS":"To_Be_Or_Not_To_Be_ONEUS",
