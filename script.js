@@ -94,7 +94,7 @@ const playlist = {
     "Mise-en-Scène - IZ*ONE": "Mise_en_Scène_IZ*ONE",
     "O Sole Mio - IZ*ONE": "O_Sole_Mio_IZ*ONE",
     "Island - IZ*ONE":"Island_IZ*ONE",
-    "해바라기 Hey. Bae. Like It. - IZ*ONE": "해바라기_Hey_Bae_Like_It_IZ*ONE",
+    "해바라기 Hey. Bae. Like It. - IZ*ONE": "Hey_Bae_Like_It_IZ*ONE",
     "Siren - Sunmi": "Siren_Sunmi",
     "Rollercoaster - Chungha": "Rollercoaster_Chungha",
     "Virtual Angel - ARTMS": "Virtual_Angel_ARTMS",
