@@ -128,6 +128,8 @@ const playlist = {
     "Håll Om Mig - Nanne Grönvall":  "Hall_Om_Mig_Nanne_Gronvall",
     "I'm Good (Blue)- Bebe Rexha & David Guetta": "Im_Good_Bebe_Rexha_David_Guetta",
     "DYNASTY x FICTION - Remix":"DYNASTY_x_FICTION_Remix",
+    "Mimimi - Dramma":"Mimimi_Dramma",
+    "Nevada - Vicetone": "Nevada_Vicetone",
     "Monody - TheFatRat": "Monody_TheFatRat",
     "Numb -  Linkin Park (Remix)": "Numb_Remix",
     "Take Me Hand - Daishi Dance": "Take_Me_Hand_Daishi_Dance",
