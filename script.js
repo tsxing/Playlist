@@ -48,6 +48,7 @@ const playlist = {
     "最后的审判 - 琅琊榜": "最后的审判_琅琊榜",
     "高進 - 聽著情歌流眼淚": "聽著情歌流眼淚_高進",
     "百鸟归巢 - 谭维维":"百鸟归巢_谭维维",
+    "天耀中华 - 姚贝娜":"天耀中华_姚贝娜",
     "歷史的天空 - 三國演義": "歷史的天空_三國演義",
     "主題曲 - 大俠霍元甲":"主題曲_大俠霍元甲",
     "红日 - 李克勤": "红日_李克勤",
@@ -105,6 +106,9 @@ const playlist = {
     "해바라기 Hey. Bae. Like It. - IZ*ONE": "Hey_Bae_Like_It_IZ*ONE",
     "First Love (첫사랑) - After School":"First_Love_After_School",
     "Siren - Sunmi": "Siren_Sunmi",
+    "Dumhdurum - Apink":"Dumhdurum_Apink",
+    "Girls - NATURE":"Girls_NATURE",
+    "Diamond - TRI.BE":"Diamond_TRIBE",
     "Rollercoaster - Chungha": "Rollercoaster_Chungha",
     "Bon Voyage - YooA":"Bon_Voyage_YooA",
     "Virtual Angel - ARTMS": "Virtual_Angel_ARTMS",
@@ -291,4 +295,5 @@ function toggleTheme() {
         document.body.classList.remove('dark-mode');
     }
 }
+
 
