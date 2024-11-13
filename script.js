@@ -128,7 +128,7 @@ const playlist = {
     "Say My Name - ATEEZ": "Say_My_Name_ATEEZ",
     "Hotaru - Fujita Maiko": "Hotaru_Fujita_Maiko",
     "Blue Bird - Naruto": "Blue_Bird_Naruto",
-    "藍悼花 - 酔シグレ": "藍悼花_酔シグレ",
+    "藍悼花 - 酔シグレ": "shigure",
     "悪魔の子 (Rock Remix) - Attack on Titan": "悪魔の子_Attack_on_Titan",
     "夢と葉桜 - 青木月光": "夢と葉桜",
     "さくらひらり - Tomo":"さくらひらり_Tomo",
