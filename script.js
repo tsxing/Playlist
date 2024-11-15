@@ -43,6 +43,8 @@ const playlist = {
     "浮光 - Music": "浮光_Music",
     "天耀中华 (伴奏) - 徐千雅":"天耀中华_伴奏_徐千雅",
     "黑色裂變 - 大秦帝國": "黑色裂變_大秦帝國",
+    "Grand Ceremony of Qin":"Grand_Ceremony_Qin",
+    "秦汉英雄传片尾曲": "Qin_Han",
     "琅琊榜 - 主题音乐": "琅琊榜_主题音乐",
     "中國軍魂 - Music": "中國軍魂",
     "最后的审判 - 琅琊榜": "最后的审判_琅琊榜",
@@ -128,7 +130,7 @@ const playlist = {
     "Say My Name - ATEEZ": "Say_My_Name_ATEEZ",
     "Hotaru - Fujita Maiko": "Hotaru_Fujita_Maiko",
     "Blue Bird - Naruto": "Blue_Bird_Naruto",
-    "藍悼花 - 酔シグレ": "shigure",
+    "藍悼花 - 酔シグレ": "藍悼花_酔シグレ",
     "悪魔の子 (Rock Remix) - Attack on Titan": "悪魔の子_Attack_on_Titan",
     "夢と葉桜 - 青木月光": "夢と葉桜",
     "さくらひらり - Tomo":"さくらひらり_Tomo",
@@ -295,5 +297,4 @@ function toggleTheme() {
         document.body.classList.remove('dark-mode');
     }
 }
-
 
