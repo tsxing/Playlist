@@ -24,7 +24,7 @@ const playlist = {
     "Strength of a Thousand Men - Two Steps From Hell": "Strength_of_a_Thousand_Men_Two_Steps_From_Hell",
     "To Glory - Two Steps From Hell": "To_Glory_Two_Steps_From_Hell",
     "Victory - Two Steps From Hell":"Victory_Two_Steps_From_Hell",
-    "Victory_X_Heart_of_Courage": "Victory_X_Heart_of_Courage",
+    "Victory X Heart of Courage": "Victory_X_Heart_of_Courage",
     "Rohan Theme - Lord of the Rings (LOTR)": "Rohan_Theme_LOTR",
     "Rohan Rohirrim Soundtrack - LOTR": "Rohan_Rohirrim_Soundtrack_LOTR",
     "Unravel Remix - Tokyo Ghoul (Samuel Kim)": "Unravel_Tokyo_Ghoul",
@@ -299,5 +299,4 @@ function toggleTheme() {
         document.body.classList.remove('dark-mode');
     }
 }
-
 
