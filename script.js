@@ -169,6 +169,7 @@ const audioSource = document.getElementById('audioSource');
 const albumArt = document.getElementById('albumArt');
 const songSelect = document.getElementById('songSelect');
 const playPauseButton = document.getElementById('playPauseButton');
+const repeatIcon = document.getElementById('repeatButtonIcon');
 
 // Function to populate the playlist
 function populatePlaylist() {
@@ -256,16 +257,43 @@ function togglePlayPause() {
     } else {
         audioPlayer.pause();
     }
-
     updatePlayPauseButton();
 }
 
 // Function to play the next song in the playlist
+const repeatCheckbox = document.getElementById('repeat-button');
+
 function playNextSong() {
-    const titles = Object.keys(playlist);
-    currentSongIndex = (currentSongIndex + 1) % titles.length;  // Increment index and wrap around if at the end
-    playSong(titles[currentSongIndex]);  // Play the next song
+    if (repeatCheckbox.checked){
+        const titles = Object.keys(playlist);
+        playSong(titles[currentSongIndex]);
+        
+    }
+    else{
+        const titles = Object.keys(playlist);
+        currentSongIndex = (currentSongIndex + 1) % titles.length;  // Increment index and wrap around if at the end
+        playSong(titles[currentSongIndex]);  // Play the next song
+
+    }
+    
 }
+
+repeatCheckbox.addEventListener("change", function(){
+    if (repeatCheckbox.checked){
+        repeatIcon.innerHTML = '<i class="fa fa-remove"></i>';
+        console.log("repeat button is checked");
+    }
+    else{
+        repeatIcon.innerHTML = '<i class="fa fa-refresh"></i>';
+        console.log("repeat button NOT checked");
+    }
+});
+
+
+repeatIcon.addEventListener("click", () => {
+    repeatCheckbox.checked = !repeatCheckbox.checked; // Toggle checkbox state
+    repeatCheckbox.dispatchEvent(new Event("change")); // Trigger 'change' event for synchronization
+    });
 
 // Event listener for when the song ends
 audioPlayer.addEventListener('ended', playNextSong);
@@ -285,16 +313,9 @@ populatePlaylist();
 updatePlayPauseButton();
 
 
-
-
-
-
-
-
-
 function toggleTheme() {
-    // Get the checkbox input
-    const checkbox = document.querySelector('input[type="checkbox"]');
+    // Get the checkbox input by its ID
+    const checkbox = document.getElementById('toggleThemeCheckbox');
     
     // Check if the checkbox is checked
     if (checkbox.checked) {
@@ -305,4 +326,5 @@ function toggleTheme() {
         document.body.classList.remove('dark-mode');
     }
 }
+
 
