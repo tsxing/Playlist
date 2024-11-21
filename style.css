@@ -221,6 +221,7 @@ body.dark-mode #songSelect:hover{
 
 .song-item:hover {
     background-color: #e0e0e0;
+    transition: 0.3s;
     color: rgb(101, 101, 101);
 }
 
