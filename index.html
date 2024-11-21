@@ -37,9 +37,17 @@
                     <source id="audioSource" src="music/booraye_ian_clarke.mp3" type="audio/mp3"> <!-- Update the path to your music file -->
                     Your browser does not support the audio element.
                 </audio>
+
+                <input style="display: none;" type = "checkbox" label = "repeat" id="repeat-button"> 
+                <label for="repeat-button"> 
+                    <button id="repeatButtonIcon" type="button">
+                        <i class="fa fa-refresh"></i>
+                    </button>
+                </label>
+
             </div>
             <label class="switch">
-                <input type="checkbox" onclick="toggleTheme()">
+                <input id="toggleThemeCheckbox" type="checkbox" onclick="toggleTheme()">
                 <span class="slider"></span>
             </label>
         </div>
