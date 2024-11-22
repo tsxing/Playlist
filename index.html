@@ -19,7 +19,10 @@
 </head>
 <body>
     
+    
     <div class="site-body">
+
+        
 
         <div class="container">
             <p id="time"> </p>
@@ -29,7 +32,11 @@
                 <select id="songSelect" name="songSelect"></select>
             </div>
 
+
             <p class="selected-song" id="selected-song">Select from 156 songs~ ♬</p>
+
+            <!-- seek bar here -->
+            <input type="range" id="seekbar" value="0" step="0.1" min="0" max="100" style="width: 100%;">
 
             <div class="button-container">
                 <button id="playPauseButton"><i class="fa fa-play"></i></button>
@@ -56,7 +63,6 @@
         </div>
 
     </div>
-
 
     <script src="script.js"></script>
     <script src="time.js"></script>
