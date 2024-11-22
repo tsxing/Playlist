@@ -328,3 +328,40 @@ function toggleTheme() {
 }
 
 
+const audio = document.getElementById("audioPlayer");
+const seekbar = document.getElementById("seekbar");
+
+// Update the progress bar as the audio plays
+audio.addEventListener("timeupdate", function() {
+    // Calculate the progress as a percentage
+    const progress = (audio.currentTime / audio.duration) * 100;
+    seekbar.value = progress;  // Update the seekbar's value
+    });
+    
+    // Allow the user to seek to a new position in the audio
+    seekbar.addEventListener("input", function() {
+        const seekTo = (seekbar.value / 100) * audio.duration;  // Calculate the time in seconds
+        audio.currentTime = seekTo;  // Set the audio to the new position
+        });
+
+
+
+        function updateSeekBarBackground() {
+            const value = (seekbar.value / seekbar.max) * 100; // Calculate percentage
+            seekbar.style.setProperty("--seek-value", `${value}%`);
+        }
+        
+        // Sync the seekbar with the audio's current time
+        audio.addEventListener("timeupdate", function () {
+            const progress = (audio.currentTime / audio.duration) * 100; // Calculate percentage
+            seekbar.value = progress; // Update the seekbar position
+            updateSeekBarBackground(); // Update the background
+        });
+        
+        // Update the audio time when the seekbar is manually adjusted
+        seekbar.addEventListener("input", function () {
+            const time = (seekbar.value / 100) * audio.duration; // Map slider value to audio time
+            audio.currentTime = time;
+            updateSeekBarBackground();
+        });
+
