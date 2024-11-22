@@ -14,6 +14,8 @@ body.dark-mode {
     color: white;
 }
 
+
+
 .site-body{
     display: flex; /* Use flexbox to arrange child containers horizontally */
     justify-content: space-between; /* Distribute space between main-container and playlist-container */
@@ -34,8 +36,17 @@ body.dark-mode {
     box-shadow: 0px 2px 15px rgb(216, 216, 216);
     transition: 0.3s;
     z-index: 100;
+
+    
 }
 
+.selected-song{
+    font-size: 10px;
+    align-self: flex-start;
+    margin-left: 5px;
+    color: black;
+
+}
 
 
 body.dark-mode .container{
@@ -103,7 +114,8 @@ body.dark-mode .selected-song{
 .container .song-text{
     position: absolute;
     font-family: sans-serif;
-    top: 350px;
+    top: 320px;
+    
 }
 
 .container .button-container {
@@ -197,6 +209,11 @@ body.dark-mode #songSelect:hover{
     .container {
         width: 110%; /* Full width for each container */
         margin-top: 50px;
+    }
+
+    .selected-song{
+        margin-left: -10px;
+    
     }
 
     .container-playlist{
@@ -320,5 +337,42 @@ input:checked + .slider:hover {
 }
 
 
+#seekbar{
+    -webkit-appearance: none; /* Removes default appearance in Webkit browsers */
+    -moz-appearance: none;    /* Removes default appearance in Firefox */
+    appearance: none;
+    position: absolute;
+    top: 390px;
 
+    max-width: 290px;
+    height: 3px;
+    outline: none;
+    cursor: pointer;
+    border: 0.5px solid black;
+    background: linear-gradient(to right, black 0%, black var(--seek-value), transparent var(--seek-value), transparent 100%);
 
+    /* background: rgb(122, 122, 122); */
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+#seekbar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    
+    background: black; /* Color of the thumb */
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+body.dark-mode #seekbar{
+    background: linear-gradient(to right, white 0%, white var(--seek-value), transparent var(--seek-value), transparent 100%);
+    border: 0.5px solid white;
+}
+
+body.dark-mode #seekbar::-webkit-slider-thumb{
+    background: white;
+}
