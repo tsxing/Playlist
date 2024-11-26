@@ -32,6 +32,7 @@ const playlist = {
     "Rengoku Theme - Demon Slayer (Samuel Kim)": "Rengoku_Theme_Demon_Slayer",
     "Inosuke Theme V2 - Demon Slayer (Samuel Kim)": "Inosuke_Theme_V2_Demon_Slayer",
     "Gurenge - Demon Slayer (Samuel Kim)": "Gurenge_Demon_Slayer",
+    "Akaza vs REngoku Theme (Samuel Kim)": "Akaza_theme",
     "Tokyo Revengers Main Theme (Samuel Kim)": "Tokyo_Revengers_Main_Theme",
     "The Battle for Me Myself - Tokyo Revengers": "The_Battle_for_Me_Myself_Tokyo_Revengers",
     "Our Dream - Tokyo Revengers": "Our_Dream_Tokyo_Revengers",
