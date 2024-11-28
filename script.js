@@ -40,6 +40,8 @@ const playlist = {
     "My Soul - July": "My_Soul_July",
     "Somewhere - July": "Somewhere_July",
     "逆时针向 - Asphyxia":"逆时针向_Asphyxia",
+    "Last Reunion - Peter Roe":"last_reunion",
+    "Interstellar Theme": "interstellar_theme",
     "Bloody Mary - Instrumental": "Bloody_Mary_Instrumental",
     "Fake Love Orchestral - BTS": "Fake_Love_Orchestral_BTS",
     "浮光 - Music": "浮光_Music",
