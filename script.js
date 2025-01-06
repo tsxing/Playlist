@@ -127,6 +127,9 @@ const playlist = {
     "Done For Me - Punch Hotel Del Luna OST": "Done_For_Me",
     "Fate - Lee Sun Hee": "Fate",
     "SBS Temptation of Wife OST": "Temptation_of_Wife",
+    "Scars leave beautiful trace": "Scars_leave_beautiful_trace",
+    "Suddenly - City Hunter": "Suddenly_City_Hunter",
+    "In The Dark": "In_The_Dark",
     "Sigriswil": "Sigriswil",
     "See The Light - Lim Hyunsik": "See_The_Light",
     "Wa - Lee Jung-hyun": "Wa",
@@ -165,6 +168,7 @@ const playlist = {
     "Answer - ATEEZ": "Answer_ATEEZ",
     "Inception - ATEEZ": "Inception_ATEEZ",
     "Say My Name - ATEEZ": "Say_My_Name_ATEEZ",
+    "This Is War - MBLAQ": "This_Is_War_MBLAQ",
     "Trap - Henry": "Trap_Henry",
     "Trap - Henry (CHN)": "Trap_Henry_CHN",
     "BLUE - BIGBANG": "BLUE_Bigbang",
@@ -176,7 +180,7 @@ const playlist = {
     "悪魔の子 (Rock Remix) - Attack on Titan": "悪魔の子_Attack_on_Titan",
     "夢と葉桜 - 青木月光": "夢と葉桜",
     "さくらひらり - Tomo":"さくらひらり_Tomo",
-    "Spirits_KOKIA":"Spirits_KOKIA",
+    "Spirits KOKIA":"Spirits_KOKIA",
     "The Final Countdown Remix- Europe": "The_Final_Countdown_Remix_Europe",
     "Bring Me to Life - Evanescence": "Bring_Me_to_Life_Evanescence",
     "I'll Do It - Heidi Montag": "Ill_Do_It_Heidi_Montag",
@@ -385,27 +389,24 @@ audio.addEventListener("timeupdate", function() {
     // Allow the user to seek to a new position in the audio
     seekbar.addEventListener("input", function() {
         const seekTo = (seekbar.value / 100) * audio.duration;  // Calculate the time in seconds
-        audio.currentTime = seekTo;  // Set the audio to the new position
-        });
-
-
-
-        function updateSeekBarBackground() {
-            const value = (seekbar.value / seekbar.max) * 100; // Calculate percentage
-            seekbar.style.setProperty("--seek-value", `${value}%`);
-        }
+        audio.currentTime = seekTo; 
+    });
+    
+    function updateSeekBarBackground() {
+        const value = (seekbar.value / seekbar.max) * 100; 
+        seekbar.style.setProperty("--seek-value", `${value}%`);
+    }
+    
+    audio.addEventListener("timeupdate", function () {
+        const progress = (audio.currentTime / audio.duration) * 100; // Calculate percentage
+        seekbar.value = progress; // Update the seekbar position
+        updateSeekBarBackground();
+    });
+    
+    seekbar.addEventListener("input", function () {
+        const time = (seekbar.value / 100) * audio.duration; // Map slider value to audio time
+        audio.currentTime = time;
+        updateSeekBarBackground();
+    });
         
-        // Sync the seekbar with the audio's current time
-        audio.addEventListener("timeupdate", function () {
-            const progress = (audio.currentTime / audio.duration) * 100; // Calculate percentage
-            seekbar.value = progress; // Update the seekbar position
-            updateSeekBarBackground(); // Update the background
-        });
         
-        // Update the audio time when the seekbar is manually adjusted
-        seekbar.addEventListener("input", function () {
-            const time = (seekbar.value / 100) * audio.duration; // Map slider value to audio time
-            audio.currentTime = time;
-            updateSeekBarBackground();
-        });
-
