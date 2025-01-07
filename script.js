@@ -181,6 +181,7 @@ const playlist = {
     "夢と葉桜 - 青木月光": "夢と葉桜",
     "さくらひらり - Tomo":"さくらひらり_Tomo",
     "Spirits KOKIA":"Spirits_KOKIA",
+    "When the flowers fall | 桜の花が舞い落ちるとき": "When_the_flowers_fall",
     "The Final Countdown Remix- Europe": "The_Final_Countdown_Remix_Europe",
     "Bring Me to Life - Evanescence": "Bring_Me_to_Life_Evanescence",
     "I'll Do It - Heidi Montag": "Ill_Do_It_Heidi_Montag",
