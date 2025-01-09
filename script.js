@@ -208,7 +208,7 @@ const playlist = {
     "迴夢遊仙 (Music)": "迴夢遊仙",
     "That Girl x Talking To The Moon Remix": "That_Girl_x_Talking_To_The_Moon"
 };
-console.log(Object.keys(playlist).length);
+console.log(Object.keys(playlist).length); // length of song playlist 
 
 let currentSongIndex = 0;  // Keeps track of the song position in the playlist
 
@@ -255,6 +255,7 @@ function populatePlaylist() {
 
 // Function to play the song
 function playSong(title) {
+    console.log(title);
     const filename = playlist[title];
     
     // Update the audio source and album art
@@ -344,7 +345,27 @@ repeatIcon.addEventListener("click", () => {
     repeatCheckbox.dispatchEvent(new Event("change")); // Trigger 'change' event for synchronization
     });
 
-// Event listener for when the song ends
+const keys = Object.keys(playlist);
+const values = Object.values(playlist);
+
+function getIndexPlaylist(index){
+    const keyatindex = keys[index];
+    return keyatindex;
+}
+
+
+function playRandomSong(){
+    console.log("rand button clicked");
+    const randomSongIndex = Math.floor(Math.random() * Object.keys(playlist).length);
+    console.log(randomSongIndex);
+    const randomTitle = getIndexPlaylist(randomSongIndex);
+    console.log(randomTitle);
+    currentSongIndex = randomSongIndex;
+    playSong(randomTitle);
+}
+
+randomSongButton.addEventListener('click',playRandomSong);
+
 audioPlayer.addEventListener('ended', playNextSong);
 
 // Event listener for the play/pause button
@@ -357,7 +378,7 @@ songSelect.addEventListener('change', function() {
     playSong(selectedTitle);  // Play the selected song
 });
 
-// Initialize playlist and button state
+
 populatePlaylist();
 updatePlayPauseButton();
 
