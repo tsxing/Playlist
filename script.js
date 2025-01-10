@@ -384,16 +384,20 @@ function playSong(title) {
     const randSongButton = document.getElementById('randomSongButton');
     randSongButton.style.boxShadow = `-5px 5px 5px ${darkenRGB(playlist[currentSongTitle][1],50)}, 
     2px -2px 1px ${lightenRGB(playlist[currentSongTitle][1],10)},
-    3px -2px 5px ${darkenRGB(playlist[currentSongTitle][1],30)} inset`;
+    3px -2px 5px ${darkenRGB(playlist[currentSongTitle][1],10)} inset`;
     randSongButton.style.backgroundColor = lightenRGB(playlist[currentSongTitle][1],20);
     randSongButton.style.color = darkenRGB(playlist[currentSongTitle][1],60);
 
     const playStopButton = document.getElementById('playPauseButton');
 
     playStopButton.style.color = darkenRGB(playlist[currentSongTitle][1],60);
-    playStopButton.style.boxShadow = `-5px 5px 5px ${darkenRGB(playlist[currentSongTitle][1],80)}, 
-    2px -2px 2px ${lightenRGB(playlist[currentSongTitle][1],10)},
-    3px -2px 10px ${darkenRGB(playlist[currentSongTitle][1],30)} inset`;
+    /* playStopButton.style.boxShadow = `-5px 5px 5px ${darkenRGB(playlist[currentSongTitle][1],50)}, 
+    2px -2px 1px ${lightenRGB(playlist[currentSongTitle][1],10)},
+    3px -2px 5px ${darkenRGB(playlist[currentSongTitle][1],10)} inset`; */
+    playStopButton.style.boxShadow= ` 
+    3px 3px 5px ${darkenRGB(playlist[currentSongTitle][1],50)} inset,
+    -3px 1px 6px ${darkenRGB(playlist[currentSongTitle][1],40)} inset,
+    -3px -1px 6px ${darkenRGB(playlist[currentSongTitle][1],40)} inset`;
     playStopButton.style.backgroundColor = lightenRGB(playlist[currentSongTitle][1],10);
 
 
@@ -463,9 +467,10 @@ function playSong(title) {
     });
 
 
-    seekbar.style.boxShadow = `-5px 5px 20px ${darkenRGB(playlist[currentSongTitle][1],20)} inset`;
-    seekbar.style.borderColor =  lightenRGB(playlist[currentSongTitle][1],30);
-    seekbar.style.background = `linear-gradient(to right, white 40%, black var(--seek-value), transparent var(--seek-value), black 100%)`;
+    seekbar.style.boxShadow = `-5px 5px 10px ${darkenRGB(playlist[currentSongTitle][1],40)} inset`;
+    seekbar.style.borderColor =  lightenRGB(playlist[currentSongTitle][1],10);
+    seekbar.style.background = `linear-gradient(to right, white 0%, black var(--seek-value), transparent var(--seek-value), black 100%)`;
+
 
 
     const style = document.createElement('style');
@@ -488,14 +493,26 @@ function playSong(title) {
 
 // Function to update the play/pause button based on the audio state
 function updatePlayPauseButton() {
+    const songTitles = Object.keys(playlist);
+    const currentSongTitle = songTitles[currentSongIndex];
+
     const img = document.querySelector('.image');
+    const playStopButton = document.getElementById('playPauseButton');
     if (audioPlayer.paused) {
         playPauseButton.innerHTML = '<i class="fa fa-play"></i>';
-        
         img.style.animationPlayState = 'paused'; // Pause the animation
+        playStopButton.style.boxShadow= `-5px 5px 5px ${darkenRGB(playlist[currentSongTitle][1],50)}, 
+    2px -2px 1px ${lightenRGB(playlist[currentSongTitle][1],10)},
+    3px 2px 5px ${darkenRGB(playlist[currentSongTitle][1],20)} inset`;
+
+
     } else {
         playPauseButton.innerHTML = '<i class="fa fa-pause"></i>'; // Set pause icon and text
         img.style.animationPlayState = 'running'; 
+        playStopButton.style.boxShadow= ` 
+    3px 3px 5px ${darkenRGB(playlist[currentSongTitle][1],50)} inset,
+    -3px 1px 6px ${darkenRGB(playlist[currentSongTitle][1],40)} inset,
+    -3px -1px 6px ${darkenRGB(playlist[currentSongTitle][1],40)} inset`;
     }
 }
 
@@ -528,13 +545,25 @@ function playNextSong() {
 }
 
 repeatCheckbox.addEventListener("change", function(){
+    const repeatButton = document.getElementById('repeatButtonIcon');
+    const songTitles = Object.keys(playlist);
+    const currentSongTitle = songTitles[currentSongIndex];
+
     if (repeatCheckbox.checked){
         repeatIcon.innerHTML = '<i class="fa fa-remove"></i>';
+
+        repeatButton.style.boxShadow= `-5px 5px 5px ${darkenRGB(playlist[currentSongTitle][1],50)}, 
+    2px -2px 1px ${lightenRGB(playlist[currentSongTitle][1],10)},
+    3px 2px 5px ${darkenRGB(playlist[currentSongTitle][1],20)} inset`;
+        
         console.log("repeat button is checked");
     }
     else{
         repeatIcon.innerHTML = '<i class="fa fa-refresh"></i>';
-        console.log("repeat button NOT checked");
+        repeatButton.style.boxShadow= ` 
+    3px 3px 5px ${darkenRGB(playlist[currentSongTitle][1],50)} inset,
+    -3px 1px 6px ${darkenRGB(playlist[currentSongTitle][1],40)} inset,
+    -3px -1px 6px ${darkenRGB(playlist[currentSongTitle][1],40)} inset`;
     }
 });
 
