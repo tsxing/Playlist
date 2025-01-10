@@ -72,14 +72,16 @@ body {
 }
 
 #time {
-    position: absolute;          /* Fixes the element in place relative to the viewport */
-    top: 103px;                /* Position it near the top of the screen */
-    left: 835px;               /* Position it near the left of the screen */
+    position: fixed;          /* Fixes the element in place relative to the viewport */
+    top: 450px;               
+    left: 258px;               /* Position it near the left of the screen */
     z-index: -1;              /* Ensure it is behind other elements */
     background: transparent;  /* No background, just text */
     color: rgb(250, 214, 173); /* Semi-visible text color */
-    font-size: 48px;        
+    font-size: 108px;        
     font-family: "Questrial", sans-serif;
+    font-weight: bold;
+    text-shadow: 5px 5px 5px black;
 }
 
 .selected-song {
@@ -208,6 +210,60 @@ body {
 }
 
 
+.rightSiteBody{
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: flex-start; /* Align items to the start (optional) */
+    gap: 20px; /* Optional gap between the two elements */
+    margin: 0;
+    padding: 0;
+}
+
+.filterButtonHolder{
+    width: 400px;
+    height: 75px;
+    overflow-y: auto;
+    border-radius: 30px;
+    background: linear-gradient(to bottom, rgba(250, 214, 173, 0.6), rgba(249, 204, 153, 0.6));
+    box-shadow: -5px 5px 20px rgb(25, 20, 15),
+    5px -5px 15px rgb(233, 233, 233),
+    0 0 0 10px linear-gradient(to bottom, rgb(250, 214, 173), rgb(249 204 153));
+    transition: 0.3s;
+    flex-direction: column;
+    margin-left: 10px;
+
+    border: 12px solid transparent;
+    background-clip: border-box;
+   /* border-color:linear-gradient(to bottom, rgba(250, 214, 173,0.8), rgba(249 204 153,0.8));*/
+    scrollbar-width: none;
+
+}
+
+.filter-button{
+    display: inline-block;
+    color: white;
+    padding: 5px 10px;
+    margin: 5px;
+    background-color: rgba(250, 214, 173, 0.6);
+    cursor: pointer;
+    border-radius: 5px;
+    user-select: none;
+    font-family:  "Questrial", sans-serif;
+}
+
+.filter-button input {
+    display: none; /* Hide the actual checkbox */
+}
+
+.filter-button input:checked +span {
+    color: black;
+}
+
+.filter-button:hover {
+    background-color: #e7e7e7;
+}
+
+
 .dropdown{
     width: 100%;
     position: absolute;
@@ -245,9 +301,12 @@ body {
     transition: 0.3s;
     flex-direction: column;
     margin-left: 10px;
+    margin-top: -10px;
 
-    
-    border: 12px solid transparent;
+    border-top: 12px solid transparent;
+    border-left: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-right: 12px solid transparent;
     background-clip: border-box;
     border-color:linear-gradient(to bottom, rgb(250, 214, 173), rgb(249 204 153));
     scrollbar-width: none;
@@ -266,10 +325,19 @@ body {
         
     }
 
+    .filterButtonHolder{
+        margin-top: 20px;
+    }
+
     .container-playlist{
-        margin-top: 50px;
-        width: 300px;
-        height: 200px;
+        margin-top: 0px;
+        border-radius: 30px;
+     
+        height: 100px;
+    }
+
+    #time{
+        display: none;
     }
 
 }
