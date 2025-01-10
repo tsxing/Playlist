@@ -2,27 +2,27 @@
 
 
 const playlist = {
-    "Booraye - Ian Clarke": ["booraye_ian_clarke","rgb(249 204 153)"],
-    "After the Fall - Two Steps From Hell": ["After_the_Fall_Two_Steps_From_Hell","rgb(252 167 103)"],
-    "Archangel - Two Steps From Hell": ["Archangel_Two_Steps_From_Hell","rgb(241 234 231)"],
-    "Birth of a Hero - Two Steps From Hell": ["Birth_of_a_Hero_Two_Steps_From_Hell","rgb(205 198 171)"],
+    "Booraye - Ian Clarke": ["booraye_ian_clarke","rgb(120 86 65)"],
+    "After the Fall - Two Steps From Hell": ["After_the_Fall_Two_Steps_From_Hell","rgb(225 113 49)"],
+    "Archangel - Two Steps From Hell": ["Archangel_Two_Steps_From_Hell","rgb(67 53 48)"],
+    "Birth of a Hero - Two Steps From Hell": ["Birth_of_a_Hero_Two_Steps_From_Hell","rgb(102 96 75)"],
     "Blackheart - Two Steps From Hell": ["Blackheart_Two_Steps_From_Hell","rgb(115 132 134)"],
-    "Black Blade - Two Steps From Hell": ["black_blade","rgb(119 187 197)"],
+    "Black Blade - Two Steps From Hell": ["black_blade","rgb(26 94 126)"],
     "Breathe - Two Steps From Hell":["breathe","rgb(128 180 223)"],
     "Colors of Love - Two Steps From Hell": ["Colors_of_Love_Two_Steps_From_Hell","rgb(206 142 105)"],
     "Compass - Two Steps From Hell": ["Compass_Two_Steps_From_Hell","rgb(201 132 87)"],
     "El Dorado - Two Steps From Hell": ["El_Dorado_Two_Steps_From_Hell","rgb(192 149 106)"],
-    "Empire of Angels - Two Steps From Hell": ["Empire_of_Angels_Two_Steps_From_Hell","rgb(182 232 231)"],
-    "Flight of the Silverbird - Two Steps From Hell": ["Flight_of_the_Silverbird_Two_Steps_From_Hell","rgb(210 222 221)"],
+    "Empire of Angels - Two Steps From Hell": ["Empire_of_Angels_Two_Steps_From_Hell","rgb(97 151 162)"],
+    "Flight of the Silverbird - Two Steps From Hell": ["Flight_of_the_Silverbird_Two_Steps_From_Hell","rgb(122 137 143)"],
     "For the Win - Two Steps From Hell": ["For_the_Win_Two_Steps_From_Hell","rgb(188 210 210)"],
     "Freedom Fighters - Two Steps From Hell": ["Freedom_Fighters_Two_Steps_From_Hell","rgb(224 219 208)"],
     "Immortal - Two Steps From Hell": ["Immortal_Two_Steps_From_Hell","rgb(235 201 180)"],
-    "Impossible - Two Steps From Hell": ["Impossible_Two_Steps_From_Hell","rgb(150 202 209)"],
+    "Impossible - Two Steps From Hell": ["Impossible_Two_Steps_From_Hell","rgb(47 70 68)"],
     "Invincible - Two Steps From Hell": ["invincible_tsfh","rgb(52 183 244)"],
     "Love & Loss - Two Steps From Hell":["loveloss_tsfh","rgb(100 159 189)"],
     "Magika - Two Steps From Hell": ["magika","rgb(0 184 226)"],
     "Never Back Down - Two Steps From Hell": ["Never_Back_Down_Two_Steps_From_Hell","rgb(158 129 122)"],
-    "Pegasus - Two Steps From Hell": ["Pegasus_Two_Steps_From_Hell","rgb(146 157 155)"],
+    "Pegasus - Two Steps From Hell": ["Pegasus_Two_Steps_From_Hell","rgb(53 105 111)"],
     "Protectors of the Earth - Two Steps From Hell": ["Protectors_of_the_Earth_Two_Steps_From_Hell","rgb(205 158 118)"],
     "Secret Melody - Two Steps From Hell": ["secret_melody_tsfh","rgb(165 140 124)"],
     "Stallion - Two Steps From Hell": ["Stallion_Two_Steps_From_Hell","rgb(214 167 142)"],
@@ -32,7 +32,7 @@ const playlist = {
     "To Glory - Two Steps From Hell": ["To_Glory_Two_Steps_From_Hell","rgb(198 166 152)"],
     "Unleashed - Two Steps From Hell": ["unleashed_tsfh","rgb(131 190 213)"],
     "Victory - Two Steps From Hell": ["Victory_Two_Steps_From_Hell","rgb(170 135 104)"],
-    "Winterspell - Two Steps From Hell": ["winterspell_tsfh","rgb(107 234 252)"],
+    "Winterspell - Two Steps From Hell": ["winterspell_tsfh","rgb(41 173 220)"],
     "Victory X Heart of Courage - Remix": ["Victory_X_Heart_of_Courage","rgb(129 128 179)"],
     "Children of the Sun - Thomas Bergersen": ["Children_of_the_Sun","rgb(224 153 50)"],
     "Final Frontier - Thomas Bergersen": ["Final_Frontier_Thomas_Bergersen","rgb(194 102 97)"],
@@ -58,7 +58,7 @@ const playlist = {
     "Interstellar - Theme": ["interstellar_theme","rgb(255 169 167)"],
     "Bloody Mary - Instrumental": ["Bloody_Mary_Instrumental","rgb(81 175 197)"],
     "Fake Love Orchestral - BTS": ["Fake_Love_Orchestral_BTS","rgb(194 194 188)"],
-    "浮光 - Music": ["浮光_Music","rgb(248 231 133)"],
+    "浮光 - Music": ["浮光_Music","rgb(248 143 0)"],
     "天耀中华 (伴奏) - 徐千雅": ["天耀中华_伴奏_徐千雅","rgb(179 104 83)"],
     "黑色裂變 - 大秦帝國": ["黑色裂變_大秦帝國","rgb(88 163 83)"],
     "Grand Ceremony of Qin - Instrumental": ["Grand_Ceremony_Qin","rgb(173 33 63)"],
@@ -209,7 +209,7 @@ const playlist = {
     "That Girl x Talking To The Moon - Remix": ["That_Girl_x_Talking_To_The_Moon","rgb(191 196 217)"],
 };
 console.log(Object.keys(playlist).length); // length of song playlist 
-
+console.log("BOORAYE: ", darkenRGB("rgb(249 204 153)",60));
 let currentSongIndex = 0;  // Keeps track of the song position in the playlist
 
 // Get references to the audio player and the song select dropdown
@@ -254,9 +254,9 @@ function populatePlaylist() {
 }
 
 function darkenRGB(rgbString, percentage) {
-    console.log(rgbString);
+
     rgbString = rgbString.replace(/\s+/g, ',');
-    console.log(rgbString);
+
     // Extract the RGB values from the string using regex
     const regex = /^rgb\((\d+),(\d+),(\d+)\)$/;
     const match = rgbString.match(regex);
@@ -325,6 +325,8 @@ function displaySongInfo(filename) {
     }
 }
 
+
+
 function toRGBA(rgbColor, opacity) {
 
     return rgbColor.replace('rgb', 'rgba').replace(')', `, ${opacity})`);
@@ -351,7 +353,7 @@ function playSong(title) {
     const playlistItems = document.querySelectorAll('.song-item');
     playlistItems.forEach((item) => {
         item.classList.remove('playing'); // Remove bold styling class
-        item.textContent = item.textContent.replace(" <--", ""); // Remove previous indicator
+        item.textContent = item.textContent.replace(" ←", ""); // Remove previous indicator
     });
 
     // Add "<--" and bold styling to the currently playing song in the playlist
@@ -359,7 +361,7 @@ function playSong(title) {
     
     console.log(currentItem.textContent);
     //document.getElementById('selected-song').innerText = currentItem.textContent;
-    currentItem.textContent += " <--";
+    currentItem.textContent += " ←";
     currentItem.classList.add('playing'); 
 
     songSelect.value = title;
@@ -379,40 +381,48 @@ function playSong(title) {
 
 
     const randSongButton = document.getElementById('randomSongButton');
-    randSongButton.style.boxShadow = `-5px 5px 10px ${darkenRGB(playlist[currentSongTitle][1],20)}, 
-    1px -1px 3px white, 
-    3px -2px 15px ${lightenRGB(playlist[currentSongTitle][1],30)} inset`;
-    randSongButton.style.backgroundColor = lightenRGB(playlist[currentSongTitle][1],40);
+    randSongButton.style.boxShadow = `-5px 5px 5px ${darkenRGB(playlist[currentSongTitle][1],50)}, 
+    2px -2px 1px ${lightenRGB(playlist[currentSongTitle][1],10)},
+    3px -2px 5px ${darkenRGB(playlist[currentSongTitle][1],30)} inset`;
+    randSongButton.style.backgroundColor = lightenRGB(playlist[currentSongTitle][1],20);
     randSongButton.style.color = darkenRGB(playlist[currentSongTitle][1],60);
-
 
     const playStopButton = document.getElementById('playPauseButton');
 
-    playStopButton.style.color = lightenRGB(playlist[currentSongTitle][1],60);
-    playStopButton.style.boxShadow = `-5px 5px 10px ${darkenRGB(playlist[currentSongTitle][1],20)}, 
-    2px -2px 7px ${lightenRGB(playlist[currentSongTitle][1],5)},
-    3px -2px 15px ${darkenRGB(playlist[currentSongTitle][1],30)} inset`;
-    playStopButton.style.backgroundColor = darkenRGB(playlist[currentSongTitle][1],20);
+    playStopButton.style.color = darkenRGB(playlist[currentSongTitle][1],60);
+    playStopButton.style.boxShadow = `-5px 5px 5px ${darkenRGB(playlist[currentSongTitle][1],80)}, 
+    2px -2px 2px ${lightenRGB(playlist[currentSongTitle][1],10)},
+    3px -2px 10px ${darkenRGB(playlist[currentSongTitle][1],30)} inset`;
+    playStopButton.style.backgroundColor = lightenRGB(playlist[currentSongTitle][1],10);
 
 
     const repeatButton = document.getElementById('repeatButtonIcon');
-    repeatButton.style.boxShadow = `-5px 5px 10px ${darkenRGB(playlist[currentSongTitle][1],20)}, 
-    1px -1px 3px white, 
-    3px -2px 15px ${lightenRGB(playlist[currentSongTitle][1],30)} inset`;
-    repeatButton.style.backgroundColor = lightenRGB(playlist[currentSongTitle][1],40);
-    repeatButton.style.color = darkenRGB(playlist[currentSongTitle][1],60);
+    repeatButton.style.boxShadow = `-5px 5px 5px ${darkenRGB(playlist[currentSongTitle][1],50)}, 
+    2px -2px 1px ${lightenRGB(playlist[currentSongTitle][1],10)},
+    3px -2px 5px ${darkenRGB(playlist[currentSongTitle][1],30)} inset`;
+    repeatButton.style.backgroundColor = lightenRGB(playlist[currentSongTitle][1],20);
+    repeatButton.style.color = darkenRGB(playlist[currentSongTitle][1],40);
 
-    artContainer.style.boxShadow = `-5px 5px 20px ${darkenRGB(playlist[currentSongTitle][1],30)}`;
- 
+    artContainer.style.boxShadow = `-5px 5px 20px ${darkenRGB(playlist[currentSongTitle][1],90)}`;
+
+    const svgProgress = document.getElementById('svgProgress');
+    svgProgress.style.stroke = `${lightenRGB(playlist[currentSongTitle][1],70)}`;
+
+    const svgTrack = document.getElementById('svgTrack');
+    svgTrack.style.stroke = `${lightenRGB(playlist[currentSongTitle][1],40)}`;
 
     /* document.body.style.backgroundColor = `${darkenRGB(playlist[currentSongTitle][1],30)}`; */
-document.body.style.background = `radial-gradient(circle at 27% 25%, ${darkenRGB(playlist[currentSongTitle][1], 30)} 40%, ${darkenRGB(playlist[currentSongTitle][1], 30)} 30%, ${lightenRGB(playlist[currentSongTitle][1], 30)} 30%, ${darkenRGB(playlist[currentSongTitle][1], 30)} 80%) repeat-x`;
+    document.body.style.background = `radial-gradient(circle at 27% 25%, ${darkenRGB(playlist[currentSongTitle][1], 50)} 40%, ${darkenRGB(playlist[currentSongTitle][1], 30)} 30%, ${darkenRGB(playlist[currentSongTitle][1], 80)} 30%, ${darkenRGB(playlist[currentSongTitle][1], 30)} 80%) repeat-x`;
+    const selectedSongArtist = document.getElementById('selected-song-artist');
+    selectedSongArtist.style.color = `${lightenRGB(playlist[currentSongTitle][1],80)}`;
+
+    const selectedSong = document.getElementById('selected-song');
+    selectedSong.style.color = `${lightenRGB(playlist[currentSongTitle][1],80)}`;
+    
 
     const containerPlaylist = document.getElementById('container-playlist');
-    containerPlaylist.style.boxShadow = `-5px 5px 20px ${darkenRGB(playlist[currentSongTitle][1],30)}`;
+    containerPlaylist.style.boxShadow = `-5px 5px 20px ${darkenRGB(playlist[currentSongTitle][1],90)}`;
     containerPlaylist.style.background = `linear-gradient(to bottom, rgba(${lightenRGB(playlist[currentSongTitle][1], 20).match(/\d+/g).join(', ')}, 0.6), rgba(${playlist[currentSongTitle][1].match(/\d+/g).join(', ')}, 0.6))`;
-
-
 
 
     containerPlaylist.style.borderImage = `linear-gradient(to bottom, ${lightenRGB(playlist[currentSongTitle][1], 20)}, ${playlist[currentSongTitle][1]})`;
@@ -425,55 +435,66 @@ document.body.style.background = `radial-gradient(circle at 27% 25%, ${darkenRGB
     const gradientBorder = `linear-gradient(to bottom, ${lightenRGB(playlist[currentSongTitle][1], 20)}, ${playlist[currentSongTitle][1]})`;
     containerPlaylist.style.boxShadow = `0 0 0 10px ${gradientBorder}`;
 
+    
+
     const songItems = document.querySelectorAll('.song-item');
 
     songItems.forEach(songItem => {
     
     // Set the initial background color and box shadow
-        songItem.style.backgroundColor = playlist[currentSongTitle][1];
-        songItem.style.boxShadow = `-5px 5px 20px ${darkenRGB(playlist[currentSongTitle][1],10)} inset`;
+        songItem.style.backgroundColor = darkenRGB(playlist[currentSongTitle][1],30);
+        songItem.style.boxShadow = `-5px 5px 20px ${darkenRGB(playlist[currentSongTitle][1],40)} inset`;
         songItem.style.opacity = '0.8';
         songItem.style.transition = 'background-color 0.3s ease, box-shadow 0.3s ease';
 
     // Add hover effect to change background color
         songItem.addEventListener('mouseover', () => {
-            songItem.style.backgroundColor = darkenRGB(playlist[currentSongTitle][1],10);
+            songItem.style.backgroundColor = darkenRGB(playlist[currentSongTitle][1],30);
+            songItem.style.fontSize = "16px";
         });
 
         // Revert background color when mouse leaves the element
         songItem.addEventListener('mouseout', () => {
-            songItem.style.backgroundColor = playlist[currentSongTitle][1];
+            songItem.style.backgroundColor = darkenRGB(playlist[currentSongTitle][1],30);
+            songItem.style.fontSize = "15px";
+            songItem.style.transition="0.3s";
         });
     });
 
 
-    seekbar.style.boxShadow = `-5px 5px 20px ${lightenRGB(playlist[currentSongTitle][1],20)} inset`;
+    seekbar.style.boxShadow = `-5px 5px 20px ${darkenRGB(playlist[currentSongTitle][1],20)} inset`;
     seekbar.style.borderColor =  lightenRGB(playlist[currentSongTitle][1],30);
-    seekbar.style.background = `linear-gradient(to right, ${darkenRGB(playlist[currentSongTitle][1],100)} 0%, ${darkenRGB(playlist[currentSongTitle][1],100)} var(--seek-value), transparent var(--seek-value), transparent 100%)`;
+    seekbar.style.background = `linear-gradient(to right, white 40%, black var(--seek-value), transparent var(--seek-value), black 100%)`;
 
 
     const style = document.createElement('style');
     style.innerHTML = `#seekbar::-webkit-slider-thumb {
-    box-shadow: 0 0 0px 7px ${darkenRGB(playlist[currentSongTitle][1],20)};}
+    box-shadow: 0 0 0px 7px ${darkenRGB(playlist[currentSongTitle][1],40)};}
     #seekbar::-webkit-slider-thumb:hover{box-shadow: 0 0 0px 7px ${darkenRGB(playlist[currentSongTitle][1],30)};
     }
     `;
+    document.head.appendChild(style);
 
-// Append the style to the <head> to apply the changes
-document.head.appendChild(style);
+    const time = document.getElementById('time');
+    time.style.color = `${lightenRGB(playlist[currentSongTitle][1],20)}`;
+
+    const playing = document.querySelector(".playing");
+    //playing.style.color =`${lightenRGB(playlist[currentSongTitle][1],60)}`;
 
 
 }
 
 
-
-
 // Function to update the play/pause button based on the audio state
 function updatePlayPauseButton() {
+    const img = document.querySelector('.image');
     if (audioPlayer.paused) {
-        playPauseButton.innerHTML = '<i class="fa fa-play"></i>'; // Set play icon and text
+        playPauseButton.innerHTML = '<i class="fa fa-play"></i>';
+        
+        img.style.animationPlayState = 'paused'; // Pause the animation
     } else {
         playPauseButton.innerHTML = '<i class="fa fa-pause"></i>'; // Set pause icon and text
+        img.style.animationPlayState = 'running'; 
     }
 }
 
@@ -558,7 +579,7 @@ songSelect.addEventListener('change', function() {
 populatePlaylist();
 updatePlayPauseButton();
 
-
+/*
 function toggleTheme() {
     // Get the checkbox input by its ID
     const checkbox = document.getElementById('toggleThemeCheckbox');
@@ -572,6 +593,7 @@ function toggleTheme() {
         document.body.classList.remove('dark-mode');
     }
 }
+*/
 
 
 const audio = document.getElementById("audioPlayer");
@@ -579,34 +601,53 @@ const seekbar = document.getElementById("seekbar");
 
 // Update the progress bar as the audio plays
 audio.addEventListener("timeupdate", function() {
-    // Calculate the progress as a percentage
     const progress = (audio.currentTime / audio.duration) * 100;
-    seekbar.value = progress;  // Update the seekbar's value
-    });
+    seekbar.value = progress;
+});
+
+seekbar.addEventListener("input", function() {
+    const seekTo = (seekbar.value / 100) * audio.duration; 
+    audio.currentTime = seekTo; 
+});
+
+function updateSeekBarBackground() {
+    const value = (seekbar.value / seekbar.max) * 100; 
+    seekbar.style.setProperty("--seek-value", `${value}%`);
+    setProgress(value);
+}
     
-    // Allow the user to seek to a new position in the audio
-    seekbar.addEventListener("input", function() {
-        const seekTo = (seekbar.value / 100) * audio.duration;  // Calculate the time in seconds
-        audio.currentTime = seekTo; 
-    });
+audio.addEventListener("timeupdate", function () {
+    const progress = (audio.currentTime / audio.duration) * 100; // Calculate percentage
+    seekbar.value = progress; // Update the seekbar position
+    updateSeekBarBackground();
+});
     
-    function updateSeekBarBackground() {
-        const value = (seekbar.value / seekbar.max) * 100; 
-        seekbar.style.setProperty("--seek-value", `${value}%`);
-    }
-    
-    audio.addEventListener("timeupdate", function () {
-        const progress = (audio.currentTime / audio.duration) * 100; // Calculate percentage
-        seekbar.value = progress; // Update the seekbar position
-        updateSeekBarBackground();
-    });
-    
-    seekbar.addEventListener("input", function () {
+seekbar.addEventListener("input", function () {
         const time = (seekbar.value / 100) * audio.duration; // Map slider value to audio time
         audio.currentTime = time;
         updateSeekBarBackground();
-    });
+});
 
+let progressCircle = document.querySelector(".progress");
+let radius = progressCircle.r.baseVal.value;
+let circumference = (radius * 2 * Math.PI)/2;
+progressCircle.style.strokeDasharray = circumference;
 
-
+    
+function setProgress(percent) {
+    progressCircle.style.strokeDashoffset = circumference+ (percent / 100) * circumference; 
+}
+        
+changeProgress();
+function changeProgress() {
+    let progresstime = 100;
+    setProgress(progresstime);
+    
+    for (let i = 100; i >= 0; i--) {
+        setTimeout(() => {
+            progresstime = i;
+            setProgress(progresstime);
+        }, i * 10); // Each increment happens every 1 second
+    }
+}
 
