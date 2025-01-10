@@ -17,10 +17,10 @@ function updateTime() {
     const formattedSeconds = String(seconds).padStart(2, '0');
 
     // Format the time as hh:mm:ss AM/PM
-    const formattedTime = `${hours}:${formattedMinutes}:${formattedSeconds} ${amPm}`;
+    const formattedTime = `${hours}:${formattedMinutes} ${amPm}`;
     document.getElementById('time').innerText = formattedTime;
 
-    console.log(formattedTime);
+    //console.log(formattedTime);
 }
   // Update the time every second
 setInterval(updateTime, 1000);
