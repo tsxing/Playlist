@@ -202,7 +202,7 @@ const playlist = {
     "We all lie - Sky 캐슬 OST Part 4": ["We_all_lie","rgb(232 182 153)"],
     "Pray - Klang; Angel's Last Mission: Love OST": ["Pray_Klang","rgb(125 203 255)"],
     "Numb -  Linkin Park (Remix)": ["Numb_Remix","rgb(132 146 148)"],
-    "Sold out - Hawk Nelson": ["Sold_out","rgb(183 136 123)"],
+    "Sold out - Hawk Nelson": ["Sold_out","rgb(86 7 5)"],
     "Take Me Hand - Daishi Dance": ["Take_Me_Hand_Daishi_Dance","rgb(232 160 147)"],
     "印第安曲 - Music": ["印第安曲","rgb(92 203 254)"],
     "迴夢遊仙 - Music": ["迴夢遊仙","rgb(179 191 178)"],
@@ -378,6 +378,7 @@ function playSong(title) {
     const img = document.querySelector('.image');
     img.style.boxShadow = `-5px 5px 20px ${darkenRGB(playlist[currentSongTitle][1],30)}`;
     img.style.borderColor=playlist[currentSongTitle][1];
+    img.style.border = '10px solid ${darkenRGB(playlist[currentSongTitle][1])';
 
 
     const randSongButton = document.getElementById('randomSongButton');
