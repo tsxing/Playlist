@@ -54,8 +54,8 @@ body {
     transition:0.3s;
     animation: bulge 10s linear infinite; 
     transform: rotate(0);
-    margin-top: -95px;
-     /* border: 8px solid rgb(242, 242, 242); */
+    margin-top: -105px;
+    border: 10px solid rgb(120, 95, 66); 
     box-shadow: -5px 5px 20px rgb(174, 143, 107);
     z-index: 3;
 
