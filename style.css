@@ -73,8 +73,8 @@ body {
 
 #time {
     position: absolute;          /* Fixes the element in place relative to the viewport */
-    top: 105px;                /* Position it near the top of the screen */
-    left: 810px;               /* Position it near the left of the screen */
+    top: 103px;                /* Position it near the top of the screen */
+    left: 835px;               /* Position it near the left of the screen */
     z-index: -1;              /* Ensure it is behind other elements */
     background: transparent;  /* No background, just text */
     color: rgb(250, 214, 173); /* Semi-visible text color */
