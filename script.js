@@ -325,6 +325,11 @@ function displaySongInfo(filename) {
     }
 }
 
+function toRGBA(rgbColor, opacity) {
+
+    return rgbColor.replace('rgb', 'rgba').replace(')', `, ${opacity})`);
+}
+
 // Function to play the song
 function playSong(title) {
     console.log(title);
@@ -366,7 +371,7 @@ function playSong(title) {
 
     console.log(currentSongTitle, " is at ", currentSongIndex);
     const artContainer = document.querySelector('.container');
-    artContainer.style.background = `linear-gradient(to bottom, ${lightenRGB(playlist[currentSongTitle][1], 20)}, ${playlist[currentSongTitle][1]})`;
+    artContainer.style.background = `linear-gradient(to bottom, rgba(${lightenRGB(playlist[currentSongTitle][1], 20).match(/\d+/g).join(', ')}, 0.6), rgba(${playlist[currentSongTitle][1].match(/\d+/g).join(', ')}, 0.6))`;
 
     const img = document.querySelector('.image');
     img.style.boxShadow = `-5px 5px 20px ${darkenRGB(playlist[currentSongTitle][1],30)}`;
@@ -398,13 +403,18 @@ function playSong(title) {
     repeatButton.style.color = darkenRGB(playlist[currentSongTitle][1],60);
 
     artContainer.style.boxShadow = `-5px 5px 20px ${darkenRGB(playlist[currentSongTitle][1],30)}`;
+ 
 
-
-    document.body.style.backgroundColor = `${darkenRGB(playlist[currentSongTitle][1],30)}`;
+    /* document.body.style.backgroundColor = `${darkenRGB(playlist[currentSongTitle][1],30)}`; */
+document.body.style.background = `radial-gradient(circle at 27% 25%, ${darkenRGB(playlist[currentSongTitle][1], 30)} 40%, ${darkenRGB(playlist[currentSongTitle][1], 30)} 30%, ${lightenRGB(playlist[currentSongTitle][1], 30)} 30%, ${darkenRGB(playlist[currentSongTitle][1], 30)} 80%) repeat-x`;
 
     const containerPlaylist = document.getElementById('container-playlist');
     containerPlaylist.style.boxShadow = `-5px 5px 20px ${darkenRGB(playlist[currentSongTitle][1],30)}`;
-    containerPlaylist.style.background = `linear-gradient(to bottom, ${lightenRGB(playlist[currentSongTitle][1], 20)}, ${playlist[currentSongTitle][1]})`;
+    containerPlaylist.style.background = `linear-gradient(to bottom, rgba(${lightenRGB(playlist[currentSongTitle][1], 20).match(/\d+/g).join(', ')}, 0.6), rgba(${playlist[currentSongTitle][1].match(/\d+/g).join(', ')}, 0.6))`;
+
+
+
+
     containerPlaylist.style.borderImage = `linear-gradient(to bottom, ${lightenRGB(playlist[currentSongTitle][1], 20)}, ${playlist[currentSongTitle][1]})`;
     
     containerPlaylist.style.backgroundClip = 'border-box'; // Clips the gradient to the border area
@@ -422,7 +432,7 @@ function playSong(title) {
     // Set the initial background color and box shadow
         songItem.style.backgroundColor = playlist[currentSongTitle][1];
         songItem.style.boxShadow = `-5px 5px 20px ${darkenRGB(playlist[currentSongTitle][1],10)} inset`;
-
+        songItem.style.opacity = '0.8';
         songItem.style.transition = 'background-color 0.3s ease, box-shadow 0.3s ease';
 
     // Add hover effect to change background color
