@@ -182,6 +182,7 @@ const playlist = {
     "さくらひらり - Tomo": ["さくらひらり_Tomo","rgb(243 215 166)",["Japanese","Pop"]],
     "Spirits - KOKIA": ["Spirits_KOKIA","rgb(241 211 108)",["Japanese","Pop"]],
     "When the flowers fall - 桜の花が舞い落ちるとき": ["When_the_flowers_fall","rgb(191 162 195)",["Japanese"]],
+    "Calling Out - Sayaka Shionoya": ["Calling_Out","rgb(193 85 131)",["Japanese","Pop"]],
     "The Final Countdown Remix - Europe": ["The_Final_Countdown_Remix_Europe","rgb(192 154 118)",["Remix"]],
     "Bring Me to Life - Evanescence": ["Bring_Me_to_Life_Evanescence","rgb(130 95 170)",["English"]],
     "I'll Do It - Heidi Montag": ["Ill_Do_It_Heidi_Montag","rgb(90 104 114)",["English","Pop"]],
