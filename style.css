@@ -26,7 +26,12 @@ body {
 .site-body{
     display: flex; /* Use flexbox to arrange child  horizontally */
     justify-content: space-between; /* Distribute space between main-container and playlist-container */
-    padding: 20px;
+    padding: 50px 120px;
+    border-radius: 40px;
+    background: linear-gradient(to bottom, rgba(250, 214, 173, 0.3), rgba(249, 204, 153, 0.3));
+    z-index: 0;
+
+    backdrop-filter: blur(5px); /* Apply the blur effect */
 }
 
 .container{
@@ -73,9 +78,9 @@ body {
 
 #time {
     position: fixed;          /* Fixes the element in place relative to the viewport */
-    top: 450px;               
-    left: 258px;               /* Position it near the left of the screen */
-    z-index: -1;              /* Ensure it is behind other elements */
+    top: 360px;               
+    left: 58px;               /* Position it near the left of the screen */
+    z-index: 1;              /* Ensure it is behind other elements */
     background: transparent;  /* No background, just text */
     color: rgb(250, 214, 173); /* Semi-visible text color */
     font-size: 108px;        
