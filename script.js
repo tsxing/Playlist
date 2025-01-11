@@ -57,7 +57,7 @@ const playlist = {
     "Sword Art Online - Theme": ["Sword_Art_Online","rgb(47 148 168)",["Instrumental","Epic","Theme/OST"]],
     "Interstellar - Theme": ["interstellar_theme","rgb(255 169 167)",["Instrumental","Epic","Theme/OST"]],
     "Bloody Mary - Instrumental": ["Bloody_Mary_Instrumental","rgb(81 175 197)",["Instrumental","Epic"]],
-    "Fake Love Orchestral - BTS": ["Fake_Love_Orchestral_BTS","rgb(194 194 188)",["Instrumental","Epic","Korean"]],
+    "Fake Love Orchestral - BTS": ["Fake_Love_Orchestral_BTS","rgb(194 194 188)",["Instrumental","Epic","Korean","Remix"]],
     "浮光 - Music": ["浮光_Music","rgb(248 143 0)",["Instrumental","Chinese"]],
     "天耀中华 (伴奏) - 徐千雅": ["天耀中华_伴奏_徐千雅","rgb(179 104 83)",["Instrumental","Epic","Chinese"]],
     "黑色裂變 - 大秦帝國": ["黑色裂變_大秦帝國","rgb(88 163 83)",["Instrumental","Epic","Theme/OST","Chinese"]],
@@ -312,10 +312,15 @@ function updateSongColors() {
     const artContainer = document.querySelector('.container');
     artContainer.style.background = `linear-gradient(to bottom, rgba(${lightenRGB(songColor, 20).match(/\d+/g).join(', ')}, 0.6), rgba(${songColor.match(/\d+/g).join(', ')}, 0.6))`;
 
+    const siteBody = document.getElementById('siteBody');
+    siteBody.style.background = `linear-gradient(to bottom, rgba(${lightenRGB(songColor, 20).match(/\d+/g).join(', ')}, 0.3), rgba(${songColor.match(/\d+/g).join(', ')}, 0.3))`;
+    siteBody.style.boxShadow = `-5px 5px 20px ${darkenRGB(songColor, 80)}`;
+
     const img = document.querySelector('.image');
-    img.style.boxShadow = `-5px 5px 20px ${darkenRGB(songColor, 30)}`;
-    img.style.borderColor = songColor;
-    img.style.border = `10px solid ${darkenRGB(songColor, 30)}`;
+    img.style.boxShadow = `-5px 5px 10px ${darkenRGB(playlist[currentSongTitle][1],30)}`;
+    const imgBorderColor = addOpacity(darkenRGB(playlist[currentSongTitle][1],30),0.5);
+    //img.style.borderColor=playlist[currentSongTitle][1];
+    img.style.border = `10px solid ${imgBorderColor}`;
 
     document.body.style.background = `radial-gradient(circle at 27% 25%, ${darkenRGB(playlist[currentSongTitle][1], 50)} 40%, ${darkenRGB(playlist[currentSongTitle][1], 30)} 30%, ${darkenRGB(playlist[currentSongTitle][1], 80)} 30%, ${darkenRGB(playlist[currentSongTitle][1], 30)} 80%) repeat-x`;
     const seekbar = document.getElementById("seekbar");
@@ -420,6 +425,34 @@ document.querySelectorAll('.filter-button input').forEach(input => {
 
 
 populatePlaylist();
+
+
+
+function addOpacity(rgbString, opac) {
+    if (typeof rgbString !== 'string' || rgbString.trim() === '') {
+        console.error("Invalid input: rgbString should be a non-empty string.");
+        return;
+    }
+
+    if (typeof opac !== 'number' || opac < 0 || opac > 1) {
+        console.error("Invalid opacity value: Opacity must be a number between 0 and 1.");
+        return;
+    }
+
+    const regex = /^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/;
+    const match = rgbString.match(regex);
+
+    if (match) {
+        let r = parseInt(match[1]);
+        let g = parseInt(match[2]);
+        let b = parseInt(match[3]);
+
+        return `rgba(${r}, ${g}, ${b}, ${opac})`;
+    } else {
+        console.error("Invalid rgb format. Ensure the format is rgb(r, g, b).");
+        return;
+    }
+}
 
 
 function darkenRGB(rgbString, percentage) {
@@ -535,9 +568,14 @@ function playSong(title) {
 
     const img = document.querySelector('.image');
     img.style.boxShadow = `-5px 5px 20px ${darkenRGB(playlist[currentSongTitle][1],30)}`;
-    img.style.borderColor=playlist[currentSongTitle][1];
-    img.style.border = '10px solid ${darkenRGB(playlist[currentSongTitle][1])';
+    const imgBorderColor = addOpacity(darkenRGB(playlist[currentSongTitle][1],30),0.5);
+    //img.style.borderColor=playlist[currentSongTitle][1];
+    img.style.border = `10px solid ${imgBorderColor}`;
 
+
+    
+    
+    
 
     const randSongButton = document.getElementById('randomSongButton');
     randSongButton.style.boxShadow = `-5px 5px 5px ${darkenRGB(playlist[currentSongTitle][1],50)}, 
