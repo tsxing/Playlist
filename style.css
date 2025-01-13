@@ -90,7 +90,7 @@ body {
 }
 
 .selected-song {
-    color: black;
+    color: white;
     z-index: 234;
     position: absolute;
     left: 50%;
