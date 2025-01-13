@@ -49,8 +49,10 @@ const playlist = {
     "The Battle for Me Myself - Tokyo Revengers": ["The_Battle_for_Me_Myself_Tokyo_Revengers","rgb(240 220 214)",["Instrumental","Epic","Theme/OST","Japanese","Anime"]],
     "Our Dream - Tokyo Revengers": ["Our_Dream_Tokyo_Revengers","rgb(240 220 214)",["Instrumental","Theme/OST","Japanese","Anime"]],
     "Call of Silence (Lofi) - Attack on Titan": ["Call_of_Silence_Attack_on_Titan","rgb(119 134 124)",["Instrumental","Theme/OST","Japanese","Anime"]],
+    "Quando Corpus Morietur - The K2" : ["Quando_Corpus_Morietur","rgb(27 118 109)",["Instrumental","Korean","Theme/OST"]],
     "My Soul - July": ["My_Soul_July","rgb(210 182 164)",["Instrumental"]],
     "Somewhere - July": ["Somewhere_July","rgb(181 140 128)",["Instrumental"]],
+    "Wings of Piano - Deemo": ["Wings_of_Piano","rgb(253 14 79)",["Instrumental"]], 
     "逆时针向 - Asphyxia": ["逆时针向_Asphyxia","rgb(135 224 234)",["Instrumental"]],
     "KOMOREBI - 鲸落版": ["KOMOREBI鲸落版","rgb(78 216 247)",["Instrumental"]],
     "Last Reunion - Peter Roe": ["last_reunion","rgb(3 137 149)",["Instrumental","Epic"]],
@@ -183,6 +185,7 @@ const playlist = {
     "Spirits - KOKIA": ["Spirits_KOKIA","rgb(241 211 108)",["Japanese","Pop"]],
     "When the flowers fall - 桜の花が舞い落ちるとき": ["When_the_flowers_fall","rgb(191 162 195)",["Japanese"]],
     "Calling Out - Sayaka Shionoya": ["Calling_Out","rgb(193 85 131)",["Japanese","Pop"]],
+    "Arigatou Aishiteta Hito - Tiara": ["ArigatouAishitetaHito_Tiara","rgb(102 51 204)",["Japanese","Pop"]],
     "The Final Countdown Remix - Europe": ["The_Final_Countdown_Remix_Europe","rgb(192 154 118)",["Remix"]],
     "Bring Me to Life - Evanescence": ["Bring_Me_to_Life_Evanescence","rgb(130 95 170)",["English"]],
     "I'll Do It - Heidi Montag": ["Ill_Do_It_Heidi_Montag","rgb(90 104 114)",["English","Pop"]],
@@ -208,6 +211,7 @@ const playlist = {
     "印第安曲 - Music": ["印第安曲","rgb(92 203 254)",["Instrumental"]],
     "迴夢遊仙 - Music": ["迴夢遊仙","rgb(179 191 178)",["Instrumental","Epic"]],
     "That Girl x Talking To The Moon - Remix": ["That_Girl_x_Talking_To_The_Moon","rgb(191 196 217)",["English","Remix"]],
+    "Upuan - Jeazell": ["Upuan_Jeazell","rgb(5 50 58)",["Filipino"]]
 };
 console.log("Playlist Length: ", Object.keys(playlist).length); 
 
@@ -243,6 +247,7 @@ function populatePlaylist() {
     if (document.getElementById('swedish-filter').checked) filters.push('Swedish');
     if (document.getElementById('russian-filter').checked) filters.push('Russian');
     if (document.getElementById('tsfh-filter').checked) filters.push('TSFH');
+    if (document.getElementById('filipino-filter').checked) filters.push('Filipino');
 
     console.log("FILTERS CHOSEN: ", filters);
 
