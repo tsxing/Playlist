@@ -211,7 +211,12 @@ const playlist = {
     "印第安曲 - Music": ["印第安曲","rgb(92 203 254)",["Instrumental"]],
     "迴夢遊仙 - Music": ["迴夢遊仙","rgb(179 191 178)",["Instrumental","Epic"]],
     "That Girl x Talking To The Moon - Remix": ["That_Girl_x_Talking_To_The_Moon","rgb(191 196 217)",["English","Remix"]],
-    "Upuan - Jeazell": ["Upuan_Jeazell","rgb(5 50 58)",["Filipino"]]
+    "Upuan - Jeazell": ["Upuan_Jeazell","rgb(5 50 58)",["Filipino"]],
+    "Illusionary Daytime - Alan Walker Style": ["Illusionary_Daytime_Alan_Walker_Style","rgb(75 162 184)",["Remix","Instrumental"]],
+    "Don't Cry - Renka": ["Dont_Cry_Renka","rgb(212 115 152)",["Japanese","Pop"]],
+    "Sayonara Aishiteta - Saki Kayama": ["Sayonara_Aishiteta","rgb(129 87 229)",["Japanese","Pop"]],
+    "殺破狼 - 仙劍奇俠傳電視原聲帶 ": ["殺破狼","rgb(5 5 7)",["Chinese","Theme/OST"]],
+    "夜空 - miwa": ["夜空_miwa","rgb(50 17 84)",["Japanese","Pop"]]
 };
 console.log("Playlist Length: ", Object.keys(playlist).length); 
 
