@@ -54,7 +54,7 @@ const playlist = {
     "Somewhere - July": ["Somewhere_July","rgb(181 140 128)",["Instrumental"]],
     "Wings of Piano - Deemo": ["Wings_of_Piano","rgb(253 14 79)",["Instrumental"]], 
     "逆时针向 - Asphyxia": ["逆时针向_Asphyxia","rgb(135 224 234)",["Instrumental"]],
-    "KOMOREBI - 鲸落版": ["KOMOREBI鲸落版","rgb(78 216 247)",["Instrumental"]],
+    "KOMOREBI - 鲸落版": ["KOMOREBI鲸落版","rgb(10 91 174)",["Instrumental"]],
     "Last Reunion - Peter Roe": ["last_reunion","rgb(3 137 149)",["Instrumental","Epic"]],
     "Sword Art Online - Theme": ["Sword_Art_Online","rgb(47 148 168)",["Instrumental","Epic","Theme/OST"]],
     "Interstellar - Theme": ["interstellar_theme","rgb(255 169 167)",["Instrumental","Epic","Theme/OST"]],
@@ -216,11 +216,19 @@ const playlist = {
     "Don't Cry - Renka": ["Dont_Cry_Renka","rgb(212 115 152)",["Japanese","Pop"]],
     "Sayonara Aishiteta - Saki Kayama": ["Sayonara_Aishiteta","rgb(129 87 229)",["Japanese","Pop"]],
     "殺破狼 - 仙劍奇俠傳電視原聲帶 ": ["殺破狼","rgb(5 5 7)",["Chinese","Theme/OST"]],
-    "夜空 - miwa": ["夜空_miwa","rgb(50 17 84)",["Japanese","Pop"]]
+    "夜空 - miwa": ["夜空_miwa","rgb(50 17 84)",["Japanese","Pop"]],
+    "Sayonara - Kana Nishino": ["Sayonara_Kana_Nishino","rgb(90 63 68)",["Japanese","Pop"]],
+    "Hana No Atosaki - Hakuouki": ["Hana_No_Atosaki_Hakuouki","rgb(60 171 214)",["Japanese","Pop"]],
+    "Get Over - dream": ["Get_Over_dream","rgb(73 59 134)",["Japanese","Pop"]]
+
 };
 console.log("Playlist Length: ", Object.keys(playlist).length); 
+let aaa = Object.keys(playlist);
+let index = aaa.indexOf("KOMOREBI - 鲸落版");
 
-let currentSongIndex = 0; 
+console.log(index);
+
+let currentSongIndex = 52; 
 
 const audioPlayer = document.getElementById('audioPlayer');
 const audioSource = document.getElementById('audioSource');
@@ -351,6 +359,7 @@ function updateSongColors() {
             songItem.style.backgroundColor = darkenRGB(playlist[currentSongTitle][1],30);
             songItem.style.fontSize = "16px";
         });
+        
 
         songItem.addEventListener('mouseout', () => {
             songItem.style.backgroundColor = darkenRGB(playlist[currentSongTitle][1],30);
