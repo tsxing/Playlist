@@ -117,7 +117,7 @@ const playlist = {
     "桃花诺 - 邓紫棋": ["桃花诺_邓紫棋","rgb(148 78 169)",["Chinese","Pop","Theme/OST"]],
     "明月天涯 - 五音Jw": ["明月天涯_五音Jw","rgb(187 196 232)",["Chinese","Pop"]],
     "阴霾 - 高旭": ["阴霾_高旭","rgb(131 169 168)",["Chinese","Pop"]],
-    "美人魚 - 林俊杰": ["美人魚_林俊杰","rgb(123 167 188)",["Chinese","Pop"]],
+    "美人魚 - 林俊杰": ["美人魚_林俊杰","rgb(5 44 171)",["Chinese","Pop"]],
     "雲與海 - 阿YueYue": ["雲與海_阿YueYue","rgb(151 196 226)",["Chinese","Pop"]],
     "夏夜灯塔 - 沈以诚": ["夏夜灯塔_沈以诚","rgb(160 156 221)",["Chinese","Pop"]],
     "Heaven - Ailee": ["heaven_ailee","rgb(248 139 193)",["Korean"]],
@@ -150,13 +150,13 @@ const playlist = {
     "Dumhdurum - Apink": ["Dumhdurum_Apink","rgb(239 214 238)",["Korean","Pop"]],
     "Girls - NATURE": ["Girls_NATURE","rgb(163 181 206)",["Korean","Pop"]],
     "Diamond - TRI.BE": ["Diamond_TRIBE","rgb(231 175 85)",["Korean","Pop"]],
-    "Start - Dreamcatcher": ["Start","rgb(146 197 230)",["Korean","Pop"]],
+    "Start - Dreamcatcher": ["Start","rgb(30 97 225)",["Korean","Pop"]],
     "Rollercoaster - Chungha": ["Rollercoaster_Chungha","rgb(134 128 125)",["Korean","Pop"]],
     "Bon Voyage - YooA": ["Bon_Voyage_YooA","rgb(237 199 167)",["Korean","Pop"]],
-    "Virtual Angel - ARTMS": ["Virtual_Angel_ARTMS","rgb(18 206 234)",["Korean","Pop"]],
+    "Virtual Angel - ARTMS": ["Virtual_Angel_ARTMS","rgb(67 128 192)",["Korean","Pop"]],
     "Girls Never Die - tripleS": ["Girls_Never_Die_tripleS","rgb(212 181 175)",["Korean","Pop"]],
     "Paradise - infinite": ["paradise_infinite","rgb(220 145 213)",["Korean","Pop"]],
-    "Rooftop - N.Flying": ["Rooftop_NFlying","rgb(236 245 119)",["Korean","Pop"]],
+    "Rooftop - N.Flying": ["Rooftop_NFlying","rgb(246 153 44)",["Korean","Pop"]],
     "beautiful - BEAST": ["beautiful_BEAST","rgb(137 220 251)",["Korean","Pop"]],
     "LUNA - ONEUS": ["LUNA_ONEUS","rgb(86 157 255)",["Korean","Pop"]],
     "Valkyrie (발키리) - ONEUS": ["Valkyrie_ONEUS","rgb(0 149 186)",["Korean","Pop"]],
@@ -167,9 +167,9 @@ const playlist = {
     "Chasing That Feeling - TOMORROW X TOGETHER": ["Chasing_That_Feeling_TOMORROW_X_TOGETHER","rgb(106 128 131)",["Korean","Pop"]],
     "FLASH - X1": ["FLASH_X1","rgb(136 102 134)",["Korean","Pop"]],
     "Fatal Trouble - ENHYPEN": ["Fatal_Trouble_ENHYPEN","rgb(152 221 244)",["Korean","Pop"]],
-    "Answer - ATEEZ": ["Answer_ATEEZ","rgb(145 127 192)",["Korean","Pop"]],
-    "Inception - ATEEZ": ["Inception_ATEEZ","rgb(187 159 204)",["Korean","Pop"]],
-    "Say My Name - ATEEZ": ["Say_My_Name_ATEEZ","rgb(170 219 233)",["Korean","Pop"]],
+    "Answer - ATEEZ": ["Answer_ATEEZ","rgb(145 127 192)",["Korean","Pop","ATEEZ"]],
+    "Inception - ATEEZ": ["Inception_ATEEZ","rgb(187 159 204)",["Korean","Pop","ATEEZ"]],
+    "Say My Name - ATEEZ": ["Say_My_Name_ATEEZ","rgb(170 219 233)",["Korean","Pop","ATEEZ"]],
     "This Is War - MBLAQ": ["This_Is_War_MBLAQ","rgb(116 216 236)",["Korean","Pop"]],
     "Trap - Henry": ["Trap_Henry","rgb(211 165 195)",["Korean","Pop"]],
     "Trap - Henry (CHN)": ["Trap_Henry_CHN","rgb(255 180 178)",["Korean","Pop"]],
@@ -215,11 +215,11 @@ const playlist = {
     "Illusionary Daytime - Alan Walker Style": ["Illusionary_Daytime_Alan_Walker_Style","rgb(75 162 184)",["Remix","Instrumental"]],
     "Don't Cry - Renka": ["Dont_Cry_Renka","rgb(212 115 152)",["Japanese","Pop"]],
     "Sayonara Aishiteta - Saki Kayama": ["Sayonara_Aishiteta","rgb(129 87 229)",["Japanese","Pop"]],
-    "殺破狼 - 仙劍奇俠傳電視原聲帶 ": ["殺破狼","rgb(5 5 7)",["Chinese","Theme/OST"]],
+    "殺破狼 - 仙劍奇俠傳電視原聲帶 ": ["殺破狼","rgb(118 16 11)",["Chinese","Theme/OST"]],
     "夜空 - miwa": ["夜空_miwa","rgb(50 17 84)",["Japanese","Pop"]],
     "Sayonara - Kana Nishino": ["Sayonara_Kana_Nishino","rgb(90 63 68)",["Japanese","Pop"]],
     "Hana No Atosaki - Hakuouki": ["Hana_No_Atosaki_Hakuouki","rgb(60 171 214)",["Japanese","Pop"]],
-    "Get Over - dream": ["Get_Over_dream","rgb(73 59 134)",["Japanese","Pop"]]
+    "Get Over - dream": ["Get_Over_dream","rgb(213 51 149)",["Japanese","Pop"]]
 
 };
 console.log("Playlist Length: ", Object.keys(playlist).length); 
@@ -257,6 +257,7 @@ function populatePlaylist() {
     if (document.getElementById('anime-filter').checked) filters.push('Anime');
     if (document.getElementById('korean-filter').checked) filters.push('Korean');
     if (document.getElementById('pop-filter').checked) filters.push('Pop');
+    if (document.getElementById('ateez-filter').checked) filters.push('ATEEZ');
     if (document.getElementById('swedish-filter').checked) filters.push('Swedish');
     if (document.getElementById('russian-filter').checked) filters.push('Russian');
     if (document.getElementById('tsfh-filter').checked) filters.push('TSFH');
@@ -323,8 +324,12 @@ function updateSongColors() {
 
     const filterButtons = document.querySelectorAll('.filter-button');
     filterButtons.forEach((button) => {
-        button.style.backgroundColor = darkenRGB(playlist[currentSongTitle][1], 30);
+        //button.style.backgroundColor = darkenRGB(playlist[currentSongTitle][1], 30);
+        button.style.background = `linear-gradient(to bottom, rgba(${darkenRGB(playlist[currentSongTitle][1], 40).match(/\d+/g).join(', ')}, 0.6), rgba(${playlist[currentSongTitle][1].match(/\d+/g).join(', ')}, 0.6))`;
+
     });
+
+    
 
 
     const artContainer = document.querySelector('.container');
@@ -692,6 +697,8 @@ function playSong(title) {
     filterButtons.forEach((button) => {
         button.style.backgroundColor = darkenRGB(playlist[currentSongTitle][1], 30);
     });
+
+
 
     updateSongColors();
 
