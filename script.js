@@ -9,7 +9,7 @@ const playlist = {
     "Blackheart - Two Steps From Hell": ["Blackheart_Two_Steps_From_Hell","rgb(115 132 134)",["Instrumental","Epic","TSFH"]],
     "Black Blade - Two Steps From Hell": ["black_blade","rgb(26 94 126)",["Instrumental","Epic","TSFH"]],
     "Breathe - Two Steps From Hell":["breathe","rgb(128 180 223)",["Instrumental","Epic","TSFH"]],
-    "Colors of Love - Two Steps From Hell": ["Colors_of_Love_Two_Steps_From_Hell","rgb(206 142 105)",["Instrumental","Epic","TSFH"]],
+    "Colors of Love - Two Steps From Hell": ["Colors_of_Love_Two_Steps_From_Hell","rgb(156 80 65)",["Instrumental","Epic","TSFH"]],
     "Compass - Two Steps From Hell": ["Compass_Two_Steps_From_Hell","rgb(201 132 87)",["Instrumental","Epic","TSFH"]],
     "El Dorado - Two Steps From Hell": ["El_Dorado_Two_Steps_From_Hell","rgb(192 149 106)",["Instrumental","Epic","TSFH"]],
     "Empire of Angels - Two Steps From Hell": ["Empire_of_Angels_Two_Steps_From_Hell","rgb(97 151 162)",["Instrumental","Epic","TSFH"]],
@@ -82,7 +82,7 @@ const playlist = {
     "主題曲 - 大俠霍元甲": ["主題曲_大俠霍元甲","rgb(127 111 146)",["Canto"]],
     "红日 - 李克勤": ["红日_李克勤","rgb(110 203 241)",["Canto","Pop"]],
     "刀劍如夢 - 周華健": ["刀劍如夢_周華健","rgb(157 188 235)",["Chinese"]],
-    "神话情话 - 周华健, 齐豫 ": ["神话情话_周华健_齐豫 ","rgb(146 210 250)",["Canto","Pop"]],
+    "神话情话 - 周华健, 齐豫 ": ["神话情话_周华健_齐豫 ","rgb(184 171 222)",["Canto","Pop"]],
     "诉衷情 - 伪装者": ["诉衷情_伪装者","rgb(151 114 80)",["Chinese","Theme/OST"]],
     "等待 - 韩磊": ["等待_韩磊","rgb(237 180 120)",["Chinese","Theme/OST"]],
     "海闊天空 - Beyond": ["海闊天空_Beyond","rgb(237 238 232)",["Canto","Pop"]],
@@ -222,24 +222,23 @@ const playlist = {
     "Get Over - dream": ["Get_Over_dream","rgb(213 51 149)",["Japanese","Pop"]],
     "Guerilla - Oh My Girl": ["Guerilla","rgb(22 56 114)","Korean","Pop"],
     "City of the Dead - EURIELLE": ["City_of_the_Dead","rgb(177 158 141)",["English"]],
-    "Let You Down - Samuel Kim": ["Let_You_Down_Cyberpunk_Edgerunner","rgb(9 72 159)",["English","Anime","SamuelKim"]],
-    "Supernova - IVE": ["IVE_Supernova","rgb(223 147 193)",["Korean","Pop"]],
+    "Let You Down - Samuel Kim": ["Let_You_Down_Cyberpunk_Edgerunner","rgb(26 150 222)",["English","Anime","SamuelKim"]],
+    "Supernova - IVE": ["IVE_Supernova","rgb(248 225 233)",["Korean","Pop"]],
     "TRUE - Yoari": ["TRUE_Yoari","rgb(201 75 183)",["Korean","Theme/OST"]],
     "Siren - Taeyeon": ["Siren_Taeyeon","rgb(230 98 102)",["Korean","Pop"]],
     "Crush - IVE": ["Crush_IVE","rgb(255 129 157)",["Korean","Pop"]],
     "Fuanteina Kamisama - Suara": ["Fuanteina_kamisama_Suara","rgb(63 151 245)",["Japanese","Pop"]]
 
-    //Fuanteina_kamisama_Suara
-
 
 };
+
 console.log("Playlist Length: ", Object.keys(playlist).length); 
 let aaa = Object.keys(playlist);
 let index = aaa.indexOf("KOMOREBI - 鲸落版");
 
 console.log(index);
 
-let currentSongIndex = 52; 
+let currentSongIndex = 223; 
 
 const audioPlayer = document.getElementById('audioPlayer');
 const audioSource = document.getElementById('audioSource');
@@ -346,6 +345,7 @@ function updateSongColors() {
 
     const artContainer = document.querySelector('.container');
     artContainer.style.background = `linear-gradient(to bottom, rgba(${lightenRGB(songColor, 20).match(/\d+/g).join(', ')}, 0.6), rgba(${songColor.match(/\d+/g).join(', ')}, 0.6))`;
+    artContainer.style.boxShadow = `-5px 5px 20px ${darkenRGB(playlist[currentSongTitle][1],80)}`;
 
     const siteBody = document.getElementById('siteBody');
     //siteBody.style.background = `linear-gradient(to bottom, rgba(${lightenRGB(songColor, 20).match(/\d+/g).join(', ')}, 0.3), rgba(${songColor.match(/\d+/g).join(', ')}, 0.3))`;
@@ -359,12 +359,12 @@ function updateSongColors() {
     //img.style.borderColor=playlist[currentSongTitle][1];
     img.style.border = `10px solid ${imgBorderColor}`;
 
-    document.body.style.background = `radial-gradient(circle at 27% 25%, ${darkenRGB(playlist[currentSongTitle][1], 50)} 40%, ${darkenRGB(playlist[currentSongTitle][1], 30)} 30%, ${darkenRGB(playlist[currentSongTitle][1], 80)} 30%, ${darkenRGB(playlist[currentSongTitle][1], 30)} 80%) repeat-x`;
+    document.body.style.background = `radial-gradient(circle at 27% 25%, ${darkenRGB(playlist[currentSongTitle][1], 50)} 40%, ${darkenRGB(playlist[currentSongTitle][1], 30)} 30%, ${darkenRGB(playlist[currentSongTitle][1], 70)} 30%, ${darkenRGB(playlist[currentSongTitle][1], 30)} 80%) repeat-x`;
     const seekbar = document.getElementById("seekbar");
     const svgProgress = document.getElementById('svgProgress');
-    svgProgress.style.stroke = `${lightenRGB(playlist[currentSongTitle][1],70)}`;
+    svgProgress.style.stroke = `${lightenRGB(playlist[currentSongTitle][1],40)}`;
     const svgTrack = document.getElementById('svgTrack');
-    svgTrack.style.stroke = `${lightenRGB(playlist[currentSongTitle][1],40)}`;
+    svgTrack.style.stroke = `${lightenRGB(playlist[currentSongTitle][1],20)}`;
 
     const songItems = document.querySelectorAll('.song-item');
     songItems.forEach(songItem => {
@@ -388,7 +388,7 @@ function updateSongColors() {
     });
 
     const containerPlaylist = document.getElementById('container-playlist');
-    containerPlaylist.style.boxShadow = `-5px 5px 20px ${darkenRGB(playlist[currentSongTitle][1],40)}`;
+    containerPlaylist.style.boxShadow = `-5px 5px 20px ${darkenRGB(playlist[currentSongTitle][1],80)}`;
     containerPlaylist.style.background = `linear-gradient(to bottom, rgba(${lightenRGB(playlist[currentSongTitle][1], 20).match(/\d+/g).join(', ')}, 0.6), rgba(${playlist[currentSongTitle][1].match(/\d+/g).join(', ')}, 0.6))`;
     containerPlaylist.style.borderImage = `linear-gradient(to bottom, ${lightenRGB(playlist[currentSongTitle][1], 20)}, ${playlist[currentSongTitle][1]})`;
     containerPlaylist.style.backgroundClip = 'border-box'; // Clips the gradient to the border area
@@ -397,7 +397,7 @@ function updateSongColors() {
     const gradientBorder = `linear-gradient(to bottom, ${lightenRGB(playlist[currentSongTitle][1], 20)}, ${playlist[currentSongTitle][1]})`;
     containerPlaylist.style.boxShadow = `0 0 0 10px ${gradientBorder}`;
 
-    filterButtonsHolder.style.boxShadow = `-5px 5px 20px ${darkenRGB(playlist[currentSongTitle][1],40)}`;
+    filterButtonsHolder.style.boxShadow = `-5px 5px 20px ${darkenRGB(playlist[currentSongTitle][1],80)}`;
     filterButtonsHolder.style.background = `linear-gradient(to bottom, rgba(${lightenRGB(playlist[currentSongTitle][1], 20).match(/\d+/g).join(', ')}, 0.6), rgba(${playlist[currentSongTitle][1].match(/\d+/g).join(', ')}, 0.6))`;
     filterButtonsHolder.style.borderImage = `linear-gradient(to bottom, ${lightenRGB(playlist[currentSongTitle][1], 20)}, ${playlist[currentSongTitle][1]})`;
     filterButtonsHolder.style.backgroundClip = 'border-box'; // Clips the gradient to the border area
@@ -429,7 +429,7 @@ function updateSongColors() {
 
     seekbar.style.boxShadow = `-5px 5px 10px ${darkenRGB(playlist[currentSongTitle][1],40)} inset`;
     seekbar.style.borderColor =  lightenRGB(playlist[currentSongTitle][1],10);
-    seekbar.style.background = `linear-gradient(to right, white 0%, black var(--seek-value), transparent var(--seek-value), black 100%)`;
+    seekbar.style.background = `linear-gradient(to right, lightenRGB(playlist[currentSongTitle][1],40) 0%, black var(--seek-value), transparent var(--seek-value), black 100%)`;
     const style = document.createElement('style');
     style.innerHTML = `#seekbar::-webkit-slider-thumb {
     box-shadow: 0 0 0px 7px ${darkenRGB(playlist[currentSongTitle][1],40)};}
@@ -637,12 +637,12 @@ function playSong(title) {
     repeatButton.style.backgroundColor = lightenRGB(playlist[currentSongTitle][1],20);
     repeatButton.style.color = darkenRGB(playlist[currentSongTitle][1],40);
 
-    artContainer.style.boxShadow = `-5px 5px 20px ${darkenRGB(playlist[currentSongTitle][1],40)}`;
+    
 
     const svgProgress = document.getElementById('svgProgress');
-    svgProgress.style.stroke = `${lightenRGB(playlist[currentSongTitle][1],70)}`;
+   
     const svgTrack = document.getElementById('svgTrack');
-    svgTrack.style.stroke = `${lightenRGB(playlist[currentSongTitle][1],40)}`;
+    svgTrack.style.stroke = `${lightenRGB(playlist[currentSongTitle][1],10)}`;
 
     /* document.body.style.backgroundColor = `${darkenRGB(playlist[currentSongTitle][1],30)}`; */
     document.body.style.background = `radial-gradient(circle at 27% 25%, ${darkenRGB(playlist[currentSongTitle][1], 50)} 40%, ${darkenRGB(playlist[currentSongTitle][1], 30)} 30%, ${darkenRGB(playlist[currentSongTitle][1], 80)} 30%, ${darkenRGB(playlist[currentSongTitle][1], 30)} 80%) repeat-x`;
