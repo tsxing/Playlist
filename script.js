@@ -39,13 +39,13 @@ const playlist = {
     "Rada - Thomas Bergersen":["Rada","rgb(228 178 117)",["Instrumental","Epic"]],
     "Rohan Theme - Lord of the Rings (LOTR)": ["Rohan_Theme_LOTR","rgb(145 157 158)",["Instrumental","Epic", "Theme/OST"]],
     "Rohan Rohirrim Soundtrack - LOTR": ["Rohan_Rohirrim_Soundtrack_LOTR","rgb(121 126 63)",["Instrumental","Epic","Theme/OST"]],
-    "Unravel Remix - Tokyo Ghoul (Samuel Kim)": ["Unravel_Tokyo_Ghoul","rgb(227 196 237)",["Instrumental","Epic","Theme/OST"],"Japanese"],
-    "Kai's Theme - Kung Fu Panda (Samuel Kim)": ["Kai_Theme_Kung_Fu_Panda","rgb(2 232 154)",["Instrumental","Epic","Theme/OST"]],
-    "Rengoku Theme - Demon Slayer (Samuel Kim)": ["Rengoku_Theme_Demon_Slayer","rgb(225 150 97)",["Instrumental","Epic","Theme/OST","Japanese","Anime"]],
-    "Inosuke Theme V2 - Demon Slayer (Samuel Kim)": ["Inosuke_Theme_V2_Demon_Slayer","rgb(174 139 173)",["Instrumental","Epic","Theme/OST","Japanese","Anime"]],
-    "Gurenge (Demon Slayer) - Samuel Kim": ["Gurenge_Demon_Slayer","rgb(35 203 237)",["Instrumental","Epic","Theme/OST","Japanese","Anime"]],
-    "Akaza vs Rengoku Theme - Samuel Kim": ["Akaza_theme","rgb(238 170 118)",["Instrumental","Epic","Theme/OST","Japanese","Anime"]],
-    "Tokyo Revengers Main Theme - Samuel Kim": ["Tokyo_Revengers_Main_Theme","rgb(248 219 214)",["Instrumental","Epic","Theme/OST","Japanese","Anime"]],
+    "Unravel Remix - Tokyo Ghoul (Samuel Kim)": ["Unravel_Tokyo_Ghoul","rgb(227 196 237)",["Instrumental","Epic","Theme/OST","Japanese","SamuelKim"]],
+    "Kai's Theme - Kung Fu Panda (Samuel Kim)": ["Kai_Theme_Kung_Fu_Panda","rgb(2 232 154)",["Instrumental","Epic","Theme/OST","SamuelKim"]],
+    "Rengoku Theme - Demon Slayer (Samuel Kim)": ["Rengoku_Theme_Demon_Slayer","rgb(225 150 97)",["Instrumental","Epic","Theme/OST","Japanese","Anime","SamuelKim"]],
+    "Inosuke Theme V2 - Demon Slayer (Samuel Kim)": ["Inosuke_Theme_V2_Demon_Slayer","rgb(174 139 173)",["Instrumental","Epic","Theme/OST","Japanese","Anime","SamuelKim"]],
+    "Gurenge (Demon Slayer) - Samuel Kim": ["Gurenge_Demon_Slayer","rgb(35 203 237)",["Instrumental","Epic","Theme/OST","Japanese","Anime","SamuelKim"]],
+    "Akaza vs Rengoku Theme - Samuel Kim": ["Akaza_theme","rgb(238 170 118)",["Instrumental","Epic","Theme/OST","Japanese","Anime","SamuelKim"]],
+    "Tokyo Revengers Main Theme - Samuel Kim": ["Tokyo_Revengers_Main_Theme","rgb(248 219 214)",["Instrumental","Epic","Theme/OST","Japanese","Anime","SamuelKim"]],
     "The Battle for Me Myself - Tokyo Revengers": ["The_Battle_for_Me_Myself_Tokyo_Revengers","rgb(240 220 214)",["Instrumental","Epic","Theme/OST","Japanese","Anime"]],
     "Our Dream - Tokyo Revengers": ["Our_Dream_Tokyo_Revengers","rgb(240 220 214)",["Instrumental","Theme/OST","Japanese","Anime"]],
     "Call of Silence (Lofi) - Attack on Titan": ["Call_of_Silence_Attack_on_Titan","rgb(119 134 124)",["Instrumental","Theme/OST","Japanese","Anime"]],
@@ -219,7 +219,18 @@ const playlist = {
     "夜空 - miwa": ["夜空_miwa","rgb(50 17 84)",["Japanese","Pop"]],
     "Sayonara - Kana Nishino": ["Sayonara_Kana_Nishino","rgb(90 63 68)",["Japanese","Pop"]],
     "Hana No Atosaki - Hakuouki": ["Hana_No_Atosaki_Hakuouki","rgb(60 171 214)",["Japanese","Pop"]],
-    "Get Over - dream": ["Get_Over_dream","rgb(213 51 149)",["Japanese","Pop"]]
+    "Get Over - dream": ["Get_Over_dream","rgb(213 51 149)",["Japanese","Pop"]],
+    "Guerilla - Oh My Girl": ["Guerilla","rgb(22 56 114)","Korean","Pop"],
+    "City of the Dead - EURIELLE": ["City_of_the_Dead","rgb(177 158 141)",["English"]],
+    "Let You Down - Samuel Kim": ["Let_You_Down_Cyberpunk_Edgerunner","rgb(9 72 159)",["English","Anime","SamuelKim"]],
+    "Supernova - IVE": ["IVE_Supernova","rgb(223 147 193)",["Korean","Pop"]],
+    "TRUE - Yoari": ["TRUE_Yoari","rgb(201 75 183)",["Korean","Theme/OST"]],
+    "Siren - Taeyeon": ["Siren_Taeyeon","rgb(230 98 102)",["Korean","Pop"]],
+    "Crush - IVE": ["Crush_IVE","rgb(255 129 157)",["Korean","Pop"]],
+    "Fuanteina Kamisama - Suara": ["Fuanteina_kamisama_Suara","rgb(63 151 245)",["Japanese","Pop"]]
+
+    //Fuanteina_kamisama_Suara
+
 
 };
 console.log("Playlist Length: ", Object.keys(playlist).length); 
@@ -249,6 +260,7 @@ function populatePlaylist() {
     if (document.getElementById('instrumental-filter').checked) filters.push('Instrumental');
     if (document.getElementById('epic-filter').checked) filters.push('Epic');
     if (document.getElementById('remix-filter').checked) filters.push('Remix');
+    if (document.getElementById('samuelkim-filter').checked) filters.push('SamuelKim');
     if (document.getElementById('theme-filter').checked) filters.push('Theme/OST');
     if (document.getElementById('chinese-filter').checked) filters.push('Chinese');
     if (document.getElementById('canto-filter').checked) filters.push('Canto');
@@ -313,7 +325,7 @@ function updateSongColors() {
     const songColor = playlist[currentSongTitle][1];
 
     const filterButtonsHolder = document.getElementById('filterButtonsHolder');
-    filterButtonsHolder.style.boxShadow = `-5px 5px 20px ${darkenRGB(playlist[currentSongTitle][1],90)}`;
+    filterButtonsHolder.style.boxShadow = `-5px 5px 20px ${darkenRGB(playlist[currentSongTitle][1],40)}`;
     filterButtonsHolder.style.background = `linear-gradient(to bottom, rgba(${lightenRGB(playlist[currentSongTitle][1], 20).match(/\d+/g).join(', ')}, 0.6), rgba(${playlist[currentSongTitle][1].match(/\d+/g).join(', ')}, 0.6))`;
     filterButtonsHolder.style.borderImage = `linear-gradient(to bottom, ${lightenRGB(playlist[currentSongTitle][1], 20)}, ${playlist[currentSongTitle][1]})`;
     filterButtonsHolder.style.backgroundClip = 'border-box'; // Clips the gradient to the border area
@@ -336,8 +348,10 @@ function updateSongColors() {
     artContainer.style.background = `linear-gradient(to bottom, rgba(${lightenRGB(songColor, 20).match(/\d+/g).join(', ')}, 0.6), rgba(${songColor.match(/\d+/g).join(', ')}, 0.6))`;
 
     const siteBody = document.getElementById('siteBody');
-    siteBody.style.background = `linear-gradient(to bottom, rgba(${lightenRGB(songColor, 20).match(/\d+/g).join(', ')}, 0.3), rgba(${songColor.match(/\d+/g).join(', ')}, 0.3))`;
-    siteBody.style.boxShadow = `-5px 5px 20px ${darkenRGB(songColor, 80)}`;
+    //siteBody.style.background = `linear-gradient(to bottom, rgba(${lightenRGB(songColor, 20).match(/\d+/g).join(', ')}, 0.3), rgba(${songColor.match(/\d+/g).join(', ')}, 0.3))`;
+    //siteBody.style.boxShadow = `-5px 5px 20px ${darkenRGB(songColor, 60)}`;
+    siteBody.style.background ='transparent';
+
 
     const img = document.querySelector('.image');
     img.style.boxShadow = `-5px 5px 10px ${darkenRGB(playlist[currentSongTitle][1],30)}`;
@@ -374,7 +388,7 @@ function updateSongColors() {
     });
 
     const containerPlaylist = document.getElementById('container-playlist');
-    containerPlaylist.style.boxShadow = `-5px 5px 20px ${darkenRGB(playlist[currentSongTitle][1],90)}`;
+    containerPlaylist.style.boxShadow = `-5px 5px 20px ${darkenRGB(playlist[currentSongTitle][1],40)}`;
     containerPlaylist.style.background = `linear-gradient(to bottom, rgba(${lightenRGB(playlist[currentSongTitle][1], 20).match(/\d+/g).join(', ')}, 0.6), rgba(${playlist[currentSongTitle][1].match(/\d+/g).join(', ')}, 0.6))`;
     containerPlaylist.style.borderImage = `linear-gradient(to bottom, ${lightenRGB(playlist[currentSongTitle][1], 20)}, ${playlist[currentSongTitle][1]})`;
     containerPlaylist.style.backgroundClip = 'border-box'; // Clips the gradient to the border area
@@ -383,7 +397,7 @@ function updateSongColors() {
     const gradientBorder = `linear-gradient(to bottom, ${lightenRGB(playlist[currentSongTitle][1], 20)}, ${playlist[currentSongTitle][1]})`;
     containerPlaylist.style.boxShadow = `0 0 0 10px ${gradientBorder}`;
 
-    filterButtonsHolder.style.boxShadow = `-5px 5px 20px ${darkenRGB(playlist[currentSongTitle][1],90)}`;
+    filterButtonsHolder.style.boxShadow = `-5px 5px 20px ${darkenRGB(playlist[currentSongTitle][1],40)}`;
     filterButtonsHolder.style.background = `linear-gradient(to bottom, rgba(${lightenRGB(playlist[currentSongTitle][1], 20).match(/\d+/g).join(', ')}, 0.6), rgba(${playlist[currentSongTitle][1].match(/\d+/g).join(', ')}, 0.6))`;
     filterButtonsHolder.style.borderImage = `linear-gradient(to bottom, ${lightenRGB(playlist[currentSongTitle][1], 20)}, ${playlist[currentSongTitle][1]})`;
     filterButtonsHolder.style.backgroundClip = 'border-box'; // Clips the gradient to the border area
@@ -623,7 +637,7 @@ function playSong(title) {
     repeatButton.style.backgroundColor = lightenRGB(playlist[currentSongTitle][1],20);
     repeatButton.style.color = darkenRGB(playlist[currentSongTitle][1],40);
 
-    artContainer.style.boxShadow = `-5px 5px 20px ${darkenRGB(playlist[currentSongTitle][1],90)}`;
+    artContainer.style.boxShadow = `-5px 5px 20px ${darkenRGB(playlist[currentSongTitle][1],40)}`;
 
     const svgProgress = document.getElementById('svgProgress');
     svgProgress.style.stroke = `${lightenRGB(playlist[currentSongTitle][1],70)}`;
@@ -725,9 +739,9 @@ function updatePlayPauseButton() {
         playPauseButton.innerHTML = '<i class="fa fa-pause"></i>'; // Set pause icon and text
         img.style.animationPlayState = 'running'; 
         playStopButton.style.boxShadow= ` 
-    3px 3px 5px ${darkenRGB(playlist[currentSongTitle][1],50)} inset,
-    -3px 1px 6px ${darkenRGB(playlist[currentSongTitle][1],40)} inset,
-    -3px -1px 6px ${darkenRGB(playlist[currentSongTitle][1],40)} inset`;
+    3px 3px 5px ${darkenRGB(playlist[currentSongTitle][1],20)} inset,
+    -3px 1px 6px ${darkenRGB(playlist[currentSongTitle][1],20)} inset,
+    -3px -1px 6px ${darkenRGB(playlist[currentSongTitle][1],20)} inset`;
     }
 }
 
@@ -766,19 +780,21 @@ repeatCheckbox.addEventListener("change", function(){
 
     if (repeatCheckbox.checked){
         repeatIcon.innerHTML = '<i class="fa fa-remove"></i>';
-
-        repeatButton.style.boxShadow= `-5px 5px 5px ${darkenRGB(playlist[currentSongTitle][1],50)}, 
-    2px -2px 1px ${lightenRGB(playlist[currentSongTitle][1],10)},
-    3px 2px 5px ${darkenRGB(playlist[currentSongTitle][1],20)} inset`;
+        repeatButton.style.boxShadow= ` 
+    3px 3px 5px ${darkenRGB(playlist[currentSongTitle][1],50)} inset,
+    -3px 1px 6px ${darkenRGB(playlist[currentSongTitle][1],40)} inset,
+    -3px -1px 6px ${darkenRGB(playlist[currentSongTitle][1],40)} inset`;
         
         console.log("repeat button is checked");
     }
     else{
         repeatIcon.innerHTML = '<i class="fa fa-refresh"></i>';
-        repeatButton.style.boxShadow= ` 
-    3px 3px 5px ${darkenRGB(playlist[currentSongTitle][1],50)} inset,
-    -3px 1px 6px ${darkenRGB(playlist[currentSongTitle][1],40)} inset,
-    -3px -1px 6px ${darkenRGB(playlist[currentSongTitle][1],40)} inset`;
+        
+
+
+    repeatButton.style.boxShadow= `-5px 5px 5px ${darkenRGB(playlist[currentSongTitle][1],50)}, 
+    2px -2px 1px ${lightenRGB(playlist[currentSongTitle][1],10)},
+    3px 2px 5px ${darkenRGB(playlist[currentSongTitle][1],20)} inset`;
     }
 });
 
