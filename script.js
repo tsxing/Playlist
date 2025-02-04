@@ -30,7 +30,7 @@ const playlist = {
     "Star Sky - Two Steps From Hell": ["Star_Sky_Two_Steps_From_Hell","rgb(113 155 158)",["Instrumental","Epic","TSFH"]], // need to do this next
     "Strength of a Thousand Men - Two Steps From Hell": ["Strength_of_a_Thousand_Men_Two_Steps_From_Hell","rgb(194 171 154)",["Instrumental","Epic","TSFH"]],
     "To Glory - Two Steps From Hell": ["To_Glory_Two_Steps_From_Hell","rgb(198 166 152)",["Instrumental","Epic","TSFH"]],
-    "Unleashed - Two Steps From Hell": ["unleashed_tsfh","rgb(131 190 213)",["Instrumental","Epic","TSFH"]],
+    "Unleashed - Two Steps From Hell": ["unleashed_tsfh","rgb(44 75 126)",["Instrumental","Epic","TSFH"]],
     "Victory - Two Steps From Hell": ["Victory_Two_Steps_From_Hell","rgb(170 135 104)",["Instrumental","Epic","TSFH"]],
     "Winterspell - Two Steps From Hell": ["winterspell_tsfh","rgb(41 173 220)",["Instrumental","Epic","TSFH"]],
     "Victory X Heart of Courage - Remix": ["Victory_X_Heart_of_Courage","rgb(129 128 179)",["Instrumental","Epic","Remix","TSFH"]],
@@ -43,11 +43,11 @@ const playlist = {
     "Kai's Theme - Kung Fu Panda (Samuel Kim)": ["Kai_Theme_Kung_Fu_Panda","rgb(2 232 154)",["Instrumental","Epic","Theme/OST","SamuelKim"]],
     "Rengoku Theme - Demon Slayer (Samuel Kim)": ["Rengoku_Theme_Demon_Slayer","rgb(225 150 97)",["Instrumental","Epic","Theme/OST","Japanese","Anime","SamuelKim"]],
     "Inosuke Theme V2 - Demon Slayer (Samuel Kim)": ["Inosuke_Theme_V2_Demon_Slayer","rgb(174 139 173)",["Instrumental","Epic","Theme/OST","Japanese","Anime","SamuelKim"]],
-    "Gurenge (Demon Slayer) - Samuel Kim": ["Gurenge_Demon_Slayer","rgb(35 203 237)",["Instrumental","Epic","Theme/OST","Japanese","Anime","SamuelKim"]],
+    "Gurenge (Demon Slayer) - Samuel Kim": ["Gurenge_Demon_Slayer","rgb(3 93 220)",["Instrumental","Epic","Theme/OST","Japanese","Anime","SamuelKim"]],
     "Akaza vs Rengoku Theme - Samuel Kim": ["Akaza_theme","rgb(238 170 118)",["Instrumental","Epic","Theme/OST","Japanese","Anime","SamuelKim"]],
     "Tokyo Revengers Main Theme - Samuel Kim": ["Tokyo_Revengers_Main_Theme","rgb(248 219 214)",["Instrumental","Epic","Theme/OST","Japanese","Anime","SamuelKim"]],
-    "The Battle for Me Myself - Tokyo Revengers": ["The_Battle_for_Me_Myself_Tokyo_Revengers","rgb(240 220 214)",["Instrumental","Epic","Theme/OST","Japanese","Anime"]],
-    "Our Dream - Tokyo Revengers": ["Our_Dream_Tokyo_Revengers","rgb(240 220 214)",["Instrumental","Theme/OST","Japanese","Anime"]],
+    "The Battle for Me Myself - Tokyo Revengers": ["The_Battle_for_Me_Myself_Tokyo_Revengers","rgb(170 47 36)",["Instrumental","Epic","Theme/OST","Japanese","Anime"]],
+    "Our Dream - Tokyo Revengers": ["Our_Dream_Tokyo_Revengers","rgb(170 47 36)",["Instrumental","Theme/OST","Japanese","Anime"]],
     "Call of Silence (Lofi) - Attack on Titan": ["Call_of_Silence_Attack_on_Titan","rgb(119 134 124)",["Instrumental","Theme/OST","Japanese","Anime"]],
     "Quando Corpus Morietur - The K2" : ["Quando_Corpus_Morietur","rgb(27 118 109)",["Instrumental","Korean","Theme/OST"]],
     "My Soul - July": ["My_Soul_July","rgb(210 182 164)",["Instrumental"]],
@@ -57,7 +57,7 @@ const playlist = {
     "KOMOREBI - 鲸落版": ["KOMOREBI鲸落版","rgb(10 91 174)",["Instrumental"]],
     "Last Reunion - Peter Roe": ["last_reunion","rgb(3 137 149)",["Instrumental","Epic"]],
     "Sword Art Online - Theme": ["Sword_Art_Online","rgb(47 148 168)",["Instrumental","Epic","Theme/OST"]],
-    "Interstellar - Theme": ["interstellar_theme","rgb(255 169 167)",["Instrumental","Epic","Theme/OST"]],
+    "Interstellar - Theme": ["interstellar_theme","rgb(52 56 71)",["Instrumental","Epic","Theme/OST"]],
     "Bloody Mary - Instrumental": ["Bloody_Mary_Instrumental","rgb(81 175 197)",["Instrumental","Epic"]],
     "Fake Love Orchestral - BTS": ["Fake_Love_Orchestral_BTS","rgb(194 194 188)",["Instrumental","Epic","Korean","Remix"]],
     "浮光 - Music": ["浮光_Music","rgb(248 143 0)",["Instrumental","Chinese"]],
@@ -84,7 +84,7 @@ const playlist = {
     "刀劍如夢 - 周華健": ["刀劍如夢_周華健","rgb(157 188 235)",["Chinese"]],
     "神话情话 - 周华健, 齐豫 ": ["神话情话_周华健_齐豫 ","rgb(184 171 222)",["Canto","Pop"]],
     "诉衷情 - 伪装者": ["诉衷情_伪装者","rgb(151 114 80)",["Chinese","Theme/OST"]],
-    "等待 - 韩磊": ["等待_韩磊","rgb(237 180 120)",["Chinese","Theme/OST"]],
+    "等待 - 韩磊": ["等待_韩磊","rgb(229 131 76)",["Chinese","Theme/OST"]],
     "海闊天空 - Beyond": ["海闊天空_Beyond","rgb(237 238 232)",["Canto","Pop"]],
     "一生有意义 - 射雕英雄传之东邪西毒": ["一生有意义_射雕英雄传之东邪西毒","rgb(176 133 66)",["Canto","Theme/OST"]],
     "鐵血丹心 - 射鵰英雄傳": ["鐵血丹心_射鵰英雄傳","rgb(122 128 105)",["Canto","Theme/OST"]],
@@ -133,7 +133,7 @@ const playlist = {
     "Suddenly - City Hunter": ["Suddenly_City_Hunter","rgb(197 220 85)",["Korean","Theme/OST"]],
     "In The Dark": ["In_The_Dark","rgb(149 150 171)",["Korean","Theme/OST"]],
     "Sigriswil - OST": ["Sigriswil","rgb(55 218 231)",["Korean","Theme/OST"]],
-    "See The Light - Lim Hyunsik": ["See_The_Light","rgb(109 129 195)",["Korean","Theme/OST"]],
+    "See The Light - Lim Hyunsik": ["See_The_Light","rgb(25 48 102)",["Korean","Theme/OST"]],
     "Wa - Lee Jung-hyun": ["Wa","rgb(186 150 165)",["Korean","Theme/OST"]],
     "Kill me Heal me - OST": ["Kill_me_heal_me_OST","rgb(142 182 207)",["Korean","Theme/OST"]],
     "This Love - DAVICHI": ["This_Love_DAVICHI","rgb(121 148 155)",["Korean","Theme/OST"]],
@@ -142,10 +142,10 @@ const playlist = {
     "Fall In Love Again - TWICE": ["Fall_In_Love_Again_TWICE","rgb(228 146 190)",["Korean"]],
     "Mago - GFRIEND": ["Mago_GFRIEND","rgb(151 151 151)",["Korean","Pop"]],
     "Mise-en-Scène - IZ*ONE": ["Mise_en_Scène_IZ*ONE","rgb(200 240 252)",["Korean","Pop"]],
-    "O Sole Mio - IZ*ONE": ["O_Sole_Mio_IZ*ONE","rgb(185 253 252)",["Korean","Pop"]],
+    "O Sole Mio - IZ*ONE": ["O_Sole_Mio_IZ*ONE","rgb(5 163 255)",["Korean","Pop"]],
     "Island - IZ*ONE": ["Island_IZ*ONE","rgb(240 210 225)",["Korean","Pop"]],
     "해바라기 Hey. Bae. Like It. - IZ*ONE": ["Hey_Bae_Like_It_IZ*ONE","rgb(226 198 246)",["Korean","Pop"]],
-    "First Love (첫사랑) - After School": ["First_Love_After_School","rgb(139 175 196)",["Korean","Pop"]],
+    "First Love (첫사랑) - After School": ["First_Love_After_School","rgb(60 112 156)",["Korean","Pop"]],
     "Siren - Sunmi": ["Siren_Sunmi","rgb(221 165 137)",["Korean","Pop"]],
     "Dumhdurum - Apink": ["Dumhdurum_Apink","rgb(239 214 238)",["Korean","Pop"]],
     "Girls - NATURE": ["Girls_NATURE","rgb(163 181 206)",["Korean","Pop"]],
@@ -193,7 +193,7 @@ const playlist = {
     "I'm Good (Blue) - Bebe Rexha & David Guetta": ["Im_Good_Bebe_Rexha_David_Guetta","rgb(98 139 226)",["English","Pop"]],
     "DYNASTY x FICTION - Remix": ["DYNASTY_x_FICTION_Remix","rgb(232 178 123)",["Remix","Pop"]],
     "Mimimi - Dramma": ["Mimimi_Dramma","rgb(182 152 132)",["Russian","Pop"]],
-    "Beautiful Mess - Kristian Kostov": ["Beautiful_Mess","rgb(140 220 255)",["English"]],
+    "Beautiful Mess - Kristian Kostov": ["Beautiful_Mess","rgb(9 60 139)",["English"]],
     "Beautiful Mess (China) - Kristian Kostov": ["Beautiful_Mess_China","rgb(63 134 189)",["English"]],
     "DaDaDa (Да да да) - Jarico": ["DaDaDa_Jarico","rgb(120 177 220)",["Russian","Pop"]],
     "Take Me To Church - Hozier (Female Version)": ["Take_Me_To_Church_Hozier_Female","rgb(249 221 174)",["English"]],
@@ -336,7 +336,16 @@ function updateSongColors() {
     const filterButtons = document.querySelectorAll('.filter-button');
     filterButtons.forEach((button) => {
         //button.style.backgroundColor = darkenRGB(playlist[currentSongTitle][1], 30);
-        button.style.background = `linear-gradient(to bottom, rgba(${darkenRGB(playlist[currentSongTitle][1], 40).match(/\d+/g).join(', ')}, 0.6), rgba(${playlist[currentSongTitle][1].match(/\d+/g).join(', ')}, 0.6))`;
+        button.style.background = `rgba(${darkenRGB(playlist[currentSongTitle][1], 0).match(/\d+/g).join(', ')}, 0.6)`;
+        button.addEventListener('mouseover', () => {
+            button.style.backgroundColor = darkenRGB(playlist[currentSongTitle][1],40);
+        });
+
+        // Revert background color when mouse leaves the element
+        button.addEventListener('mouseout', () => {
+            button.style.background = `rgba(${darkenRGB(playlist[currentSongTitle][1], 0).match(/\d+/g).join(', ')}, 0.6)`;
+            button.style.transition="0.3s";
+        });
 
     });
 
@@ -360,6 +369,9 @@ function updateSongColors() {
     img.style.border = `10px solid ${imgBorderColor}`;
 
     document.body.style.background = `radial-gradient(circle at 27% 25%, ${darkenRGB(playlist[currentSongTitle][1], 50)} 40%, ${darkenRGB(playlist[currentSongTitle][1], 30)} 30%, ${darkenRGB(playlist[currentSongTitle][1], 70)} 30%, ${darkenRGB(playlist[currentSongTitle][1], 30)} 80%) repeat-x`;
+    document.body.style.backgroundSize = `100vw 100vh`;
+    document.body.style.backgroundAttachment = "fixed";
+
     const seekbar = document.getElementById("seekbar");
     const svgProgress = document.getElementById('svgProgress');
     svgProgress.style.stroke = `${lightenRGB(playlist[currentSongTitle][1],40)}`;
@@ -369,21 +381,23 @@ function updateSongColors() {
     const songItems = document.querySelectorAll('.song-item');
     songItems.forEach(songItem => {
     // Set the initial background color and box shadow
-        songItem.style.backgroundColor = darkenRGB(playlist[currentSongTitle][1],30);
-        songItem.style.boxShadow = `-5px 5px 20px ${darkenRGB(playlist[currentSongTitle][1],40)} inset`;
+        songItem.style.background = `rgba(${darkenRGB(playlist[currentSongTitle][1], 0).match(/\d+/g).join(', ')}, 0.6)`;
+
+        //songItem.style.boxShadow = `-5px 5px 20px ${darkenRGB(playlist[currentSongTitle][1],20)} inset`;
         songItem.style.opacity = '0.8';
         songItem.style.transition = 'background-color 0.3s ease, box-shadow 0.3s ease';
 
         songItem.addEventListener('mouseover', () => {
-            songItem.style.backgroundColor = darkenRGB(playlist[currentSongTitle][1],30);
-            songItem.style.fontSize = "16px";
+            songItem.style.backgroundColor = darkenRGB(playlist[currentSongTitle][1],40);
+        
+            //songItem.style.boxShadow = `-5px 5px 20px ${darkenRGB(playlist[currentSongTitle][1],-30)} inset`;
         });
         
 
         songItem.addEventListener('mouseout', () => {
-            songItem.style.backgroundColor = darkenRGB(playlist[currentSongTitle][1],30);
-            songItem.style.fontSize = "15px";
-            songItem.style.transition="0.3s";
+            songItem.style.background = `rgba(${darkenRGB(playlist[currentSongTitle][1], 0).match(/\d+/g).join(', ')}, 0.6)`;
+            songItem.style.transition="0.1s";
+            //songItem.style.boxShadow = `-5px 5px 20px ${darkenRGB(playlist[currentSongTitle][1],20)} inset`;
         });
     });
 
@@ -406,25 +420,17 @@ function updateSongColors() {
     filterButtonsHolder.style.boxShadow = `0 0 0 10px ${filtergradientBorder}`;
 
     const randSongButton = document.getElementById('randomSongButton');
-    randSongButton.style.boxShadow = `-5px 5px 5px ${darkenRGB(playlist[currentSongTitle][1],50)}, 
-    2px -2px 1px ${lightenRGB(playlist[currentSongTitle][1],10)},
-    3px -2px 5px ${darkenRGB(playlist[currentSongTitle][1],10)} inset`;
-    randSongButton.style.backgroundColor = lightenRGB(playlist[currentSongTitle][1],20);
+    randSongButton.style.boxShadow = `-5px 5px 5px ${darkenRGB(playlist[currentSongTitle][1],30)}`;
+    randSongButton.style.backgroundColor = lightenRGB(playlist[currentSongTitle][1],10);
     randSongButton.style.color = darkenRGB(playlist[currentSongTitle][1],60);
 
     const playStopButton = document.getElementById('playPauseButton');
     playStopButton.style.color = darkenRGB(playlist[currentSongTitle][1],60);
-    playStopButton.style.boxShadow= ` 
-    3px 3px 5px ${darkenRGB(playlist[currentSongTitle][1],50)} inset,
-    -3px 1px 6px ${darkenRGB(playlist[currentSongTitle][1],40)} inset,
-    -3px -1px 6px ${darkenRGB(playlist[currentSongTitle][1],40)} inset`;
     playStopButton.style.backgroundColor = lightenRGB(playlist[currentSongTitle][1],10);
 
     const repeatButton = document.getElementById('repeatButtonIcon');
-    repeatButton.style.boxShadow = `-5px 5px 5px ${darkenRGB(playlist[currentSongTitle][1],50)}, 
-    2px -2px 1px ${lightenRGB(playlist[currentSongTitle][1],10)},
-    3px -2px 5px ${darkenRGB(playlist[currentSongTitle][1],30)} inset`;
-    repeatButton.style.backgroundColor = lightenRGB(playlist[currentSongTitle][1],20);
+    repeatButton.style.boxShadow = `-5px 5px 5px ${darkenRGB(playlist[currentSongTitle][1],30)}`;
+    repeatButton.style.backgroundColor = lightenRGB(playlist[currentSongTitle][1],10);
     repeatButton.style.color = darkenRGB(playlist[currentSongTitle][1],40);
 
     seekbar.style.boxShadow = `-5px 5px 10px ${darkenRGB(playlist[currentSongTitle][1],40)} inset`;
@@ -575,21 +581,6 @@ function playSong(title) {
     console.log(`Playing: ${title} (Song Index: ${currentSongIndex})`);
     populatePlaylist(title);
 
-    /*
-    // Remove "<--"
-    const playlistItems = document.querySelectorAll('.song-item');
-    playlistItems.forEach((item) => {
-        item.classList.remove('playing'); // Remove bold styling class
-        item.textContent = item.textContent.replace(" ←", ""); // Remove previous indicator
-    });
-
-    // Add "<--" 
-    const currentItem = playlistItems[currentSongIndex];
-    currentItem.textContent += " ←";
-    console.log("from playsong: ",currentItem.textContent);
-    currentItem.classList.add('playing'); 
-    */
-
     songSelect.value = title;
     updatePlayPauseButton();  // Update the play/pause button state
 
@@ -610,11 +601,6 @@ function playSong(title) {
     //img.style.borderColor=playlist[currentSongTitle][1];
     img.style.border = `10px solid ${imgBorderColor}`;
 
-
-    
-    
-    
-
     const randSongButton = document.getElementById('randomSongButton');
     randSongButton.style.boxShadow = `-5px 5px 5px ${darkenRGB(playlist[currentSongTitle][1],50)}, 
     2px -2px 1px ${lightenRGB(playlist[currentSongTitle][1],10)},
@@ -624,10 +610,13 @@ function playSong(title) {
 
     const playStopButton = document.getElementById('playPauseButton');
     playStopButton.style.color = darkenRGB(playlist[currentSongTitle][1],60);
-    playStopButton.style.boxShadow= ` 
-    3px 3px 5px ${darkenRGB(playlist[currentSongTitle][1],50)} inset,
-    -3px 1px 6px ${darkenRGB(playlist[currentSongTitle][1],40)} inset,
-    -3px -1px 6px ${darkenRGB(playlist[currentSongTitle][1],40)} inset`;
+
+    playStopButton.style.boxShadow= `  
+    1px 2px 5px ${darkenRGB(playlist[currentSongTitle][1],30)} inset,
+    -3px 1px 6px ${darkenRGB(playlist[currentSongTitle][1],20)} inset,
+    -3px -1px 6px ${darkenRGB(playlist[currentSongTitle][1],20)} inset`; // MOOCOWDLESS
+    playStopButton.style.boxShadow= `-5px 5px 5px ${darkenRGB(playlist[currentSongTitle][1],30)}`;
+
     playStopButton.style.backgroundColor = lightenRGB(playlist[currentSongTitle][1],10);
 
     const repeatButton = document.getElementById('repeatButtonIcon');
@@ -671,20 +660,19 @@ function playSong(title) {
     
     // Set the initial background color and box shadow
         songItem.style.backgroundColor = darkenRGB(playlist[currentSongTitle][1],30);
-        songItem.style.boxShadow = `-5px 5px 20px ${darkenRGB(playlist[currentSongTitle][1],40)} inset`;
-        songItem.style.opacity = '0.8';
+        songItem.style.boxShadow = `-5px 5px 20px ${darkenRGB(playlist[currentSongTitle][1],20)} inset`;
+        songItem.style.opacity = '0.9';
         songItem.style.transition = 'background-color 0.3s ease, box-shadow 0.3s ease';
 
     // Add hover effect to change background color
         songItem.addEventListener('mouseover', () => {
             songItem.style.backgroundColor = darkenRGB(playlist[currentSongTitle][1],30);
-            songItem.style.fontSize = "16px";
+   
         });
 
         // Revert background color when mouse leaves the element
         songItem.addEventListener('mouseout', () => {
             songItem.style.backgroundColor = darkenRGB(playlist[currentSongTitle][1],30);
-            songItem.style.fontSize = "15px";
             songItem.style.transition="0.3s";
         });
     });
@@ -695,7 +683,7 @@ function playSong(title) {
     const style = document.createElement('style');
     style.innerHTML = `#seekbar::-webkit-slider-thumb {
     box-shadow: 0 0 0px 7px ${darkenRGB(playlist[currentSongTitle][1],40)};}
-    #seekbar::-webkit-slider-thumb:hover{box-shadow: 0 0 0px 7px ${darkenRGB(playlist[currentSongTitle][1],30)};
+    #seekbar::-webkit-slider-thumb:hover{box-shadow: 0 0 0px 5px ${darkenRGB(playlist[currentSongTitle][1],30)};
     }`;
     document.head.appendChild(style);
 
@@ -706,14 +694,6 @@ function playSong(title) {
 
     const playing = document.querySelector(".playing");
     //playing.style.color =`${lightenRGB(playlist[currentSongTitle][1],60)}`;
-
-    const filterButtons = document.querySelectorAll('.filter-button');
-    filterButtons.forEach((button) => {
-        button.style.backgroundColor = darkenRGB(playlist[currentSongTitle][1], 30);
-    });
-
-
-
     updateSongColors();
 
 
@@ -730,18 +710,11 @@ function updatePlayPauseButton() {
     if (audioPlayer.paused) {
         playPauseButton.innerHTML = '<i class="fa fa-play"></i>';
         img.style.animationPlayState = 'paused'; // Pause the animation
-        playStopButton.style.boxShadow= `-5px 5px 5px ${darkenRGB(playlist[currentSongTitle][1],50)}, 
-    2px -2px 1px ${lightenRGB(playlist[currentSongTitle][1],10)},
-    3px 2px 5px ${darkenRGB(playlist[currentSongTitle][1],20)} inset`;
-
-
+        playStopButton.style.boxShadow= `-5px 5px 5px ${darkenRGB(playlist[currentSongTitle][1],30)}  `;
     } else {
         playPauseButton.innerHTML = '<i class="fa fa-pause"></i>'; // Set pause icon and text
         img.style.animationPlayState = 'running'; 
-        playStopButton.style.boxShadow= ` 
-    3px 3px 5px ${darkenRGB(playlist[currentSongTitle][1],20)} inset,
-    -3px 1px 6px ${darkenRGB(playlist[currentSongTitle][1],20)} inset,
-    -3px -1px 6px ${darkenRGB(playlist[currentSongTitle][1],20)} inset`;
+        
     }
 }
 
@@ -780,21 +753,16 @@ repeatCheckbox.addEventListener("change", function(){
 
     if (repeatCheckbox.checked){
         repeatIcon.innerHTML = '<i class="fa fa-remove"></i>';
-        repeatButton.style.boxShadow= ` 
-    3px 3px 5px ${darkenRGB(playlist[currentSongTitle][1],50)} inset,
-    -3px 1px 6px ${darkenRGB(playlist[currentSongTitle][1],40)} inset,
-    -3px -1px 6px ${darkenRGB(playlist[currentSongTitle][1],40)} inset`;
-        
+        repeatButton.style.boxShadow= `-5px 5px 5px ${darkenRGB(playlist[currentSongTitle][1],30)}  `;
         console.log("repeat button is checked");
     }
     else{
         repeatIcon.innerHTML = '<i class="fa fa-refresh"></i>';
+        console.log("repeat button is NOT checked");
         
-
-
-    repeatButton.style.boxShadow= `-5px 5px 5px ${darkenRGB(playlist[currentSongTitle][1],50)}, 
-    2px -2px 1px ${lightenRGB(playlist[currentSongTitle][1],10)},
-    3px 2px 5px ${darkenRGB(playlist[currentSongTitle][1],20)} inset`;
+    //repeatButton.style.boxShadow= `-5px 5px 5px ${darkenRGB(playlist[currentSongTitle][1],50)}, 
+    //2px -2px 1px ${lightenRGB(playlist[currentSongTitle][1],10)},
+   // 3px 2px 5px ${darkenRGB(playlist[currentSongTitle][1],20)} inset`;
     }
 });
 
