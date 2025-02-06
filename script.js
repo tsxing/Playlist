@@ -232,11 +232,11 @@ const playlist = {
 
 };
 
+/*
 console.log("Playlist Length: ", Object.keys(playlist).length); 
 let aaa = Object.keys(playlist);
 let index = aaa.indexOf("KOMOREBI - 鲸落版");
-
-console.log(index);
+console.log(index); */
 
 let currentSongIndex = 223; 
 
@@ -274,21 +274,87 @@ function populatePlaylist() {
     if (document.getElementById('tsfh-filter').checked) filters.push('TSFH');
     if (document.getElementById('filipino-filter').checked) filters.push('Filipino');
 
+    if (document.getElementById('favorites-filter').checked) filters.push('Favorites');
+
     console.log("FILTERS CHOSEN: ", filters);
 
     let anyMatch = false; 
+
+    // Load favorites from localStorage when the page loads
+    let favorites = JSON.parse(localStorage.getItem('favorites')) || {}; // Load from localStorage or initialize as empty object
 
     for (const title in playlist) {
         if (playlist.hasOwnProperty(title)) {
             const song = playlist[title];
             const songTags = song[2];
 
-            if (filters.every(filter => songTags.includes(filter))) {
-                anyMatch = true; 
+            // Apply filters
+            if (filters.every(filter => {
+                if (filter === 'Favorites') {
+                    return favorites.hasOwnProperty('radio-' + title.replace(/\s+/g, '')); // Ensure the song is in favorites
+                }
+                return songTags.includes(filter); // Other filters
+            })) {
+                anyMatch = true;
+
+                // Create the main container for each song
+                const songdivContainer = document.createElement('div');
+                songdivContainer.classList.add('song-item-container');
+                container.appendChild(songdivContainer);
 
                 const songDiv = document.createElement('div');
                 songDiv.classList.add('song-item');
                 songDiv.textContent = title;
+
+                // Create the radio button
+                const radioButton = document.createElement('input');
+                radioButton.type = 'radio';
+                radioButton.name = 'favorite';  // Group all radio buttons together
+                radioButton.value = title;     // Use the song title as the radio button's value
+                radioButton.id = 'radio-' + title.replace(/\s+/g, ''); // ID with spaces removed
+
+                // Check if the song is in the favorites list
+                if (favorites[radioButton.id]) {
+                    radioButton.checked = true;  // Set it as checked if it's in favorites
+                }
+
+                // Create the label with the heart icon
+                const radioLabel = document.createElement('label');
+                radioLabel.setAttribute('for', radioButton.id);
+                // Set the initial heart icon based on the checked state of the radio button
+                radioLabel.innerHTML = radioButton.checked ? '<i class="fa fa-heart"></i>' : '<i class="fa fa-heart-o"></i>';
+
+                // Add event listener to handle the toggling of the heart icon and update favorites
+                radioLabel.addEventListener('click', function() {
+                    if (radioButton.checked) {
+                        // If radio button is checked, uncheck it, change the icon, and remove from favorites
+                        radioButton.checked = false;
+                        radioLabel.innerHTML = '<i class="fa fa-heart-o"></i>';  // Change icon to heart-o
+
+                        // Remove from favorites
+                        delete favorites[radioButton.id]; // Remove from favorites
+                    } else {
+                        // If radio button is unchecked, check it, change the icon, and add to favorites
+                        radioButton.checked = true;
+                        radioLabel.innerHTML = '<i class="fa fa-heart"></i>';  // Change icon to heart
+
+                        // Add to favorites
+                        favorites[radioButton.id] = title; // Add to favorites
+                    }
+
+                    // Save the updated favorites object to localStorage
+                    localStorage.setItem('favorites', JSON.stringify(favorites));
+                });
+
+                // Create a container for the radio button and label
+                const radioDiv = document.createElement('div');
+                radioDiv.classList.add('radio-container');
+                radioDiv.appendChild(radioButton);
+                radioDiv.appendChild(radioLabel);
+
+                // Append the song and radio button to the container
+                songdivContainer.appendChild(songDiv);
+                songdivContainer.appendChild(radioDiv);
 
                 // Add click event listener to each song item
                 songDiv.addEventListener('click', function() {
@@ -296,26 +362,25 @@ function populatePlaylist() {
                     playSong(title);
                 });
 
-                // Append the song item to the playlist container and the dropdown
-                container.appendChild(songDiv);
+                // Add the song title to the dropdown
                 const option = document.createElement('option');
                 option.textContent = title;
                 option.value = title;
                 dropdown.appendChild(option);
-
-                // Apply color styling after appending the song item
-                const currentSongTitle = Object.keys(playlist)[currentSongIndex];
-                const songColor = playlist[currentSongTitle][1]; // Get the color associated with the current song
             }
         }
     }
+
+    // Debug: Log the current favorites
+    console.log("FAVS: ", favorites);
+
     // no songs match the filters; currentSongIndex to 0
     if (!anyMatch) {
         console.log("no songs match:(");
-        
     }
     updateSongColors();
 }
+
 
 
 function updateSongColors() {
@@ -349,18 +414,12 @@ function updateSongColors() {
 
     });
 
-    
-
-
     const artContainer = document.querySelector('.container');
     artContainer.style.background = `linear-gradient(to bottom, rgba(${lightenRGB(songColor, 20).match(/\d+/g).join(', ')}, 0.6), rgba(${songColor.match(/\d+/g).join(', ')}, 0.6))`;
     artContainer.style.boxShadow = `-5px 5px 20px ${darkenRGB(playlist[currentSongTitle][1],80)}`;
 
     const siteBody = document.getElementById('siteBody');
-    //siteBody.style.background = `linear-gradient(to bottom, rgba(${lightenRGB(songColor, 20).match(/\d+/g).join(', ')}, 0.3), rgba(${songColor.match(/\d+/g).join(', ')}, 0.3))`;
-    //siteBody.style.boxShadow = `-5px 5px 20px ${darkenRGB(songColor, 60)}`;
     siteBody.style.background ='transparent';
-
 
     const img = document.querySelector('.image');
     img.style.boxShadow = `-5px 5px 10px ${darkenRGB(playlist[currentSongTitle][1],30)}`;
@@ -380,26 +439,24 @@ function updateSongColors() {
 
     const songItems = document.querySelectorAll('.song-item');
     songItems.forEach(songItem => {
-    // Set the initial background color and box shadow
         songItem.style.background = `rgba(${darkenRGB(playlist[currentSongTitle][1], 0).match(/\d+/g).join(', ')}, 0.6)`;
-
-        //songItem.style.boxShadow = `-5px 5px 20px ${darkenRGB(playlist[currentSongTitle][1],20)} inset`;
         songItem.style.opacity = '0.8';
         songItem.style.transition = 'background-color 0.3s ease, box-shadow 0.3s ease';
 
         songItem.addEventListener('mouseover', () => {
             songItem.style.backgroundColor = darkenRGB(playlist[currentSongTitle][1],40);
-        
-            //songItem.style.boxShadow = `-5px 5px 20px ${darkenRGB(playlist[currentSongTitle][1],-30)} inset`;
         });
-        
 
         songItem.addEventListener('mouseout', () => {
             songItem.style.background = `rgba(${darkenRGB(playlist[currentSongTitle][1], 0).match(/\d+/g).join(', ')}, 0.6)`;
             songItem.style.transition="0.1s";
-            //songItem.style.boxShadow = `-5px 5px 20px ${darkenRGB(playlist[currentSongTitle][1],20)} inset`;
         });
     });
+
+    const selectedSongArtist = document.getElementById('selected-song-artist');
+    selectedSongArtist.style.color = `${lightenRGB(playlist[currentSongTitle][1],80)}`;
+
+    document.body.style.background = `radial-gradient(circle at 27% 25%, ${darkenRGB(playlist[currentSongTitle][1], 50)} 40%, ${darkenRGB(playlist[currentSongTitle][1], 30)} 30%, ${darkenRGB(playlist[currentSongTitle][1], 80)} 30%, ${darkenRGB(playlist[currentSongTitle][1], 30)} 80%) repeat-x`;
 
     const containerPlaylist = document.getElementById('container-playlist');
     containerPlaylist.style.boxShadow = `-5px 5px 20px ${darkenRGB(playlist[currentSongTitle][1],80)}`;
@@ -419,6 +476,7 @@ function updateSongColors() {
     filterButtonsHolder.style.border = '1px solid transparent'; // Creates an invisible border for the effect
     filterButtonsHolder.style.boxShadow = `0 0 0 10px ${filtergradientBorder}`;
 
+    /*
     const randSongButton = document.getElementById('randomSongButton');
     randSongButton.style.boxShadow = `-5px 5px 5px ${darkenRGB(playlist[currentSongTitle][1],30)}`;
     randSongButton.style.backgroundColor = lightenRGB(playlist[currentSongTitle][1],10);
@@ -431,8 +489,24 @@ function updateSongColors() {
     const repeatButton = document.getElementById('repeatButtonIcon');
     repeatButton.style.boxShadow = `-5px 5px 5px ${darkenRGB(playlist[currentSongTitle][1],30)}`;
     repeatButton.style.backgroundColor = lightenRGB(playlist[currentSongTitle][1],10);
-    repeatButton.style.color = darkenRGB(playlist[currentSongTitle][1],40);
+    repeatButton.style.color = darkenRGB(playlist[currentSongTitle][1],40);*/
 
+    const randSongButton = document.getElementById('randomSongButton');
+    randSongButton.style.boxShadow= `-5px 5px 5px ${darkenRGB(playlist[currentSongTitle][1],30)}`;
+    randSongButton.style.backgroundColor = lightenRGB(playlist[currentSongTitle][1],20);
+    randSongButton.style.color = darkenRGB(playlist[currentSongTitle][1],60);
+
+    const playStopButton = document.getElementById('playPauseButton');
+    playStopButton.style.color = darkenRGB(playlist[currentSongTitle][1],60);
+    playStopButton.style.boxShadow= `-5px 5px 5px ${darkenRGB(playlist[currentSongTitle][1],30)}`;
+    playStopButton.style.backgroundColor = lightenRGB(playlist[currentSongTitle][1],10);
+
+    const repeatButton = document.getElementById('repeatButtonIcon');
+    repeatButton.style.boxShadow= `-5px 5px 5px ${darkenRGB(playlist[currentSongTitle][1],30)}`;
+    repeatButton.style.backgroundColor = lightenRGB(playlist[currentSongTitle][1],20);
+    repeatButton.style.color = darkenRGB(playlist[currentSongTitle][1],60); 
+
+    // SEEKBAR
     seekbar.style.boxShadow = `-5px 5px 10px ${darkenRGB(playlist[currentSongTitle][1],40)} inset`;
     seekbar.style.borderColor =  lightenRGB(playlist[currentSongTitle][1],10);
     seekbar.style.background = `linear-gradient(to right, lightenRGB(playlist[currentSongTitle][1],40) 0%, black var(--seek-value), transparent var(--seek-value), black 100%)`;
@@ -455,10 +529,6 @@ function updateSongColors() {
     });
 
     console.log("currsongindex is: ",currentSongIndex);
-
-
-    
-
 }
 
 // checkboxes for filtering
@@ -467,9 +537,7 @@ document.querySelectorAll('.filter-button input').forEach(input => {
     input.addEventListener('change', populatePlaylist);
 });
 
-
 populatePlaylist();
-
 
 
 function addOpacity(rgbString, opac) {
@@ -485,7 +553,6 @@ function addOpacity(rgbString, opac) {
 
     const regex = /^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/;
     const match = rgbString.match(regex);
-
     if (match) {
         let r = parseInt(match[1]);
         let g = parseInt(match[2]);
@@ -497,7 +564,6 @@ function addOpacity(rgbString, opac) {
         return;
     }
 }
-
 
 function darkenRGB(rgbString, percentage) {
     rgbString = rgbString.replace(/\s+/g, ',');
@@ -584,22 +650,25 @@ function playSong(title) {
     songSelect.value = title;
     updatePlayPauseButton();  // Update the play/pause button state
 
-
     const songTitles = Object.keys(playlist);
     const currentSongTitle = songTitles[currentSongIndex];
 
-    const filterButtonsHolder = document.getElementById('filterButtonsHolder');
-    //filterButtonsHolder.style.background =`linear-gradient(to bottom, rgba(${lightenRGB(playlist[currentSongTitle][1], 20).match(/\d+/g).join(', ')}, 0.6), rgba(${playlist[currentSongTitle][1].match(/\d+/g).join(', ')}, 0.6))`;
+    /*
+    const filterButtonsHolder = document.getElementById('filterButtonsHolder'); /*
 
     console.log(currentSongTitle, " is at ", currentSongIndex);
+    /*
     const artContainer = document.querySelector('.container');
     artContainer.style.background = `linear-gradient(to bottom, rgba(${lightenRGB(playlist[currentSongTitle][1], 20).match(/\d+/g).join(', ')}, 0.6), rgba(${playlist[currentSongTitle][1].match(/\d+/g).join(', ')}, 0.6))`;
-
+    */
+    /*
     const img = document.querySelector('.image');
     img.style.boxShadow = `-5px 5px 20px ${darkenRGB(playlist[currentSongTitle][1],30)}`;
     const imgBorderColor = addOpacity(darkenRGB(playlist[currentSongTitle][1],30),0.5);
     //img.style.borderColor=playlist[currentSongTitle][1];
-    img.style.border = `10px solid ${imgBorderColor}`;
+    img.style.border = `10px solid ${imgBorderColor}`; /*
+
+    /*
 
     const randSongButton = document.getElementById('randomSongButton');
     randSongButton.style.boxShadow = `-5px 5px 5px ${darkenRGB(playlist[currentSongTitle][1],50)}, 
@@ -610,13 +679,11 @@ function playSong(title) {
 
     const playStopButton = document.getElementById('playPauseButton');
     playStopButton.style.color = darkenRGB(playlist[currentSongTitle][1],60);
-
     playStopButton.style.boxShadow= `  
     1px 2px 5px ${darkenRGB(playlist[currentSongTitle][1],30)} inset,
     -3px 1px 6px ${darkenRGB(playlist[currentSongTitle][1],20)} inset,
     -3px -1px 6px ${darkenRGB(playlist[currentSongTitle][1],20)} inset`; // MOOCOWDLESS
     playStopButton.style.boxShadow= `-5px 5px 5px ${darkenRGB(playlist[currentSongTitle][1],30)}`;
-
     playStopButton.style.backgroundColor = lightenRGB(playlist[currentSongTitle][1],10);
 
     const repeatButton = document.getElementById('repeatButtonIcon');
@@ -624,35 +691,34 @@ function playSong(title) {
     2px -2px 1px ${lightenRGB(playlist[currentSongTitle][1],10)},
     3px -2px 5px ${darkenRGB(playlist[currentSongTitle][1],30)} inset`;
     repeatButton.style.backgroundColor = lightenRGB(playlist[currentSongTitle][1],20);
-    repeatButton.style.color = darkenRGB(playlist[currentSongTitle][1],40);
+    repeatButton.style.color = darkenRGB(playlist[currentSongTitle][1],40);  */
 
-    
 
-    const svgProgress = document.getElementById('svgProgress');
-   
+    /*
     const svgTrack = document.getElementById('svgTrack');
     svgTrack.style.stroke = `${lightenRGB(playlist[currentSongTitle][1],10)}`;
-
+ */
     /* document.body.style.backgroundColor = `${darkenRGB(playlist[currentSongTitle][1],30)}`; */
-    document.body.style.background = `radial-gradient(circle at 27% 25%, ${darkenRGB(playlist[currentSongTitle][1], 50)} 40%, ${darkenRGB(playlist[currentSongTitle][1], 30)} 30%, ${darkenRGB(playlist[currentSongTitle][1], 80)} 30%, ${darkenRGB(playlist[currentSongTitle][1], 30)} 80%) repeat-x`;
-    const selectedSongArtist = document.getElementById('selected-song-artist');
-    selectedSongArtist.style.color = `${lightenRGB(playlist[currentSongTitle][1],80)}`;
-
+    
+/*
     const selectedSong = document.getElementById('selected-song');
     selectedSong.style.color = `${lightenRGB(playlist[currentSongTitle][1],80)}`;
-    
+    */
 
+    /*
     const containerPlaylist = document.getElementById('container-playlist');
     containerPlaylist.style.boxShadow = `-5px 5px 20px ${darkenRGB(playlist[currentSongTitle][1],90)}`;
     containerPlaylist.style.background = `linear-gradient(to bottom, rgba(${lightenRGB(playlist[currentSongTitle][1], 20).match(/\d+/g).join(', ')}, 0.6), rgba(${playlist[currentSongTitle][1].match(/\d+/g).join(', ')}, 0.6))`;
     containerPlaylist.style.borderImage = `linear-gradient(to bottom, ${lightenRGB(playlist[currentSongTitle][1], 20)}, ${playlist[currentSongTitle][1]})`;
-    
+    */
+    /*
     containerPlaylist.style.backgroundClip = 'border-box'; // Clips the gradient to the border area
     containerPlaylist.style.padding = '12px'; // Ensure there is space for the border
     containerPlaylist.style.border = '1px solid transparent'; // Creates an invisible border for the effect
     const gradientBorder = `linear-gradient(to bottom, ${lightenRGB(playlist[currentSongTitle][1], 20)}, ${playlist[currentSongTitle][1]})`;
     containerPlaylist.style.boxShadow = `0 0 0 10px ${gradientBorder}`;
-
+ */
+    
 
     const songItems = document.querySelectorAll('.song-item');
 
@@ -667,7 +733,6 @@ function playSong(title) {
     // Add hover effect to change background color
         songItem.addEventListener('mouseover', () => {
             songItem.style.backgroundColor = darkenRGB(playlist[currentSongTitle][1],30);
-   
         });
 
         // Revert background color when mouse leaves the element
@@ -693,7 +758,6 @@ function playSong(title) {
     time.style.textShadow = `-5px 5px 20px ${darkenRGB(playlist[currentSongTitle][1],90)}`;
 
     const playing = document.querySelector(".playing");
-    //playing.style.color =`${lightenRGB(playlist[currentSongTitle][1],60)}`;
     updateSongColors();
 
 
