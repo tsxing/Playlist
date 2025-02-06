@@ -69,13 +69,16 @@
         <canvas id="canvas" style="display: none"></canvas>
         <div id="dominant-color"></div>
 
-        <div class="dropdown" style="display: none">
-          <select id="songSelect" name="songSelect"></select>
-        </div>
+        
+      
 
         <p class="selected-song" id="selected-song">SELECT FROM 226 SONGS</p>
         <p class="selected-song-artist" id="selected-song-artist"></p>
         <div id="song-info"></div>
+
+        <div class="dropdown" style="display: none">
+          <select id="songSelect" name="songSelect"></select>
+        </div>
 
         <!-- seek bar here -->
         <input
@@ -104,7 +107,6 @@
               src="music/Siren_Taeyeon.mp3"
               type="audio/mp3"
             />
-            <!-- Update the path to your music file -->
             Your browser does not support the audio element.
           </audio>
 
@@ -128,6 +130,13 @@
 
       <div class="rightSiteBody">
         <div class="filterButtonHolder" id="filterButtonsHolder">
+
+          <label class="filter-button" id="filterButton">
+            <input type="checkbox" id="favorites-filter" />
+            <span>FAVORITES</span>
+          </label>
+
+
           <label class="filter-button" id="filterButton">
             <input type="checkbox" id="epic-filter" />
             <span>EPIC</span>
@@ -157,8 +166,6 @@
             <input type="checkbox" id="theme-filter" />
             <span>THEME/OST</span>
           </label>
-
-          
 
           <label class="filter-button">
             <input type="checkbox" id="canto-filter" />
