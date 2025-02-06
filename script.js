@@ -470,21 +470,6 @@ function updateSongColors() {
     filterButtonsHolder.style.border = '1px solid transparent'; // Creates an invisible border for the effect
     filterButtonsHolder.style.boxShadow = `0 0 0 10px ${filtergradientBorder}`;
 
-    /*
-    const randSongButton = document.getElementById('randomSongButton');
-    randSongButton.style.boxShadow = `-5px 5px 5px ${darkenRGB(playlist[currentSongTitle][1],30)}`;
-    randSongButton.style.backgroundColor = lightenRGB(playlist[currentSongTitle][1],10);
-    randSongButton.style.color = darkenRGB(playlist[currentSongTitle][1],60);
-
-    const playStopButton = document.getElementById('playPauseButton');
-    playStopButton.style.color = darkenRGB(playlist[currentSongTitle][1],60);
-    playStopButton.style.backgroundColor = lightenRGB(playlist[currentSongTitle][1],10);
-
-    const repeatButton = document.getElementById('repeatButtonIcon');
-    repeatButton.style.boxShadow = `-5px 5px 5px ${darkenRGB(playlist[currentSongTitle][1],30)}`;
-    repeatButton.style.backgroundColor = lightenRGB(playlist[currentSongTitle][1],10);
-    repeatButton.style.color = darkenRGB(playlist[currentSongTitle][1],40);*/
-
     const randSongButton = document.getElementById('randomSongButton');
     randSongButton.style.boxShadow= `-5px 5px 5px ${darkenRGB(playlist[currentSongTitle][1],30)}`;
     randSongButton.style.backgroundColor = lightenRGB(playlist[currentSongTitle][1],20);
@@ -647,73 +632,6 @@ function playSong(title) {
     const songTitles = Object.keys(playlist);
     const currentSongTitle = songTitles[currentSongIndex];
 
-    /*
-    const filterButtonsHolder = document.getElementById('filterButtonsHolder'); /*
-
-    console.log(currentSongTitle, " is at ", currentSongIndex);
-    /*
-    const artContainer = document.querySelector('.container');
-    artContainer.style.background = `linear-gradient(to bottom, rgba(${lightenRGB(playlist[currentSongTitle][1], 20).match(/\d+/g).join(', ')}, 0.6), rgba(${playlist[currentSongTitle][1].match(/\d+/g).join(', ')}, 0.6))`;
-    */
-    /*
-    const img = document.querySelector('.image');
-    img.style.boxShadow = `-5px 5px 20px ${darkenRGB(playlist[currentSongTitle][1],30)}`;
-    const imgBorderColor = addOpacity(darkenRGB(playlist[currentSongTitle][1],30),0.5);
-    //img.style.borderColor=playlist[currentSongTitle][1];
-    img.style.border = `10px solid ${imgBorderColor}`; /*
-
-    /*
-
-    const randSongButton = document.getElementById('randomSongButton');
-    randSongButton.style.boxShadow = `-5px 5px 5px ${darkenRGB(playlist[currentSongTitle][1],50)}, 
-    2px -2px 1px ${lightenRGB(playlist[currentSongTitle][1],10)},
-    3px -2px 5px ${darkenRGB(playlist[currentSongTitle][1],10)} inset`;
-    randSongButton.style.backgroundColor = lightenRGB(playlist[currentSongTitle][1],20);
-    randSongButton.style.color = darkenRGB(playlist[currentSongTitle][1],60);
-
-    const playStopButton = document.getElementById('playPauseButton');
-    playStopButton.style.color = darkenRGB(playlist[currentSongTitle][1],60);
-    playStopButton.style.boxShadow= `  
-    1px 2px 5px ${darkenRGB(playlist[currentSongTitle][1],30)} inset,
-    -3px 1px 6px ${darkenRGB(playlist[currentSongTitle][1],20)} inset,
-    -3px -1px 6px ${darkenRGB(playlist[currentSongTitle][1],20)} inset`; // MOOCOWDLESS
-    playStopButton.style.boxShadow= `-5px 5px 5px ${darkenRGB(playlist[currentSongTitle][1],30)}`;
-    playStopButton.style.backgroundColor = lightenRGB(playlist[currentSongTitle][1],10);
-
-    const repeatButton = document.getElementById('repeatButtonIcon');
-    repeatButton.style.boxShadow = `-5px 5px 5px ${darkenRGB(playlist[currentSongTitle][1],50)}, 
-    2px -2px 1px ${lightenRGB(playlist[currentSongTitle][1],10)},
-    3px -2px 5px ${darkenRGB(playlist[currentSongTitle][1],30)} inset`;
-    repeatButton.style.backgroundColor = lightenRGB(playlist[currentSongTitle][1],20);
-    repeatButton.style.color = darkenRGB(playlist[currentSongTitle][1],40);  */
-
-
-    /*
-    const svgTrack = document.getElementById('svgTrack');
-    svgTrack.style.stroke = `${lightenRGB(playlist[currentSongTitle][1],10)}`;
- */
-    /* document.body.style.backgroundColor = `${darkenRGB(playlist[currentSongTitle][1],30)}`; */
-    
-/*
-    const selectedSong = document.getElementById('selected-song');
-    selectedSong.style.color = `${lightenRGB(playlist[currentSongTitle][1],80)}`;
-    */
-
-    /*
-    const containerPlaylist = document.getElementById('container-playlist');
-    containerPlaylist.style.boxShadow = `-5px 5px 20px ${darkenRGB(playlist[currentSongTitle][1],90)}`;
-    containerPlaylist.style.background = `linear-gradient(to bottom, rgba(${lightenRGB(playlist[currentSongTitle][1], 20).match(/\d+/g).join(', ')}, 0.6), rgba(${playlist[currentSongTitle][1].match(/\d+/g).join(', ')}, 0.6))`;
-    containerPlaylist.style.borderImage = `linear-gradient(to bottom, ${lightenRGB(playlist[currentSongTitle][1], 20)}, ${playlist[currentSongTitle][1]})`;
-    */
-    /*
-    containerPlaylist.style.backgroundClip = 'border-box'; // Clips the gradient to the border area
-    containerPlaylist.style.padding = '12px'; // Ensure there is space for the border
-    containerPlaylist.style.border = '1px solid transparent'; // Creates an invisible border for the effect
-    const gradientBorder = `linear-gradient(to bottom, ${lightenRGB(playlist[currentSongTitle][1], 20)}, ${playlist[currentSongTitle][1]})`;
-    containerPlaylist.style.boxShadow = `0 0 0 10px ${gradientBorder}`;
- */
-    
-
     const songItems = document.querySelectorAll('.song-item');
 
     songItems.forEach(songItem => {
@@ -817,10 +735,7 @@ repeatCheckbox.addEventListener("change", function(){
     else{
         repeatIcon.innerHTML = '<i class="fa fa-refresh"></i>';
         console.log("repeat button is NOT checked");
-        
-    //repeatButton.style.boxShadow= `-5px 5px 5px ${darkenRGB(playlist[currentSongTitle][1],50)}, 
-    //2px -2px 1px ${lightenRGB(playlist[currentSongTitle][1],10)},
-   // 3px 2px 5px ${darkenRGB(playlist[currentSongTitle][1],20)} inset`;
+
     }
 });
 
