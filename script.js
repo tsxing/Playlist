@@ -251,7 +251,7 @@ function populatePlaylist() {
     const container = document.getElementById('container-playlist');
     const dropdown = document.getElementById('songSelect');
 
-    // Clear prev song options
+    // Clear previous song options
     container.innerHTML = '';
     dropdown.innerHTML = '';
 
@@ -280,8 +280,8 @@ function populatePlaylist() {
 
     let anyMatch = false; 
 
-    // Load favorites from localStorage when the page loads
-    let favorites = JSON.parse(localStorage.getItem('favorites')) || {}; // Load from localStorage or initialize as empty object
+    // Load favorites from localStorage
+    let favorites = JSON.parse(localStorage.getItem('favorites')) || {}; 
 
     for (const title in playlist) {
         if (playlist.hasOwnProperty(title)) {
@@ -291,13 +291,13 @@ function populatePlaylist() {
             // Apply filters
             if (filters.every(filter => {
                 if (filter === 'Favorites') {
-                    return favorites.hasOwnProperty('radio-' + title.replace(/\s+/g, '')); // Ensure the song is in favorites
+                    return favorites.hasOwnProperty('radio-' + title.replace(/\s+/g, ''));
                 }
-                return songTags.includes(filter); // Other filters
+                return songTags.includes(filter);
             })) {
                 anyMatch = true;
 
-                // Create the main container for each song
+                // Create song container
                 const songdivContainer = document.createElement('div');
                 songdivContainer.classList.add('song-item-container');
                 container.appendChild(songdivContainer);
@@ -306,63 +306,58 @@ function populatePlaylist() {
                 songDiv.classList.add('song-item');
                 songDiv.textContent = title;
 
-                // Create the radio button
+                // Create radio button
                 const radioButton = document.createElement('input');
                 radioButton.type = 'radio';
-                radioButton.name = 'favorite';  // Group all radio buttons together
-                radioButton.value = title;     // Use the song title as the radio button's value
-                radioButton.id = 'radio-' + title.replace(/\s+/g, ''); // ID with spaces removed
+                radioButton.name = 'favorite';
+                radioButton.value = title;
+                radioButton.id = 'radio-' + title.replace(/\s+/g, '');
 
-                // Check if the song is in the favorites list
-                if (favorites[radioButton.id]) {
-                    radioButton.checked = true;  // Set it as checked if it's in favorites
-                }
+                // Check if the song is in favorites
+                radioButton.checked = favorites.hasOwnProperty(radioButton.id);
 
-                // Create the label with the heart icon
+                // Create label with heart icon
                 const radioLabel = document.createElement('label');
                 radioLabel.setAttribute('for', radioButton.id);
-                // Set the initial heart icon based on the checked state of the radio button
                 radioLabel.innerHTML = radioButton.checked ? '<i class="fa fa-heart"></i>' : '<i class="fa fa-heart-o"></i>';
 
-                // Add event listener to handle the toggling of the heart icon and update favorites
-                radioLabel.addEventListener('click', function() {
-                    if (radioButton.checked) {
-                        // If radio button is checked, uncheck it, change the icon, and remove from favorites
-                        radioButton.checked = false;
-                        radioLabel.innerHTML = '<i class="fa fa-heart-o"></i>';  // Change icon to heart-o
+                // Handle heart click logic
+                radioLabel.addEventListener('click', function(event) {
+                    event.preventDefault(); // Prevent default radio button behavior
 
-                        // Remove from favorites
-                        delete favorites[radioButton.id]; // Remove from favorites
-                    } else {
-                        // If radio button is unchecked, check it, change the icon, and add to favorites
-                        radioButton.checked = true;
-                        radioLabel.innerHTML = '<i class="fa fa-heart"></i>';  // Change icon to heart
+                    setTimeout(() => {
+                        if (favorites[radioButton.id]) {
+                            // Remove from favorites
+                            delete favorites[radioButton.id];
+                            radioLabel.innerHTML = '<i class="fa fa-heart-o"></i>';
+                        } else {
+                            // Add to favorites
+                            favorites[radioButton.id] = title;
+                            radioLabel.innerHTML = '<i class="fa fa-heart"></i>';
+                        }
 
-                        // Add to favorites
-                        favorites[radioButton.id] = title; // Add to favorites
-                    }
-
-                    // Save the updated favorites object to localStorage
-                    localStorage.setItem('favorites', JSON.stringify(favorites));
+                        // Save updated favorites to localStorage
+                        localStorage.setItem('favorites', JSON.stringify(favorites));
+                    }, 10);
                 });
 
-                // Create a container for the radio button and label
+                // Create radio button container
                 const radioDiv = document.createElement('div');
                 radioDiv.classList.add('radio-container');
                 radioDiv.appendChild(radioButton);
                 radioDiv.appendChild(radioLabel);
 
-                // Append the song and radio button to the container
+                // Append elements
                 songdivContainer.appendChild(songDiv);
                 songdivContainer.appendChild(radioDiv);
 
-                // Add click event listener to each song item
+                // Play song when clicking song name
                 songDiv.addEventListener('click', function() {
-                    currentSongIndex = Object.keys(playlist).indexOf(title); // Update the index based on clicked song
+                    currentSongIndex = Object.keys(playlist).indexOf(title);
                     playSong(title);
                 });
 
-                // Add the song title to the dropdown
+                // Add song to dropdown
                 const option = document.createElement('option');
                 option.textContent = title;
                 option.value = title;
@@ -371,15 +366,14 @@ function populatePlaylist() {
         }
     }
 
-    // Debug: Log the current favorites
     console.log("FAVS: ", favorites);
 
-    // no songs match the filters; currentSongIndex to 0
     if (!anyMatch) {
-        console.log("no songs match:(");
+        console.log("No songs match the filters :(");
     }
     updateSongColors();
 }
+
 
 
 
