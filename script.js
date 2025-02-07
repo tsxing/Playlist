@@ -227,7 +227,15 @@ const playlist = {
     "TRUE - Yoari": ["TRUE_Yoari","rgb(201 75 183)",["Korean","Theme/OST"]],
     "Siren - Taeyeon": ["Siren_Taeyeon","rgb(230 98 102)",["Korean","Pop"]],
     "Crush - IVE": ["Crush_IVE","rgb(255 129 157)",["Korean","Pop"]],
-    "Fuanteina Kamisama - Suara": ["Fuanteina_kamisama_Suara","rgb(63 151 245)",["Japanese","Pop"]]
+    "Fuanteina Kamisama - Suara": ["Fuanteina_kamisama_Suara","rgb(63 151 245)",["Japanese","Pop"]],
+    "Go Big or Go Home - ENHYPEN": ["Go_Big_or_Go_Home_ENHYPEN","rgb(2 48 164)",["Korean","Pop"]],
+    "Love Dive (Synthwave) - IVE": ["Love_Dive_Synthwave_IVE","rgb(253 177 207)",["Korean","Pop","Remix"]],
+    "Spring Day - BTS (Remix)": ["Spring_Day_BTS_Remix","rgb(243 190 190)",["Korean","Pop","Remix"]],
+    "koinomushi - Hanatan": ["koinomushi","rgb(90 192 230)",["Japanese","Pop"]],
+    "Mago (Rock Version) - GFriend": ["Mago_GFriend_Rock_Version","rgb(253 211 246)",["Remix","Pop","Korean"]],
+    "Run Away (Rock Version) - TXT": ["Run_Away_Rock_TXT","rgb(251 114 168)",["Remix","Pop","Korean"]],
+    "Styx Helix - Myth & Roid": ["Styx_Helix_Myth_Roid","rgb(131 192 239)",["Pop","Japanese"]]
+    //Styx_Helix_Myth_Roid
 
 
 };
