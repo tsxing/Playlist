@@ -39,7 +39,7 @@ const playlist = {
     "Rada - Thomas Bergersen":["Rada","rgb(228 178 117)",["Instrumental","Epic"]],
     "Rohan Theme - Lord of the Rings (LOTR)": ["Rohan_Theme_LOTR","rgb(145 157 158)",["Instrumental","Epic", "Theme/OST"]],
     "Rohan Rohirrim Soundtrack - LOTR": ["Rohan_Rohirrim_Soundtrack_LOTR","rgb(121 126 63)",["Instrumental","Epic","Theme/OST"]],
-    "Unravel Remix - Tokyo Ghoul (Samuel Kim)": ["Unravel_Tokyo_Ghoul","rgb(227 196 237)",["Instrumental","Epic","Theme/OST","Japanese","SamuelKim"]],
+    "Unravel Remix - Tokyo Ghoul (Samuel Kim)": ["Unravel_Tokyo_Ghoul","rgb(227 196 237)",["Instrumental","Epic","Theme/OST", "Anime","Japanese","SamuelKim"]],
     "Kai's Theme - Kung Fu Panda (Samuel Kim)": ["Kai_Theme_Kung_Fu_Panda","rgb(2 232 154)",["Instrumental","Epic","Theme/OST","SamuelKim"]],
     "Rengoku Theme - Demon Slayer (Samuel Kim)": ["Rengoku_Theme_Demon_Slayer","rgb(225 150 97)",["Instrumental","Epic","Theme/OST","Japanese","Anime","SamuelKim"]],
     "Inosuke Theme V2 - Demon Slayer (Samuel Kim)": ["Inosuke_Theme_V2_Demon_Slayer","rgb(174 139 173)",["Instrumental","Epic","Theme/OST","Japanese","Anime","SamuelKim"]],
@@ -234,8 +234,10 @@ const playlist = {
     "koinomushi - Hanatan": ["koinomushi","rgb(90 192 230)",["Japanese","Pop"]],
     "Mago (Rock Version) - GFriend": ["Mago_GFriend_Rock_Version","rgb(253 211 246)",["Remix","Pop","Korean"]],
     "Run Away (Rock Version) - TXT": ["Run_Away_Rock_TXT","rgb(251 114 168)",["Remix","Pop","Korean"]],
-    "Styx Helix - Myth & Roid": ["Styx_Helix_Myth_Roid","rgb(131 192 239)",["Pop","Japanese"]]
-    //Styx_Helix_Myth_Roid
+    "Styx Helix - Myth & Roid": ["Styx_Helix_Myth_Roid","rgb(131 192 239)",["Pop","Japanese"]],
+    "Licht und Schatten - Tokyo Ghoul (Samuel Kim)": ["Licht_und_Schatten","rgb(246 175 179)",["SamuelKim","Japanese","Anime","Instrumental"]],
+
+    //Licht_und_Schatten
 
 
 };
