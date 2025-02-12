@@ -236,8 +236,9 @@ const playlist = {
     "Run Away (Rock Version) - TXT": ["Run_Away_Rock_TXT","rgb(251 114 168)",["Remix","Pop","Korean"]],
     "Styx Helix - Myth & Roid": ["Styx_Helix_Myth_Roid","rgb(131 192 239)",["Pop","Japanese"]],
     "Licht und Schatten - Tokyo Ghoul (Samuel Kim)": ["Licht_und_Schatten","rgb(246 175 179)",["SamuelKim","Japanese","Anime","Instrumental"]],
+    "漂泊的情人 - dj version": ["漂泊的情人_dj","rgb(236 166 90)",["Canto","Remix"]]
 
-    //Licht_und_Schatten
+    //漂泊的情人_dj
 
 
 };
@@ -330,7 +331,9 @@ function populatePlaylist() {
                 const radioLabel = document.createElement('label');
                 radioLabel.setAttribute('for', radioButton.id);
                 radioLabel.innerHTML = radioButton.checked ? '<i class="fa fa-heart"></i>' : '<i class="fa fa-heart-o"></i>';
+                radioLabel.style.color = 'white'; // Apply white color to the label
 
+                
                 // Handle heart click logic
                 radioLabel.addEventListener('click', function(event) {
                     event.preventDefault(); // Prevent default radio button behavior
