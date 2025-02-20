@@ -90,7 +90,7 @@ const playlist = {
     "鐵血丹心 - 射鵰英雄傳": ["鐵血丹心_射鵰英雄傳","rgb(122 128 105)",["Canto","Theme/OST"]],
     "留下我美夢 - TVB 甄妮" : ["留下我美夢_甄妮","rgb(203 165 152)",["Canto","Theme/OST"]],
     "一生所愛 - 大话西游": ["一生所愛_大话西游","rgb(236 194 135)",["Canto","Theme/OST"]],
-    "天命最高 - 古天乐 (寻秦记主题曲)": ["天命最高_古天乐","rgb(177 194 150)",["Canto","Theme/OST"]],
+    "天命最高 - 古天乐 (寻秦记主题曲)": ["天命最高_古天乐","rgb(102 122 78)",["Canto","Theme/OST"]],
     "天下 - 大秦賦": ["天下_大秦賦","rgb(241 187 120)",["Chinese","Theme/OST"]],
     "珍惜 - 李宇春": ["珍惜_李宇春","rgb(155 122 98)",["Chinese","Theme/OST"]],
     "忘川 - 小曲兒 (曲終人未散)": ["忘川_小曲兒","rgb(251 220 214)",["Chinese","Theme/OST"]],
@@ -223,7 +223,7 @@ const playlist = {
     "Guerilla - Oh My Girl": ["Guerilla","rgb(22 56 114)","Korean","Pop"],
     "City of the Dead - EURIELLE": ["City_of_the_Dead","rgb(177 158 141)",["English"]],
     "Let You Down - Samuel Kim": ["Let_You_Down_Cyberpunk_Edgerunner","rgb(26 150 222)",["English","Anime","SamuelKim"]],
-    "Supernova - IVE": ["IVE_Supernova","rgb(248 225 233)",["Korean","Pop"]],
+    "Supernova - IVE": ["IVE_Supernova","rgb(234 153 198)",["Korean","Pop"]],
     "TRUE - Yoari": ["TRUE_Yoari","rgb(201 75 183)",["Korean","Theme/OST"]],
     "Siren - Taeyeon": ["Siren_Taeyeon","rgb(230 98 102)",["Korean","Pop"]],
     "Crush - IVE": ["Crush_IVE","rgb(255 129 157)",["Korean","Pop"]],
@@ -231,14 +231,20 @@ const playlist = {
     "Go Big or Go Home - ENHYPEN": ["Go_Big_or_Go_Home_ENHYPEN","rgb(2 48 164)",["Korean","Pop"]],
     "Love Dive (Synthwave) - IVE": ["Love_Dive_Synthwave_IVE","rgb(253 177 207)",["Korean","Pop","Remix"]],
     "Spring Day - BTS (Remix)": ["Spring_Day_BTS_Remix","rgb(243 190 190)",["Korean","Pop","Remix"]],
-    "koinomushi - Hanatan": ["koinomushi","rgb(90 192 230)",["Japanese","Pop"]],
+    "koinomushi - Hanatan": ["koinomushi","rgb(116 209 252)",["Japanese","Pop"]],
     "Mago (Rock Version) - GFriend": ["Mago_GFriend_Rock_Version","rgb(253 211 246)",["Remix","Pop","Korean"]],
     "Run Away (Rock Version) - TXT": ["Run_Away_Rock_TXT","rgb(251 114 168)",["Remix","Pop","Korean"]],
     "Styx Helix - Myth & Roid": ["Styx_Helix_Myth_Roid","rgb(131 192 239)",["Pop","Japanese"]],
     "Licht und Schatten - Tokyo Ghoul (Samuel Kim)": ["Licht_und_Schatten","rgb(246 175 179)",["SamuelKim","Japanese","Anime","Instrumental"]],
-    "漂泊的情人 - dj version": ["漂泊的情人_dj","rgb(236 166 90)",["Canto","Remix"]]
+    "漂泊的情人 - dj version": ["漂泊的情人_dj","rgb(236 166 90)",["Canto","Remix"]],
+    "Full Moon - Sunmi": ["Full_Moon_Sunmi","rgb(0 72 140)",["Korean","Pop"]],
+    "セツナイのは - Sally Miura": ["Setsunai_no_wa_Sally_Miura","rgb(254 199 231)",["Japanese","Pop"]],
+    "Kpop Mashup - Normal Smasher": ["Kpop_Mix_Normal_Smasher","rgb(89 206 244)",["Korean","Pop","Remix"]],
+    "Try - P!NK": ["Try_Pink","rgb(248 177 253)",["English","Pop"]],
+    "一瞬のクオリア - しちごさん": ["Isshun_no_kuoria_Shi_chigosan","rgb(225 203 210)",["Japanese","Pop"]],
+    "僕は鳥になる - Hitomi": ["Bokuwa_Tori_ni_Naru_Hitomi","rgb(209 147 155)",["Japanese","Pop"]]
 
-    //漂泊的情人_dj
+    //Bokuwa_Tori_ni_Naru_Hitomi
 
 
 };
@@ -333,7 +339,7 @@ function populatePlaylist() {
                 radioLabel.innerHTML = radioButton.checked ? '<i class="fa fa-heart"></i>' : '<i class="fa fa-heart-o"></i>';
                 radioLabel.style.color = 'white'; // Apply white color to the label
 
-                
+
                 // Handle heart click logic
                 radioLabel.addEventListener('click', function(event) {
                     event.preventDefault(); // Prevent default radio button behavior
