@@ -241,16 +241,25 @@ const playlist = {
     "セツナイのは - Sally Miura": ["Setsunai_no_wa_Sally_Miura","rgb(254 199 231)",["Japanese","Pop"]],
     "Kpop Mashup - Normal Smasher": ["Kpop_Mix_Normal_Smasher","rgb(89 206 244)",["Korean","Pop","Remix"]],
     "Try - P!NK": ["Try_Pink","rgb(248 177 253)",["English","Pop"]],
-    "一瞬のクオリア - しちごさん": ["Isshun_no_kuoria_Shi_chigosan","rgb(225 203 210)",["Japanese","Pop"]],
-    "僕は鳥になる - Hitomi": ["Bokuwa_Tori_ni_Naru_Hitomi","rgb(209 147 155)",["Japanese","Pop"]]
+    "一瞬のクオリア - しちごさん": ["Isshun_no_kuoria_Shi_chigosan","rgb(240 184 197)",["Japanese","Pop"]],
+    "僕は鳥になる - Hitomi": ["Bokuwa_Tori_ni_Naru_Hitomi","rgb(209 147 155)",["Japanese","Pop"]],
+    "Sugar Free - Tara": ["Sugar_Free_T_ara","rgb(236 174 184)",["Korean","Pop"]],
+    "라라라 - 이수영": ["rarara_lee_Sooyoung","rgb(50 74 138)",["Korean","Pop"]],
+    "휠릴리 - 이수영": ["Whistling_Lee_Sooyoung","rgb(39 74 164)",["Korean","Pop"]],
+    "덩그러니 - 이수영": ["this_time_Lee_sooyoung","rgb(53 129 196)",["Korean","Pop"]],
+    "Grace - 이수영": ["grace_leesooyoung","rgb(124 139 230)",["Korean","Pop"]],
+    "그리고 사랑해 - 이수영": ["made_in_winter_leesooyoung","rgb(69 119 211)",["Korean","Pop"]],
+    "얼마나 좋을까 - 이수영": ["finalfantasy_lee_sooyoung","rgb(26 75 177)",["Korean","Pop","OST"]],
+    "Never Again - 이수영": ["never_again_leesooyoung","rgb(30 83 100)",["Korean","Pop","OST"]]
 
-    //Bokuwa_Tori_ni_Naru_Hitomi
+    //never_again_leesooyoung
 
 
 };
 
-/*
+
 console.log("Playlist Length: ", Object.keys(playlist).length); 
+/*
 let aaa = Object.keys(playlist);
 let index = aaa.indexOf("KOMOREBI - 鲸落版");
 console.log(index); */
