@@ -259,20 +259,26 @@ const playlist = {
     "pporappippam - SUNMI": ["pporappippam_sunmi","rgb(214 182 241)",["Korean","Pop"]],
     "Utsukushiki Zankoku Na Sekai - Yoko Hikasa": ["Utsukushiki_Zankoku_Na_Sekai_Yoko_Hikasa","rgb(111 155 142)",["Japanese","Pop","Anime"]],
     "IWALY - iland": ["IWALY","rgb(248 157 175)",["Korean","Pop"]],
-    "UTOPIA - ATEEZ": ["UTOPIA","rgb(107 156 140)",["Korean","ATEEZ","Pop"]]
+    "UTOPIA - ATEEZ": ["UTOPIA","rgb(107 156 140)",["Korean","ATEEZ","Pop"]],
+    "我相信 - 楊培安": ["我相信_楊培安","rgb(225 141 178)",["Chinese","Pop"]]
 
 
-    //UTOPIA
+
+    //我相信_楊培安
 
 
 };
 
 
 console.log("Playlist Length: ", Object.keys(playlist).length); 
-/*
+
 let aaa = Object.keys(playlist);
+console.log("STUPID FOCISK:", playlist[Object.keys(playlist)[3]][0]);
 let index = aaa.indexOf("KOMOREBI - 鲸落版");
-console.log(index); */
+console.log(index); 
+
+
+
 
 let currentSongIndex = 223; 
 
@@ -282,6 +288,69 @@ const albumArt = document.getElementById('albumArt');
 const songSelect = document.getElementById('songSelect');
 const playPauseButton = document.getElementById('playPauseButton');
 const repeatIcon = document.getElementById('repeatButtonIcon');
+
+
+
+
+// Initialize Media Session API
+if ('mediaSession' in navigator) {
+    navigator.mediaSession.setActionHandler('play', () => {
+        audioPlayer.play();
+        updateMediaSession();
+    });
+
+    navigator.mediaSession.setActionHandler('pause', () => {
+        audioPlayer.pause();
+        updateMediaSession();
+    });
+
+    navigator.mediaSession.setActionHandler('previoustrack', () => {
+        playPreviousSong();
+    });
+
+    navigator.mediaSession.setActionHandler('nexttrack', () => {
+        playNextSong();
+    });
+
+    navigator.mediaSession.setActionHandler('seekbackward', (details) => {
+        audioPlayer.currentTime = Math.max(0, audioPlayer.currentTime - (details.seekOffset || 10));
+        updateMediaSession();
+    });
+
+    navigator.mediaSession.setActionHandler('seekforward', (details) => {
+        audioPlayer.currentTime = Math.min(audioPlayer.duration, audioPlayer.currentTime + (details.seekOffset || 10));
+        updateMediaSession();
+    });
+}
+
+// Function to update media metadata
+function updateMediaSession() {
+    if (!('mediaSession' in navigator)) return;
+
+    const songTitles = Object.keys(playlist);
+    const currentSongTitle = songTitles[currentSongIndex];
+    const songDetails = Object.keys(playlist)[currentSongIndex];
+    console.log("stupid shit" , );
+
+    navigator.mediaSession.metadata = new MediaMetadata({
+        title: currentSongTitle,
+        artist: songDetails,
+        album: "Music Player :)",
+        artwork: [
+            { 
+                src: `https://github.com/tsxing/Playlist/blob/main/albumArt/`+ `${playlist[Object.keys(playlist)[currentSongIndex]][0]}`+`.png`,
+                
+                sizes: "512x512", 
+                type: "image/jpeg" 
+            }
+        ]
+    });
+
+    navigator.mediaSession.playbackState = audioPlayer.paused ? "paused" : "playing";
+}
+
+
+
 
 function populatePlaylist() {
     const container = document.getElementById('container-playlist');
@@ -650,8 +719,10 @@ function toRGBA(rgbColor, opacity) {
 
 // Function to play the song
 function playSong(title) {
+    updateMediaSession();
     console.log(title);
     const filename = playlist[title][0];
+    
     
     audioSource.src = `music/${filename}.mp3`; 
     albumArt.src = `albumArt/${filename}.png`;
@@ -875,3 +946,6 @@ function changeProgress() {
         }, i * 10); // Each increment happens every 1 second
     }
 }
+
+audioPlayer.addEventListener('play', updateMediaSession);
+audioPlayer.addEventListener('pause', updateMediaSession);
