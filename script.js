@@ -141,7 +141,7 @@ const playlist = {
     "Love Attack - Rescene": ["Love_Attack_Rescene","rgb(176 202 211)",["Korean","Theme/OST"]],
     "Fall In Love Again - TWICE": ["Fall_In_Love_Again_TWICE","rgb(228 146 190)",["Korean"]],
     "Mago - GFRIEND": ["Mago_GFRIEND","rgb(151 151 151)",["Korean","Pop"]],
-    "Mise-en-Scène - IZ*ONE": ["Mise_en_Scène_IZ*ONE","rgb(200 240 252)",["Korean","Pop"]],
+    "Mise-en-Scene - IZ*ONE": ["Mise_en_Scene_IZ*ONE","rgb(200 240 252)",["Korean","Pop"]],
     "O Sole Mio - IZ*ONE": ["O_Sole_Mio_IZ*ONE","rgb(5 163 255)",["Korean","Pop"]],
     "Island - IZ*ONE": ["Island_IZ*ONE","rgb(240 210 225)",["Korean","Pop"]],
     "해바라기 Hey. Bae. Like It. - IZ*ONE": ["Hey_Bae_Like_It_IZ*ONE","rgb(226 198 246)",["Korean","Pop"]],
@@ -175,8 +175,8 @@ const playlist = {
     "Trap - Henry (CHN)": ["Trap_Henry_CHN","rgb(255 180 178)",["Korean","Pop"]],
     "BLUE - BIGBANG": ["BLUE_Bigbang","rgb(109 179 255)",["Korean","Pop"]],
     "Fiction - BEAST": ["Fiction_BEAST","rgb(90 154 198)",["Korean","Pop"]],
-    "Fiction - BEAST (Cover)": ["Fiction_Female","rgb(139 222 221)",["Korean","Pop"]],
-    "Hotaru - Fujita Maiko": ["Hotaru_Fujita_Maiko","rgb(225 218 231)",["Japanese","Pop"]],
+    "Fiction - BEAST (Cover)": ["Fiction_Female","rgb(29 116 145)",["Korean","Pop"]],
+    "Hotaru - Fujita Maiko": ["Hotaru_Fujita_Maiko","rgb(253 241 250)",["Japanese","Pop"]],
     "Blue Bird - Naruto": ["Blue_Bird_Naruto","rgb(96 200 235)",["Japanese","Pop","Anime"]],
     "shigure - Music": ["shigure","rgb(170 161 215)",["Japanese","Pop"]],
     "悪魔の子 (Rock Remix) - Attack on Titan": ["悪魔の子_Attack_on_Titan","rgb(167 145 146)",["Japanese","Remix","Pop","Anime"]],
@@ -199,7 +199,7 @@ const playlist = {
     "Take Me To Church - Hozier (Female Version)": ["Take_Me_To_Church_Hozier_Female","rgb(249 221 174)",["English"]],
     "Around The World (La La La) - ATC": ["Around_The_World_LaLaLa_ATC","rgb(240 173 161)",["English"]],
     "Nevada - Vicetone": ["Nevada_Vicetone","rgb(125 189 241)",["English"]],
-    "Why Do I - Bri Tolani and Unknown Brain": ["Why_do_i","rgb(182 227 255)",["English","Pop"]],
+    "Why Do I - Bri Tolani and Unknown Brain": ["Why_do_i","rgb(48 129 240)",["English","Pop"]],
     "underwater (sped up) - Nikki Flores": ["underwater","rgb(98 212 244)",["English","Pop","Remix"]],
     "Monody - TheFatRat": ["Monody_TheFatRat","rgb(167 163 165)",["English","Pop"]],
     "Monody - Epic Version": ["Monody_Epic_Version","rgb(147 195 211)",["Instrumental","Epic","Remix"]],
@@ -233,7 +233,7 @@ const playlist = {
     "Spring Day - BTS (Remix)": ["Spring_Day_BTS_Remix","rgb(243 190 190)",["Korean","Pop","Remix"]],
     "koinomushi - Hanatan": ["koinomushi","rgb(116 209 252)",["Japanese","Pop"]],
     "Mago (Rock Version) - GFriend": ["Mago_GFriend_Rock_Version","rgb(253 211 246)",["Remix","Pop","Korean"]],
-    "Run Away (Rock Version) - TXT": ["Run_Away_Rock_TXT","rgb(251 114 168)",["Remix","Pop","Korean"]],
+    "Run Away (Rock Version) - TOMORROW X TOGETHER": ["Run_Away_Rock_TXT","rgb(251 114 168)",["Remix","Pop","Korean"]],
     "Styx Helix - Myth & Roid": ["Styx_Helix_Myth_Roid","rgb(131 192 239)",["Pop","Japanese"]],
     "Licht und Schatten - Tokyo Ghoul (Samuel Kim)": ["Licht_und_Schatten","rgb(246 175 179)",["SamuelKim","Japanese","Anime","Instrumental"]],
     "漂泊的情人 - dj version": ["漂泊的情人_dj","rgb(236 166 90)",["Canto","Remix"]],
@@ -250,9 +250,19 @@ const playlist = {
     "Grace - 이수영": ["grace_leesooyoung","rgb(124 139 230)",["Korean","Pop"]],
     "그리고 사랑해 - 이수영": ["made_in_winter_leesooyoung","rgb(69 119 211)",["Korean","Pop"]],
     "얼마나 좋을까 - 이수영": ["finalfantasy_lee_sooyoung","rgb(26 75 177)",["Korean","Pop","OST"]],
-    "Never Again - 이수영": ["never_again_leesooyoung","rgb(30 83 100)",["Korean","Pop","OST"]]
+    "Never Again - 이수영": ["never_again_leesooyoung","rgb(30 83 100)",["Korean","Pop","OST"]],
+    "The Riddle (sped) - Termik": ["Riddle_sped_up","rgb(35 93 107)",["English","Pop","Remix"]],
+    "Now - Trouble Maker": ["now_troublemaker","rgb(7 84 136)",["Korean","Pop"]],
+    "Darkside - Alan Walker": ["Darkside_Alan_Walker","rgb(37 48 159)",["English","Pop"]],
+    "Deja vu - Dreamcatcher": ["Dejavu_Dreamcatcher","rgb(32 120 226)",["Korean","Pop"]],
+    "Diamond Heart - Alan Walker": ["diamondheart_alanwalker","rgb(86 143 129)",["English","Pop"]],
+    "pporappippam - SUNMI": ["pporappippam_sunmi","rgb(214 182 241)",["Korean","Pop"]],
+    "Utsukushiki Zankoku Na Sekai - Yoko Hikasa": ["Utsukushiki_Zankoku_Na_Sekai_Yoko_Hikasa","rgb(111 155 142)",["Japanese","Pop","Anime"]],
+    "IWALY - iland": ["IWALY","rgb(248 157 175)",["Korean","Pop"]],
+    "UTOPIA - ATEEZ": ["UTOPIA","rgb(107 156 140)",["Korean","ATEEZ","Pop"]]
 
-    //never_again_leesooyoung
+
+    //UTOPIA
 
 
 };
@@ -438,7 +448,7 @@ function updateSongColors() {
 
     const artContainer = document.querySelector('.container');
     artContainer.style.background = `linear-gradient(to bottom, rgba(${lightenRGB(songColor, 20).match(/\d+/g).join(', ')}, 0.6), rgba(${songColor.match(/\d+/g).join(', ')}, 0.6))`;
-    artContainer.style.boxShadow = `-5px 5px 20px ${darkenRGB(playlist[currentSongTitle][1],80)}`;
+    artContainer.style.boxShadow = `-5px 5px 20px ${darkenRGB(playlist[currentSongTitle][1],40)}`;
 
     const siteBody = document.getElementById('siteBody');
     siteBody.style.background ='transparent';
@@ -449,7 +459,7 @@ function updateSongColors() {
     //img.style.borderColor=playlist[currentSongTitle][1];
     img.style.border = `10px solid ${imgBorderColor}`;
 
-    document.body.style.background = `radial-gradient(circle at 27% 25%, ${darkenRGB(playlist[currentSongTitle][1], 50)} 40%, ${darkenRGB(playlist[currentSongTitle][1], 30)} 30%, ${darkenRGB(playlist[currentSongTitle][1], 70)} 30%, ${darkenRGB(playlist[currentSongTitle][1], 30)} 80%) repeat-x`;
+    document.body.style.background = `radial-gradient(circle at 27% 25%, ${darkenRGB(playlist[currentSongTitle][1], 30)} 40%, ${darkenRGB(playlist[currentSongTitle][1], 30)} 30%, ${darkenRGB(playlist[currentSongTitle][1], 50)} 30%, ${darkenRGB(playlist[currentSongTitle][1], 30)} 80%) repeat-x`;
     document.body.style.backgroundSize = `100vw 100vh`;
     document.body.style.backgroundAttachment = "fixed";
 
@@ -478,10 +488,10 @@ function updateSongColors() {
     const selectedSongArtist = document.getElementById('selected-song-artist');
     selectedSongArtist.style.color = `${lightenRGB(playlist[currentSongTitle][1],80)}`;
 
-    document.body.style.background = `radial-gradient(circle at 27% 25%, ${darkenRGB(playlist[currentSongTitle][1], 50)} 40%, ${darkenRGB(playlist[currentSongTitle][1], 30)} 30%, ${darkenRGB(playlist[currentSongTitle][1], 80)} 30%, ${darkenRGB(playlist[currentSongTitle][1], 30)} 80%) repeat-x`;
+    //document.body.style.background = `radial-gradient(circle at 27% 25%, ${darkenRGB(playlist[currentSongTitle][1], 30)} 40%, ${darkenRGB(playlist[currentSongTitle][1], 30)} 30%, ${darkenRGB(playlist[currentSongTitle][1], 55)} 30%, ${darkenRGB(playlist[currentSongTitle][1], 30)} 80%) repeat-x`;
 
     const containerPlaylist = document.getElementById('container-playlist');
-    containerPlaylist.style.boxShadow = `-5px 5px 20px ${darkenRGB(playlist[currentSongTitle][1],80)}`;
+    containerPlaylist.style.boxShadow = `-5px 5px 20px ${darkenRGB(playlist[currentSongTitle][1],40)}`;
     containerPlaylist.style.background = `linear-gradient(to bottom, rgba(${lightenRGB(playlist[currentSongTitle][1], 20).match(/\d+/g).join(', ')}, 0.6), rgba(${playlist[currentSongTitle][1].match(/\d+/g).join(', ')}, 0.6))`;
     containerPlaylist.style.borderImage = `linear-gradient(to bottom, ${lightenRGB(playlist[currentSongTitle][1], 20)}, ${playlist[currentSongTitle][1]})`;
     containerPlaylist.style.backgroundClip = 'border-box'; // Clips the gradient to the border area
@@ -490,7 +500,7 @@ function updateSongColors() {
     const gradientBorder = `linear-gradient(to bottom, ${lightenRGB(playlist[currentSongTitle][1], 20)}, ${playlist[currentSongTitle][1]})`;
     containerPlaylist.style.boxShadow = `0 0 0 10px ${gradientBorder}`;
 
-    filterButtonsHolder.style.boxShadow = `-5px 5px 20px ${darkenRGB(playlist[currentSongTitle][1],80)}`;
+    filterButtonsHolder.style.boxShadow = `-5px 5px 20px ${darkenRGB(playlist[currentSongTitle][1],40)}`;
     filterButtonsHolder.style.background = `linear-gradient(to bottom, rgba(${lightenRGB(playlist[currentSongTitle][1], 20).match(/\d+/g).join(', ')}, 0.6), rgba(${playlist[currentSongTitle][1].match(/\d+/g).join(', ')}, 0.6))`;
     filterButtonsHolder.style.borderImage = `linear-gradient(to bottom, ${lightenRGB(playlist[currentSongTitle][1], 20)}, ${playlist[currentSongTitle][1]})`;
     filterButtonsHolder.style.backgroundClip = 'border-box'; // Clips the gradient to the border area
