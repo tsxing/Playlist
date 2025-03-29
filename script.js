@@ -70,7 +70,7 @@ const playlist = {
     "錦繡山河 - Music":["錦繡山河","rgb(251 92 33)",["Instrumental","Epic","Theme/OST","Chinese"]],
     "White Dew - 羽腫": ["White_dew","rgb(158 181 122)",["Instrumental","Chinese"]],
     "告白の夜 - Music": ["the_reason_why","rgb(27 167 244)",["Instrumental","Japanese"]],
-    "最后的审判 - 琅琊榜": ["最后的审判_琅琊榜","rgb(243 230 252)",["Instrumental","Theme/OST","Chinese"]],
+    "最后的审判 - 琅琊榜": ["最后的审判_琅琊榜","rgb(4 155 255)",["Instrumental","Theme/OST","Chinese"]],
     "高進 - 聽著情歌流眼淚": ["聽著情歌流眼淚_高進","rgb(155 80 52)",["Chinese","Pop"]],
     "百鸟归巢 - 谭维维": ["百鸟归巢_谭维维","rgb(138 225 174)",["Chinese"]],
     "天耀中华 - 姚贝娜": ["天耀中华_姚贝娜","rgb(230 124 96)",["Chinese"]],
@@ -85,7 +85,7 @@ const playlist = {
     "神话情话 - 周华健, 齐豫 ": ["神话情话_周华健_齐豫 ","rgb(184 171 222)",["Canto","Pop"]],
     "诉衷情 - 伪装者": ["诉衷情_伪装者","rgb(151 114 80)",["Chinese","Theme/OST"]],
     "等待 - 韩磊": ["等待_韩磊","rgb(229 131 76)",["Chinese","Theme/OST"]],
-    "海闊天空 - Beyond": ["海闊天空_Beyond","rgb(237 238 232)",["Canto","Pop"]],
+    "海闊天空 - Beyond": ["海闊天空_Beyond","rgb(181 201 49)",["Canto","Pop"]],
     "一生有意义 - 射雕英雄传之东邪西毒": ["一生有意义_射雕英雄传之东邪西毒","rgb(176 133 66)",["Canto","Theme/OST"]],
     "鐵血丹心 - 射鵰英雄傳": ["鐵血丹心_射鵰英雄傳","rgb(122 128 105)",["Canto","Theme/OST"]],
     "留下我美夢 - TVB 甄妮" : ["留下我美夢_甄妮","rgb(203 165 152)",["Canto","Theme/OST"]],
@@ -118,11 +118,11 @@ const playlist = {
     "明月天涯 - 五音Jw": ["明月天涯_五音Jw","rgb(187 196 232)",["Chinese","Pop"]],
     "阴霾 - 高旭": ["阴霾_高旭","rgb(131 169 168)",["Chinese","Pop"]],
     "美人魚 - 林俊杰": ["美人魚_林俊杰","rgb(5 44 171)",["Chinese","Pop"]],
-    "雲與海 - 阿YueYue": ["雲與海_阿YueYue","rgb(151 196 226)",["Chinese","Pop"]],
-    "夏夜灯塔 - 沈以诚": ["夏夜灯塔_沈以诚","rgb(160 156 221)",["Chinese","Pop"]],
+    "雲與海 - 阿YueYue": ["雲與海_阿YueYue","rgb(8 92 198)",["Chinese","Pop"]],
+    "夏夜灯塔 - 沈以诚": ["夏夜灯塔_沈以诚","rgb(50 98 200)",["Chinese","Pop"]],
     "Heaven - Ailee": ["heaven_ailee","rgb(248 139 193)",["Korean"]],
     "I will show you - Ailee": ["I_will_show_you","rgb(109 218 222)",["Korean"]],
-    "Fated to love you - Ailee": ["Fated_to_love_you","rgb(132 215 250)",["Korean"]],
+    "Fated to love you - Ailee": ["Fated_to_love_you","rgb(0 102 217)",["Korean"]],
     "Orbit - HWASA": ["Orbit_HWASA","rgb(172 160 122)",["Korean"]],
     "monogram - Lucid Dream": ["monogram_Lucid_Dream","rgb(162 212 183)",["Korean"]],
     "Once Again - Mad Clown & Kim Nayoung": ["Once_Again_Mad_Clown","rgb(79 170 168)",["Korean","Theme/OST"]],
@@ -131,7 +131,7 @@ const playlist = {
     "SBS Temptation of Wife - OST": ["Temptation_of_Wife","rgb(108 192 212)",["Korean","Theme/OST"]],
     "Scars leave beautiful trace - OST": ["Scars_leave_beautiful_trace","rgb(122 197 231)",["Korean","Theme/OST"]],
     "Suddenly - City Hunter": ["Suddenly_City_Hunter","rgb(197 220 85)",["Korean","Theme/OST"]],
-    "In The Dark": ["In_The_Dark","rgb(149 150 171)",["Korean","Theme/OST"]],
+    "In The Dark - OST": ["In_The_Dark","rgb(149 150 171)",["Korean","Theme/OST"]],
     "Sigriswil - OST": ["Sigriswil","rgb(55 218 231)",["Korean","Theme/OST"]],
     "See The Light - Lim Hyunsik": ["See_The_Light","rgb(25 48 102)",["Korean","Theme/OST"]],
     "Wa - Lee Jung-hyun": ["Wa","rgb(186 150 165)",["Korean","Theme/OST"]],
@@ -147,7 +147,7 @@ const playlist = {
     "해바라기 Hey. Bae. Like It. - IZ*ONE": ["Hey_Bae_Like_It_IZ*ONE","rgb(226 198 246)",["Korean","Pop"]],
     "First Love (첫사랑) - After School": ["First_Love_After_School","rgb(60 112 156)",["Korean","Pop"]],
     "Siren - Sunmi": ["Siren_Sunmi","rgb(221 165 137)",["Korean","Pop"]],
-    "Dumhdurum - Apink": ["Dumhdurum_Apink","rgb(239 214 238)",["Korean","Pop"]],
+    "Dumhdurum - Apink": ["Dumhdurum_Apink","rgb(242 180 215)",["Korean","Pop"]],
     "Girls - NATURE": ["Girls_NATURE","rgb(163 181 206)",["Korean","Pop"]],
     "Diamond - TRI.BE": ["Diamond_TRIBE","rgb(231 175 85)",["Korean","Pop"]],
     "Start - Dreamcatcher": ["Start","rgb(30 97 225)",["Korean","Pop"]],
@@ -155,7 +155,7 @@ const playlist = {
     "Bon Voyage - YooA": ["Bon_Voyage_YooA","rgb(237 199 167)",["Korean","Pop"]],
     "Virtual Angel - ARTMS": ["Virtual_Angel_ARTMS","rgb(67 128 192)",["Korean","Pop"]],
     "Girls Never Die - tripleS": ["Girls_Never_Die_tripleS","rgb(212 181 175)",["Korean","Pop"]],
-    "Paradise - infinite": ["paradise_infinite","rgb(220 145 213)",["Korean","Pop"]],
+    "Paradise - infinite": ["paradise_infinite","rgb(19 141 179)",["Korean","Pop"]],
     "Rooftop - N.Flying": ["Rooftop_NFlying","rgb(246 153 44)",["Korean","Pop"]],
     "beautiful - BEAST": ["beautiful_BEAST","rgb(137 220 251)",["Korean","Pop"]],
     "LUNA - ONEUS": ["LUNA_ONEUS","rgb(86 157 255)",["Korean","Pop"]],
@@ -230,7 +230,7 @@ const playlist = {
     "Fuanteina Kamisama - Suara": ["Fuanteina_kamisama_Suara","rgb(63 151 245)",["Japanese","Pop"]],
     "Go Big or Go Home - ENHYPEN": ["Go_Big_or_Go_Home_ENHYPEN","rgb(2 48 164)",["Korean","Pop"]],
     "Love Dive (Synthwave) - IVE": ["Love_Dive_Synthwave_IVE","rgb(253 177 207)",["Korean","Pop","Remix"]],
-    "Spring Day - BTS (Remix)": ["Spring_Day_BTS_Remix","rgb(243 190 190)",["Korean","Pop","Remix"]],
+    "Spring Day - BTS (Remix)": ["Spring_Day_BTS_Remix","rgb(173 161 219)",["Korean","Pop","Remix"]],
     "koinomushi - Hanatan": ["koinomushi","rgb(116 209 252)",["Japanese","Pop"]],
     "Mago (Rock Version) - GFriend": ["Mago_GFriend_Rock_Version","rgb(253 211 246)",["Remix","Pop","Korean"]],
     "Run Away (Rock Version) - TOMORROW X TOGETHER": ["Run_Away_Rock_TXT","rgb(251 114 168)",["Remix","Pop","Korean"]],
@@ -260,11 +260,15 @@ const playlist = {
     "Utsukushiki Zankoku Na Sekai - Yoko Hikasa": ["Utsukushiki_Zankoku_Na_Sekai_Yoko_Hikasa","rgb(111 155 142)",["Japanese","Pop","Anime"]],
     "IWALY - iland": ["IWALY","rgb(248 157 175)",["Korean","Pop"]],
     "UTOPIA - ATEEZ": ["UTOPIA","rgb(107 156 140)",["Korean","ATEEZ","Pop"]],
-    "我相信 - 楊培安": ["我相信_楊培安","rgb(225 141 178)",["Chinese","Pop"]]
+    "我相信 - 楊培安": ["我相信_楊培安","rgb(225 141 178)",["Chinese","Pop"]],
+    "水手 - 鄭智化": ["水手","rgb(170 144 135)",["Chinese","Pop"]],
+    "红颜旧 - 琅琊榜": ["Hong_Yan_Jiu","rgb(49 112 117)",["Chinese","Pop","Theme/OST"]],
+    "Born to Die - Lana del Ray": ["Born_to_die","rgb(90 125 100)",["English","Pop"]],
+    "The Chaser - Infinite": ["The_Chaser_Infinite","rgb(78 93 55)",["Korean","Pop"]]
 
 
 
-    //我相信_楊培安
+    //The_Chaser_Infinite
 
 
 };
@@ -338,10 +342,9 @@ function updateMediaSession() {
         album: "Music Player :)",
         artwork: [
             { 
-                src: `https://github.com/tsxing/Playlist/blob/main/albumArt/`+ `${playlist[Object.keys(playlist)[currentSongIndex]][0]}`+`.png`,
-                
-                sizes: "512x512", 
-                type: "image/jpeg" 
+                src: `https://raw.githubusercontent.com/tsxing/Playlist/main/albumArt/` + `${playlist[Object.keys(playlist)[currentSongIndex]][0]}` + `.png`,
+                sizes: "1000x1000", 
+                type: "image/png" 
             }
         ]
     });
