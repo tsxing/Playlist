@@ -200,7 +200,7 @@ const playlist = {
     "Around The World (La La La) - ATC": ["Around_The_World_LaLaLa_ATC","rgb(240 173 161)",["English"]],
     "Nevada - Vicetone": ["Nevada_Vicetone","rgb(125 189 241)",["English"]],
     "Why Do I - Bri Tolani and Unknown Brain": ["Why_do_i","rgb(48 129 240)",["English","Pop"]],
-    "underwater (sped up) - Nikki Flores": ["underwater","rgb(98 212 244)",["English","Pop","Remix"]],
+    "underwater (sped up) - Nikki Flores": ["underwater","rgb(3 139 174)",["English","Pop","Remix"]],
     "Monody - TheFatRat": ["Monody_TheFatRat","rgb(167 163 165)",["English","Pop"]],
     "Monody - Epic Version": ["Monody_Epic_Version","rgb(147 195 211)",["Instrumental","Epic","Remix"]],
     "We all lie - Sky 캐슬 OST Part 4": ["We_all_lie","rgb(232 182 153)",["Theme/OST"]],
@@ -264,11 +264,17 @@ const playlist = {
     "水手 - 鄭智化": ["水手","rgb(170 144 135)",["Chinese","Pop"]],
     "红颜旧 - 琅琊榜": ["Hong_Yan_Jiu","rgb(49 112 117)",["Chinese","Pop","Theme/OST"]],
     "Born to Die - Lana del Ray": ["Born_to_die","rgb(90 125 100)",["English","Pop"]],
-    "The Chaser - Infinite": ["The_Chaser_Infinite","rgb(78 93 55)",["Korean","Pop"]]
+    "The Chaser - Infinite": ["The_Chaser_Infinite","rgb(78 93 55)",["Korean","Pop"]],
+    "LALALILALA - APRIL": ["LALALILALA_APRIL","rgb(37 110 158)",["Korean","Pop"]],
+    "Oh! My Mistake - APRIL": ["Oh_My_Mistake_APRIL","rgb(68 112 112)",["Korean","Pop"]],
+    "Xstep - Geometry Dash": ["Xstep_Geometry_Dash","rgb(11 70 101)",["Instrumental","geodash"]],
+    "Base after base - Geometry Dash": ["Baseafterbase_Geometry_Dash","rgb(76 102 111)",["Instrumental","geodash"]],
+    "Back on track - Geometry Dash": ["Backontrack_Geometry_Dash","rgb(1 84 112)",["Instrumental","geodash"]],
+    "Stereo Madness - Geometry Dash": ["StereoMadness_Geometry_Dash","rgb(13 80 94)",["Instrumental","geodash"]]
 
 
 
-    //The_Chaser_Infinite
+    //StereoMadness_Geometry_Dash
 
 
 };
@@ -376,7 +382,8 @@ function populatePlaylist() {
     if (document.getElementById('anime-filter').checked) filters.push('Anime');
     if (document.getElementById('korean-filter').checked) filters.push('Korean');
     if (document.getElementById('pop-filter').checked) filters.push('Pop');
-    if (document.getElementById('ateez-filter').checked) filters.push('ATEEZ');
+    if (document.getElementById('ateez-filter').checked) filters.push('ATEEZ'); 
+    if (document.getElementById('geodash-filter').checked) filters.push('geodash'); 
     if (document.getElementById('swedish-filter').checked) filters.push('Swedish');
     if (document.getElementById('russian-filter').checked) filters.push('Russian');
     if (document.getElementById('tsfh-filter').checked) filters.push('TSFH');
