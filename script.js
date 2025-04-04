@@ -270,11 +270,15 @@ const playlist = {
     "Xstep - Geometry Dash": ["Xstep_Geometry_Dash","rgb(11 70 101)",["Instrumental","geodash"]],
     "Base after base - Geometry Dash": ["Baseafterbase_Geometry_Dash","rgb(76 102 111)",["Instrumental","geodash"]],
     "Back on track - Geometry Dash": ["Backontrack_Geometry_Dash","rgb(1 84 112)",["Instrumental","geodash"]],
-    "Stereo Madness - Geometry Dash": ["StereoMadness_Geometry_Dash","rgb(13 80 94)",["Instrumental","geodash"]]
+    "Stereo Madness - Geometry Dash": ["StereoMadness_Geometry_Dash","rgb(13 80 94)",["Instrumental","geodash"]],
+    "一念執著 - 胡歌 & 阿蘭": ["一念執著","rgb(186 164 117)",["Theme/OST","Chinese"]],
+    "神话情话 - 周华健, 齐豫": ["神话情话","rgb(98 143 149)",["Canto"]],
+    "投入的笑一次 - 毛阿敏": ["投入的笑一次","rgb(99 177 153)",["Chinese","Theme/OST"]],
+    "明天会更好 - 群星": ["明天会更好","rgb(105 138 192)",["Chinese"]],
+    "青蘋果樂園 - 小虎隊": ["青蘋果樂園_小虎隊","rgb(49 163 219)",["Chinese","Pop"]]
 
 
-
-    //StereoMadness_Geometry_Dash
+    //青蘋果樂園_小虎隊
 
 
 };
