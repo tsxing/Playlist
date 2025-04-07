@@ -275,10 +275,13 @@ const playlist = {
     "神话情话 - 周华健, 齐豫": ["神话情话","rgb(98 143 149)",["Canto"]],
     "投入的笑一次 - 毛阿敏": ["投入的笑一次","rgb(99 177 153)",["Chinese","Theme/OST"]],
     "明天会更好 - 群星": ["明天会更好","rgb(105 138 192)",["Chinese"]],
-    "青蘋果樂園 - 小虎隊": ["青蘋果樂園_小虎隊","rgb(49 163 219)",["Chinese","Pop"]]
+    "青蘋果樂園 - 小虎隊": ["青蘋果樂園_小虎隊","rgb(49 163 219)",["Chinese","Pop"]],
+    "We were in Love - Davichi, T-ara": ["Wewereinlove","rgb(32 144 189)",["Korean","Pop"]],
+    "Egotistic - Mamamoo": ["Egotistic_Mamamoo","rgb(97 182 213)",["Korean","Pop"]],
+    "No Celestial - LE SSERAFIM": ["No_Celestial","rgb(5 77 132)",["Korean","Pop"]]
 
 
-    //青蘋果樂園_小虎隊
+    //No_Celestial
 
 
 };
