@@ -220,7 +220,7 @@ const playlist = {
     "Sayonara - Kana Nishino": ["Sayonara_Kana_Nishino","rgb(90 63 68)",["Japanese","Pop"]],
     "Hana No Atosaki - Hakuouki": ["Hana_No_Atosaki_Hakuouki","rgb(60 171 214)",["Japanese","Pop"]],
     "Get Over - dream": ["Get_Over_dream","rgb(213 51 149)",["Japanese","Pop"]],
-    "Guerilla - Oh My Girl": ["Guerilla","rgb(22 56 114)","Korean","Pop"],
+    "Guerilla - Oh My Girl": ["Guerilla","rgb(22 56 114)",["Korean","Pop"]],
     "City of the Dead - EURIELLE": ["City_of_the_Dead","rgb(177 158 141)",["English"]],
     "Let You Down - Samuel Kim": ["Let_You_Down_Cyberpunk_Edgerunner","rgb(26 150 222)",["English","Anime","SamuelKim"]],
     "Supernova - IVE": ["IVE_Supernova","rgb(234 153 198)",["Korean","Pop"]],
@@ -278,96 +278,176 @@ const playlist = {
     "青蘋果樂園 - 小虎隊": ["青蘋果樂園_小虎隊","rgb(49 163 219)",["Chinese","Pop"]],
     "We were in Love - Davichi, T-ara": ["Wewereinlove","rgb(32 144 189)",["Korean","Pop"]],
     "Egotistic - Mamamoo": ["Egotistic_Mamamoo","rgb(97 182 213)",["Korean","Pop"]],
-    "No Celestial - LE SSERAFIM": ["No_Celestial","rgb(5 77 132)",["Korean","Pop"]]
+    "No Celestial - LE SSERAFIM": ["No_Celestial","rgb(5 77 132)",["Korean","Pop"]],
+    "One Shot - B.A.P.": ["BAP_One_Shot","rgb(49 33 33)",["Korean","Pop"]],
+    "Time to Love - T-ARA & SUPERNOVA": ["Time_to_Love_TARA_SUPERNOVA","rgb(88 82 202)",["Korean","Pop"]]
 
 
-    //No_Celestial
+
+    //Time_to_Love_TARA_SUPERNOVA
 
 
 };
 
+console.log("Playlist Length:", Object.keys(playlist).length);
 
-console.log("Playlist Length: ", Object.keys(playlist).length); 
-
-let aaa = Object.keys(playlist);
-console.log("STUPID FOCISK:", playlist[Object.keys(playlist)[3]][0]);
-let index = aaa.indexOf("KOMOREBI - 鲸落版");
-console.log(index); 
-
-
-
-
-let currentSongIndex = 223; 
-
+// ========== ELEMENT REFERENCES ==========
 const audioPlayer = document.getElementById('audioPlayer');
-const audioSource = document.getElementById('audioSource');
-const albumArt = document.getElementById('albumArt');
-const songSelect = document.getElementById('songSelect');
 const playPauseButton = document.getElementById('playPauseButton');
+const prevSongButton = document.getElementById('prevSongButton');
+const nextSongButton = document.getElementById('nextSongButton');
+
+const randomSongButton = document.getElementById('randomSongButton');
+const repeatCheckbox = document.getElementById('repeat-button');
 const repeatIcon = document.getElementById('repeatButtonIcon');
 
+const albumArtElement = document.getElementById('albumArt');
+const selectedSongElement = document.getElementById('selected-song');
+const selectedSongArtistElement = document.getElementById('selected-song-artist');
+const audioDurationElement = document.getElementById('audio-duration');
+const containerPlaylist = document.getElementById('container-playlist');
+const seekbar = document.getElementById('seekbar');
 
+let currentSongIndex = 0; // Start from the first song
 
+// ========== PLAYBACK FUNCTIONS ==========
 
-// Initialize Media Session API
-if ('mediaSession' in navigator) {
-    navigator.mediaSession.setActionHandler('play', () => {
-        audioPlayer.play();
-        updateMediaSession();
-    });
+// Play a song by its index in the playlist
+function playSongByIndex(index) {
+    const songNames = Object.keys(playlist);
+    const songName = songNames[index];
+    const [imageName, , , songPath] = playlist[songName];
 
-    navigator.mediaSession.setActionHandler('pause', () => {
+    playSong(songName, 'Artist Name', imageName, songPath);
+}
+
+// Play a specific song
+function playSong(index) {
+    currentSongIndex=index;
+    console.log("this song is ",currentSongIndex);
+    const songNames = Object.keys(playlist);        // array of song names (keys)
+    const songNameAtIndex = songNames[index];          // the name (key) at index 3
+    const songPath = playlist[songNameAtIndex][0]; 
+
+    console.log(songPath);
+
+    const audioPath = `music/${songPath}.mp3`;
+
+    if (!audioPlayer.paused) {
         audioPlayer.pause();
-        updateMediaSession();
-    });
+        audioPlayer.currentTime = 0;
+    }
 
-    navigator.mediaSession.setActionHandler('previoustrack', () => {
-        playPreviousSong();
-    });
+    audioPlayer.src = audioPath;
+    audioPlayer.load();
 
-    navigator.mediaSession.setActionHandler('nexttrack', () => {
-        playNextSong();
-    });
+    audioPlayer.oncanplaythrough = () => {
+        audioPlayer.play();
+        updatePlayPauseIcon();
+    };
+    
+    const fullTitle = Object.keys(playlist)[index];
+    const [title, artist] = fullTitle.split(" - ");
 
-    navigator.mediaSession.setActionHandler('seekbackward', (details) => {
-        audioPlayer.currentTime = Math.max(0, audioPlayer.currentTime - (details.seekOffset || 10));
-        updateMediaSession();
-    });
+    selectedSongElement.textContent = title.trim();
+    selectedSongArtistElement.textContent = artist?.trim() || "Unknown Artist";
 
-    navigator.mediaSession.setActionHandler('seekforward', (details) => {
-        audioPlayer.currentTime = Math.min(audioPlayer.duration, audioPlayer.currentTime + (details.seekOffset || 10));
-        updateMediaSession();
-    });
+    albumArtElement.src = `albumArt/${songPath}.png`;
+
+    audioPlayer.onloadedmetadata = () => {
+        audioDurationElement.textContent = formatTime(audioPlayer.duration);
+    };
 }
 
-// Function to update media metadata
-function updateMediaSession() {
-    if (!('mediaSession' in navigator)) return;
 
+
+// Format time (mm:ss)
+function formatTime(seconds) {
+    const mins = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+}
+
+// ========== UI FUNCTIONS ==========
+
+// Toggle play/pause and update the icon
+function updatePlayPauseIcon() {
+    playPauseButton.innerHTML = audioPlayer.paused
+        ? '<i class="fa fa-play"></i>'
+        : '<i class="fa fa-pause"></i>';
+}
+
+// Function to get the selected filters from the checkboxes
+function getSelectedFilters() {
+    const selectedFilters = [];
+    const filterElements = document.querySelectorAll('.filter-button input[type="checkbox"]:checked');
+    
+    filterElements.forEach(input => {
+        const filterId = input.id.replace('-filter', ''); // Get the filter name by removing '-filter' from the id
+        selectedFilters.push(filterId);
+    });
+
+    return selectedFilters;
+}
+// Ensure this function gets called on page load and when filters are toggled
+window.onload = function() {
+    populatePlaylist(); // Initial population of the playlist
+    setupFilterListeners(); // Set up listeners for filter changes
+};
+
+// Get the selected filters
+function getSelectedFilters() {
+    const selectedFilters = [];
+    // Get all checkbox inputs under the filter buttons holder and check if they're checked
+    const filterElements = document.querySelectorAll('#filterButtonsHolder input[type="checkbox"]:checked');
+
+    filterElements.forEach(input => {
+        // Extract filter name from the checkbox id
+        const filterId = input.id.replace('-filter', ''); // Strip '-filter' from the ID
+        selectedFilters.push(filterId);
+    });
+    console.log('Selected Filters:', selectedFilters);  // Debugging log
+    return selectedFilters;
+}
+
+// Set up listeners for the filter buttons
+function setupFilterListeners() {
+    document.querySelectorAll('#filterButtonsHolder input[type="checkbox"]').forEach(checkbox => {
+        checkbox.addEventListener('change', () => {
+            populatePlaylist();  // Repopulate the playlist when a filter is toggled
+        });
+    });
+}
+function addRecentsTagToLast10() {
     const songTitles = Object.keys(playlist);
-    const currentSongTitle = songTitles[currentSongIndex];
-    const songDetails = Object.keys(playlist)[currentSongIndex];
-    console.log("stupid shit" , );
+    
+    // Add "Recents" tag to the last 10 songs in the playlist
+    const last10Songs = songTitles.slice(-12);  // Get the last 10 song titles
 
-    navigator.mediaSession.metadata = new MediaMetadata({
-        title: currentSongTitle,
-        artist: songDetails,
-        album: "Music Player :)",
-        artwork: [
-            { 
-                src: `https://raw.githubusercontent.com/tsxing/Playlist/main/albumArt/` + `${playlist[Object.keys(playlist)[currentSongIndex]][0]}` + `.png`,
-                sizes: "1000x1000", 
-                type: "image/png" 
-            }
-        ]
+    last10Songs.forEach(title => {
+        const song = playlist[title];
+        if (!song[2].includes('Recents')) {
+            song[2].push('Recents');  // Add "Recents" to the song's tags array if it's not already there
+        }
     });
-
-    navigator.mediaSession.playbackState = audioPlayer.paused ? "paused" : "playing";
 }
 
+// Modify the populatePlaylist function to reflect these changes
+function addRecentsTagToLast10() {
+    const songTitles = Object.keys(playlist);
+    
+    // Add "Recents" tag to the last 10 songs in the playlist
+    const last10Songs = songTitles.slice(-12);  // Get the last 10 song titles
 
+    last10Songs.forEach(title => {
+        const song = playlist[title];
+        if (!song[2].includes('Recents')) {
+            song[2].push('Recents');  // Add "Recents" to the song's tags array if it's not already there
+        }
+    });
+}
 
-
+// Modify the populatePlaylist function to reflect these changes
 function populatePlaylist() {
     const container = document.getElementById('container-playlist');
     const dropdown = document.getElementById('songSelect');
@@ -377,6 +457,9 @@ function populatePlaylist() {
     dropdown.innerHTML = '';
 
     const filters = [];
+
+    // Check the state of each filter checkbox and add it to the filters array if checked
+    if (document.getElementById('recents-filter').checked) filters.push('Recents');
     if (document.getElementById('instrumental-filter').checked) filters.push('Instrumental');
     if (document.getElementById('epic-filter').checked) filters.push('Epic');
     if (document.getElementById('remix-filter').checked) filters.push('Remix');
@@ -396,573 +479,213 @@ function populatePlaylist() {
     if (document.getElementById('tsfh-filter').checked) filters.push('TSFH');
     if (document.getElementById('filipino-filter').checked) filters.push('Filipino');
 
-    if (document.getElementById('favorites-filter').checked) filters.push('Favorites');
+    //if (document.getElementById('favorites-filter').checked) filters.push('Favorites');
 
-    console.log("FILTERS CHOSEN: ", filters);
+    console.log("FILTERS CHOSEN: ", filters);  // Debugging log
 
     let anyMatch = false; 
 
     // Load favorites from localStorage
     let favorites = JSON.parse(localStorage.getItem('favorites')) || {}; 
 
+    // Add "Recents" tag to the last 10 songs in the playlist
+    addRecentsTagToLast10();
+
+    // Iterate through the playlist and apply filters
     for (const title in playlist) {
         if (playlist.hasOwnProperty(title)) {
             const song = playlist[title];
-            const songTags = song[2];
+            const songTags = song[2];  // songTags are at index 2
 
-            // Apply filters
-            if (filters.every(filter => {
+            // Check if the song matches all the selected filters
+            const matchesFilters = filters.every(filter => {
                 if (filter === 'Favorites') {
-                    return favorites.hasOwnProperty('radio-' + title.replace(/\s+/g, ''));
+                    return favorites[title];  // Check if the song is in favorites
                 }
-                return songTags.includes(filter);
-            })) {
+                return songTags.includes(filter);  // Check if the song has the filter tag
+            });
+
+            if (matchesFilters) {
+                // If the song matches the filters, create a new song item element
+
+                const songItem = document.createElement('div');
+                songItem.classList.add('song-item');
+                songItem.style.backgroundColor = "transparent";  // Assuming color can be applied here
+
+                const image = document.createElement('img');
+                image.src = `albumArt/${song[0]}.png`;  // Assuming the album image is in `song[0]`
+                image.classList.add('song-image');
+                image.alt = title;
+
+                const description = document.createElement('div');
+                description.classList.add('song-description');
+
+                const [songTitleText, artistNameText] = title.split(' - ');
+
+                const songTitle = document.createElement('h5');
+                songTitle.textContent = songTitleText;
+                songTitle.classList.add('song-title');
+
+                const artistName = document.createElement('p');
+                artistName.textContent = artistNameText || '';
+                artistName.classList.add('artist-name');
+
+                description.appendChild(songTitle);
+                description.appendChild(artistName);
+
+                songItem.appendChild(image);
+                songItem.appendChild(description);
+
+                // Add click event to each song item
+                songItem.addEventListener('click', () => {
+                    const songNames = Object.keys(playlist);
+                    const currentSongIndex = songNames.indexOf(title); // Get the index of the clicked song
+                    console.log("Clicked index:", currentSongIndex);
+                    playSong(currentSongIndex); // Play the song at the clicked index
+                });
+
+                // Append the song item to the playlist container
+                container.appendChild(songItem);
                 anyMatch = true;
-
-                // Create song container
-                const songdivContainer = document.createElement('div');
-                songdivContainer.classList.add('song-item-container');
-                container.appendChild(songdivContainer);
-
-                const songDiv = document.createElement('div');
-                songDiv.classList.add('song-item');
-                songDiv.textContent = title;
-
-                // Create radio button
-                const radioButton = document.createElement('input');
-                radioButton.type = 'radio';
-                radioButton.name = 'favorite';
-                radioButton.value = title;
-                radioButton.id = 'radio-' + title.replace(/\s+/g, '');
-
-                // Check if the song is in favorites
-                radioButton.checked = favorites.hasOwnProperty(radioButton.id);
-
-                // Create label with heart icon
-                const radioLabel = document.createElement('label');
-                radioLabel.setAttribute('for', radioButton.id);
-                radioLabel.innerHTML = radioButton.checked ? '<i class="fa fa-heart"></i>' : '<i class="fa fa-heart-o"></i>';
-                radioLabel.style.color = 'white'; // Apply white color to the label
-
-
-                // Handle heart click logic
-                radioLabel.addEventListener('click', function(event) {
-                    event.preventDefault(); // Prevent default radio button behavior
-
-                    setTimeout(() => {
-                        if (favorites[radioButton.id]) {
-                            // Remove from favorites
-                            delete favorites[radioButton.id];
-                            radioLabel.innerHTML = '<i class="fa fa-heart-o"></i>';
-                        } else {
-                            // Add to favorites
-                            favorites[radioButton.id] = title;
-                            radioLabel.innerHTML = '<i class="fa fa-heart"></i>';
-                        }
-
-                        // Save updated favorites to localStorage
-                        localStorage.setItem('favorites', JSON.stringify(favorites));
-                    }, 10);
-                });
-
-                // Create radio button container
-                const radioDiv = document.createElement('div');
-                radioDiv.classList.add('radio-container');
-                radioDiv.appendChild(radioButton);
-                radioDiv.appendChild(radioLabel);
-
-                // Append elements
-                songdivContainer.appendChild(songDiv);
-                songdivContainer.appendChild(radioDiv);
-
-                // Play song when clicking song name
-                songDiv.addEventListener('click', function() {
-                    currentSongIndex = Object.keys(playlist).indexOf(title);
-                    playSong(title);
-                });
-
-                // Add song to dropdown
-                const option = document.createElement('option');
-                option.textContent = title;
-                option.value = title;
-                dropdown.appendChild(option);
             }
         }
     }
 
-    console.log("FAVS: ", favorites);
-
+    // If no songs match the filters, you can display a message
     if (!anyMatch) {
-        console.log("No songs match the filters :(");
+        const noSongsMessage = document.createElement('p');
+        noSongsMessage.textContent = "No songs match the selected filters.";
+        noSongsMessage.style.fontFamily = "Arimo, sans-serif"; // Set font, using a fallback font
+        container.appendChild(noSongsMessage);
     }
-    updateSongColors();
 }
 
+// Event listener to trigger populatePlaylist when a filter is changed
+document.querySelectorAll('.filter-button input').forEach(input => {
+    input.addEventListener('change', populatePlaylist);
+});
 
 
+        
 
-function updateSongColors() {
-    const songTitles = Object.keys(playlist);
-    const currentSongTitle = songTitles[currentSongIndex];
-    const songColor = playlist[currentSongTitle][1];
-
-    const filterButtonsHolder = document.getElementById('filterButtonsHolder');
-    filterButtonsHolder.style.boxShadow = `-5px 5px 20px ${darkenRGB(playlist[currentSongTitle][1],40)}`;
-    filterButtonsHolder.style.background = `linear-gradient(to bottom, rgba(${lightenRGB(playlist[currentSongTitle][1], 20).match(/\d+/g).join(', ')}, 0.6), rgba(${playlist[currentSongTitle][1].match(/\d+/g).join(', ')}, 0.6))`;
-    filterButtonsHolder.style.borderImage = `linear-gradient(to bottom, ${lightenRGB(playlist[currentSongTitle][1], 20)}, ${playlist[currentSongTitle][1]})`;
-    filterButtonsHolder.style.backgroundClip = 'border-box'; // Clips the gradient to the border area
-    filterButtonsHolder.style.padding = '12px'; // Ensure there is space for the border
-    filterButtonsHolder.style.border = '1px solid transparent'; // Creates an invisible border for the effect
-    const filtergradientBorder = `linear-gradient(to bottom, ${lightenRGB(playlist[currentSongTitle][1], 20)}, ${playlist[currentSongTitle][1]})`;
-    filterButtonsHolder.style.boxShadow = `0 0 0 10px ${filtergradientBorder}`;
-
-    const filterButtons = document.querySelectorAll('.filter-button');
-    filterButtons.forEach((button) => {
-        //button.style.backgroundColor = darkenRGB(playlist[currentSongTitle][1], 30);
-        button.style.background = `rgba(${darkenRGB(playlist[currentSongTitle][1], 0).match(/\d+/g).join(', ')}, 0.6)`;
-        button.addEventListener('mouseover', () => {
-            button.style.backgroundColor = darkenRGB(playlist[currentSongTitle][1],40);
-        });
-
-        // Revert background color when mouse leaves the element
-        button.addEventListener('mouseout', () => {
-            button.style.background = `rgba(${darkenRGB(playlist[currentSongTitle][1], 0).match(/\d+/g).join(', ')}, 0.6)`;
-            button.style.transition="0.3s";
-        });
-
-    });
-
-    const artContainer = document.querySelector('.container');
-    artContainer.style.background = `linear-gradient(to bottom, rgba(${lightenRGB(songColor, 20).match(/\d+/g).join(', ')}, 0.6), rgba(${songColor.match(/\d+/g).join(', ')}, 0.6))`;
-    artContainer.style.boxShadow = `-5px 5px 20px ${darkenRGB(playlist[currentSongTitle][1],40)}`;
-
-    const siteBody = document.getElementById('siteBody');
-    siteBody.style.background ='transparent';
-
-    const img = document.querySelector('.image');
-    img.style.boxShadow = `-5px 5px 10px ${darkenRGB(playlist[currentSongTitle][1],30)}`;
-    const imgBorderColor = addOpacity(darkenRGB(playlist[currentSongTitle][1],30),0.5);
-    //img.style.borderColor=playlist[currentSongTitle][1];
-    img.style.border = `10px solid ${imgBorderColor}`;
-
-    document.body.style.background = `radial-gradient(circle at 27% 25%, ${darkenRGB(playlist[currentSongTitle][1], 30)} 40%, ${darkenRGB(playlist[currentSongTitle][1], 30)} 30%, ${darkenRGB(playlist[currentSongTitle][1], 50)} 30%, ${darkenRGB(playlist[currentSongTitle][1], 30)} 80%) repeat-x`;
-    document.body.style.backgroundSize = `100vw 100vh`;
-    document.body.style.backgroundAttachment = "fixed";
-
-    const seekbar = document.getElementById("seekbar");
-    const svgProgress = document.getElementById('svgProgress');
-    svgProgress.style.stroke = `${lightenRGB(playlist[currentSongTitle][1],40)}`;
-    const svgTrack = document.getElementById('svgTrack');
-    svgTrack.style.stroke = `${lightenRGB(playlist[currentSongTitle][1],20)}`;
-
-    const songItems = document.querySelectorAll('.song-item');
-    songItems.forEach(songItem => {
-        songItem.style.background = `rgba(${darkenRGB(playlist[currentSongTitle][1], 0).match(/\d+/g).join(', ')}, 0.6)`;
-        songItem.style.opacity = '0.8';
-        songItem.style.transition = 'background-color 0.3s ease, box-shadow 0.3s ease';
-
-        songItem.addEventListener('mouseover', () => {
-            songItem.style.backgroundColor = darkenRGB(playlist[currentSongTitle][1],40);
-        });
-
-        songItem.addEventListener('mouseout', () => {
-            songItem.style.background = `rgba(${darkenRGB(playlist[currentSongTitle][1], 0).match(/\d+/g).join(', ')}, 0.6)`;
-            songItem.style.transition="0.1s";
-        });
-    });
-
-    const selectedSongArtist = document.getElementById('selected-song-artist');
-    selectedSongArtist.style.color = `${lightenRGB(playlist[currentSongTitle][1],80)}`;
-
-    //document.body.style.background = `radial-gradient(circle at 27% 25%, ${darkenRGB(playlist[currentSongTitle][1], 30)} 40%, ${darkenRGB(playlist[currentSongTitle][1], 30)} 30%, ${darkenRGB(playlist[currentSongTitle][1], 55)} 30%, ${darkenRGB(playlist[currentSongTitle][1], 30)} 80%) repeat-x`;
-
-    const containerPlaylist = document.getElementById('container-playlist');
-    containerPlaylist.style.boxShadow = `-5px 5px 20px ${darkenRGB(playlist[currentSongTitle][1],40)}`;
-    containerPlaylist.style.background = `linear-gradient(to bottom, rgba(${lightenRGB(playlist[currentSongTitle][1], 20).match(/\d+/g).join(', ')}, 0.6), rgba(${playlist[currentSongTitle][1].match(/\d+/g).join(', ')}, 0.6))`;
-    containerPlaylist.style.borderImage = `linear-gradient(to bottom, ${lightenRGB(playlist[currentSongTitle][1], 20)}, ${playlist[currentSongTitle][1]})`;
-    containerPlaylist.style.backgroundClip = 'border-box'; // Clips the gradient to the border area
-    containerPlaylist.style.padding = '12px'; // Ensure there is space for the border
-    containerPlaylist.style.border = '1px solid transparent'; // Creates an invisible border for the effect
-    const gradientBorder = `linear-gradient(to bottom, ${lightenRGB(playlist[currentSongTitle][1], 20)}, ${playlist[currentSongTitle][1]})`;
-    containerPlaylist.style.boxShadow = `0 0 0 10px ${gradientBorder}`;
-
-    filterButtonsHolder.style.boxShadow = `-5px 5px 20px ${darkenRGB(playlist[currentSongTitle][1],40)}`;
-    filterButtonsHolder.style.background = `linear-gradient(to bottom, rgba(${lightenRGB(playlist[currentSongTitle][1], 20).match(/\d+/g).join(', ')}, 0.6), rgba(${playlist[currentSongTitle][1].match(/\d+/g).join(', ')}, 0.6))`;
-    filterButtonsHolder.style.borderImage = `linear-gradient(to bottom, ${lightenRGB(playlist[currentSongTitle][1], 20)}, ${playlist[currentSongTitle][1]})`;
-    filterButtonsHolder.style.backgroundClip = 'border-box'; // Clips the gradient to the border area
-    filterButtonsHolder.style.padding = '12px'; // Ensure there is space for the border
-    filterButtonsHolder.style.border = '1px solid transparent'; // Creates an invisible border for the effect
-    filterButtonsHolder.style.boxShadow = `0 0 0 10px ${filtergradientBorder}`;
-
-    const randSongButton = document.getElementById('randomSongButton');
-    randSongButton.style.boxShadow= `-5px 5px 5px ${darkenRGB(playlist[currentSongTitle][1],30)}`;
-    randSongButton.style.backgroundColor = lightenRGB(playlist[currentSongTitle][1],20);
-    randSongButton.style.color = darkenRGB(playlist[currentSongTitle][1],60);
-
-    const playStopButton = document.getElementById('playPauseButton');
-    playStopButton.style.color = darkenRGB(playlist[currentSongTitle][1],60);
-    playStopButton.style.boxShadow= `-5px 5px 5px ${darkenRGB(playlist[currentSongTitle][1],30)}`;
-    playStopButton.style.backgroundColor = lightenRGB(playlist[currentSongTitle][1],10);
-
-    const repeatButton = document.getElementById('repeatButtonIcon');
-    repeatButton.style.boxShadow= `-5px 5px 5px ${darkenRGB(playlist[currentSongTitle][1],30)}`;
-    repeatButton.style.backgroundColor = lightenRGB(playlist[currentSongTitle][1],20);
-    repeatButton.style.color = darkenRGB(playlist[currentSongTitle][1],60); 
-
-    // SEEKBAR
-    seekbar.style.boxShadow = `-5px 5px 10px ${darkenRGB(playlist[currentSongTitle][1],40)} inset`;
-    seekbar.style.borderColor =  lightenRGB(playlist[currentSongTitle][1],10);
-    seekbar.style.background = `linear-gradient(to right, lightenRGB(playlist[currentSongTitle][1],40) 0%, black var(--seek-value), transparent var(--seek-value), black 100%)`;
-    const style = document.createElement('style');
-    style.innerHTML = `#seekbar::-webkit-slider-thumb {
-    box-shadow: 0 0 0px 7px ${darkenRGB(playlist[currentSongTitle][1],40)};}
-    #seekbar::-webkit-slider-thumb:hover{box-shadow: 0 0 0px 7px ${darkenRGB(playlist[currentSongTitle][1],30)};
-    }`;
-    document.head.appendChild(style);
-
-    const time = document.getElementById('time');
-    time.style.color = `${lightenRGB(playlist[currentSongTitle][1],20)}`;
-    time.style.opacity = `0.6`;
-    time.style.textShadow = `-5px 5px 20px ${darkenRGB(playlist[currentSongTitle][1],90)}`;
-
-    const playlistItems = document.querySelectorAll('.song-item');
-    playlistItems.forEach((item) => {
-        item.classList.remove('playing'); // Remove bold styling class
-        item.textContent = item.textContent.replace(" ←", ""); // Remove previous indicator
-    });
-
-    console.log("currsongindex is: ",currentSongIndex);
-}
-
-// checkboxes for filtering
 document.querySelectorAll('.filter-button input').forEach(input => {
     
     input.addEventListener('change', populatePlaylist);
 });
 
-populatePlaylist();
 
 
-function addOpacity(rgbString, opac) {
-    if (typeof rgbString !== 'string' || rgbString.trim() === '') {
-        console.error("Invalid input: rgbString should be a non-empty string.");
-        return;
-    }
-
-    if (typeof opac !== 'number' || opac < 0 || opac > 1) {
-        console.error("Invalid opacity value: Opacity must be a number between 0 and 1.");
-        return;
-    }
-
-    const regex = /^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/;
-    const match = rgbString.match(regex);
-    if (match) {
-        let r = parseInt(match[1]);
-        let g = parseInt(match[2]);
-        let b = parseInt(match[3]);
-
-        return `rgba(${r}, ${g}, ${b}, ${opac})`;
-    } else {
-        console.error("Invalid rgb format. Ensure the format is rgb(r, g, b).");
-        return;
-    }
-}
-
-function darkenRGB(rgbString, percentage) {
-    rgbString = rgbString.replace(/\s+/g, ',');
-
-    const regex = /^rgb\((\d+),(\d+),(\d+)\)$/;
-    const match = rgbString.match(regex);
-    
-    if (match) {
-        let r = parseInt(match[1]);
-        let g = parseInt(match[2]);
-        let b = parseInt(match[3]);
-        
-        const darken = 1 - (percentage / 100);
-
-        r = Math.max(0, r * darken);
-        g = Math.max(0, g * darken);
-        b = Math.max(0, b * darken);
-        return `rgb(${Math.round(r)}, ${Math.round(g)}, ${Math.round(b)})`;
-    }
-}
-
-function lightenRGB(rgbString, percentage) {
-    rgbString = rgbString.replace(/\s+/g, ',');
-    const regex = /^rgb\((\d+),(\d+),(\d+)\)$/;
-    const match = rgbString.match(regex);
-    if (match) {
-        let r = parseInt(match[1]);
-        let g = parseInt(match[2]);
-        let b = parseInt(match[3]);
-
-        const lighten = percentage / 100;
-
-        r = Math.min(255, r + (255 - r) * lighten);
-        g = Math.min(255, g + (255 - g) * lighten);
-        b = Math.min(255, b + (255 - b) * lighten);
-        
-        return `rgb(${Math.round(r)}, ${Math.round(g)}, ${Math.round(b)})`;
-    } else {
-        throw new Error("Invalid RGB string format");
-    }
-}
 
 
-const keys = Object.keys(playlist);
-const values = Object.values(playlist);
 
+// ========== EVENT LISTENERS ==========
 
-function displaySongInfo(filename) {
-    const songContainer = document.getElementById("song-info"); // Ensure you have an element with id="song-info"
-
-    // Find the key in the playlist where the first element matches the filename
-    for (const title in playlist) {
-        if (playlist[title][0] === filename) {
-            // Split the key into song name and artist
-            const [songName, songArtist] = title.split(" - ");
-
-            document.getElementById('selected-song').innerText = `${songName}`;
-            document.getElementById('selected-song-artist').innerText=  `${songArtist}`;
-            break;
-        }
-    }
-}
-
-function toRGBA(rgbColor, opacity) {
-    return rgbColor.replace('rgb', 'rgba').replace(')', `, ${opacity})`);
-}
-
-// Function to play the song
-function playSong(title) {
-    updateMediaSession();
-    console.log(title);
-    const filename = playlist[title][0];
-    
-    
-    audioSource.src = `music/${filename}.mp3`; 
-    albumArt.src = `albumArt/${filename}.png`;
-    displaySongInfo(filename);
-
-    audioPlayer.load();  // Load the new song
-    audioPlayer.play();  // Play the new song
-
-    // Optionally update any other UI elements if needed
-    console.log(`Playing: ${title} (Song Index: ${currentSongIndex})`);
-    populatePlaylist(title);
-
-    songSelect.value = title;
-    updatePlayPauseButton();  // Update the play/pause button state
-
-    const songTitles = Object.keys(playlist);
-    const currentSongTitle = songTitles[currentSongIndex];
-
-    const songItems = document.querySelectorAll('.song-item');
-
-    songItems.forEach(songItem => {
-    
-    // Set the initial background color and box shadow
-        songItem.style.backgroundColor = darkenRGB(playlist[currentSongTitle][1],30);
-        songItem.style.boxShadow = `-5px 5px 20px ${darkenRGB(playlist[currentSongTitle][1],20)} inset`;
-        songItem.style.opacity = '0.9';
-        songItem.style.transition = 'background-color 0.3s ease, box-shadow 0.3s ease';
-
-    // Add hover effect to change background color
-        songItem.addEventListener('mouseover', () => {
-            songItem.style.backgroundColor = darkenRGB(playlist[currentSongTitle][1],30);
-        });
-
-        // Revert background color when mouse leaves the element
-        songItem.addEventListener('mouseout', () => {
-            songItem.style.backgroundColor = darkenRGB(playlist[currentSongTitle][1],30);
-            songItem.style.transition="0.3s";
-        });
-    });
-
-    seekbar.style.boxShadow = `-5px 5px 10px ${darkenRGB(playlist[currentSongTitle][1],40)} inset`;
-    seekbar.style.borderColor =  lightenRGB(playlist[currentSongTitle][1],10);
-    seekbar.style.background = `linear-gradient(to right, white 0%, black var(--seek-value), transparent var(--seek-value), black 100%)`;
-    const style = document.createElement('style');
-    style.innerHTML = `#seekbar::-webkit-slider-thumb {
-    box-shadow: 0 0 0px 7px ${darkenRGB(playlist[currentSongTitle][1],40)};}
-    #seekbar::-webkit-slider-thumb:hover{box-shadow: 0 0 0px 5px ${darkenRGB(playlist[currentSongTitle][1],30)};
-    }`;
-    document.head.appendChild(style);
-
-    const time = document.getElementById('time');
-    time.style.color = `${lightenRGB(playlist[currentSongTitle][1],20)}`;
-    time.style.opacity = `0.6`;
-    time.style.textShadow = `-5px 5px 20px ${darkenRGB(playlist[currentSongTitle][1],90)}`;
-
-    const playing = document.querySelector(".playing");
-    updateSongColors();
-
-
-}
-
-
-// Function to update the play/pause button based on the audio state
-function updatePlayPauseButton() {
-    const songTitles = Object.keys(playlist);
-    const currentSongTitle = songTitles[currentSongIndex];
-
-    const img = document.querySelector('.image');
-    const playStopButton = document.getElementById('playPauseButton');
-    if (audioPlayer.paused) {
-        playPauseButton.innerHTML = '<i class="fa fa-play"></i>';
-        img.style.animationPlayState = 'paused'; // Pause the animation
-        playStopButton.style.boxShadow= `-5px 5px 5px ${darkenRGB(playlist[currentSongTitle][1],30)}  `;
-    } else {
-        playPauseButton.innerHTML = '<i class="fa fa-pause"></i>'; // Set pause icon and text
-        img.style.animationPlayState = 'running'; 
-        
-    }
-}
-
-// Function to toggle play/pause when the button is clicked
-function togglePlayPause() {
+playPauseButton.addEventListener('click', () => {
     if (audioPlayer.paused) {
         audioPlayer.play();
     } else {
         audioPlayer.pause();
     }
-    updatePlayPauseButton();
-}
+    updatePlayPauseIcon();
+});
 
-// Function to play the next song in the playlist
-const repeatCheckbox = document.getElementById('repeat-button');
+audioPlayer.addEventListener('play', () => {
 
-function playNextSong() {
-    if (repeatCheckbox.checked){
-        const titles = Object.keys(playlist);
-        playSong(titles[currentSongIndex]);
-        
-    }
-    else{
-        const titles = Object.keys(playlist);
-        currentSongIndex = (currentSongIndex + 1) % titles.length;  // Increment index and wrap around if at the end
-        playSong(titles[currentSongIndex]);  // Play the next song
+    updatePlayPauseIcon();
+});
 
-    }
-    
-}
+audioPlayer.addEventListener('pause', updatePlayPauseIcon);
 
-repeatCheckbox.addEventListener("change", function(){
-    const repeatButton = document.getElementById('repeatButtonIcon');
-    const songTitles = Object.keys(playlist);
-    const currentSongTitle = songTitles[currentSongIndex];
-
-    if (repeatCheckbox.checked){
-        repeatIcon.innerHTML = '<i class="fa fa-remove"></i>';
-        repeatButton.style.boxShadow= `-5px 5px 5px ${darkenRGB(playlist[currentSongTitle][1],30)}  `;
-        console.log("repeat button is checked");
-    }
-    else{
-        repeatIcon.innerHTML = '<i class="fa fa-refresh"></i>';
-        console.log("repeat button is NOT checked");
-
+// Seekbar updates
+audioPlayer.addEventListener('timeupdate', () => {
+    if (!isNaN(audioPlayer.duration)) {
+        seekbar.value = (audioPlayer.currentTime / audioPlayer.duration) * 100;
     }
 });
 
-
-repeatIcon.addEventListener("click", () => {
-    repeatCheckbox.checked = !repeatCheckbox.checked; // Toggle checkbox state
-    repeatCheckbox.dispatchEvent(new Event("change")); // Trigger 'change' event for synchronization
-    });
-
-
-
-function getIndexPlaylist(index){
-    const keyatindex = keys[index];
-    return keyatindex;
-}
-
-
-function playRandomSong(){
-    console.log("rand button clicked");
-    const randomSongIndex = Math.floor(Math.random() * Object.keys(playlist).length);
-    console.log(randomSongIndex);
-    const randomTitle = getIndexPlaylist(randomSongIndex);
-    console.log(randomTitle);
-    currentSongIndex = randomSongIndex;
-    playSong(randomTitle);
-}
-
-randomSongButton.addEventListener('click',playRandomSong);
-
-audioPlayer.addEventListener('ended', playNextSong);
-
-// Event listener for the play/pause button
-playPauseButton.addEventListener('click', togglePlayPause);
-
-// Event listener for dropdown song change
-songSelect.addEventListener('change', function() {
-    const selectedTitle = songSelect.value;
-    currentSongIndex = Object.keys(playlist).indexOf(selectedTitle);  // Update index based on selection
-    playSong(selectedTitle);  
-    console.log("currsongindex is changed to ",currentSongIndex);
+seekbar.addEventListener('input', () => {
+    const newTime = (seekbar.value / 100) * audioPlayer.duration;
+    audioPlayer.currentTime = newTime;
 });
 
 
-populatePlaylist();
-updatePlayPauseButton();
 
+prevSongButton.addEventListener('click', () => {
+    currentSongIndex--;
+    console.log("the curr songind: ",currentSongIndex);
 
-const audio = document.getElementById("audioPlayer");
-const seekbar = document.getElementById("seekbar");
-
-// Update the progress bar as the audio plays
-audio.addEventListener("timeupdate", function() {
-    const progress = (audio.currentTime / audio.duration) * 100;
-    seekbar.value = progress;
-});
-
-seekbar.addEventListener("input", function() {
-    const seekTo = (seekbar.value / 100) * audio.duration; 
-    audio.currentTime = seekTo; 
-});
-
-function updateSeekBarBackground() {
-    const value = (seekbar.value / seekbar.max) * 100; 
-    seekbar.style.setProperty("--seek-value", `${value}%`);
-    setProgress(value);
-}
-    
-audio.addEventListener("timeupdate", function () {
-    const progress = (audio.currentTime / audio.duration) * 100; // Calculate percentage
-    seekbar.value = progress; // Update the seekbar position
-    updateSeekBarBackground();
-});
-    
-seekbar.addEventListener("input", function () {
-        const time = (seekbar.value / 100) * audio.duration; // Map slider value to audio time
-        audio.currentTime = time;
-        updateSeekBarBackground();
-});
-
-let progressCircle = document.querySelector(".progress");
-let radius = progressCircle.r.baseVal.value;
-let circumference = (radius * 2 * Math.PI)/2;
-progressCircle.style.strokeDasharray = circumference;
-
-    
-function setProgress(percent) {
-    progressCircle.style.strokeDashoffset = circumference+ (percent / 100) * circumference; 
-}
-        
-changeProgress();
-function changeProgress() {
-    let progresstime = 100;
-    setProgress(progresstime);
-    
-    for (let i = 100; i >= 0; i--) {
-        setTimeout(() => {
-            progresstime = i;
-            setProgress(progresstime);
-        }, i * 10); // Each increment happens every 1 second
+    // Loop to last song if at the beginning
+    if (currentSongIndex < 0) {
+        currentSongIndex = Object.keys(playlist).length - 1;
     }
-}
 
-audioPlayer.addEventListener('play', updateMediaSession);
-audioPlayer.addEventListener('pause', updateMediaSession);
+    playSong(currentSongIndex);
+});
+
+nextSongButton.addEventListener('click', () => {
+    currentSongIndex++;
+    if (currentSongIndex >= Object.keys(playlist).length) {
+        currentSongIndex = 0; // Loop to first song if at the end
+    }
+    playSong(currentSongIndex);
+});
+
+
+const repeatButton = document.getElementById('repeatButtonIcon');
+
+// Ensure the initial icon reflects the checkbox state
+repeatIcon.innerHTML = repeatCheckbox.checked 
+    ? '<i class="fa fa-remove"></i>' 
+    : '<i class="fa fa-refresh"></i>';
+
+// Toggle the repeat mode when the button is clicked
+repeatButton.addEventListener('click', () => {
+    // Toggle the checkbox state manually
+    repeatCheckbox.checked = !repeatCheckbox.checked;
+
+    // Change the icon based on the new state
+    if (repeatCheckbox.checked) {
+        repeatIcon.innerHTML = '<i class="fa fa-remove"></i>'; // Icon for repeat ON
+        console.log("🔁 Repeat mode is ON");
+    } else {
+        repeatIcon.innerHTML = '<i class="fa fa-refresh"></i>'; // Icon for repeat OFF
+        console.log("🔁 Repeat mode is OFF");
+    }
+});
+
+audioPlayer.addEventListener('ended', () => {
+    console.log("Song ended. Repeat mode: ", repeatCheckbox.checked); // Debug log to check if repeat is enabled
+    if (repeatCheckbox.checked) {
+        console.log("Repeating current song...");
+
+        playSong(currentSongIndex); // Replay current song
+    } else {
+        console.log("Moving to next song...");
+        currentSongIndex++;
+        if (currentSongIndex >= Object.keys(playlist).length) {
+            currentSongIndex = 0; // Wrap around to the first song
+        }
+        playSong(currentSongIndex); // Play next
+    }
+});
+
+randomSongButton.addEventListener('click', () => {
+    // Generate a random index within the bounds of the playlist length
+    currentSongIndex = Math.floor(Math.random() * Object.keys(playlist).length);
+
+    console.log("Playing random song at index:", currentSongIndex); // Debugging log
+
+    // Play the song at the random index
+    playSong(currentSongIndex);
+});
+
+
+
+
+
+
+// Populate playlist on page load
+window.onload = populatePlaylist;
+
+
+// change playsong function
