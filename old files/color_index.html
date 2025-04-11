@@ -1,1 +1,242 @@
 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Music Player</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Dots:wght@400..700&family=Questrial&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- font for filter button -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- lato -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="site-body" id="siteBody">
+      <div class="container">
+        <svg width="250" height="250">
+          <circle
+            r="115"
+            cx="125"
+            cy="125"
+            class="track"
+            id="svgTrack"
+          ></circle>
+          <circle
+            r="115"
+            cx="125"
+            cy="125"
+            class="progress"
+            id="svgProgress"
+          ></circle>
+        </svg>
+
+        <div class="black-circ"></div>
+        <img
+          class="image"
+          draggable="false"
+          id="albumArt"
+          src="albumArt/Siren_Taeyeon.png"
+          width="200"
+          height="200"
+        />
+        <canvas id="canvas" style="display: none"></canvas>
+        <div id="dominant-color"></div>
+
+        
+      
+
+        <p class="selected-song" id="selected-song">SELECT FROM 226 SONGS</p>
+        <p class="selected-song-artist" id="selected-song-artist"></p>
+        <div id="song-info"></div>
+
+        <div class="dropdown" style="display: none">
+          <select id="songSelect" name="songSelect"></select>
+        </div>
+
+        <!-- seek bar here -->
+        <input
+          type="range"
+          id="seekbar"
+          value="0"
+          step="0.1"
+          min="0"
+          max="100"
+          style="width: 100%"
+        />
+
+        <div class="button-container">
+          <label for="random-button">
+            <button class="container-button" id="randomSongButton">
+              <i class="fa fa-random"></i>
+            </button>
+          </label>
+
+          <button class="container-button" id="playPauseButton">
+            <i class="fa fa-play"></i>
+          </button>
+          <audio id="audioPlayer">
+            <source
+              id="audioSource"
+              src="music/Siren_Taeyeon.mp3"
+              type="audio/mp3"
+            />
+            Your browser does not support the audio element.
+          </audio>
+
+          <input
+            style="display: none"
+            type="checkbox"
+            label="repeat"
+            id="repeat-button"
+          />
+          <label for="repeat-button">
+            <button
+              class="container-button"
+              id="repeatButtonIcon"
+              type="button"
+            >
+              <i class="fa fa-refresh"></i>
+            </button>
+          </label>
+        </div>
+      </div>
+
+      <div class="rightSiteBody">
+        <div class="filterButtonHolder" id="filterButtonsHolder">
+
+          <label class="filter-button" id="filterButton">
+            <input type="checkbox" id="favorites-filter" />
+            <span>FAVORITES</span>
+          </label>
+
+
+          <label class="filter-button" id="filterButton">
+            <input type="checkbox" id="epic-filter" />
+            <span>EPIC</span>
+          </label>
+
+          <label class="filter-button">
+            <input type="checkbox" id="instrumental-filter" />
+            <span>INSTRUMENT</span>
+          </label>
+
+          <label class="filter-button">
+            <input type="checkbox" id="remix-filter" />
+            <span>REMIX</span>
+          </label>
+
+          <label class="filter-button">
+            <input type="checkbox" id="samuelkim-filter" />
+            <span>SAMUEL KIM</span>
+          </label>
+
+          <label class="filter-button">
+            <input type="checkbox" id="chinese-filter" />
+            <span>CHN</span>
+          </label>
+
+          <label class="filter-button">
+            <input type="checkbox" id="theme-filter" />
+            <span>THEME/OST</span>
+          </label>
+
+          <label class="filter-button">
+            <input type="checkbox" id="canto-filter" />
+            <span>CANTO</span>
+          </label>
+
+          <label class="filter-button">
+            <input type="checkbox" id="korean-filter" />
+            <span>KOREAN</span>
+          </label>
+
+          <label class="filter-button">
+            <input type="checkbox" id="ateez-filter" />
+            <span>ATEEZ</span>
+          </label>
+
+          <label class="filter-button">
+            <input type="checkbox" id="jpn-filter" />
+            <span>JPN</span>
+          </label>
+
+          <label class="filter-button">
+            <input type="checkbox" id="english-filter" />
+            <span>ENG</span>
+          </label>
+
+          <label class="filter-button">
+            <input type="checkbox" id="pop-filter" />
+            <span>POP</span>
+          </label>
+
+          <label class="filter-button">
+            <input type="checkbox" id="geodash-filter" />
+            <span>GEO DASH</span>
+          </label>
+
+          <label class="filter-button">
+            <input type="checkbox" id="russian-filter" />
+            <span>RUSSIAN</span>
+          </label>
+
+          <label class="filter-button">
+            <input type="checkbox" id="swedish-filter" />
+            <span>SWEDISH</span>
+          </label>
+
+          <label class="filter-button">
+            <input type="checkbox" id="tsfh-filter" />
+            <span>TSFH</span>
+          </label>
+
+          <label class="filter-button">
+            <input type="checkbox" id="anime-filter" />
+            <span>ANIME</span>
+          </label>
+
+          <label class="filter-button">
+            <input type="checkbox" id="filipino-filter" />
+            <span>FILIPINO</span>
+          </label>
+        </div>
+
+        <div id="container-playlist" class="container-playlist"></div>
+      </div>
+
+      <p id="time"></p>
+    </div>
+    <script src="script.js"></script>
+    <script src="time.js"></script>
+
+    <script></script>
+  </body>
+</html>
