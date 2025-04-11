@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="favicon2.ico" />
     <link rel="stylesheet" href="style.css" />
 
     <title>Music Player</title>
@@ -24,6 +24,12 @@
       rel="stylesheet"
     />
 
+    <!-- Arimo font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
+
     <!-- font for filter button -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,206 +42,191 @@
       href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
       rel="stylesheet"
     />
+
+
+    <!-- ROBOTO -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+
   </head>
+
+
+  
   <body>
-    <div class="site-body" id="siteBody">
-      <div class="container">
-        <svg width="250" height="250">
-          <circle
-            r="115"
-            cx="125"
-            cy="125"
-            class="track"
-            id="svgTrack"
-          ></circle>
-          <circle
-            r="115"
-            cx="125"
-            cy="125"
-            class="progress"
-            id="svgProgress"
-          ></circle>
-        </svg>
+    <div class="sitebody">
+    
+      <div class="container" id="container">
 
-        <div class="black-circ"></div>
-        <img
-          class="image"
-          draggable="false"
-          id="albumArt"
-          src="albumArt/Siren_Taeyeon.png"
-          width="200"
-          height="200"
-        />
-        <canvas id="canvas" style="display: none"></canvas>
-        <div id="dominant-color"></div>
-
+        <div id="topbrowserbar">
+          <div id="browserdot1"></div>
+          <div id="browserdot2"></div>
+          <div id="browserdot3"></div>
+        </div>
         
-      
+        <img class="image" draggable="false" id="albumArt" src="albumArt/Siren_Taeyeon.png"/> 
+        <p class="selected-song" id="selected-song">Select A Song</p> 
+        <p class="selected-song-artist" id="selected-song-artist">Artist</p>
 
-        <p class="selected-song" id="selected-song">SELECT FROM 226 SONGS</p>
-        <p class="selected-song-artist" id="selected-song-artist"></p>
+        <p class="light-dark-toggle" id="light-dark-toggle"><i class="fa fa-sun-o" ></i></p>
+
+        <p class="audio-duration" id="audio-duration">0:00</p>
         <div id="song-info"></div>
-
         <div class="dropdown" style="display: none">
           <select id="songSelect" name="songSelect"></select>
         </div>
-
-        <!-- seek bar here -->
-        <input
-          type="range"
-          id="seekbar"
-          value="0"
-          step="0.1"
-          min="0"
-          max="100"
-          style="width: 100%"
-        />
+        <input type="range" id="seekbar" value="0" step="0.1" min="0" max="100" style="width: 100%"/>
 
         <div class="button-container">
           <label for="random-button">
-            <button class="container-button" id="randomSongButton">
-              <i class="fa fa-random"></i>
-            </button>
+            <button class="container-button" id="randomSongButton"> <i class="fa fa-random"></i> </button>
           </label>
-
-          <button class="container-button" id="playPauseButton">
-            <i class="fa fa-play"></i>
-          </button>
+          <button class="container-button" id="prevSongButton"> <i class="fa fa-backward"></i> </button>
+          <button class="container-button" id="playPauseButton"> <i class="fa fa-play"></i> </button>
+          <button class="container-button" id="nextSongButton"> <i class="fa fa-forward"></i> </button>
           <audio id="audioPlayer">
-            <source
-              id="audioSource"
-              src="music/Siren_Taeyeon.mp3"
-              type="audio/mp3"
-            />
-            Your browser does not support the audio element.
+            <source id="audioSource" src="music/Siren_Taeyeon.mp3" type="audio/mp3"/>
           </audio>
-
-          <input
-            style="display: none"
-            type="checkbox"
-            label="repeat"
-            id="repeat-button"
-          />
+          <input style="display: none" type="checkbox" label="repeat" id="repeat-button" />
           <label for="repeat-button">
-            <button
-              class="container-button"
-              id="repeatButtonIcon"
-              type="button"
-            >
-              <i class="fa fa-refresh"></i>
-            </button>
+            <button class="container-button" id="repeatButtonIcon" type="button" > <i class="fa fa-refresh"></i> </button>
           </label>
         </div>
+
       </div>
 
-      <div class="rightSiteBody">
+  
+
+      <div id="topbrowserbar-playlist">
+        <div id="browserdot1-playlist"></div>
+        <div id="browserdot2-playlist"></div>
+        <div id="browserdot3-playlist"></div>
+      </div>
+
+     
+
+      <div class="filter-container">
+        <p></p>
         <div class="filterButtonHolder" id="filterButtonsHolder">
 
+          <label class="filter-button">
+            <input type="checkbox" id="recents-filter" />
+            <span> <i class="fa fa-clock-o" style="color: #0078ff;"></i>&nbsp;  Recent</span>
+          </label>
+
+          <!-- 
+
+          
           <label class="filter-button" id="filterButton">
             <input type="checkbox" id="favorites-filter" />
             <span>FAVORITES</span>
           </label>
-
+        -->
 
           <label class="filter-button" id="filterButton">
-            <input type="checkbox" id="epic-filter" />
-            <span>EPIC</span>
-          </label>
-
+              <input type="checkbox" id="epic-filter" />
+              <span> <i class="fa fa-music" style="color: #0078ff;"></i>  &nbsp; Epic</span>
+            </label>
           <label class="filter-button">
-            <input type="checkbox" id="instrumental-filter" />
-            <span>INSTRUMENT</span>
-          </label>
-
+              <input type="checkbox" id="instrumental-filter" />
+              <span><i class="fa fa-music" style="color: #0078ff;"></i> &nbsp;  Instru</span>
+            </label>
           <label class="filter-button">
-            <input type="checkbox" id="remix-filter" />
-            <span>REMIX</span>
+              <input type="checkbox" id="remix-filter" />
+              <span><i class="fa fa-music" style="color: #0078ff;"></i> &nbsp;  Remix</span>
           </label>
-
+            <label class="filter-button">
+              <input type="checkbox" id="samuelkim-filter" />
+              <span><i class="fa fa-music" style="color: #0078ff;"></i>  &nbsp; Sam Kim</span>
+          </label>
           <label class="filter-button">
-            <input type="checkbox" id="samuelkim-filter" />
-            <span>SAMUEL KIM</span>
+              <input type="checkbox" id="chinese-filter" />
+              <span><i class="fa fa-music" style="color: #0078ff;"></i>  &nbsp; Chinese</span>
           </label>
-
-          <label class="filter-button">
-            <input type="checkbox" id="chinese-filter" />
-            <span>CHN</span>
-          </label>
-
           <label class="filter-button">
             <input type="checkbox" id="theme-filter" />
-            <span>THEME/OST</span>
+            <span><i class="fa fa-music" style="color: #0078ff;"></i> &nbsp;  Themes</span>
           </label>
-
-          <label class="filter-button">
+          <label class="filter-button"> 
             <input type="checkbox" id="canto-filter" />
-            <span>CANTO</span>
+            <span><i class="fa fa-music" style="color: #0078ff;"></i> &nbsp;  Canto</span>
           </label>
-
           <label class="filter-button">
             <input type="checkbox" id="korean-filter" />
-            <span>KOREAN</span>
+            <span><i class="fa fa-music" style="color: #0078ff;"></i> &nbsp;  Korean</span>
           </label>
-
           <label class="filter-button">
             <input type="checkbox" id="ateez-filter" />
-            <span>ATEEZ</span>
+            <span><i class="fa fa-music" style="color: #0078ff;"></i>  &nbsp; ATEEZ</span>
           </label>
-
           <label class="filter-button">
-            <input type="checkbox" id="jpn-filter" />
-            <span>JPN</span>
+              <input type="checkbox" id="jpn-filter" />
+              <span><i class="fa fa-music" style="color: #0078ff;"></i> &nbsp;  Jpn</span>
           </label>
-
           <label class="filter-button">
-            <input type="checkbox" id="english-filter" />
-            <span>ENG</span>
+              <input type="checkbox" id="english-filter" />
+              <span><i class="fa fa-music" style="color: #0078ff;"></i>  &nbsp; English</span>
           </label>
-
           <label class="filter-button">
-            <input type="checkbox" id="pop-filter" />
-            <span>POP</span>
+              <input type="checkbox" id="pop-filter" />
+              <span><i class="fa fa-music" style="color: #0078ff;"></i>  &nbsp; Pop</span>
           </label>
-
           <label class="filter-button">
-            <input type="checkbox" id="geodash-filter" />
-            <span>GEO DASH</span>
+              <input type="checkbox" id="geodash-filter" />
+              <span><i class="fa fa-music" style="color: #0078ff;"></i>  &nbsp; Geodash</span>
           </label>
-
           <label class="filter-button">
-            <input type="checkbox" id="russian-filter" />
-            <span>RUSSIAN</span>
-          </label>
+              <input type="checkbox" id="russian-filter" />
+              <span><i class="fa fa-music" style="color: #0078ff;"></i> &nbsp;  Russian</span>
+            </label>
 
-          <label class="filter-button">
-            <input type="checkbox" id="swedish-filter" />
-            <span>SWEDISH</span>
-          </label>
+            <label class="filter-button">
+              <input type="checkbox" id="swedish-filter" />
+              <span><i class="fa fa-music" style="color: #0078ff;"></i> &nbsp;  Swedish</span>
+            </label>
 
-          <label class="filter-button">
-            <input type="checkbox" id="tsfh-filter" />
-            <span>TSFH</span>
-          </label>
+            <label class="filter-button">
+              <input type="checkbox" id="tsfh-filter" />
+              <span><i class="fa fa-music" style="color: #0078ff;"></i>  &nbsp; TSFH</span>
+            </label>
 
-          <label class="filter-button">
-            <input type="checkbox" id="anime-filter" />
-            <span>ANIME</span>
-          </label>
+            <label class="filter-button">
+              <input type="checkbox" id="anime-filter" />
+              <span><i class="fa fa-music" style="color: #0078ff;"></i> &nbsp;  Anime</span>
+            </label>
 
-          <label class="filter-button">
-            <input type="checkbox" id="filipino-filter" />
-            <span>FILIPINO</span>
-          </label>
-        </div>
+            <label class="filter-button">
+              <input type="checkbox" id="filipino-filter" />
+              <span><i class="fa fa-music" style="color: #0078ff;"></i> &nbsp;  Filipino</span>
+            </label>
 
-        <div id="container-playlist" class="container-playlist"></div>
+
+     
+
+
+          </div> 
+
       </div>
+      <div id="topbrowserbar-right">
 
-      <p id="time"></p>
+      </div>
+      
+        <div class="container-playlist" id="container-playlist"> 
+          
+
+        </div>
+      
+
     </div>
-    <script src="script.js"></script>
-    <script src="time.js"></script>
 
-    <script></script>
+
+    <!--  <p id="time"></p>  -->
+      
+     <script src="script.js"></script>
+     <script src="mode-toggle.js"></script>
+    
+
   </body>
+  
 </html>
