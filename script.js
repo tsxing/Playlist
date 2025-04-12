@@ -280,11 +280,12 @@ const playlist = {
     "Egotistic - Mamamoo": ["Egotistic_Mamamoo","rgb(97 182 213)",["Korean","Pop"]],
     "No Celestial - LE SSERAFIM": ["No_Celestial","rgb(5 77 132)",["Korean","Pop"]],
     "One Shot - B.A.P.": ["BAP_One_Shot","rgb(49 33 33)",["Korean","Pop"]],
-    "Time to Love - T-ARA & SUPERNOVA": ["Time_to_Love_TARA_SUPERNOVA","rgb(88 82 202)",["Korean","Pop"]]
+    "Time to Love - T-ARA & SUPERNOVA": ["Time_to_Love_TARA_SUPERNOVA","rgb(88 82 202)",["Korean","Pop"]],
+    "Wild - 9Muses": ["Wild_9Muses","rgb(19 89 174)",["Korean","Pop"]]
 
 
 
-    //Time_to_Love_TARA_SUPERNOVA
+    //Wild_9Muses
 
 
 };
