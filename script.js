@@ -82,7 +82,6 @@ const playlist = {
     "主題曲 - 大俠霍元甲": ["主題曲_大俠霍元甲","rgb(127 111 146)",["Canto"]],
     "红日 - 李克勤": ["红日_李克勤","rgb(110 203 241)",["Canto","Pop"]],
     "刀劍如夢 - 周華健": ["刀劍如夢_周華健","rgb(157 188 235)",["Chinese"]],
-    "神话情话 - 周华健, 齐豫 ": ["神话情话_周华健_齐豫 ","rgb(184 171 222)",["Canto","Pop"]],
     "诉衷情 - 伪装者": ["诉衷情_伪装者","rgb(151 114 80)",["Chinese","Theme/OST"]],
     "等待 - 韩磊": ["等待_韩磊","rgb(229 131 76)",["Chinese","Theme/OST"]],
     "海闊天空 - Beyond": ["海闊天空_Beyond","rgb(181 201 49)",["Canto","Pop"]],
@@ -281,11 +280,19 @@ const playlist = {
     "No Celestial - LE SSERAFIM": ["No_Celestial","rgb(5 77 132)",["Korean","Pop"]],
     "One Shot - B.A.P.": ["BAP_One_Shot","rgb(49 33 33)",["Korean","Pop"]],
     "Time to Love - T-ARA & SUPERNOVA": ["Time_to_Love_TARA_SUPERNOVA","rgb(88 82 202)",["Korean","Pop"]],
-    "Wild - 9Muses": ["Wild_9Muses","rgb(19 89 174)",["Korean","Pop"]]
+    "Wild - 9Muses": ["Wild_9Muses","rgb(19 89 174)",["Korean","Pop"]],
+    "Dream of girls - UNIVERSE TICKET": ["Dream_of_girls_UNIVERSE_TICKET","rgb(30 104 242)",["Korean","Pop"]],
+    "Pain the love of heart - SPEED": ["Pain_the_love_of_heart_SPEED","rgb(21 39 36)",["Korean","Pop"]],
+    "FACE - NU'EST": ["FACE_NUEST","rgb(1 95 220)",["Korean","Pop"]],
+    "Ma Boo - T-ARA": ["Ma_Boo_TARA","rgb(70 195 243)",["Korean","Pop"]],
+    "INSANE - BTOB": ["INSANE_BTOB","rgb(2 115 224)",["Korean","Pop"]],
+    "Making A Lover - SS501": ["Making_A_Lover_SS501","rgb(74 156 116)",["Korean","Pop","Theme/OST"]],
+    "News - 9MUSES": ["News_9MUSES","rgb(2 123 224)",["Korean","Pop"]]
 
 
 
-    //Wild_9Muses
+
+    //News_9MUSES
 
 
 };
@@ -576,7 +583,7 @@ document.querySelectorAll('.filter-button input').forEach(input => {
 
 
 
-
+  
 
 
 // ========== EVENT LISTENERS ==========
@@ -605,6 +612,7 @@ audioPlayer.addEventListener('timeupdate', () => {
 });
 
 seekbar.addEventListener('input', () => {
+    console.log("repeat mode:",repeatCheckbox.checked);
     const newTime = (seekbar.value / 100) * audioPlayer.duration;
     audioPlayer.currentTime = newTime;
 });
@@ -643,6 +651,8 @@ repeatIcon.innerHTML = repeatCheckbox.checked
 repeatButton.addEventListener('click', () => {
     // Toggle the checkbox state manually
     repeatCheckbox.checked = !repeatCheckbox.checked;
+    console.log("Repeat checkbox state after toggle:", repeatCheckbox.checked);
+
 
     // Change the icon based on the new state
     if (repeatCheckbox.checked) {
@@ -655,7 +665,7 @@ repeatButton.addEventListener('click', () => {
 });
 
 audioPlayer.addEventListener('ended', () => {
-    console.log("Song ended. Repeat mode: ", repeatCheckbox.checked); // Debug log to check if repeat is enabled
+    console.log("Song ended. Repeat mode: ", repeatCheckbox.checked); 
     if (repeatCheckbox.checked) {
         console.log("Repeating current song...");
 
