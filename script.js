@@ -280,19 +280,17 @@ const playlist = {
     "No Celestial - LE SSERAFIM": ["No_Celestial","rgb(5 77 132)",["Korean","Pop"]],
     "One Shot - B.A.P.": ["BAP_One_Shot","rgb(49 33 33)",["Korean","Pop"]],
     "Time to Love - T-ARA & SUPERNOVA": ["Time_to_Love_TARA_SUPERNOVA","rgb(88 82 202)",["Korean","Pop"]],
-    "Wild - 9Muses": ["Wild_9Muses","rgb(19 89 174)",["Korean","Pop"]],
+    "FACE - NU'EST": ["FACE_NUEST","rgb(1 95 220)",["Korean","Pop"]],
     "Dream of girls - UNIVERSE TICKET": ["Dream_of_girls_UNIVERSE_TICKET","rgb(30 104 242)",["Korean","Pop"]],
     "Pain the love of heart - SPEED": ["Pain_the_love_of_heart_SPEED","rgb(21 39 36)",["Korean","Pop"]],
-    "FACE - NU'EST": ["FACE_NUEST","rgb(1 95 220)",["Korean","Pop"]],
     "Ma Boo - T-ARA": ["Ma_Boo_TARA","rgb(70 195 243)",["Korean","Pop"]],
+    "Wild - 9Muses": ["Wild_9Muses","rgb(19 89 174)",["Korean","Pop"]],
     "INSANE - BTOB": ["INSANE_BTOB","rgb(2 115 224)",["Korean","Pop"]],
     "Making A Lover - SS501": ["Making_A_Lover_SS501","rgb(74 156 116)",["Korean","Pop","Theme/OST"]],
-    "News - 9MUSES": ["News_9MUSES","rgb(2 123 224)",["Korean","Pop"]]
+    "News - 9MUSES": ["News_9MUSES","rgb(2 123 224)",["Korean","Pop"]],
+    "Wake Me Up - BAP": ["Wake_Me_Up_BAP","rgb(254 161 255)",["Korean","Pop"]]
 
-
-
-
-    //News_9MUSES
+    //Wake_Me_Up_BAP
 
 
 };
