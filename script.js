@@ -286,11 +286,15 @@ const playlist = {
     "Ma Boo - T-ARA": ["Ma_Boo_TARA","rgb(70 195 243)",["Korean","Pop"]],
     "Wild - 9Muses": ["Wild_9Muses","rgb(19 89 174)",["Korean","Pop"]],
     "INSANE - BTOB": ["INSANE_BTOB","rgb(2 115 224)",["Korean","Pop"]],
+    "That's My Fault - SPEED": ["Thats_My_Fault_SPEED","rgb(11 115 200)",["Korean","Pop"]],
+    "Love Letter - JinSoul": ["Love_Letter_JinSoul","rgb(0 144 232)",["Korean","Pop"]],
+    "Error - VIXX": ["Error_VIXX","rgb(43 73 205)",["Korean","Pop"]],
+    "On and On - VIXX": ["On_and_On_VIXX","rgb(37 122 228)",["Korean","Pop"]],
     "Making A Lover - SS501": ["Making_A_Lover_SS501","rgb(74 156 116)",["Korean","Pop","Theme/OST"]],
     "News - 9MUSES": ["News_9MUSES","rgb(2 123 224)",["Korean","Pop"]],
     "Wake Me Up - BAP": ["Wake_Me_Up_BAP","rgb(254 161 255)",["Korean","Pop"]]
 
-    //Wake_Me_Up_BAP
+    //On_and_On_VIXX
 
 
 };
