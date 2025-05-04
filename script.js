@@ -291,10 +291,12 @@ const playlist = {
     "Error - VIXX": ["Error_VIXX","rgb(43 73 205)",["Korean","Pop"]],
     "On and On - VIXX": ["On_and_On_VIXX","rgb(37 122 228)",["Korean","Pop"]],
     "Making A Lover - SS501": ["Making_A_Lover_SS501","rgb(74 156 116)",["Korean","Pop","Theme/OST"]],
+    "Good Luck - BEAST": ["Good_Luck_BEAST","rgb(70 125 177)",["Korean","Pop"]],
     "News - 9MUSES": ["News_9MUSES","rgb(2 123 224)",["Korean","Pop"]],
-    "Wake Me Up - BAP": ["Wake_Me_Up_BAP","rgb(254 161 255)",["Korean","Pop"]]
+    "Wake Me Up - BAP": ["Wake_Me_Up_BAP","rgb(254 161 255)",["Korean","Pop"]],
+    "Back - INFINITE": ["Back_INFINITE","rgb(72 189 239)",["Korean","Pop"]]
 
-    //On_and_On_VIXX
+    //Back_INFINITE
 
 
 };
