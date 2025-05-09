@@ -293,12 +293,13 @@ const playlist = {
     "Making A Lover - SS501": ["Making_A_Lover_SS501","rgb(74 156 116)",["Korean","Pop","Theme/OST"]],
     "Good Luck - BEAST": ["Good_Luck_BEAST","rgb(70 125 177)",["Korean","Pop"]],
     "News - 9MUSES": ["News_9MUSES","rgb(2 123 224)",["Korean","Pop"]],
-    "Wake Me Up - B.A.P": ["Wake_Me_Up_BAP","rgb(254 161 255)",["Korean","Pop"]],
+    "Wake Me Up - B.A.P.": ["Wake_Me_Up_BAP","rgb(254 161 255)",["Korean","Pop"]],
     "0330 - UKISS": ["0330_UKISS","rgb(90 174 255)",["Korean","Pop"]],
-    "Hands Up - B.A.P": ["HandsUp_BAP","rgb(90 174 255)",["Korean","Pop"]],
+    "Hands Up - B.A.P.": ["HandsUp_BAP","rgb(90 174 255)",["Korean","Pop"]],
+    "1004 (Angel) - B.A.P.": ["1004Angel_BAP","rgb(72 189 239)",["Korean","Pop"]],
     "Back - INFINITE": ["Back_INFINITE","rgb(72 189 239)",["Korean","Pop"]]
 
-    //HandsUp_BAP
+    //1004Angel_BAP
 
 
 };
