@@ -297,9 +297,14 @@ const playlist = {
     "0330 - UKISS": ["0330_UKISS","rgb(90 174 255)",["Korean","Pop"]],
     "Hands Up - B.A.P.": ["HandsUp_BAP","rgb(90 174 255)",["Korean","Pop"]],
     "1004 (Angel) - B.A.P.": ["1004Angel_BAP","rgb(72 189 239)",["Korean","Pop"]],
-    "Back - INFINITE": ["Back_INFINITE","rgb(72 189 239)",["Korean","Pop"]]
+    "Back - INFINITE": ["Back_INFINITE","rgb(72 189 239)",["Korean","Pop"]],
+    "I'm Sory - MYNAME": ["Im_Sory_MYNAME","rgb(72 189 239)",["Korean","Pop"]],
+    "Lucky=One - cosmosy": ["LuckyOne_cosmosy","rgb(72 189 239)",["Korean","Pop"]],
+    "Bad - INFINITE": ["Bad_INFINITE","rgb(72 189 239)",["Korean","Pop"]]
 
-    //1004Angel_BAP
+
+
+    //Bad_INFINITE
 
 
 };
