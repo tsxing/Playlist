@@ -1,6 +1,5 @@
 // Playlist dictionary
 
-
 const playlist = {
     "Booraye - Ian Clarke": ["booraye_ian_clarke","rgb(120 86 65)",["Instrumental"]],
     "After the Fall - Two Steps From Hell": ["After_the_Fall_Two_Steps_From_Hell","rgb(225 113 49)",["Instrumental","Epic","TSFH"]],
@@ -39,7 +38,7 @@ const playlist = {
     "Rada - Thomas Bergersen":["Rada","rgb(228 178 117)",["Instrumental","Epic"]],
     "Rohan Theme - Lord of the Rings (LOTR)": ["Rohan_Theme_LOTR","rgb(145 157 158)",["Instrumental","Epic", "Theme/OST"]],
     "Rohan Rohirrim Soundtrack - LOTR": ["Rohan_Rohirrim_Soundtrack_LOTR","rgb(121 126 63)",["Instrumental","Epic","Theme/OST"]],
-    "Unravel Remix - Tokyo Ghoul (Samuel Kim)": ["Unravel_Tokyo_Ghoul","rgb(227 196 237)",["Instrumental","Epic","Theme/OST", "Anime","Japanese","SamuelKim"]],
+    "Unravel Remix - Tokyo Ghoul (Samuel Kim)": ["Unravel_Tokyo_Ghoul","rgb(227 196 237)",["Instrumental","Epic","Theme/OST", "Anime","Japanese","SamuelKim","Remix"]],
     "Kai's Theme - Kung Fu Panda (Samuel Kim)": ["Kai_Theme_Kung_Fu_Panda","rgb(2 232 154)",["Instrumental","Epic","Theme/OST","SamuelKim"]],
     "Rengoku Theme - Demon Slayer (Samuel Kim)": ["Rengoku_Theme_Demon_Slayer","rgb(225 150 97)",["Instrumental","Epic","Theme/OST","Japanese","Anime","SamuelKim"]],
     "Inosuke Theme V2 - Demon Slayer (Samuel Kim)": ["Inosuke_Theme_V2_Demon_Slayer","rgb(174 139 173)",["Instrumental","Epic","Theme/OST","Japanese","Anime","SamuelKim"]],
@@ -263,7 +262,7 @@ const playlist = {
     "水手 - 鄭智化": ["水手","rgb(170 144 135)",["Chinese","Pop"]],
     "红颜旧 - 琅琊榜": ["Hong_Yan_Jiu","rgb(49 112 117)",["Chinese","Pop","Theme/OST"]],
     "Born to Die - Lana del Ray": ["Born_to_die","rgb(90 125 100)",["English","Pop"]],
-    "The Chaser - Infinite": ["The_Chaser_Infinite","rgb(78 93 55)",["Korean","Pop"]],
+    "The Chaser - Infinite": ["The_Chaser_Infinite","rgb(78 93 55)",["Korean","Pop","INFINITE"]],
     "LALALILALA - APRIL": ["LALALILALA_APRIL","rgb(37 110 158)",["Korean","Pop"]],
     "Oh! My Mistake - APRIL": ["Oh_My_Mistake_APRIL","rgb(68 112 112)",["Korean","Pop"]],
     "Xstep - Geometry Dash": ["Xstep_Geometry_Dash","rgb(11 70 101)",["Instrumental","geodash"]],
@@ -278,7 +277,7 @@ const playlist = {
     "We were in Love - Davichi, T-ara": ["Wewereinlove","rgb(32 144 189)",["Korean","Pop"]],
     "Egotistic - Mamamoo": ["Egotistic_Mamamoo","rgb(97 182 213)",["Korean","Pop"]],
     "No Celestial - LE SSERAFIM": ["No_Celestial","rgb(5 77 132)",["Korean","Pop"]],
-    "One Shot - B.A.P.": ["BAP_One_Shot","rgb(49 33 33)",["Korean","Pop"]],
+    "One Shot - B.A.P.": ["BAP_One_Shot","rgb(49 33 33)",["Korean","Pop","BAP"]],
     "Time to Love - T-ARA & SUPERNOVA": ["Time_to_Love_TARA_SUPERNOVA","rgb(88 82 202)",["Korean","Pop"]],
     "FACE - NU'EST": ["FACE_NUEST","rgb(1 95 220)",["Korean","Pop"]],
     "Dream of girls - UNIVERSE TICKET": ["Dream_of_girls_UNIVERSE_TICKET","rgb(30 104 242)",["Korean","Pop"]],
@@ -293,18 +292,22 @@ const playlist = {
     "Making A Lover - SS501": ["Making_A_Lover_SS501","rgb(74 156 116)",["Korean","Pop","Theme/OST"]],
     "Good Luck - BEAST": ["Good_Luck_BEAST","rgb(70 125 177)",["Korean","Pop"]],
     "News - 9MUSES": ["News_9MUSES","rgb(2 123 224)",["Korean","Pop"]],
-    "Wake Me Up - B.A.P.": ["Wake_Me_Up_BAP","rgb(254 161 255)",["Korean","Pop"]],
+    "Wake Me Up - B.A.P.": ["Wake_Me_Up_BAP","rgb(254 161 255)",["Korean","Pop","BAP"]],
     "0330 - UKISS": ["0330_UKISS","rgb(90 174 255)",["Korean","Pop"]],
-    "Hands Up - B.A.P.": ["HandsUp_BAP","rgb(90 174 255)",["Korean","Pop"]],
-    "1004 (Angel) - B.A.P.": ["1004Angel_BAP","rgb(72 189 239)",["Korean","Pop"]],
-    "Back - INFINITE": ["Back_INFINITE","rgb(72 189 239)",["Korean","Pop"]],
-    "I'm Sory - MYNAME": ["Im_Sory_MYNAME","rgb(72 189 239)",["Korean","Pop"]],
+    "Hands Up - B.A.P.": ["HandsUp_BAP","rgb(90 174 255)",["Korean","Pop","BAP"]],
+    "1004 (Angel) - B.A.P.": ["1004Angel_BAP","rgb(72 189 239)",["Korean","Pop","BAP"]],
+    "Back - INFINITE": ["Back_INFINITE","rgb(72 189 239)",["Korean","Pop","INFINITE"]],
+    "I'm Sorry - MYNAME": ["Im_Sory_MYNAME","rgb(72 189 239)",["Korean","Pop"]],
     "Lucky=One - cosmosy": ["LuckyOne_cosmosy","rgb(72 189 239)",["Korean","Pop"]],
-    "Bad - INFINITE": ["Bad_INFINITE","rgb(72 189 239)",["Korean","Pop"]]
+    "Bad - INFINITE": ["Bad_INFINITE","rgb(72 189 239)",["Korean","Pop","INFINITE"]],
+    "I Remember - B.A.P.": ["I_Remember_BAP","rgb(72 189 239)",["Korean","Pop","BAP"]],
+    "爱的主打歌 - 萧亚轩": ["爱的主打歌_萧亚轩","rgb(72 189 239)",["Chinese","Pop"]],
+    "別讓愛凋落 - 盧潤澤": ["別讓愛凋落_盧潤澤","rgb(72 189 239)",["Chinese","Pop"]]
 
 
 
-    //Bad_INFINITE
+
+    //別讓愛凋落_盧潤澤
 
 
 };
@@ -498,6 +501,8 @@ function populatePlaylist() {
     if (document.getElementById('russian-filter').checked) filters.push('Russian');
     if (document.getElementById('tsfh-filter').checked) filters.push('TSFH');
     if (document.getElementById('filipino-filter').checked) filters.push('Filipino');
+    if (document.getElementById('BAP-filter').checked) filters.push('BAP');
+    if (document.getElementById('INFINITE-filter').checked) filters.push('INFINITE');
 
     //if (document.getElementById('favorites-filter').checked) filters.push('Favorites');
 
