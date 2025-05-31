@@ -63,6 +63,8 @@ const playlist = {
     "天耀中华 (伴奏) - 徐千雅": ["天耀中华_伴奏_徐千雅","rgb(179 104 83)",["Instrumental","Epic","Chinese"]],
     "黑色裂變 - 大秦帝國": ["黑色裂變_大秦帝國","rgb(88 163 83)",["Instrumental","Epic","Theme/OST","Chinese"]],
     "Grand Ceremony of Qin - Instrumental": ["Grand_Ceremony_Qin","rgb(173 33 63)",["Instrumental","Epic","Theme/OST","Chinese"]],
+    "Theme - 大秦帝国 II": ["daqindiguo2","rgb(72 189 239)",["Chinese","Instrumental","Theme/OST"]],
+    "Prelude - 大秦帝国": ["prelude_daqindiguo","rgb(72 189 239)",["Chinese","Instrumental","Theme/OST"]],
     "秦汉英雄传 - 片尾曲": ["Qin_Han","rgb(192 164 129)",["Instrumental","Epic","Theme/OST","Chinese"]],
     "琅琊榜 - 主题音乐": ["琅琊榜_主题音乐","rgb(102 204 214)",["Instrumental","Epic","Theme/OST","Chinese"]],
     "中國軍魂 - Music": ["中國軍魂","rgb(39 168 193)",["Instrumental","Epic","Theme/OST","Chinese"]],
@@ -302,12 +304,17 @@ const playlist = {
     "Bad - INFINITE": ["Bad_INFINITE","rgb(72 189 239)",["Korean","Pop","INFINITE"]],
     "I Remember - B.A.P.": ["I_Remember_BAP","rgb(72 189 239)",["Korean","Pop","BAP"]],
     "爱的主打歌 - 萧亚轩": ["爱的主打歌_萧亚轩","rgb(72 189 239)",["Chinese","Pop"]],
-    "別讓愛凋落 - 盧潤澤": ["別讓愛凋落_盧潤澤","rgb(72 189 239)",["Chinese","Pop"]]
+    "別讓愛凋落 - 盧潤澤": ["別讓愛凋落_盧潤澤","rgb(72 189 239)",["Chinese","Pop"]],
+    "天上星 - 霍含蕾Rea": ["天上星_Rea","rgb(72 189 239)",["Chinese","Pop"]],
+    "花鳥風月 - Suara": ["Kachofugetsu_Suara","rgb(72 189 239)",["Japanese","Pop"]],
+    "いつもこの場所で - Ayane": ["Itsumo_kono_basho_de","rgb(72 189 239)",["Japanese","Pop"]]
 
 
 
 
-    //別讓愛凋落_盧潤澤
+
+
+    //Itsumo_kono_basho_de
 
 
 };
