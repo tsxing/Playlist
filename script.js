@@ -306,15 +306,14 @@ const playlist = {
     "爱的主打歌 - 萧亚轩": ["爱的主打歌_萧亚轩","rgb(72 189 239)",["Chinese","Pop"]],
     "別讓愛凋落 - 盧潤澤": ["別讓愛凋落_盧潤澤","rgb(72 189 239)",["Chinese","Pop"]],
     "天上星 - 霍含蕾Rea": ["天上星_Rea","rgb(72 189 239)",["Chinese","Pop"]],
+    "Lion Instrumental - Gidle ": ["Gidle_Lion_Karaoke","rgb(72 189 239)",["Korean","Pop","Instrumental"]],
     "花鳥風月 - Suara": ["Kachofugetsu_Suara","rgb(72 189 239)",["Japanese","Pop"]],
-    "いつもこの場所で - Ayane": ["Itsumo_kono_basho_de","rgb(72 189 239)",["Japanese","Pop"]]
+    "いつもこの場所で - Ayane": ["Itsumo_kono_basho_de","rgb(72 189 239)",["Japanese","Pop"]],
+    "青い空　それだけなのに… - KOKIA": ["Aoi_sora_sore_dakenanoni","rgb(72 189 239)",["Japanese","Pop"]]
 
 
 
-
-
-
-    //Itsumo_kono_basho_de
+    //Gidle_Lion_Karaoke
 
 
 };
