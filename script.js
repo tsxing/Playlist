@@ -309,11 +309,13 @@ const playlist = {
     "Lion Instrumental - Gidle ": ["Gidle_Lion_Karaoke","rgb(72 189 239)",["Korean","Pop","Instrumental"]],
     "花鳥風月 - Suara": ["Kachofugetsu_Suara","rgb(72 189 239)",["Japanese","Pop"]],
     "いつもこの場所で - Ayane": ["Itsumo_kono_basho_de","rgb(72 189 239)",["Japanese","Pop"]],
-    "青い空　それだけなのに… - KOKIA": ["Aoi_sora_sore_dakenanoni","rgb(72 189 239)",["Japanese","Pop"]]
+    "青い空　それだけなのに… - KOKIA": ["Aoi_sora_sore_dakenanoni","rgb(72 189 239)",["Japanese","Pop"]],
+    "Generation - TripleS": ["Generation_TripleS","rgb(72 189 239)",["Korean","Pop"]],
+    "DOXA - Secret Number": ["DOXA_Secret_Number","rgb(72 189 239)",["Korean","Pop"]]
 
 
 
-    //Gidle_Lion_Karaoke
+    //DOXA_Secret_Number
 
 
 };
