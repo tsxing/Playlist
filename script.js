@@ -313,11 +313,14 @@ const playlist = {
     "Generation - TripleS": ["Generation_TripleS","rgb(72 189 239)",["Korean","Pop"]],
     "DOXA - Secret Number": ["DOXA_Secret_Number","rgb(72 189 239)",["Korean","Pop"]],
     "狡兔死 走狗烹 - 加木": ["狡兔死走狗烹_加木","rgb(72 189 239)",["Chinese","Pop"]],
-    "察觉 - TC": ["察觉_TC","rgb(72 189 239)",["Chinese","Pop"]]
+    "察觉 - TC": ["察觉_TC","rgb(72 189 239)",["Chinese","Pop"]],
+    "多情種 - 胡楊林": ["多情種_胡楊林","rgb(72 189 239)",["Chinese","Pop"]],
+    "双生蝶 - 哦漏阿YueYue": ["双生蝶_哦漏阿YueYue","rgb(72 189 239)",["Chinese","Pop"]]
 
 
 
-    //察觉_TC
+
+    //双生蝶_哦漏阿YueYue
 
 
 };
