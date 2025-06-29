@@ -316,13 +316,18 @@ const playlist = {
     "察觉 - TC": ["察觉_TC","rgb(72 189 239)",["Chinese","Pop"]],
     "多情種 - 胡楊林": ["多情種_胡楊林","rgb(72 189 239)",["Chinese","Pop"]],
     "双生蝶 - 哦漏阿YueYue": ["双生蝶_哦漏阿YueYue","rgb(72 189 239)",["Chinese","Pop"]],
+    "消散的味道 - 高旭": ["消散的味道_高旭","rgb(72 189 239)",["Chinese","Pop"]],
+    "不落 - 高旭": ["不落_高旭","rgb(72 189 239)",["Chinese","Pop"]],
+    "Soda Pop - Saja Boys": ["Soda_Pop_SajaBoys","rgb(72 189 239)",["Korean","Pop"]],
     "Golden - HUNTRX": ["Golden_HUNTRX","rgb(72 189 239)",["Korean","Pop"]],
-    "Soda Pop - Saja Boys": ["Soda_Pop_SajaBoys","rgb(72 189 239)",["Korean","Pop"]]
+    "What It Sounds Like - HUNTERX": ["What_It_Sounds_Like_HUNTERX","rgb(72 189 239)",["Korean","Pop"]],
+    "Free - Rumi": ["Free_Rumi","rgb(72 189 239)",["Korean","Pop"]]
 
 
 
 
-    //Soda_Pop_SajaBoys
+
+    //不落_高旭
 
 
 };
