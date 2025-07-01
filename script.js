@@ -319,15 +319,17 @@ const playlist = {
     "消散的味道 - 高旭": ["消散的味道_高旭","rgb(72 189 239)",["Chinese","Pop"]],
     "不落 - 高旭": ["不落_高旭","rgb(72 189 239)",["Chinese","Pop"]],
     "Soda Pop - Saja Boys": ["Soda_Pop_SajaBoys","rgb(72 189 239)",["Korean","Pop"]],
+    "Will - Pandora Hearts OST": ["Will_Pandora_Hearts","rgb(72 189 239)",["Instrumental","Theme/OST"]],
     "Golden - HUNTRX": ["Golden_HUNTRX","rgb(72 189 239)",["Korean","Pop"]],
-    "What It Sounds Like - HUNTERX": ["What_It_Sounds_Like_HUNTERX","rgb(72 189 239)",["Korean","Pop"]],
-    "Free - Rumi": ["Free_Rumi","rgb(72 189 239)",["Korean","Pop"]]
+    "What It Sounds Like - HUNTRX": ["What_It_Sounds_Like_HUNTERX","rgb(72 189 239)",["Korean","Pop"]],
+    "Free - Rumi (HUNTRX)": ["Free_Rumi","rgb(72 189 239)",["Korean","Pop"]],
+    "Takedown - HUNTRX": ["Takedown_HUNTRX","rgb(72 189 239)",["Korean","Pop"]]
 
 
 
 
 
-    //不落_高旭
+    //Takedown_HUNTRX
 
 
 };
