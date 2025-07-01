@@ -323,13 +323,15 @@ const playlist = {
     "Golden - HUNTRX": ["Golden_HUNTRX","rgb(72 189 239)",["Korean","Pop"]],
     "What It Sounds Like - HUNTRX": ["What_It_Sounds_Like_HUNTERX","rgb(72 189 239)",["Korean","Pop"]],
     "Free - Rumi (HUNTRX)": ["Free_Rumi","rgb(72 189 239)",["Korean","Pop"]],
-    "Takedown - HUNTRX": ["Takedown_HUNTRX","rgb(72 189 239)",["Korean","Pop"]]
+    "Takedown - HUNTRX": ["Takedown_HUNTRX","rgb(72 189 239)",["Korean","Pop"]],
+    "How It's Done - HUNTRX": ["How_Its_Done_HUNTRX","rgb(72 189 239)",["Korean","Pop"]]
 
 
 
 
 
-    //Takedown_HUNTRX
+
+    //How_Its_Done_HUNTRX
 
 
 };
