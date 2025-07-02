@@ -324,14 +324,16 @@ const playlist = {
     "What It Sounds Like - HUNTRX": ["What_It_Sounds_Like_HUNTERX","rgb(72 189 239)",["Korean","Pop"]],
     "Free - Rumi (HUNTRX)": ["Free_Rumi","rgb(72 189 239)",["Korean","Pop"]],
     "Takedown - HUNTRX": ["Takedown_HUNTRX","rgb(72 189 239)",["Korean","Pop"]],
-    "How It's Done - HUNTRX": ["How_Its_Done_HUNTRX","rgb(72 189 239)",["Korean","Pop"]]
+    "How It's Done - HUNTRX": ["How_Its_Done_HUNTRX","rgb(72 189 239)",["Korean","Pop"]],
+    "錦鯉抄 - 銀臨/雲の泣": ["錦鯉抄","rgb(72 189 239)",["Chinese","Japanese","Pop"]]
 
 
 
 
 
 
-    //How_Its_Done_HUNTRX
+
+    //錦鯉抄
 
 
 };
