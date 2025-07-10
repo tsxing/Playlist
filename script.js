@@ -326,10 +326,12 @@ const playlist = {
     "Takedown - HUNTRX": ["Takedown_HUNTRX","rgb(72 189 239)",["Korean","Pop"]],
     "How It's Done - HUNTRX": ["How_Its_Done_HUNTRX","rgb(72 189 239)",["Korean","Pop"]],
     "錦鯉抄 - 銀臨/雲の泣": ["錦鯉抄","rgb(72 189 239)",["Chinese","Japanese","Pop"]],
-    "海底 - 一支榴莲": ["海底_一支榴莲","rgb(72 189 239)",["Chinese","Pop"]]
+    "海底 - 一支榴莲": ["海底_一支榴莲","rgb(72 189 239)",["Chinese","Pop"]],
+    "My Name - KDrama OST": ["My_Name_KDrama_OST","rgb(72 189 239)",["Korean","Theme/OST"]],
+    "Vintage - Eba": ["Eba_Vintage","rgb(72 189 239)",["Russian","Pop","Remix"]]
 
 
-    //海底_一支榴莲
+    //Eba_Vintage
 
 
 };
