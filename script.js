@@ -328,10 +328,15 @@ const playlist = {
     "錦鯉抄 - 銀臨/雲の泣": ["錦鯉抄","rgb(72 189 239)",["Chinese","Japanese","Pop"]],
     "海底 - 一支榴莲": ["海底_一支榴莲","rgb(72 189 239)",["Chinese","Pop"]],
     "My Name - KDrama OST": ["My_Name_KDrama_OST","rgb(72 189 239)",["Korean","Theme/OST"]],
-    "Vintage - Eba": ["Eba_Vintage","rgb(72 189 239)",["Russian","Pop","Remix"]]
+    "Vintage - Eba": ["Eba_Vintage","rgb(72 189 239)",["Russian","Pop","Remix"]],
+    "Adrenaline - OST": ["Adrenaline_OST","rgb(72 189 239)",["Korean","Theme/OST"]],
+    "Mediocre Life - OST": ["Mediocre_Life_OST","rgb(72 189 239)",["Korean","Theme/OST"]],
+    "Speak For Yourself - OST": ["Speak_For_Yourself_OST","rgb(72 189 239)",["Korean","Theme/OST"]]
 
 
-    //Eba_Vintage
+
+
+    //Speak_For_Yourself_OST
 
 
 };
