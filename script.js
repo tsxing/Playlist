@@ -331,12 +331,15 @@ const playlist = {
     "Vintage - Eba": ["Eba_Vintage","rgb(72 189 239)",["Russian","Pop","Remix"]],
     "Adrenaline - OST": ["Adrenaline_OST","rgb(72 189 239)",["Korean","Theme/OST"]],
     "Mediocre Life - OST": ["Mediocre_Life_OST","rgb(72 189 239)",["Korean","Theme/OST"]],
-    "Speak For Yourself - OST": ["Speak_For_Yourself_OST","rgb(72 189 239)",["Korean","Theme/OST"]]
+    "Speak For Yourself - OST": ["Speak_For_Yourself_OST","rgb(72 189 239)",["Korean","Theme/OST"]],
+    "囍 - 葛東琪": ["囍_葛東琪","rgb(72 189 239)",["Chinese"]],
+    "漆黒 - Fujita": ["漆黒_Fujita","rgb(72 189 239)",["Japanese","Pop"]]
 
 
 
 
-    //Speak_For_Yourself_OST
+
+    //漆黒_Fujita
 
 
 };
