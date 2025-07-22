@@ -170,6 +170,9 @@ const playlist = {
     "Answer - ATEEZ": ["Answer_ATEEZ","rgb(145 127 192)",["Korean","Pop","ATEEZ"]],
     "Inception - ATEEZ": ["Inception_ATEEZ","rgb(187 159 204)",["Korean","Pop","ATEEZ"]],
     "Say My Name - ATEEZ": ["Say_My_Name_ATEEZ","rgb(170 219 233)",["Korean","Pop","ATEEZ"]],
+    "UTOPIA - ATEEZ": ["UTOPIA","rgb(107 156 140)",["Korean","ATEEZ","Pop"]],
+    "WAVE - ATEEZ": ["WAVE_ATEEZ","rgb(107 156 140)",["Korean","ATEEZ","Pop"]],
+    "HALAZIA - ATEEZ": ["HALAZIA_ATEEZ","rgb(170 219 233)",["Korean","Pop","ATEEZ"]],
     "This Is War - MBLAQ": ["This_Is_War_MBLAQ","rgb(116 216 236)",["Korean","Pop"]],
     "Trap - Henry": ["Trap_Henry","rgb(211 165 195)",["Korean","Pop"]],
     "Trap - Henry (CHN)": ["Trap_Henry_CHN","rgb(255 180 178)",["Korean","Pop"]],
@@ -259,7 +262,6 @@ const playlist = {
     "pporappippam - SUNMI": ["pporappippam_sunmi","rgb(214 182 241)",["Korean","Pop"]],
     "Utsukushiki Zankoku Na Sekai - Yoko Hikasa": ["Utsukushiki_Zankoku_Na_Sekai_Yoko_Hikasa","rgb(111 155 142)",["Japanese","Pop","Anime"]],
     "IWALY - iland": ["IWALY","rgb(248 157 175)",["Korean","Pop"]],
-    "UTOPIA - ATEEZ": ["UTOPIA","rgb(107 156 140)",["Korean","ATEEZ","Pop"]],
     "我相信 - 楊培安": ["我相信_楊培安","rgb(225 141 178)",["Chinese","Pop"]],
     "水手 - 鄭智化": ["水手","rgb(170 144 135)",["Chinese","Pop"]],
     "红颜旧 - 琅琊榜": ["Hong_Yan_Jiu","rgb(49 112 117)",["Chinese","Pop","Theme/OST"]],
@@ -332,14 +334,20 @@ const playlist = {
     "Adrenaline - OST": ["Adrenaline_OST","rgb(72 189 239)",["Korean","Theme/OST"]],
     "Mediocre Life - OST": ["Mediocre_Life_OST","rgb(72 189 239)",["Korean","Theme/OST"]],
     "Speak For Yourself - OST": ["Speak_For_Yourself_OST","rgb(72 189 239)",["Korean","Theme/OST"]],
+    "漆黒 - Fujita": ["漆黒_Fujita","rgb(72 189 239)",["Japanese","Pop"]],
     "囍 - 葛東琪": ["囍_葛東琪","rgb(72 189 239)",["Chinese"]],
-    "漆黒 - Fujita": ["漆黒_Fujita","rgb(72 189 239)",["Japanese","Pop"]]
+    "女駙馬 - 三無X祖婭納惜": ["女駙馬_三無X祖婭納惜","rgb(72 189 239)",["Chinese"]],
+    "木蘭行 - 三無": ["木蘭行_三無","rgb(72 189 239)",["Chinese"]],
+    "忘羡 - 魔道祖师": ["忘羡_魔道祖师","rgb(72 189 239)",["Chinese"]],
+    "救贖者 - 阮妍霏": ["救贖者_阮妍霏","rgb(72 189 239)",["Chinese"]],
+    "Dynasty (Remix) - MIIA": ["dynasty_remix_MIIA","rgb(72 189 239)",["English","Remix"]],
+    "Welcome To The Show - DPR IAN": ["Welcome_To_The_Show_DPR_IAN","rgb(72 189 239)",["English"]]
 
 
 
 
 
-    //漆黒_Fujita
+    //HALAZIA_ATEEZ
 
 
 };
