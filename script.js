@@ -163,6 +163,7 @@ const playlist = {
     "To Be Or Not To Be - ONEUS": ["To_Be_Or_Not_To_Be_ONEUS","rgb(242 225 178)",["Korean","Pop"]],
     "A Song Written Easily - ONEUS": ["A_Song_Written_Easily_ONEUS","rgb(57 193 207)",["Korean","Pop"]],
     "Deja Vu - TOMORROW X TOGETHER":["Deja_Vu_TOMORROW_X_TOGETHER","rgb(204 181 141)",["Korean","Pop"]],
+    "0X1=LOVESONG - TOMORROW X TOGETHER":["0X1=LOVESONG_TXT","rgb(204 181 141)",["Korean","Pop"]],
     "LO$ER=LO♡ER - TOMORROW X TOGETHER": ["Loser_Lover_TOMORROW_X_TOGETHER","rgb(146 156 201)",["Korean","Pop"]],
     "Chasing That Feeling - TOMORROW X TOGETHER": ["Chasing_That_Feeling_TOMORROW_X_TOGETHER","rgb(106 128 131)",["Korean","Pop"]],
     "FLASH - X1": ["FLASH_X1","rgb(136 102 134)",["Korean","Pop"]],
@@ -173,6 +174,10 @@ const playlist = {
     "UTOPIA - ATEEZ": ["UTOPIA","rgb(107 156 140)",["Korean","ATEEZ","Pop"]],
     "WAVE - ATEEZ": ["WAVE_ATEEZ","rgb(107 156 140)",["Korean","ATEEZ","Pop"]],
     "HALAZIA - ATEEZ": ["HALAZIA_ATEEZ","rgb(170 219 233)",["Korean","Pop","ATEEZ"]],
+    "HALA HALA - ATEEZ": ["HALA_HALA_ATEEZ","rgb(170 219 233)",["Korean","Pop","ATEEZ"]],
+    "안개 MIST - ATEEZ": ["안개MIST_ATEEZ","rgb(170 219 233)",["Korean","Pop","ATEEZ"]],
+    "Dazzling Light - ATEEZ": ["Dazzling_Light_ATEEZ","rgb(170 219 233)",["Korean","Pop","ATEEZ"]],
+    "Star 1117 - ATEEZ": ["Star1117_ATEEZ","rgb(170 219 233)",["Korean","Pop","ATEEZ"]],
     "This Is War - MBLAQ": ["This_Is_War_MBLAQ","rgb(116 216 236)",["Korean","Pop"]],
     "Trap - Henry": ["Trap_Henry","rgb(211 165 195)",["Korean","Pop"]],
     "Trap - Henry (CHN)": ["Trap_Henry_CHN","rgb(255 180 178)",["Korean","Pop"]],
@@ -341,13 +346,15 @@ const playlist = {
     "忘羡 - 魔道祖师": ["忘羡_魔道祖师","rgb(72 189 239)",["Chinese"]],
     "救贖者 - 阮妍霏": ["救贖者_阮妍霏","rgb(72 189 239)",["Chinese"]],
     "Dynasty (Remix) - MIIA": ["dynasty_remix_MIIA","rgb(72 189 239)",["English","Remix"]],
-    "Welcome To The Show - DPR IAN": ["Welcome_To_The_Show_DPR_IAN","rgb(72 189 239)",["English"]]
+    "Welcome To The Show - DPR IAN": ["Welcome_To_The_Show_DPR_IAN","rgb(72 189 239)",["English"]],
+    "Moonstruck - ENHYPEN": ["Moonstruck_ENHYPEN","rgb(152 221 244)",["Korean","Pop"]],
+    "XO - ENHYPEN": ["XO_ENHYPEN","rgb(152 221 244)",["Korean","Pop"]]
 
 
 
 
 
-    //HALAZIA_ATEEZ
+    //Dazzling_Light_ATEEZ
 
 
 };
