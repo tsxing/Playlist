@@ -166,6 +166,8 @@ const playlist = {
     "0X1=LOVESONG - TOMORROW X TOGETHER":["0X1=LOVESONG_TXT","rgb(204 181 141)",["Korean","Pop"]],
     "LO$ER=LO♡ER - TOMORROW X TOGETHER": ["Loser_Lover_TOMORROW_X_TOGETHER","rgb(146 156 201)",["Korean","Pop"]],
     "Chasing That Feeling - TOMORROW X TOGETHER": ["Chasing_That_Feeling_TOMORROW_X_TOGETHER","rgb(106 128 131)",["Korean","Pop"]],
+    "Run Away (Rock Version) - TOMORROW X TOGETHER": ["Run_Away_Rock_TXT","rgb(251 114 168)",["Remix","Pop","Korean"]],
+    "New Rules - TOMORROW X TOGETHER": ["NewRules_TXT","rgb(251 114 168)",["Remix","Pop","Korean"]],
     "FLASH - X1": ["FLASH_X1","rgb(136 102 134)",["Korean","Pop"]],
     "Fatal Trouble - ENHYPEN": ["Fatal_Trouble_ENHYPEN","rgb(152 221 244)",["Korean","Pop"]],
     "Answer - ATEEZ": ["Answer_ATEEZ","rgb(145 127 192)",["Korean","Pop","ATEEZ"]],
@@ -178,6 +180,8 @@ const playlist = {
     "안개 MIST - ATEEZ": ["안개MIST_ATEEZ","rgb(170 219 233)",["Korean","Pop","ATEEZ"]],
     "Dazzling Light - ATEEZ": ["Dazzling_Light_ATEEZ","rgb(170 219 233)",["Korean","Pop","ATEEZ"]],
     "Star 1117 - ATEEZ": ["Star1117_ATEEZ","rgb(170 219 233)",["Korean","Pop","ATEEZ"]],
+    "Take Me Home - ATEEZ": ["TakeMeHome_ATEEZ","rgb(170 219 233)",["Korean","Pop","ATEEZ"]],
+    "Eternal Sunshine - ATEEZ": ["EternalSunshine_ATEEZ","rgb(170 219 233)",["Korean","Pop","ATEEZ"]],
     "This Is War - MBLAQ": ["This_Is_War_MBLAQ","rgb(116 216 236)",["Korean","Pop"]],
     "Trap - Henry": ["Trap_Henry","rgb(211 165 195)",["Korean","Pop"]],
     "Trap - Henry (CHN)": ["Trap_Henry_CHN","rgb(255 180 178)",["Korean","Pop"]],
@@ -241,7 +245,6 @@ const playlist = {
     "Spring Day - BTS (Remix)": ["Spring_Day_BTS_Remix","rgb(173 161 219)",["Korean","Pop","Remix"]],
     "koinomushi - Hanatan": ["koinomushi","rgb(116 209 252)",["Japanese","Pop"]],
     "Mago (Rock Version) - GFriend": ["Mago_GFriend_Rock_Version","rgb(253 211 246)",["Remix","Pop","Korean"]],
-    "Run Away (Rock Version) - TOMORROW X TOGETHER": ["Run_Away_Rock_TXT","rgb(251 114 168)",["Remix","Pop","Korean"]],
     "Styx Helix - Myth & Roid": ["Styx_Helix_Myth_Roid","rgb(131 192 239)",["Pop","Japanese"]],
     "Licht und Schatten - Tokyo Ghoul (Samuel Kim)": ["Licht_und_Schatten","rgb(246 175 179)",["SamuelKim","Japanese","Anime","Instrumental"]],
     "漂泊的情人 - dj version": ["漂泊的情人_dj","rgb(236 166 90)",["Canto","Remix"]],
@@ -348,13 +351,15 @@ const playlist = {
     "Dynasty (Remix) - MIIA": ["dynasty_remix_MIIA","rgb(72 189 239)",["English","Remix"]],
     "Welcome To The Show - DPR IAN": ["Welcome_To_The_Show_DPR_IAN","rgb(72 189 239)",["English"]],
     "Moonstruck - ENHYPEN": ["Moonstruck_ENHYPEN","rgb(152 221 244)",["Korean","Pop"]],
-    "XO - ENHYPEN": ["XO_ENHYPEN","rgb(152 221 244)",["Korean","Pop"]]
+    "XO - ENHYPEN": ["XO_ENHYPEN","rgb(152 221 244)",["Korean","Pop"]],
+    "Beautiful Strangers - TOMORROW X TOGETHER": ["BeautifulStrangers_TXT","rgb(251 114 168)",["Pop","Korean"]],
+    "Ghost Girl - TOMORROW X TOGETHER": ["GhostGirl_TXT","rgb(251 114 168)",["Pop","Korean"]],
 
 
 
 
 
-    //Dazzling_Light_ATEEZ
+    //EternalSunshine_ATEEZ
 
 
 };
