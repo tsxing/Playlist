@@ -162,14 +162,14 @@ const playlist = {
     "Valkyrie (발키리) - ONEUS": ["Valkyrie_ONEUS","rgb(0 149 186)",["Korean","Pop"]],
     "To Be Or Not To Be - ONEUS": ["To_Be_Or_Not_To_Be_ONEUS","rgb(242 225 178)",["Korean","Pop"]],
     "A Song Written Easily - ONEUS": ["A_Song_Written_Easily_ONEUS","rgb(57 193 207)",["Korean","Pop"]],
-    "Deja Vu - TOMORROW X TOGETHER":["Deja_Vu_TOMORROW_X_TOGETHER","rgb(204 181 141)",["Korean","Pop"]],
-    "0X1=LOVESONG - TOMORROW X TOGETHER":["0X1=LOVESONG_TXT","rgb(204 181 141)",["Korean","Pop"]],
-    "LO$ER=LO♡ER - TOMORROW X TOGETHER": ["Loser_Lover_TOMORROW_X_TOGETHER","rgb(146 156 201)",["Korean","Pop"]],
-    "Chasing That Feeling - TOMORROW X TOGETHER": ["Chasing_That_Feeling_TOMORROW_X_TOGETHER","rgb(106 128 131)",["Korean","Pop"]],
-    "Run Away (Rock Version) - TOMORROW X TOGETHER": ["Run_Away_Rock_TXT","rgb(251 114 168)",["Remix","Pop","Korean"]],
-    "New Rules - TOMORROW X TOGETHER": ["NewRules_TXT","rgb(251 114 168)",["Remix","Pop","Korean"]],
+    "Deja Vu - TOMORROW X TOGETHER":["Deja_Vu_TOMORROW_X_TOGETHER","rgb(204 181 141)",["Korean","Pop","TXT"]],
+    "0X1=LOVESONG - TOMORROW X TOGETHER":["0X1=LOVESONG_TXT","rgb(204 181 141)",["Korean","Pop","TXT"]],
+    "LO$ER=LO♡ER - TOMORROW X TOGETHER": ["Loser_Lover_TOMORROW_X_TOGETHER","rgb(146 156 201)",["Korean","Pop","TXT"]],
+    "Chasing That Feeling - TOMORROW X TOGETHER": ["Chasing_That_Feeling_TOMORROW_X_TOGETHER","rgb(106 128 131)",["Korean","Pop","TXT"]],
+    "Run Away (Rock Version) - TOMORROW X TOGETHER": ["Run_Away_Rock_TXT","rgb(251 114 168)",["Remix","Pop","Korean","TXT"]],
+    "New Rules - TOMORROW X TOGETHER": ["NewRules_TXT","rgb(251 114 168)",["Remix","Pop","Korean","TXT"]],
     "FLASH - X1": ["FLASH_X1","rgb(136 102 134)",["Korean","Pop"]],
-    "Fatal Trouble - ENHYPEN": ["Fatal_Trouble_ENHYPEN","rgb(152 221 244)",["Korean","Pop"]],
+    "Fatal Trouble - ENHYPEN": ["Fatal_Trouble_ENHYPEN","rgb(152 221 244)",["Korean","Pop","ENHYPEN"]],
     "Answer - ATEEZ": ["Answer_ATEEZ","rgb(145 127 192)",["Korean","Pop","ATEEZ"]],
     "Inception - ATEEZ": ["Inception_ATEEZ","rgb(187 159 204)",["Korean","Pop","ATEEZ"]],
     "Say My Name - ATEEZ": ["Say_My_Name_ATEEZ","rgb(170 219 233)",["Korean","Pop","ATEEZ"]],
@@ -350,16 +350,21 @@ const playlist = {
     "救贖者 - 阮妍霏": ["救贖者_阮妍霏","rgb(72 189 239)",["Chinese"]],
     "Dynasty (Remix) - MIIA": ["dynasty_remix_MIIA","rgb(72 189 239)",["English","Remix"]],
     "Welcome To The Show - DPR IAN": ["Welcome_To_The_Show_DPR_IAN","rgb(72 189 239)",["English"]],
-    "Moonstruck - ENHYPEN": ["Moonstruck_ENHYPEN","rgb(152 221 244)",["Korean","Pop"]],
-    "XO - ENHYPEN": ["XO_ENHYPEN","rgb(152 221 244)",["Korean","Pop"]],
-    "Beautiful Strangers - TOMORROW X TOGETHER": ["BeautifulStrangers_TXT","rgb(251 114 168)",["Pop","Korean"]],
-    "Ghost Girl - TOMORROW X TOGETHER": ["GhostGirl_TXT","rgb(251 114 168)",["Pop","Korean"]],
+    "XO - ENHYPEN": ["XO_ENHYPEN","rgb(152 221 244)",["Korean","Pop","ENHYPEN"]],
+    "Moonstruck - ENHYPEN": ["Moonstruck_ENHYPEN","rgb(152 221 244)",["Korean","Pop","ENHYPEN"]],
+    "Beautiful Strangers - TOMORROW X TOGETHER": ["BeautifulStrangers_TXT","rgb(251 114 168)",["Pop","Korean","TXT"]],
+    "Ghost Girl - TOMORROW X TOGETHER": ["GhostGirl_TXT","rgb(251 114 168)",["Pop","Korean","TXT"]],
+    "忘不掉的你 - h3R3": ["忘不掉的你_h3R3","rgb(251 114 168)",["Pop","Chinese"]],
+    "还是会想你 - 林達浪": ["还是会想你_林達浪","rgb(251 114 168)",["Pop","Chinese"]],
+    "Love You To Death - KCM": ["Loveyoutodeath_KCM","rgb(251 114 168)",["Korean"]],
+    "Teeth - ENHYPEN": ["Teeth_ENHYPEN","rgb(251 114 168)",["Korean","Pop"]],
+    "HELIUM - ENHYPEN": ["HELIUM - ENHYPEN","rgb(251 114 168)",["Korean","Pop"]]
 
 
 
 
 
-    //EternalSunshine_ATEEZ
+    //HELIUM_ENHYPEN
 
 
 };
@@ -555,6 +560,8 @@ function populatePlaylist() {
     if (document.getElementById('filipino-filter').checked) filters.push('Filipino');
     if (document.getElementById('BAP-filter').checked) filters.push('BAP');
     if (document.getElementById('INFINITE-filter').checked) filters.push('INFINITE');
+    if (document.getElementById('ENHYPEN-filter').checked) filters.push('ENHYPEN');
+    if (document.getElementById('TXT-filter').checked) filters.push('TXT');
 
     //if (document.getElementById('favorites-filter').checked) filters.push('Favorites');
 
