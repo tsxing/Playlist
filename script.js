@@ -351,14 +351,14 @@ const playlist = {
     "Dynasty (Remix) - MIIA": ["dynasty_remix_MIIA","rgb(72 189 239)",["English","Remix"]],
     "Welcome To The Show - DPR IAN": ["Welcome_To_The_Show_DPR_IAN","rgb(72 189 239)",["English"]],
     "XO - ENHYPEN": ["XO_ENHYPEN","rgb(152 221 244)",["Korean","Pop","ENHYPEN"]],
-    "Moonstruck - ENHYPEN": ["Moonstruck_ENHYPEN","rgb(152 221 244)",["Korean","Pop","ENHYPEN"]],
     "Beautiful Strangers - TOMORROW X TOGETHER": ["BeautifulStrangers_TXT","rgb(251 114 168)",["Pop","Korean","TXT"]],
     "Ghost Girl - TOMORROW X TOGETHER": ["GhostGirl_TXT","rgb(251 114 168)",["Pop","Korean","TXT"]],
+    "Moonstruck - ENHYPEN": ["Moonstruck_ENHYPEN","rgb(152 221 244)",["Korean","Pop","ENHYPEN"]],
     "忘不掉的你 - h3R3": ["忘不掉的你_h3R3","rgb(251 114 168)",["Pop","Chinese"]],
     "还是会想你 - 林達浪": ["还是会想你_林達浪","rgb(251 114 168)",["Pop","Chinese"]],
     "Love You To Death - KCM": ["Loveyoutodeath_KCM","rgb(251 114 168)",["Korean"]],
-    "Teeth - ENHYPEN": ["Teeth_ENHYPEN","rgb(251 114 168)",["Korean","Pop"]],
-    "HELIUM - ENHYPEN": ["HELIUM - ENHYPEN","rgb(251 114 168)",["Korean","Pop"]]
+    "Teeth - ENHYPEN": ["Teeth_ENHYPEN","rgb(251 114 168)",["Korean","Pop","ENHYPEN"]],
+    "HELIUM - ENHYPEN": ["HELIUM_ENHYPEN","rgb(251 114 168)",["Korean","Pop","ENHYPEN"]]
 
 
 
