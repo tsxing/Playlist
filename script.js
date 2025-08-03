@@ -158,10 +158,14 @@ const playlist = {
     "Paradise - infinite": ["paradise_infinite","rgb(19 141 179)",["Korean","Pop"]],
     "Rooftop - N.Flying": ["Rooftop_NFlying","rgb(246 153 44)",["Korean","Pop"]],
     "beautiful - BEAST": ["beautiful_BEAST","rgb(137 220 251)",["Korean","Pop"]],
-    "LUNA - ONEUS": ["LUNA_ONEUS","rgb(86 157 255)",["Korean","Pop"]],
-    "Valkyrie (발키리) - ONEUS": ["Valkyrie_ONEUS","rgb(0 149 186)",["Korean","Pop"]],
-    "To Be Or Not To Be - ONEUS": ["To_Be_Or_Not_To_Be_ONEUS","rgb(242 225 178)",["Korean","Pop"]],
-    "A Song Written Easily - ONEUS": ["A_Song_Written_Easily_ONEUS","rgb(57 193 207)",["Korean","Pop"]],
+    "LUNA - ONEUS": ["LUNA_ONEUS","rgb(86 157 255)",["Korean","Pop","ONEUS"]],
+    "Valkyrie (발키리) - ONEUS": ["Valkyrie_ONEUS","rgb(0 149 186)",["Korean","Pop","ONEUS"]],
+    "To Be Or Not To Be - ONEUS": ["To_Be_Or_Not_To_Be_ONEUS","rgb(242 225 178)",["Korean","Pop","ONEUS"]],
+    "A Song Written Easily - ONEUS": ["A_Song_Written_Easily_ONEUS","rgb(57 193 207)",["Korean","Pop","ONEUS"]],
+    "Same Scent - ONEUS": ["Same_Scent_ONEUS","rgb(242 225 178)",["Korean","Pop","ONEUS"]],
+    "Erase Me - ONEUS": ["Erase_Me_ONEUS","rgb(242 225 178)",["Korean","Pop","ONEUS"]],
+    "Twilight - ONEUS": ["Twilight_ONEUS","rgb(242 225 178)",["Korean","Pop","ONEUS"]],
+    "Unforgettable - ONEUS": ["Unforgettable_ONEUS","rgb(242 225 178)",["Korean","Pop","ONEUS"]],
     "Deja Vu - TOMORROW X TOGETHER":["Deja_Vu_TOMORROW_X_TOGETHER","rgb(204 181 141)",["Korean","Pop","TXT"]],
     "0X1=LOVESONG - TOMORROW X TOGETHER":["0X1=LOVESONG_TXT","rgb(204 181 141)",["Korean","Pop","TXT"]],
     "LO$ER=LO♡ER - TOMORROW X TOGETHER": ["Loser_Lover_TOMORROW_X_TOGETHER","rgb(146 156 201)",["Korean","Pop","TXT"]],
@@ -358,13 +362,15 @@ const playlist = {
     "还是会想你 - 林達浪": ["还是会想你_林達浪","rgb(251 114 168)",["Pop","Chinese"]],
     "Love You To Death - KCM": ["Loveyoutodeath_KCM","rgb(251 114 168)",["Korean"]],
     "Teeth - ENHYPEN": ["Teeth_ENHYPEN","rgb(251 114 168)",["Korean","Pop","ENHYPEN"]],
-    "HELIUM - ENHYPEN": ["HELIUM_ENHYPEN","rgb(251 114 168)",["Korean","Pop","ENHYPEN"]]
+    "HELIUM - ENHYPEN": ["HELIUM_ENHYPEN","rgb(251 114 168)",["Korean","Pop","ENHYPEN"]],
+    "War Cry - &TEAM": ["WarCry_andTEAM","rgb(251 114 168)",["Korean","Pop"]],
+    "仙瑤 - 葉里": ["仙瑤_葉里","rgb(251 114 168)",["Chinese"]]
 
 
 
 
 
-    //HELIUM_ENHYPEN
+    //WarCry_andTEAM
 
 
 };
@@ -562,6 +568,7 @@ function populatePlaylist() {
     if (document.getElementById('INFINITE-filter').checked) filters.push('INFINITE');
     if (document.getElementById('ENHYPEN-filter').checked) filters.push('ENHYPEN');
     if (document.getElementById('TXT-filter').checked) filters.push('TXT');
+    if (document.getElementById('ONEUS-filter').checked) filters.push('ONEUS');
 
     //if (document.getElementById('favorites-filter').checked) filters.push('Favorites');
 
