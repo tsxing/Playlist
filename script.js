@@ -364,13 +364,19 @@ const playlist = {
     "Teeth - ENHYPEN": ["Teeth_ENHYPEN","rgb(251 114 168)",["Korean","Pop","ENHYPEN"]],
     "HELIUM - ENHYPEN": ["HELIUM_ENHYPEN","rgb(251 114 168)",["Korean","Pop","ENHYPEN"]],
     "War Cry - &TEAM": ["WarCry_andTEAM","rgb(251 114 168)",["Korean","Pop"]],
-    "仙瑤 - 葉里": ["仙瑤_葉里","rgb(251 114 168)",["Chinese"]]
+    "仙瑤 - 葉里": ["仙瑤_葉里","rgb(251 114 168)",["Chinese"]],
+    "T.T.M. - iKON": ["TTM_iKON","rgb(251 114 168)",["Korean","Pop"]],
+    "Shaking Heart - C-Clown": ["Shaking_Heart_CClown","rgb(251 114 168)",["Korean","Pop"]],
+    "Really Crazy - &TEAM": ["Really_Crazy_andTEAM","rgb(251 114 168)",["Korean","Pop"]],
+    "Deer Hunter - &TEAM": ["Deer_Hunter_andTEAM","rgb(251 114 168)",["Korean","Pop"]],
+    "Under the Skin - &TEAM": ["Under_the_skin_andTEAM","rgb(251 114 168)",["Korean","Pop"]]
 
 
 
 
 
-    //WarCry_andTEAM
+
+    //Under_the_skin_andTEAM
 
 
 };
