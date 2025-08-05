@@ -372,27 +372,24 @@ const playlist = {
     "Under the Skin - &TEAM": ["Under_the_skin_andTEAM","rgb(251 114 168)",["Korean","Pop"]]
 
 
-
-
-
-
     //Under_the_skin_andTEAM
 
 
 };
 
-console.log("Playlist Length:", Object.keys(playlist).length);
 
-// ========== ELEMENT REFERENCES ==========
+
+let currentSongIndex = 0;
+let filteredSongTitles = [];
+
+// ========= ELEMENT REFERENCES ==========
 const audioPlayer = document.getElementById('audioPlayer');
 const playPauseButton = document.getElementById('playPauseButton');
 const prevSongButton = document.getElementById('prevSongButton');
 const nextSongButton = document.getElementById('nextSongButton');
-
 const randomSongButton = document.getElementById('randomSongButton');
 const repeatCheckbox = document.getElementById('repeat-button');
 const repeatIcon = document.getElementById('repeatButtonIcon');
-
 const albumArtElement = document.getElementById('albumArt');
 const selectedSongElement = document.getElementById('selected-song');
 const selectedSongArtistElement = document.getElementById('selected-song-artist');
@@ -400,29 +397,22 @@ const audioDurationElement = document.getElementById('audio-duration');
 const containerPlaylist = document.getElementById('container-playlist');
 const seekbar = document.getElementById('seekbar');
 
-let currentSongIndex = 0; // Start from the first song
-
-// ========== PLAYBACK FUNCTIONS ==========
-
-// Play a song by its index in the playlist
-function playSongByIndex(index) {
-    const songNames = Object.keys(playlist);
-    const songName = songNames[index];
-    const [imageName, , , songPath] = playlist[songName];
-
-    playSong(songName, 'Artist Name', imageName, songPath);
+// ========= FUNCTIONS ==========
+function addRecentsTagToLast10() {
+    const songTitles = Object.keys(playlist);
+    const last10Songs = songTitles.slice(-12);
+    last10Songs.forEach(title => {
+        const song = playlist[title];
+        if (!song[2].includes('Recents')) {
+            song[2].push('Recents');
+        }
+    });
 }
 
-// Play a specific song
 function playSong(index) {
-    currentSongIndex=index;
-    console.log("this song is ",currentSongIndex);
-    const songNames = Object.keys(playlist);        // array of song names (keys)
-    const songNameAtIndex = songNames[index];          // the name (key) at index 3
-    const songPath = playlist[songNameAtIndex][0]; 
-
-    console.log(songPath);
-
+    currentSongIndex = index;
+    const songName = filteredSongTitles[index];
+    const [songPath] = playlist[songName];
     const audioPath = `music/${songPath}.mp3`;
 
     if (!audioPlayer.paused) {
@@ -437,13 +427,10 @@ function playSong(index) {
         audioPlayer.play();
         updatePlayPauseIcon();
     };
-    
-    const fullTitle = Object.keys(playlist)[index];
-    const [title, artist] = fullTitle.split(" - ");
 
+    const [title, artist] = songName.split(" - ");
     selectedSongElement.textContent = title.trim();
     selectedSongArtistElement.textContent = artist?.trim() || "Unknown Artist";
-
     albumArtElement.src = `albumArt/${songPath}.png`;
 
     audioPlayer.onloadedmetadata = () => {
@@ -451,105 +438,23 @@ function playSong(index) {
     };
 }
 
-
-
-// Format time (mm:ss)
 function formatTime(seconds) {
     const mins = Math.floor(seconds / 60);
     const secs = Math.floor(seconds % 60);
     return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
 }
 
-// ========== UI FUNCTIONS ==========
-
-// Toggle play/pause and update the icon
 function updatePlayPauseIcon() {
     playPauseButton.innerHTML = audioPlayer.paused
         ? '<i class="fa fa-play"></i>'
         : '<i class="fa fa-pause"></i>';
 }
 
-// Function to get the selected filters from the checkboxes
-function getSelectedFilters() {
-    const selectedFilters = [];
-    const filterElements = document.querySelectorAll('.filter-button input[type="checkbox"]:checked');
-    
-    filterElements.forEach(input => {
-        const filterId = input.id.replace('-filter', ''); // Get the filter name by removing '-filter' from the id
-        selectedFilters.push(filterId);
-    });
-
-    return selectedFilters;
-}
-// Ensure this function gets called on page load and when filters are toggled
-window.onload = function() {
-    populatePlaylist(); // Initial population of the playlist
-    setupFilterListeners(); // Set up listeners for filter changes
-};
-
-// Get the selected filters
-function getSelectedFilters() {
-    const selectedFilters = [];
-    // Get all checkbox inputs under the filter buttons holder and check if they're checked
-    const filterElements = document.querySelectorAll('#filterButtonsHolder input[type="checkbox"]:checked');
-
-    filterElements.forEach(input => {
-        // Extract filter name from the checkbox id
-        const filterId = input.id.replace('-filter', ''); // Strip '-filter' from the ID
-        selectedFilters.push(filterId);
-    });
-    console.log('Selected Filters:', selectedFilters);  // Debugging log
-    return selectedFilters;
-}
-
-// Set up listeners for the filter buttons
-function setupFilterListeners() {
-    document.querySelectorAll('#filterButtonsHolder input[type="checkbox"]').forEach(checkbox => {
-        checkbox.addEventListener('change', () => {
-            populatePlaylist();  // Repopulate the playlist when a filter is toggled
-        });
-    });
-}
-function addRecentsTagToLast10() {
-    const songTitles = Object.keys(playlist);
-    
-    // Add "Recents" tag to the last 10 songs in the playlist
-    const last10Songs = songTitles.slice(-12);  // Get the last 10 song titles
-
-    last10Songs.forEach(title => {
-        const song = playlist[title];
-        if (!song[2].includes('Recents')) {
-            song[2].push('Recents');  // Add "Recents" to the song's tags array if it's not already there
-        }
-    });
-}
-
-// Modify the populatePlaylist function to reflect these changes
-function addRecentsTagToLast10() {
-    const songTitles = Object.keys(playlist);
-    
-    // Add "Recents" tag to the last 10 songs in the playlist
-    const last10Songs = songTitles.slice(-12);  // Get the last 10 song titles
-
-    last10Songs.forEach(title => {
-        const song = playlist[title];
-        if (!song[2].includes('Recents')) {
-            song[2].push('Recents');  // Add "Recents" to the song's tags array if it's not already there
-        }
-    });
-}
-
-// Modify the populatePlaylist function to reflect these changes
 function populatePlaylist() {
-    const container = document.getElementById('container-playlist');
-    const dropdown = document.getElementById('songSelect');
-
-    // Clear previous song options
-    container.innerHTML = '';
-    dropdown.innerHTML = '';
+    containerPlaylist.innerHTML = '';
+    filteredSongTitles = [];
 
     const filters = [];
-
     // Check the state of each filter checkbox and add it to the filters array if checked
     if (document.getElementById('recents-filter').checked) filters.push('Recents');
     if (document.getElementById('instrumental-filter').checked) filters.push('Instrumental');
@@ -576,107 +481,39 @@ function populatePlaylist() {
     if (document.getElementById('TXT-filter').checked) filters.push('TXT');
     if (document.getElementById('ONEUS-filter').checked) filters.push('ONEUS');
 
-    //if (document.getElementById('favorites-filter').checked) filters.push('Favorites');
-
-    console.log("FILTERS CHOSEN: ", filters);  // Debugging log
-
-    let anyMatch = false; 
-
-    // Load favorites from localStorage
-    let favorites = JSON.parse(localStorage.getItem('favorites')) || {}; 
-
-    // Add "Recents" tag to the last 10 songs in the playlist
     addRecentsTagToLast10();
 
-    // Iterate through the playlist and apply filters
     for (const title in playlist) {
-        if (playlist.hasOwnProperty(title)) {
-            const song = playlist[title];
-            const songTags = song[2];  // songTags are at index 2
+        const song = playlist[title];
+        const songTags = song[2];
 
-            // Check if the song matches all the selected filters
-            const matchesFilters = filters.every(filter => {
-                if (filter === 'Favorites') {
-                    return favorites[title];  // Check if the song is in favorites
-                }
-                return songTags.includes(filter);  // Check if the song has the filter tag
+        const matches = filters.every(f => songTags.includes(f));
+        if (matches) {
+            filteredSongTitles.push(title);
+
+            const item = document.createElement('div');
+            item.classList.add('song-item');
+            item.innerHTML = `
+                <img src="albumArt/${song[0]}.png" class="song-image" alt="${title}" />
+                <div class="song-description">
+                    <h5 class="song-title">${title.split(' - ')[0]}</h5>
+                    <p class="artist-name">${title.split(' - ')[1]}</p>
+                </div>
+            `;
+            item.addEventListener('click', () => {
+                currentSongIndex = filteredSongTitles.indexOf(title);
+                playSong(currentSongIndex);
             });
-
-            if (matchesFilters) {
-                // If the song matches the filters, create a new song item element
-
-                const songItem = document.createElement('div');
-                songItem.classList.add('song-item');
-                songItem.style.backgroundColor = "transparent";  // Assuming color can be applied here
-
-                const image = document.createElement('img');
-                image.src = `albumArt/${song[0]}.png`;  // Assuming the album image is in `song[0]`
-                image.classList.add('song-image');
-                image.alt = title;
-
-                const description = document.createElement('div');
-                description.classList.add('song-description');
-
-                const [songTitleText, artistNameText] = title.split(' - ');
-
-                const songTitle = document.createElement('h5');
-                songTitle.textContent = songTitleText;
-                songTitle.classList.add('song-title');
-
-                const artistName = document.createElement('p');
-                artistName.textContent = artistNameText || '';
-                artistName.classList.add('artist-name');
-
-                description.appendChild(songTitle);
-                description.appendChild(artistName);
-
-                songItem.appendChild(image);
-                songItem.appendChild(description);
-
-                // Add click event to each song item
-                songItem.addEventListener('click', () => {
-                    const songNames = Object.keys(playlist);
-                    const currentSongIndex = songNames.indexOf(title); // Get the index of the clicked song
-                    console.log("Clicked index:", currentSongIndex);
-                    playSong(currentSongIndex); // Play the song at the clicked index
-                });
-
-                // Append the song item to the playlist container
-                container.appendChild(songItem);
-                anyMatch = true;
-            }
+            containerPlaylist.appendChild(item);
         }
     }
 
-    // If no songs match the filters, you can display a message
-    if (!anyMatch) {
-        const noSongsMessage = document.createElement('p');
-        noSongsMessage.textContent = "No songs match the selected filters.";
-        noSongsMessage.style.fontFamily = "Arimo, sans-serif"; // Set font, using a fallback font
-        container.appendChild(noSongsMessage);
+    if (filteredSongTitles.length === 0) {
+        containerPlaylist.innerHTML = '<p>No songs match the selected filters.</p>';
     }
 }
 
-// Event listener to trigger populatePlaylist when a filter is changed
-document.querySelectorAll('.filter-button input').forEach(input => {
-    input.addEventListener('change', populatePlaylist);
-});
-
-
-        
-
-document.querySelectorAll('.filter-button input').forEach(input => {
-    
-    input.addEventListener('change', populatePlaylist);
-});
-
-
-
-  
-
-
-// ========== EVENT LISTENERS ==========
-
+// ========= EVENT LISTENERS ==========
 playPauseButton.addEventListener('click', () => {
     if (audioPlayer.paused) {
         audioPlayer.play();
@@ -686,14 +523,9 @@ playPauseButton.addEventListener('click', () => {
     updatePlayPauseIcon();
 });
 
-audioPlayer.addEventListener('play', () => {
-
-    updatePlayPauseIcon();
-});
-
+audioPlayer.addEventListener('play', updatePlayPauseIcon);
 audioPlayer.addEventListener('pause', updatePlayPauseIcon);
 
-// Seekbar updates
 audioPlayer.addEventListener('timeupdate', () => {
     if (!isNaN(audioPlayer.duration)) {
         seekbar.value = (audioPlayer.currentTime / audioPlayer.duration) * 100;
@@ -701,91 +533,64 @@ audioPlayer.addEventListener('timeupdate', () => {
 });
 
 seekbar.addEventListener('input', () => {
-    console.log("repeat mode:",repeatCheckbox.checked);
     const newTime = (seekbar.value / 100) * audioPlayer.duration;
     audioPlayer.currentTime = newTime;
 });
 
-
-
 prevSongButton.addEventListener('click', () => {
     currentSongIndex--;
-    console.log("the curr songind: ",currentSongIndex);
-
-    // Loop to last song if at the beginning
     if (currentSongIndex < 0) {
-        currentSongIndex = Object.keys(playlist).length - 1;
+        currentSongIndex = filteredSongTitles.length - 1;
     }
-
     playSong(currentSongIndex);
 });
 
 nextSongButton.addEventListener('click', () => {
     currentSongIndex++;
-    if (currentSongIndex >= Object.keys(playlist).length) {
-        currentSongIndex = 0; // Loop to first song if at the end
+    if (currentSongIndex >= filteredSongTitles.length) {
+        currentSongIndex = 0;
     }
     playSong(currentSongIndex);
 });
 
+randomSongButton.addEventListener('click', () => {
+    currentSongIndex = Math.floor(Math.random() * filteredSongTitles.length);
+    playSong(currentSongIndex);
+});
 
-const repeatButton = document.getElementById('repeatButtonIcon');
+audioPlayer.addEventListener('ended', () => {
+    if (repeatCheckbox.checked) {
+        playSong(currentSongIndex);
+    } else {
+        currentSongIndex++;
+        if (currentSongIndex >= filteredSongTitles.length) {
+            currentSongIndex = 0;
+        }
+        playSong(currentSongIndex);
+    }
+});
 
-// Ensure the initial icon reflects the checkbox state
 repeatIcon.innerHTML = repeatCheckbox.checked 
     ? '<i class="fa fa-remove"></i>' 
     : '<i class="fa fa-refresh"></i>';
 
-// Toggle the repeat mode when the button is clicked
-repeatButton.addEventListener('click', () => {
-    // Toggle the checkbox state manually
+repeatIcon.addEventListener('click', () => {
     repeatCheckbox.checked = !repeatCheckbox.checked;
-    console.log("Repeat checkbox state after toggle:", repeatCheckbox.checked);
-
-
-    // Change the icon based on the new state
-    if (repeatCheckbox.checked) {
-        repeatIcon.innerHTML = '<i class="fa fa-remove"></i>'; // Icon for repeat ON
-        console.log("🔁 Repeat mode is ON");
-    } else {
-        repeatIcon.innerHTML = '<i class="fa fa-refresh"></i>'; // Icon for repeat OFF
-        console.log("🔁 Repeat mode is OFF");
-    }
+    repeatIcon.innerHTML = repeatCheckbox.checked 
+        ? '<i class="fa fa-remove"></i>' 
+        : '<i class="fa fa-refresh"></i>';
 });
 
-audioPlayer.addEventListener('ended', () => {
-    console.log("Song ended. Repeat mode: ", repeatCheckbox.checked); 
-    if (repeatCheckbox.checked) {
-        console.log("Repeating current song...");
-
-        playSong(currentSongIndex); // Replay current song
-    } else {
-        console.log("Moving to next song...");
-        currentSongIndex++;
-        if (currentSongIndex >= Object.keys(playlist).length) {
-            currentSongIndex = 0; // Wrap around to the first song
-        }
-        playSong(currentSongIndex); // Play next
-    }
+document.querySelectorAll('.filter-button input').forEach(input => {
+    input.addEventListener('change', populatePlaylist);
 });
 
-randomSongButton.addEventListener('click', () => {
-    // Generate a random index within the bounds of the playlist length
-    currentSongIndex = Math.floor(Math.random() * Object.keys(playlist).length);
-
-    console.log("Playing random song at index:", currentSongIndex); // Debugging log
-
-    // Play the song at the random index
-    playSong(currentSongIndex);
-});
-
-
-
-
-
-
-// Populate playlist on page load
+// ========= INITIALIZE ==========
 window.onload = populatePlaylist;
 
 
-// change playsong function
+
+
+
+    
+
