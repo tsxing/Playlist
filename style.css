@@ -584,10 +584,8 @@ border-left: 0.2px solid #aaaaaa;
 }
 
 
-
 .rightside{
-
-position: relative;
+    position: relative;
     height: auto;
     width: auto;
 
@@ -727,10 +725,6 @@ input:checked + .slider:hover {
 
 
 
-
-
-
-
 .light-mode {
     background-color: #fff;
     color: #000;
@@ -756,6 +750,15 @@ input:checked + .slider:hover {
     
     box-shadow: 0px 0px 5px rgb(37, 37, 37);
 }
+
+.dark-mode #albumArt{
+    box-shadow: none;
+    /* box-shadow: 0px 0px 10px rgb(0, 0, 0);*/
+}
+
+.dark-mode .filter-button{
+
+}
 .dark-mode #topbrowserbar{
     transition: 1s;
     background: #383838;
@@ -770,6 +773,8 @@ input:checked + .slider:hover {
 
 .dark-mode #topbrowserbar-right{
     background-color: #383838;
+    border-left: none;
+    border-bottom: none;
 }
 
 .dark-mode .filterButtonHolder{
@@ -779,6 +784,7 @@ input:checked + .slider:hover {
 .dark-mode #topbrowserbar-playlist{
     transition: 1s;
     background: #383838;
+    
 }
 .dark-mode .filter-container{
     transition: 1s;
@@ -794,6 +800,12 @@ input:checked + .slider:hover {
     transition: 1s;
     border-color: #7c7b7d;
     color: #a6a5a7;
+}
+
+.dark-mode .filter-button input:checked +span {
+    transition: 1s;
+    background-color: #393939;
+    border-radius: 8px;
 }
 .dark-mode .button-container .container-button{
     transition: 1s;
