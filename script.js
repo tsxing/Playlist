@@ -363,13 +363,13 @@ const playlist = {
     "Love You To Death - KCM": ["Loveyoutodeath_KCM","rgb(251 114 168)",["Korean"]],
     "Teeth - ENHYPEN": ["Teeth_ENHYPEN","rgb(251 114 168)",["Korean","Pop","ENHYPEN"]],
     "HELIUM - ENHYPEN": ["HELIUM_ENHYPEN","rgb(251 114 168)",["Korean","Pop","ENHYPEN"]],
-    "War Cry - &TEAM": ["WarCry_andTEAM","rgb(251 114 168)",["Korean","Pop"]],
+    "War Cry - &TEAM": ["WarCry_andTEAM","rgb(251 114 168)",["Korean","Pop","&TEAM"]],
     "仙瑤 - 葉里": ["仙瑤_葉里","rgb(251 114 168)",["Chinese"]],
     "T.T.M. - iKON": ["TTM_iKON","rgb(251 114 168)",["Korean","Pop"]],
     "Shaking Heart - C-Clown": ["Shaking_Heart_CClown","rgb(251 114 168)",["Korean","Pop"]],
-    "Really Crazy - &TEAM": ["Really_Crazy_andTEAM","rgb(251 114 168)",["Korean","Pop"]],
-    "Deer Hunter - &TEAM": ["Deer_Hunter_andTEAM","rgb(251 114 168)",["Korean","Pop"]],
-    "Under the Skin - &TEAM": ["Under_the_skin_andTEAM","rgb(251 114 168)",["Korean","Pop"]]
+    "Really Crazy - &TEAM": ["Really_Crazy_andTEAM","rgb(251 114 168)",["Korean","Pop","&TEAM"]],
+    "Deer Hunter - &TEAM": ["Deer_Hunter_andTEAM","rgb(251 114 168)",["Korean","Pop","&TEAM"]],
+    "Under the Skin - &TEAM": ["Under_the_skin_andTEAM","rgb(251 114 168)",["Korean","Pop","&TEAM"]]
 
 
     //Under_the_skin_andTEAM
@@ -480,6 +480,8 @@ function populatePlaylist() {
     if (document.getElementById('ENHYPEN-filter').checked) filters.push('ENHYPEN');
     if (document.getElementById('TXT-filter').checked) filters.push('TXT');
     if (document.getElementById('ONEUS-filter').checked) filters.push('ONEUS');
+    if (document.getElementById('TEAM-filter').checked) filters.push('&TEAM');
+
 
     addRecentsTagToLast10();
 
