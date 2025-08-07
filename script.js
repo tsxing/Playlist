@@ -369,13 +369,21 @@ const playlist = {
     "Shaking Heart - C-Clown": ["Shaking_Heart_CClown","rgb(251 114 168)",["Korean","Pop"]],
     "Really Crazy - &TEAM": ["Really_Crazy_andTEAM","rgb(251 114 168)",["Korean","Pop","&TEAM"]],
     "Deer Hunter - &TEAM": ["Deer_Hunter_andTEAM","rgb(251 114 168)",["Korean","Pop","&TEAM"]],
-    "Under the Skin - &TEAM": ["Under_the_skin_andTEAM","rgb(251 114 168)",["Korean","Pop","&TEAM"]]
+    "Under the Skin - &TEAM": ["Under_the_skin_andTEAM","rgb(251 114 168)",["Korean","Pop","&TEAM"]],
+    "晚来客 - 国风堂": ["晚来客_国风堂","rgb(251 114 168)",["Chinese"]],
+    "别时月 - 排骨教主": ["别时月_排骨教主","rgb(251 114 168)",["Chinese"]],
+    "Echoes - ENHYPEN": ["Echoes_ENHYPEN","rgb(251 114 168)",["Korean","Pop","ENHYPEN"]],
+    "Dropkick - &TEAM": ["Dropkick_andTEAM","rgb(251 114 168)",["Korean","Pop","&TEAM"]],
+    "Koegawari - &TEAM": ["Koegawari_andTEAM","rgb(251 114 168)",["Korean","Pop","&TEAM"]]
 
 
-    //Under_the_skin_andTEAM
+    //Koegawari_andTEAM
 
 
 };
+
+console.log(Object.keys(playlist).length);
+
 
 
 
