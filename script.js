@@ -371,13 +371,20 @@ const playlist = {
     "Deer Hunter - &TEAM": ["Deer_Hunter_andTEAM","rgb(251 114 168)",["Korean","Pop","&TEAM"]],
     "Under the Skin - &TEAM": ["Under_the_skin_andTEAM","rgb(251 114 168)",["Korean","Pop","&TEAM"]],
     "晚来客 - 国风堂": ["晚来客_国风堂","rgb(251 114 168)",["Chinese"]],
-    "别时月 - 排骨教主": ["别时月_排骨教主","rgb(251 114 168)",["Chinese"]],
+    "别时月 - 排骨教主": ["别时月_排骨教主","rgb(251 114 168)",["Chinese","Pop"]],
     "Echoes - ENHYPEN": ["Echoes_ENHYPEN","rgb(251 114 168)",["Korean","Pop","ENHYPEN"]],
     "Dropkick - &TEAM": ["Dropkick_andTEAM","rgb(251 114 168)",["Korean","Pop","&TEAM"]],
-    "Koegawari - &TEAM": ["Koegawari_andTEAM","rgb(251 114 168)",["Korean","Pop","&TEAM"]]
+    "Koegawari - &TEAM": ["Koegawari_andTEAM","rgb(251 114 168)",["Korean","Pop","&TEAM"]],
+    "FIREWORK - &TEAM": ["FIREWORK_andTEAM","rgb(251 114 168)",["Korean","Pop","&TEAM"]],
+    "世中逢尔雨逢花 - 柚木暖": ["世中逢尔雨逢花_柚木暖","rgb(251 114 168)",["Chinese", "Pop"]],
+    "光的方向 - 张碧晨": ["光的方向_张碧晨","rgb(251 114 168)",["Chinese", "Pop","Theme/OST"]],
+    "Big suki - &TEAM": ["Big_suki_andTEAM","rgb(251 114 168)",["Korean","Pop","&TEAM"]],
+    "YOUNG LUV - STAYC": ["YOUNG_LUV_STAYC","rgb(251 114 168)",["Korean","Pop"]],
+    "Loca - Favorite": ["Loca_Favorite","rgb(251 114 168)",["Korean","Pop"]],
+    "Go in Blind - &TEAM": ["Go_in_Blind_andTEAM","rgb(251 114 168)",["Korean","Pop","&TEAM"]]
 
 
-    //Koegawari_andTEAM
+    //Go_in_Blind_andTEAM
 
 
 };
