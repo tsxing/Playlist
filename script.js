@@ -155,7 +155,7 @@ const playlist = {
     "Bon Voyage - YooA": ["Bon_Voyage_YooA","rgb(237 199 167)",["Korean","Pop"]],
     "Virtual Angel - ARTMS": ["Virtual_Angel_ARTMS","rgb(67 128 192)",["Korean","Pop"]],
     "Girls Never Die - tripleS": ["Girls_Never_Die_tripleS","rgb(212 181 175)",["Korean","Pop"]],
-    "Paradise - infinite": ["paradise_infinite","rgb(19 141 179)",["Korean","Pop"]],
+    "Paradise - infinite": ["paradise_infinite","rgb(19 141 179)",["Korean","Pop","INFINITE"]],
     "Rooftop - N.Flying": ["Rooftop_NFlying","rgb(246 153 44)",["Korean","Pop"]],
     "beautiful - BEAST": ["beautiful_BEAST","rgb(137 220 251)",["Korean","Pop"]],
     "LUNA - ONEUS": ["LUNA_ONEUS","rgb(86 157 255)",["Korean","Pop","ONEUS"]],
@@ -381,11 +381,14 @@ const playlist = {
     "Big suki - &TEAM": ["Big_suki_andTEAM","rgb(251 114 168)",["Korean","Pop","&TEAM"]],
     "YOUNG LUV - STAYC": ["YOUNG_LUV_STAYC","rgb(251 114 168)",["Korean","Pop"]],
     "Loca - Favorite": ["Loca_Favorite","rgb(251 114 168)",["Korean","Pop"]],
-    "Go in Blind - &TEAM": ["Go_in_Blind_andTEAM","rgb(251 114 168)",["Korean","Pop","&TEAM"]]
+    "Go in Blind - &TEAM": ["Go_in_Blind_andTEAM","rgb(251 114 168)",["Korean","Pop","&TEAM"]],
+    "Shingeki no Kyojin - AOT Theme": ["Shingeki_no_Kyojin","rgb(251 114 168)",["Japanese","Anime","Theme/OST","Instrumental"]],
+    "Caught In Our Thoughts - CMA": ["Caught_In_Our_Thoughts_CMA","rgb(251 114 168)",["Instrumental"]],
+    "In Your Eyes - DG812": ["In_Your_Eyes_DG812","rgb(251 114 168)",["English","Pop"]],
+    "分飞_日文版": ["分飞_日文版","rgb(251 114 168)",["Japanese","Pop"]]
 
 
-    //Go_in_Blind_andTEAM
-
+    //分飞_日文版
 
 };
 
