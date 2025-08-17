@@ -1,0 +1,451 @@
+body {
+    display: flex;            /* Enables flex layout */
+    justify-content: center;  /* Centers horizontally */
+    align-items: center;      /* Centers vertically */
+    height: 100vh;            /* Full viewport height */
+    margin: 0;                /* Remove default body margin */
+    background-image: url('bkg.jpg');
+    background-size: cover;
+}
+
+.sitebody{
+    height: 696px;
+    width: 1152px;
+    border-radius: 40px;
+    border: 0.5px solid rgb(154, 154, 154);
+    background-color: rgba(255, 0, 0, 0); /* semi-transparent  */
+    backdrop-filter: blur(15px); /* adds blur behind the element */
+    position: relative;
+    overflow: auto;
+}
+
+.filters-container{
+    width: 800px;
+    height: 50px;
+    top: 10px;
+    right: 20px;
+    position: absolute;
+    background-color: transparent;
+    overflow: auto;
+    display: flex;                  /* horizontal layout */
+    gap: 10px;                      /* space between buttons */
+                 /* container padding */
+    overflow-x: auto;               /* horizontal scroll if overflow */
+    white-space: nowrap;            /* prevent wrapping */
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0,0,0,0.3) transparent;
+
+}
+
+.filter-button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color:transparent;
+    color: white;
+    border: 0.5px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    padding: 6px 12px;
+    font-family: 'Prompt', sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0;                /* prevents shrinking in flex */
+}
+
+.filter-button input[type="checkbox"] {
+    display: none;                 /* hide the checkbox itself */
+}
+
+.filter-button span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.filter-button:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.filter-button input[type="checkbox"]:checked + span {
+    background-color: rgba(79, 79, 79, 0.6);
+    color: white;
+    border-radius: 20px;
+    padding: 10px 13px;
+}
+
+.greeting-text{
+    color: white;
+    font-family: "Lato", sans-serif;
+    padding-left: 25px;
+    position: absolute;
+    top: 10px;
+}
+
+
+
+.random-song-container {
+    height: 375px;
+    width: 290px;
+    top: 470px;
+    
+    left: 20px;
+    background-color: rgba(154, 154, 154, 0.4);
+    backdrop-filter: blur(15px);
+    border: 0.5px solid rgb(154, 154, 154);
+    font-family: "Lato", sans-serif;
+    border-radius: 30px;
+    position: absolute;
+    overflow: auto;
+    gap: 15px;
+
+    display: grid; /* use grid layout */
+    grid-template-columns: 1fr; /* one column vertically */
+    justify-items: center; /* center horizontally */
+
+}
+
+.random-song-container h2 {
+    color: white;
+    justify-self: start; 
+    font-size: 20px;
+    padding-left: 25px;
+    margin-bottom: 10px;
+    font-family: "Lato", sans-serif;
+  font-weight: 700;
+}
+
+
+.lyrics-container{
+    height: 375px;
+    width: 290px;
+    top: 75px;
+    left: 20px;
+    background-color: rgba(154, 154, 154, 0.4);
+    backdrop-filter: blur(15px);
+    border: 0.5px solid rgb(154, 154, 154);
+    border-radius: 30px;
+    position: absolute;
+    overflow: auto;
+}
+.lyrics-container h3{
+    color: white;
+    font-family: "Lato", sans-serif;
+    padding-left: 25px;
+
+}
+.lyrics-container p{
+    font-family: "Lato", sans-serif;
+    padding-left: 25px;
+}
+
+.current-song-container {
+    position: absolute;
+    height: 375px;
+    width: 800px;
+    top: 75px;
+    right: 20px;
+    /* */
+    border: 0.5px solid rgb(154, 154, 154);
+    border: none;
+    border-radius: 30px;
+    overflow: hidden;
+    background-color: black;
+    background-clip: border-box;   /* let background extend under border */
+    background-size: 110% 110%; 
+
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.current-song-container::before {
+    content: "";
+    position: absolute;
+    top: -2px;    /* bleed out slightly */
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: url('albumArt/example.png') center/cover no-repeat;
+    z-index: 0;
+}
+
+#albumArt {
+    position: absolute;
+    transform: translate(-1%, -1%);
+    top: 0;
+    left: 0;
+    width: 110%;
+    height: 110%;
+    object-fit: cover;   /* fills the container without repeating */
+    z-index: 0;          /* behind controls and text */
+    transition: all 0.3s ease;
+    filter: blur(4px);
+}
+
+/* Overlay content */
+#selected-song-container,
+.controls-container {
+    position: relative;
+    z-index: 1;           /* in front of album art */
+    color: white;         /* text contrast */
+    padding: 20px;
+    
+}
+
+.controls-right{
+    padding-left: 15px;
+}
+/* Position the song info above the controls */
+#selected-song-container {
+    margin-bottom: 60px;  /* space above controls */
+}
+
+#selected-song{
+    color: white;
+    font-family: "Lato", sans-serif;
+  font-weight: 700;
+    text-shadow: 2px 2px 5px black;
+    font-size: 50px;
+    position: relative;
+    top: 90px;
+}
+#selected-song-artist{
+    font-size: 30px;
+    font-family: "Lato", sans-serif;
+  font-weight: 700;
+    text-shadow: 2px 2px 5px black;
+    position: relative;
+    top: 30px;
+
+}
+
+/* Controls at the bottom */
+.controls-container {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    display: flex;
+
+    gap: 5px;
+    
+    padding: 20px;
+    border-radius: 0 0 30px 30px;
+
+    display: flex;
+    align-items: center;  /* vertical centering */
+    justify-content: flex-start}
+
+#youmaylike{
+    position: absolute;
+    font-family: "Lato", sans-serif;
+  font-weight: 700;
+    color: white;
+    top: 460px;
+    right: 670px;
+
+
+}
+
+.playlist-container{
+    position: absolute;
+    background-color: transparent;
+    right: 20px;
+    top: 530px;
+    width: 800px;
+    height: 600px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns per row */
+    grid-auto-rows: 175px;
+    gap: 10px; /* space between songs */
+    overflow: auto;
+
+}
+
+
+.song-item {
+    position: relative;
+    width: 175px;
+    height: 150px;
+    border-radius: 15px;
+    cursor: pointer;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end; /* pushes text to bottom */
+    justify-content: flex-start; /* left align content horizontally */
+    padding: 10px; /* left + bottom padding */
+    color: white;
+    font-family: "Lato", sans-serif;
+    text-shadow: 2px 2px 3px black;
+    text-align: left;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.song-description {
+    width: 100%;
+    /* already positioned bottom with absolute if needed */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 10px 15px; /* left/right padding */
+    box-sizing: border-box;
+    background: rgba(0,0,0,0.5);
+    text-align: left;
+}
+
+
+.song-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.song-item h5,
+.song-item p {
+    margin: 0;   /* remove default top/bottom margin */
+    padding: 0;
+    text-align: left;
+}
+
+
+
+.song-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    
+}
+
+
+.song-title {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.artist-name {
+    font-size: 14px;
+    color: #cccccc;
+}
+
+
+.controls-container button {
+    background-color: transparent; /* semi-transparent blue */
+    border: 0.5px solid white;
+    color: white;
+    padding: 10px 20px;       /* makes them pill-shaped */
+    border-radius: 50px;      /* large radius = pill shape */
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: "Lato", sans-serif;
+}
+
+.controls-container button:hover {
+    background-color: rgba(0, 120, 255, 0.4); /* slightly darker on hover */
+}
+
+#audio-duration{
+    font-size: 15px;
+    font-family: "Lato", sans-serif;
+    line-height: 1;          /* ensures no extra vertical spacing */
+    display: flex;            /* makes it a flex item */
+    align-items: center;      /* vertically centers the text */
+}
+
+/* Optional: style the repeat checkbox pill */
+#repeat-button span {
+    display: inline-flex;
+    
+    align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    font-size: 18px;
+    border-radius: 50px;
+    border: 0.5px solid white;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#repeat-button span:hover {
+    background-color: rgba(0, 120, 255, 0.4);
+}
+
+#playPauseButton {
+    background-color: rgba(255, 255, 255);
+    color: black;
+}
+
+#playPauseButton:hover {
+    background-color: rgb(255, 255, 255,0.3);
+}
+
+
+
+
+
+/* Container */
+#seekbar {
+    -webkit-appearance: none;  /* remove default styles */
+    width: 150px;
+    height: 8px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.3);
+    outline: none;
+
+    cursor: pointer;
+}
+
+/* Track */
+#seekbar::-webkit-slider-runnable-track {
+    height: 8px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+#seekbar::-moz-range-track {
+    height: 8px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Thumb (the draggable part) */
+#seekbar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #ffffff;   /* blue */
+    border: 2px solid white;
+    margin-top: -4px;       /* center thumb vertically on track */
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+#seekbar::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+}
+
+#seekbar::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #0078ff;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+#seekbar::-moz-range-thumb:hover {
+    transform: scale(1.2);
+}
+
+/* Optional: filled portion of the track (Webkit only) */
+#seekbar::-webkit-slider-runnable-track {
+    background: linear-gradient(to right, #0078ff 0%, #0078ff var(--seek-value), rgba(255,255,255,0.3) var(--seek-value), rgba(255,255,255,0.3) 100%);
+}
