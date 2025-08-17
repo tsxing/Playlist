@@ -385,7 +385,7 @@ const playlist = {
     "Shingeki no Kyojin - AOT Theme": ["Shingeki_no_Kyojin","rgb(251 114 168)",["Japanese","Anime","Theme/OST","Instrumental"]],
     "Caught In Our Thoughts - CMA": ["Caught_In_Our_Thoughts_CMA","rgb(251 114 168)",["Instrumental"]],
     "In Your Eyes - DG812": ["In_Your_Eyes_DG812","rgb(251 114 168)",["English","Pop"]],
-    "分飞_日文版": ["分飞_日文版","rgb(251 114 168)",["Japanese","Pop"]]
+    "分飞 - 日文版": ["分飞_日文版","rgb(251 114 168)",["Japanese","Pop"]]
 
 
     //分飞_日文版
