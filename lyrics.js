@@ -1,6 +1,11 @@
 let currentLyrics = [];
 let lyricIndex = 0;
 
+function parseTime(timeString) {
+    const parts = timeString.split(':');        // ["MM", "SS.xx"]
+    return parseInt(parts[0], 10) * 60 + parseFloat(parts[1]);
+}
+
 function loadLyrics(songFileName) {
     const lyricsDiv = document.getElementById("lyrics");
     const header = lyricsDiv.querySelector("h3"); // keep the header
