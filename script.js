@@ -226,7 +226,7 @@ const playlist = {
     "Take Me Hand - Daishi Dance": ["Take_Me_Hand_Daishi_Dance","rgb(232 160 147)",["English","Pop"]],
     "印第安曲 - Music": ["印第安曲","rgb(92 203 254)",["Instrumental"]],
     "迴夢遊仙 - Music": ["迴夢遊仙","rgb(179 191 178)",["Instrumental","Epic"]],
-    "That Girl x Talking To The Moon - Remix": ["That_Girl_x_Talking_To_The_Moon","rgb(191 196 217)",["English","Remix"]],
+    "That Girl x Talking To Moon - Remix": ["That_Girl_x_Talking_To_The_Moon","rgb(191 196 217)",["English","Remix"]],
     "Upuan - Jeazell": ["Upuan_Jeazell","rgb(5 50 58)",["Filipino"]],
     "Illusionary Daytime - Alan Walker Style": ["Illusionary_Daytime_Alan_Walker_Style","rgb(75 162 184)",["Remix","Instrumental"]],
     "Don't Cry - Renka": ["Dont_Cry_Renka","rgb(212 115 152)",["Japanese","Pop"]],
@@ -364,7 +364,7 @@ const playlist = {
     "Teeth - ENHYPEN": ["Teeth_ENHYPEN","rgb(251 114 168)",["Korean","Pop","ENHYPEN"]],
     "HELIUM - ENHYPEN": ["HELIUM_ENHYPEN","rgb(251 114 168)",["Korean","Pop","ENHYPEN"]],
     "War Cry - &TEAM": ["WarCry_andTEAM","rgb(251 114 168)",["Korean","Pop","&TEAM"]],
-    "仙瑤 - 葉里": ["仙瑤_葉里","rgb(251 114 168)",["Chinese"]],
+    "仙瑶 - 叶里": ["仙瑤_葉里","rgb(251 114 168)",["Chinese"]],
     "T.T.M. - iKON": ["TTM_iKON","rgb(251 114 168)",["Korean","Pop"]],
     "Shaking Heart - C-Clown": ["Shaking_Heart_CClown","rgb(251 114 168)",["Korean","Pop"]],
     "Really Crazy - &TEAM": ["Really_Crazy_andTEAM","rgb(251 114 168)",["Korean","Pop","&TEAM"]],
@@ -683,6 +683,8 @@ function populateRandomSongs() {
 
         container.appendChild(item);
     });
+
+    
 }
 
 // helper function to play song by title
@@ -702,6 +704,8 @@ function playSongByTitle(songName) {
     selectedSongElement.textContent = title.trim();
     selectedSongArtistElement.textContent = artist?.trim() || "Unknown Artist";
     albumArtElement.src = `albumArt/${songPath}.png`;
+
+    loadLyrics(songPath);
 }
 
 // ======== FORMAT TIME FUNCTION ========
