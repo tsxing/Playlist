@@ -18,7 +18,10 @@ function loadLyrics(songFileName) {
             return response.json();
         })
         .then(data => {
-            currentLyrics = data;
+            currentLyrics = data.map(item => ({
+                line: item.line,
+                time: parseTime(item.time)  // convert "MM:SS.xx" to seconds
+            }));
             lyricIndex = 0;
             displayLyrics();
         })
