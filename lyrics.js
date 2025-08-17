@@ -8,9 +8,9 @@ function parseTime(timeString) {
 
 function loadLyrics(songFileName) {
     const lyricsDiv = document.getElementById("lyrics");
-    const header = lyricsDiv.querySelector("h3"); // keep the header
-    lyricsDiv.innerHTML = "";                     // clear previous lines
-    lyricsDiv.appendChild(header);                // re-add the header
+    const header = lyricsDiv.querySelector("h3");
+    lyricsDiv.innerHTML = "";
+    lyricsDiv.appendChild(header);
 
     fetch(`lyrics/${songFileName}.json`)
         .then(response => {
@@ -18,10 +18,15 @@ function loadLyrics(songFileName) {
             return response.json();
         })
         .then(data => {
-            currentLyrics = data.map(item => ({
-                line: item.line,
-                time: parseTime(item.time)  // convert "MM:SS.xx" to seconds
-            }));
+            currentLyrics = data.map(item => {
+                let timeInSeconds;
+                if (typeof item.time === "string") {
+                    timeInSeconds = parseTime(item.time); // parse "MM:SS.xx"
+                } else {
+                    timeInSeconds = item.time;           // already a number
+                }
+                return { line: item.line, time: timeInSeconds };
+            });
             lyricIndex = 0;
             displayLyrics();
         })
@@ -33,6 +38,7 @@ function loadLyrics(songFileName) {
             currentLyrics = [];
         });
 }
+
 
 
 
