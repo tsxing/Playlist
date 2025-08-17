@@ -392,15 +392,12 @@ const playlist = {
 
 };
 
+
 console.log(Object.keys(playlist).length);
 
 
 
-
-let currentSongIndex = 0;
-let filteredSongTitles = [];
-
-// ========= ELEMENT REFERENCES ==========
+// ======== ELEMENT REFERENCES ========
 const audioPlayer = document.getElementById('audioPlayer');
 const playPauseButton = document.getElementById('playPauseButton');
 const prevSongButton = document.getElementById('prevSongButton');
@@ -414,66 +411,14 @@ const selectedSongArtistElement = document.getElementById('selected-song-artist'
 const audioDurationElement = document.getElementById('audio-duration');
 const containerPlaylist = document.getElementById('container-playlist');
 const seekbar = document.getElementById('seekbar');
+const songContainer = document.querySelector('.current-song-container');
 
-// ========= FUNCTIONS ==========
-function addRecentsTagToLast10() {
-    const songTitles = Object.keys(playlist);
-    const last10Songs = songTitles.slice(-12);
-    last10Songs.forEach(title => {
-        const song = playlist[title];
-        if (!song[2].includes('Recents')) {
-            song[2].push('Recents');
-        }
-    });
-}
+let currentSongIndex = 0;
+let filteredSongTitles = [];
 
-function playSong(index) {
-    currentSongIndex = index;
-    const songName = filteredSongTitles[index];
-    const [songPath] = playlist[songName];
-    const audioPath = `music/${songPath}.mp3`;
-
-    if (!audioPlayer.paused) {
-        audioPlayer.pause();
-        audioPlayer.currentTime = 0;
-    }
-
-    audioPlayer.src = audioPath;
-    audioPlayer.load();
-
-    audioPlayer.oncanplaythrough = () => {
-        audioPlayer.play();
-        updatePlayPauseIcon();
-    };
-
-    const [title, artist] = songName.split(" - ");
-    selectedSongElement.textContent = title.trim();
-    selectedSongArtistElement.textContent = artist?.trim() || "Unknown Artist";
-    albumArtElement.src = `albumArt/${songPath}.png`;
-
-    audioPlayer.onloadedmetadata = () => {
-        audioDurationElement.textContent = formatTime(audioPlayer.duration);
-    };
-}
-
-function formatTime(seconds) {
-    const mins = Math.floor(seconds / 60);
-    const secs = Math.floor(seconds % 60);
-    return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
-}
-
-function updatePlayPauseIcon() {
-    playPauseButton.innerHTML = audioPlayer.paused
-        ? '<i class="fa fa-play"></i>'
-        : '<i class="fa fa-pause"></i>';
-}
-
-function populatePlaylist() {
-    containerPlaylist.innerHTML = '';
-    filteredSongTitles = [];
-
+// ======== FILTER HANDLING ========
+function getActiveFilters() {
     const filters = [];
-    // Check the state of each filter checkbox and add it to the filters array if checked
     if (document.getElementById('recents-filter').checked) filters.push('Recents');
     if (document.getElementById('instrumental-filter').checked) filters.push('Instrumental');
     if (document.getElementById('epic-filter').checked) filters.push('Epic');
@@ -499,31 +444,137 @@ function populatePlaylist() {
     if (document.getElementById('TXT-filter').checked) filters.push('TXT');
     if (document.getElementById('ONEUS-filter').checked) filters.push('ONEUS');
     if (document.getElementById('TEAM-filter').checked) filters.push('&TEAM');
+    return filters;
+}
+
+// ======== RECENTS HANDLING ========
+function addRecentsTagToLast12() {
+    const songTitles = Object.keys(playlist);
+    const last12Songs = songTitles.slice(-12);
+    last12Songs.forEach(title => {
+        const song = playlist[title];
+        if (!song[2].includes('Recents')) {
+            song[2].push('Recents');
+        }
+    });
+}
+
+// ======== PLAY SONG ========
+function playSong(index) {
+    currentSongIndex = index;
+    const songName = filteredSongTitles[index];
+    const [songPath] = playlist[songName]; // this is like "我相信_楊培安"
+    const audioPath = `music/${songPath}.mp3`;
+
+    // play audio
+    if (!audioPlayer.paused) {
+        audioPlayer.pause();
+        audioPlayer.currentTime = 0;
+    }
+    audioPlayer.src = audioPath;
+    audioPlayer.load();
+
+    audioPlayer.oncanplaythrough = () => {
+        audioPlayer.play();
+        updatePlayPauseIcon();
+    };
+
+    // update current song text and album art
+    const [title, artist] = songName.split(" - ");
+    selectedSongElement.textContent = title.trim();
+    selectedSongArtistElement.textContent = artist?.trim() || "Unknown Artist";
+    albumArtElement.src = `albumArt/${songPath}.png`;
+
+    // set background
+    songContainer.style.backgroundImage = `url('albumArt/${songPath}.png')`;
+    songContainer.style.backgroundSize = "cover";
+    songContainer.style.backgroundPosition = "center";
+    songContainer.style.backgroundRepeat = "no-repeat";
+
+    audioPlayer.onloadedmetadata = () => {
+        audioDurationElement.textContent = formatTime(audioPlayer.duration);
+    };
+
+    // Load lyrics for this song
+    loadLyrics(songPath); // <--- this line loads lyrics JSON
+}
 
 
-    addRecentsTagToLast10();
+// ======== FORMAT TIME ========
+function formatTime(seconds) {
+    const mins = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+}
+
+// ======== UPDATE ICON ========
+function updatePlayPauseIcon() {
+    playPauseButton.innerHTML = audioPlayer.paused
+        ? '&nbsp; <i class="fa fa-play"></i> &nbsp; Play'
+        : '<i class="fa fa-pause"></i> &nbsp; Pause';
+}
+
+function populatePlaylist() {
+    containerPlaylist.innerHTML = '';
+    filteredSongTitles = [];
+
+    // Collect active filters
+    const filters = [];
+    if (document.getElementById('recents-filter').checked) filters.push('Recents');
+    if (document.getElementById('instrumental-filter').checked) filters.push('Instrumental');
+    if (document.getElementById('epic-filter').checked) filters.push('Epic');
+    if (document.getElementById('remix-filter').checked) filters.push('Remix');
+    if (document.getElementById('samuelkim-filter').checked) filters.push('SamuelKim');
+    if (document.getElementById('theme-filter').checked) filters.push('Theme/OST');
+    if (document.getElementById('chinese-filter').checked) filters.push('Chinese');
+    if (document.getElementById('canto-filter').checked) filters.push('Canto');
+    if (document.getElementById('english-filter').checked) filters.push('English');
+    if (document.getElementById('jpn-filter').checked) filters.push('Japanese');
+    if (document.getElementById('anime-filter').checked) filters.push('Anime');
+    if (document.getElementById('korean-filter').checked) filters.push('Korean');
+    if (document.getElementById('pop-filter').checked) filters.push('Pop');
+    if (document.getElementById('ateez-filter').checked) filters.push('ATEEZ');
+    if (document.getElementById('geodash-filter').checked) filters.push('geodash');
+    if (document.getElementById('swedish-filter').checked) filters.push('Swedish');
+    if (document.getElementById('russian-filter').checked) filters.push('Russian');
+    if (document.getElementById('tsfh-filter').checked) filters.push('TSFH');
+    if (document.getElementById('filipino-filter').checked) filters.push('Filipino');
+    if (document.getElementById('BAP-filter').checked) filters.push('BAP');
+    if (document.getElementById('INFINITE-filter').checked) filters.push('INFINITE');
+    if (document.getElementById('ENHYPEN-filter').checked) filters.push('ENHYPEN');
+    if (document.getElementById('TXT-filter').checked) filters.push('TXT');
+    if (document.getElementById('ONEUS-filter').checked) filters.push('ONEUS');
+    if (document.getElementById('TEAM-filter').checked) filters.push('&TEAM');
+
+    addRecentsTagToLast12(); // make sure to tag last 12 songs as "Recents"
 
     for (const title in playlist) {
         const song = playlist[title];
         const songTags = song[2];
 
+        // Only include songs that match all filters
         const matches = filters.every(f => songTags.includes(f));
-        if (matches) {
+        if (matches || filters.length === 0) {
             filteredSongTitles.push(title);
 
             const item = document.createElement('div');
             item.classList.add('song-item');
+
+            // Set album art as background
+            item.style.backgroundImage = `url('albumArt/${song[0]}.png')`;
+
             item.innerHTML = `
-                <img src="albumArt/${song[0]}.png" class="song-image" alt="${title}" />
                 <div class="song-description">
                     <h5 class="song-title">${title.split(' - ')[0]}</h5>
                     <p class="artist-name">${title.split(' - ')[1]}</p>
                 </div>
             `;
+
             item.addEventListener('click', () => {
                 currentSongIndex = filteredSongTitles.indexOf(title);
                 playSong(currentSongIndex);
             });
+
             containerPlaylist.appendChild(item);
         }
     }
@@ -533,13 +584,11 @@ function populatePlaylist() {
     }
 }
 
-// ========= EVENT LISTENERS ==========
+
+// ======== EVENT LISTENERS ========
 playPauseButton.addEventListener('click', () => {
-    if (audioPlayer.paused) {
-        audioPlayer.play();
-    } else {
-        audioPlayer.pause();
-    }
+    if (audioPlayer.paused) audioPlayer.play();
+    else audioPlayer.pause();
     updatePlayPauseIcon();
 });
 
@@ -559,17 +608,13 @@ seekbar.addEventListener('input', () => {
 
 prevSongButton.addEventListener('click', () => {
     currentSongIndex--;
-    if (currentSongIndex < 0) {
-        currentSongIndex = filteredSongTitles.length - 1;
-    }
+    if (currentSongIndex < 0) currentSongIndex = filteredSongTitles.length - 1;
     playSong(currentSongIndex);
 });
 
 nextSongButton.addEventListener('click', () => {
     currentSongIndex++;
-    if (currentSongIndex >= filteredSongTitles.length) {
-        currentSongIndex = 0;
-    }
+    if (currentSongIndex >= filteredSongTitles.length) currentSongIndex = 0;
     playSong(currentSongIndex);
 });
 
@@ -579,38 +624,123 @@ randomSongButton.addEventListener('click', () => {
 });
 
 audioPlayer.addEventListener('ended', () => {
-    if (repeatCheckbox.checked) {
-        playSong(currentSongIndex);
-    } else {
+    if (repeatCheckbox.checked) playSong(currentSongIndex);
+    else {
         currentSongIndex++;
-        if (currentSongIndex >= filteredSongTitles.length) {
-            currentSongIndex = 0;
-        }
+        if (currentSongIndex >= filteredSongTitles.length) currentSongIndex = 0;
         playSong(currentSongIndex);
     }
 });
 
-repeatIcon.innerHTML = repeatCheckbox.checked 
-    ? '<i class="fa fa-remove"></i>' 
-    : '<i class="fa fa-refresh"></i>';
-
+repeatIcon.innerHTML = repeatCheckbox.checked ? '<i class="fa fa-remove"></i>' : '<i class="fa fa-refresh"></i>';
 repeatIcon.addEventListener('click', () => {
     repeatCheckbox.checked = !repeatCheckbox.checked;
-    repeatIcon.innerHTML = repeatCheckbox.checked 
-        ? '<i class="fa fa-remove"></i>' 
-        : '<i class="fa fa-refresh"></i>';
+    repeatIcon.innerHTML = repeatCheckbox.checked ? '<i class="fa fa-remove"></i>' : '<i class="fa fa-refresh"></i>';
 });
 
+// Update playlist when filters change
 document.querySelectorAll('.filter-button input').forEach(input => {
     input.addEventListener('change', populatePlaylist);
 });
 
-// ========= INITIALIZE ==========
-window.onload = populatePlaylist;
+
+
+function populateRandomSongs() {
+    const container = document.querySelector('.random-song-container');
+    container.innerHTML = '<h2>Random Song Recommendations</h2>'; // header
+
+    const songTitles = Object.keys(playlist);
+    const randomSongs = [];
+
+    // pick 4 unique random songs
+    while (randomSongs.length < 4 && randomSongs.length < songTitles.length) {
+        const randIndex = Math.floor(Math.random() * songTitles.length);
+        const title = songTitles[randIndex];
+        if (!randomSongs.includes(title)) randomSongs.push(title);
+    }
+
+    randomSongs.forEach(title => {
+        const song = playlist[title];
+        const [songPath] = song;
+
+        const item = document.createElement('div');
+        item.classList.add('song-item');
+        item.style.width = '220px'; // smaller for random container
+        item.style.height = '120px';
+        item.style.backgroundImage = `url('albumArt/${songPath}.png')`;
+
+        item.innerHTML = `
+            <div class="song-description">
+                <h5 class="song-title">${title.split(' - ')[0]}</h5>
+                <p class="artist-name">${title.split(' - ')[1]}</p>
+            </div>
+        `;
+
+        // click plays song immediately
+        item.addEventListener('click', () => {
+            playSongByTitle(title);
+        });
+
+        container.appendChild(item);
+    });
+}
+
+// helper function to play song by title
+function playSongByTitle(songName) {
+    const song = playlist[songName];
+    if (!song) return;
+
+    const [songPath] = song;
+    const audioPath = `music/${songPath}.mp3`;
+
+    audioPlayer.src = audioPath;
+    audioPlayer.load();
+    audioPlayer.play();
+    updatePlayPauseIcon();
+
+    const [title, artist] = songName.split(" - ");
+    selectedSongElement.textContent = title.trim();
+    selectedSongArtistElement.textContent = artist?.trim() || "Unknown Artist";
+    albumArtElement.src = `albumArt/${songPath}.png`;
+}
+
+// ======== FORMAT TIME FUNCTION ========
+function formatTime(seconds) {
+    const mins = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+}
+
+// ======== UPDATE CURRENT TIME & TOTAL DURATION ========
+audioPlayer.addEventListener('loadedmetadata', () => {
+    // When audio loads, show total duration
+    const totalDuration = formatTime(audioPlayer.duration);
+    audioDurationElement.textContent = `0:00 / ${totalDuration}`;
+});
+
+audioPlayer.addEventListener('timeupdate', () => {
+    if (!isNaN(audioPlayer.currentTime) && !isNaN(audioPlayer.duration)) {
+        const currentTime = formatTime(audioPlayer.currentTime);
+        const totalDuration = formatTime(audioPlayer.duration);
+        audioDurationElement.textContent = `${currentTime} / ${totalDuration}`;
+    }
+});
+
+
+window.onload = () => {
+    populatePlaylist(); // populate filteredSongTitles first
+    populateRandomSongs();
 
 
 
+    const initialSongName = "Caught In Our Thoughts - CMA"; // match the key in your playlist
+    const initialIndex = filteredSongTitles.findIndex(title => title.includes(initialSongName));
+
+    if (initialIndex !== -1) {
+        currentSongIndex = initialIndex;
+        playSong(currentSongIndex);
+    }
+};
 
 
-    
-
+// Optionally, refresh random songs on button click or interval
