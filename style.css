@@ -6,6 +6,7 @@ body {
     margin: 0;                /* Remove default body margin */
     background-image: url('bkg.jpg');
     background-size: cover;
+    overflow: hidden;
 }
 
 .sitebody{
@@ -137,6 +138,7 @@ body {
 .lyrics-container p{
     font-family: "Lato", sans-serif;
     padding-left: 25px;
+    color: white;
 }
 
 .current-song-container {
