@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="icon" type="image/x-icon" href="favicon2.ico" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Music Player</title>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+  <!-- lato -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+  <div class="sitebody">
+
+    <!-- FILTERS -->
+    <div class="filters-container">
+      <label class="filter-button"><input type="checkbox" id="recents-filter" /><span><i class="fa fa-clock-o" style="color: #ffffff;"></i>&nbsp; Recent</span></label>
+      <label class="filter-button"><input type="checkbox" id="epic-filter" /><span><i class="fa fa-music" style="color: #ffffff;"></i>&nbsp; Epic</span></label>
+      <label class="filter-button"><input type="checkbox" id="instrumental-filter" /><span><i class="fa fa-music" style="color: #ffffff;"></i>&nbsp; Instru</span></label>
+      <label class="filter-button"><input type="checkbox" id="remix-filter" /><span><i class="fa fa-music" style="color: #ffffff;"></i>&nbsp; Remix</span></label>
+      <label class="filter-button"><input type="checkbox" id="samuelkim-filter" /><span><i class="fa fa-music" style="color: #ffffff;"></i>&nbsp; Sam Kim</span></label>
+      <label class="filter-button"><input type="checkbox" id="chinese-filter" /><span><i class="fa fa-music" style="color: #ffffff;"></i>&nbsp; Chinese</span></label>
+      <label class="filter-button"><input type="checkbox" id="theme-filter" /><span><i class="fa fa-music" style="color: #ffffff;"></i>&nbsp; Themes</span></label>
+      <label class="filter-button"><input type="checkbox" id="canto-filter" /><span><i class="fa fa-music" style="color: #ffffff;"></i>&nbsp; Canto</span></label>
+      <label class="filter-button"><input type="checkbox" id="korean-filter" /><span><i class="fa fa-music" style="color: #ffffff;"></i>&nbsp; Korean</span></label>
+      <label class="filter-button"><input type="checkbox" id="ateez-filter" /><span><i class="fa fa-music" style="color: #ffffff;"></i>&nbsp; ATEEZ</span></label>
+      <label class="filter-button"><input type="checkbox" id="jpn-filter" /><span><i class="fa fa-music" style="color: #ffffff;"></i>&nbsp; Jpn</span></label>
+      <label class="filter-button"><input type="checkbox" id="english-filter" /><span><i class="fa fa-music" style="color: #ffffff;"></i>&nbsp; English</span></label>
+      <label class="filter-button"><input type="checkbox" id="pop-filter" /><span><i class="fa fa-music" style="color: #ffffff;"></i>&nbsp; Pop</span></label>
+      <label class="filter-button"><input type="checkbox" id="geodash-filter" /><span><i class="fa fa-music" style="color: #ffffff;"></i>&nbsp; Geodash</span></label>
+      <label class="filter-button"><input type="checkbox" id="russian-filter" /><span><i class="fa fa-music" style="color: #ffffff;"></i>&nbsp; Russian</span></label>
+      <label class="filter-button"><input type="checkbox" id="swedish-filter" /><span><i class="fa fa-music" style="color: #ffffff;"></i>&nbsp; Swedish</span></label>
+      <label class="filter-button"><input type="checkbox" id="tsfh-filter" /><span><i class="fa fa-music" style="color: #ffffff;"></i>&nbsp; TSFH</span></label>
+      <label class="filter-button"><input type="checkbox" id="anime-filter" /><span><i class="fa fa-music" style="color: #ffffff;"></i>&nbsp; Anime</span></label>
+      <label class="filter-button"><input type="checkbox" id="filipino-filter" /><span><i class="fa fa-music" style="color: #ffffff;"></i>&nbsp; Filipino</span></label>
+      <label class="filter-button"><input type="checkbox" id="BAP-filter" /><span><i class="fa fa-music" style="color: #ffffff;"></i>&nbsp; B.A.P.</span></label>
+      <label class="filter-button"><input type="checkbox" id="INFINITE-filter" /><span><i class="fa fa-music" style="color: #ffffff;"></i>&nbsp; INFINITE</span></label>
+      <label class="filter-button"><input type="checkbox" id="ENHYPEN-filter" /><span><i class="fa fa-music" style="color: #ffffff;"></i>&nbsp; ENHA</span></label>
+      <label class="filter-button"><input type="checkbox" id="TXT-filter" /><span><i class="fa fa-music" style="color: #ffffff;"></i>&nbsp; TXT</span></label>
+      <label class="filter-button"><input type="checkbox" id="ONEUS-filter" /><span><i class="fa fa-music" style="color: #ffffff;"></i>&nbsp; ONEUS</span></label>
+      <label class="filter-button"><input type="checkbox" id="TEAM-filter" /><span><i class="fa fa-music" style="color: #ffffff;"></i>&nbsp; &TEAM</span></label>
+    <!-- Add the rest of your filter buttons here -->
+    </div>
+
+    <!-- CURRENT SONG DISPLAY -->
+    <div class="current-song-container">
+      <img id="albumArt" src="albumArt/双生蝶_哦漏阿YueYue.png" alt="Album Art">
+      <div id="selected-song-container">
+          <h4 id="selected-song">Song Title</h4>
+          <p id="selected-song-artist">Artist</p>
+      </div>
+      <div class="controls-container">
+        <button id="playPauseButton"><i class="fa fa-play"></i> &nbsp; Play</button>
+        
+        <input type="range" id="seekbar" value="0" min="0" max="100" step="0.1" />
+        <span id="audio-duration">0:00</span>
+
+        <div class="controls-right">
+          <label id="repeat-button">
+            <input type="checkbox" id="repeatCheckbox" style="display:none;" />
+            <span id="repeatButtonIcon"><i class="fa fa-refresh"></i></span>
+          </label>
+          <button id="prevSongButton"><i class="fa fa-step-backward"></i></button>
+          <button id="nextSongButton"><i class="fa fa-step-forward"></i></button>
+          <button id="randomSongButton"><i class="fa fa-random"></i></button>
+        </div>
+
+        
+      </div>
+    </div>
+    <div class="greeting-text">
+      <h2>Greetings, user!</h2>
+
+    </div>
+
+    <div  id="lyrics" class="lyrics-container">
+      <h3>Lyrics</h3>
+
+    </div>
+    <div class="random-song-container">
+      <h2 style="text-align:left; margin-bottom:10px; color: white;">Random Song Recommendations</h2>
+    </div>
+    
+  
+
+    <!-- PLAYLIST -->
+    <audio id="audioPlayer"></audio>
+    <h2 id="youmaylike">You might like </h2>
+    <div id="container-playlist" class="playlist-container"></div>
+
+  </div>
+
+  <script src="script.js"></script>
+  <script src="lyrics.js"></script>
+</body>
+</html>
