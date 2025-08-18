@@ -388,7 +388,7 @@ const playlist = {
     "分飞 - 日文版": ["分飞_日文版","rgb(251 114 168)",["Japanese","Pop"]],
     "Got That Boom - SECRET NUMBER": ["Got_That_Boom_SECRET_NUMBER","rgb(251 114 168)",["Korean","Pop"]],
     "桜ひとひら - 黒うさP": ["桜ひとひら_黒うさP","rgb(251 114 168)",["Japanese","Pop"]],
-    "三生三世_張杰": ["三生三世_張杰","rgb(251 114 168)",["Chinese","Pop","Theme/OST"]],
+    "三生三世 - 張杰": ["三生三世_張杰","rgb(251 114 168)",["Chinese","Pop","Theme/OST"]],
     "Don't Look At Me Like That - Song Ji Eun": ["Dont_Look_At_Me_Like_That_Song_Ji_Eun","rgb(251 114 168)",["Korean","Pop"]],
     "I NEED U - BTS": ["I_NEED_U_BTS","rgb(251 114 168)",["Korean","Pop"]],
     "静悄悄 - 大泫": ["静悄悄_大泫","rgb(251 114 168)",["Chinese","Pop"]],
