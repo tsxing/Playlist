@@ -44,13 +44,42 @@
 </head>
 
 <body>
+
+
   <div class="sitebody">
 
     
       <div class="top-nav">
         <div class="greeting-text">
-          <h2>Greetings, user!</h2>
+          <h2 id="greeting">Greetings, user</h2>
         </div>
+
+        <script>
+          const names = [
+            "Listener", "Dreamer", "Wanderer","Voyager","Traveler","Learner","music lover"
+          ];
+        
+          const greetingEl = document.getElementById("greeting");
+
+          function randomGreeting() {
+            const randomName = names[Math.floor(Math.random() * names.length)];
+            
+            // Fade out
+            greetingEl.classList.add("hidden");
+
+            setTimeout(() => {
+              // Change text once faded out
+              greetingEl.textContent = `Greetings, ${randomName}`;
+              
+              // Fade back in
+              greetingEl.classList.remove("hidden");
+            }, 1000); // match transition time
+          }
+
+          // Start rotating every 2s
+          setInterval(randomGreeting, 4000);
+        </script>
+
         <!-- FILTERS -->
         <div class="filters-container">
           <label class="filter-button"><input type="checkbox" id="recents-filter" /><span><i class="fa fa-clock-o" style="color: #ffffff;"></i>&nbsp; Recent</span></label>
