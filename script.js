@@ -244,7 +244,7 @@ const playlist = {
     "Siren - Taeyeon": ["Siren_Taeyeon","rgb(230 98 102)",["Korean","Pop"]],
     "Crush - IVE": ["Crush_IVE","rgb(255 129 157)",["Korean","Pop"]],
     "Fuanteina Kamisama - Suara": ["Fuanteina_kamisama_Suara","rgb(63 151 245)",["Japanese","Pop"]],
-    "Go Big or Go Home - ENHYPEN": ["Go_Big_or_Go_Home_ENHYPEN","rgb(2 48 164)",["Korean","Pop"]],
+    "Go Big or Go Home - ENHYPEN": ["Go_Big_or_Go_Home_ENHYPEN","rgb(2 48 164)",["Korean","Pop","ENHYPEN"]],
     "Love Dive (Synthwave) - IVE": ["Love_Dive_Synthwave_IVE","rgb(253 177 207)",["Korean","Pop","Remix"]],
     "Spring Day - BTS (Remix)": ["Spring_Day_BTS_Remix","rgb(173 161 219)",["Korean","Pop","Remix"]],
     "koinomushi - Hanatan": ["koinomushi","rgb(116 209 252)",["Japanese","Pop"]],
