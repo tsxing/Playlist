@@ -34,7 +34,7 @@ body {
     border-radius: 40px;
     border: 0.5px solid rgb(154, 154, 154);
     background-color: rgba(197, 197, 197, 0.1); /* semi-transparent  */
-    backdrop-filter: blur(15px); /* adds blur behind the element */
+    backdrop-filter: blur(25px); /* adds blur behind the element */
     position: relative;
     overflow: auto;
     scale: 0.80;
@@ -71,7 +71,17 @@ body {
     padding-left: 5px;
     position: absolute;
     top: 4px;
+    opacity: 0.8;
 }
+.greeting-text h2 {
+    transition: opacity 1s ease-in-out; /* smooth fade */
+    opacity: 1;
+  }
+  
+  .greeting-text h2.hidden {
+    opacity: 0;
+  }
+  
 
 .filters-container{
     width: 800px;
@@ -125,7 +135,7 @@ body {
     background-color: rgba(79, 79, 79, 0.6);
     color: white;
     border-radius: 20px;
-    padding: 10px 13px;
+    padding: 6px 12px;
 }
 
 
@@ -138,7 +148,11 @@ body {
     top: 470px;
     
     left: 20px;
-    background-color: rgba(154, 154, 154, 0.4);
+    background: radial-gradient(
+        circle at top right,
+        rgba(255, 255, 255, 0.3),
+        rgba(154, 154, 154, 0.05) 70%
+      );
     backdrop-filter: blur(15px);
     /* border: 0.5px solid rgb(154, 154, 154); */
     font-family: "Poppins", sans-serif;
@@ -171,7 +185,12 @@ body {
     width: 290px;
     top: 75px;
     left: 20px;
-    background-color: rgba(154, 154, 154, 0.4);
+    background: radial-gradient(
+        circle at bottom right,
+        rgba(255, 255, 255, 0.3),
+        rgba(154, 154, 154, 0.05) 70%
+      );
+      
     backdrop-filter: blur(15px);
     /* border: 0.5px solid rgb(154, 154, 154);*/
     border-radius: 30px;
@@ -182,12 +201,15 @@ body {
     color: white;
     font-family: "Poppins", sans-serif;
     padding-left: 25px;
+    
 
 }
 .lyrics-container p{
     font-family: "Poppins", sans-serif;
     padding-left: 25px;
     color: white;
+    padding-right: 25px;
+    opacity: 0.8;
 }
 
 .current-song-container {
@@ -265,13 +287,13 @@ background: rgba(255, 255, 255, 0.3);}
 /* WebKit thumb */
 #hueSlider::-webkit-slider-thumb {
     -webkit-appearance: none;
-    width: 15px;
-    height: 15px;
-    background-color: none; /* solid white thumb */
-    border: 1px solid white;
+    width: 14px;
+    height: 14px;
+    background-color: white; /* solid white thumb */
+
     border-radius: 50%;
     cursor: grab;
-    margin-top: -2px; /* align thumb with track */
+    margin-top: -1px; /* align thumb with track */
     box-shadow: none;
 }
 
@@ -328,7 +350,8 @@ background: rgba(255, 255, 255, 0.3);}
     gap: 10px;             /* space between buttons */
     z-index: 100;
     margin-left: -420px;
-
+    border: none;              /* remove border */
+    outline: none;
 }
 /* Position the song info above the controls */
 
@@ -356,7 +379,7 @@ background: rgba(255, 255, 255, 0.3);}
     gap: 5px;
     
     padding: 20px;
-    border-radius: 0 0 30px 30px;
+
 
     display: flex;
     align-items: center;  /* vertical centering */
@@ -378,6 +401,7 @@ background: rgba(255, 255, 255, 0.3);}
     color: white;
     top: 460px;
     right: 640px;
+    opacity: 0.8;
 
 
 }
@@ -385,7 +409,7 @@ background: rgba(255, 255, 255, 0.3);}
 .playlist-container{
     position: absolute;
     background-color: transparent;
-    right: 20px;
+    right: 10px;
     top: 530px;
     width: 800px;
     height: 400px;
@@ -394,17 +418,17 @@ background: rgba(255, 255, 255, 0.3);}
     grid-auto-rows: 175px;
     gap: 10px; /* space between songs */
     overflow: auto;
-
+    padding: 10px;
 }
 
 
 .song-item {
     position: relative;
-    width: 175px;
+    width: 170px;
     height: 150px;
-    border-radius: 15px;
+    border-radius: 25px;
     cursor: pointer;
-    overflow: hidden;
+    overflow: auto;
     display: flex;
     align-items: flex-end; /* pushes text to bottom */
     justify-content: flex-start; /* left align content horizontally */
@@ -468,8 +492,14 @@ background: rgba(255, 255, 255, 0.3);}
 
 
 .controls-container button {
-    background-color: transparent; /* semi-transparent blue */
-    border: 0.5px solid white;
+
+    background: radial-gradient(
+        circle at bottom right,
+        rgba(255, 255, 255, 0.25),
+        rgba(255, 255, 255, 0.4) 70%
+    );
+
+    backdrop-filter: blur(15px);
     color: white;
     padding: 10px 20px;       /* makes them pill-shaped */
     border-radius: 50px;      /* large radius = pill shape */
@@ -477,10 +507,17 @@ background: rgba(255, 255, 255, 0.3);}
     cursor: pointer;
     transition: all 0.2s ease;
     font-family: "Poppins", sans-serif;
+    border: none;              /* remove border */
+    outline: none;
 }
 
 .controls-container button:hover {
-    background-color: rgba(97, 97, 97, 0.4); /* slightly darker on hover */
+    background: radial-gradient(
+        circle at bottom right,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.2) 70%
+    );
+
 }
 
 
@@ -488,20 +525,30 @@ background: rgba(255, 255, 255, 0.3);}
 /* Optional: style the repeat checkbox pill */
 #repeat-button span {
     display: inline-flex;
+    background: radial-gradient(
+        circle at bottom right,
+        rgba(255, 255, 255, 0.25),
+        rgba(255, 255, 255, 0.4) 70%
+    );
     
     align-items: center;
     justify-content: center;
-    padding: 12px 20px;
+    padding: 14px 20px;
     font-size: 18px;
     border-radius: 50px;
-    border: 0.5px solid white;
     color: white;
     cursor: pointer;
     transition: all 0.2s ease;
+    backdrop-filter: blur(15px);
 }
 
 #repeat-button span:hover {
-    background-color: rgba(78, 78, 78, 0.4);
+    background: radial-gradient(
+        circle at bottom right,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.2) 70%
+    );
+
 }
 
 #playPauseButton {
@@ -512,6 +559,7 @@ background: rgba(255, 255, 255, 0.3);}
 
 #playPauseButton:hover {
     background-color: rgb(255, 255, 255,0.3);
+
 }
 
 
@@ -576,8 +624,8 @@ background: rgba(255, 255, 255, 0.3);}
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: none;   
-    border: 1px solid white;
+    background: rgba(0, 0, 0, 0.9);   
+    border: 0.5px solid white;
     margin-top: -2px;       /* center thumb vertically on track */
     cursor: pointer;
     transition: transform 0.2s ease;
