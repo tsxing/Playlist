@@ -2,16 +2,31 @@
 
 
 body {
-    display: flex;            /* Enables flex layout */
-    justify-content: center;  /* Centers horizontally */
-    align-items: center;      /* Centers vertically */
-    height: 100vh;            /* Full viewport height */
-    margin: 0;                /* Remove default body margin */
-    background-image: url('bkg.jpg');
-    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
     overflow: hidden;
-    scale: 0.80;
-}
+    position: relative;
+  }
+
+  /* Put the background on a pseudo-element */
+  body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('bkg.jpg') no-repeat center/cover;
+    z-index: -1; /* keep it behind everything */
+    filter: hue-rotate(var(--hue));
+    transition: filter 0.2s linear;
+  }
+
+
+
 
 .sitebody{
     height: 696px;
@@ -22,21 +37,31 @@ body {
     backdrop-filter: blur(15px); /* adds blur behind the element */
     position: relative;
     overflow: auto;
+    scale: 0.80;
 }
 
 .top-nav {
-    position: sticky; /* stays visible when scrolling */
-    top: 0;           /* sticks to top of viewport */
-    background-color: rgba(0,0,0,0.7); /* optional semi-transparent bg */
+    position: sticky;
+    top: 0;
     height: 50px;
-    backdrop-filter: blur(5px);        /* optional blur */
-    z-index: 1000;    /* stays above content */
     display: flex;
-    align-items: center;  /* vertical center greeting with buttons */
+    align-items: center;
     padding: 10px 20px;
-    gap: 20px;        /* space between greeting and filters */
-    flex-wrap: wrap;   /* wrap filter buttons if viewport is narrow */
+    gap: 20px;
+    flex-wrap: wrap;
+    z-index: 1000;
+
+    /* Initial state: transparent */
+    background-color: transparent;
+    backdrop-filter: none;
+
 }
+
+.top-nav.scrolled {
+    background-color: rgba(0,0,0,0.7); /* semi-transparent when scrolled */
+    backdrop-filter: blur(5px);
+}
+
 
 .greeting-text{
     color: white;
@@ -209,6 +234,59 @@ body {
     backdrop-filter: blur(5px);      /* optional blur effect */
 }
 
+#hueSlider {
+    z-index: 5;
+    position: absolute;
+    right: 5px;
+    top: 60px;
+    height: 15px;   /* track thickness */
+    width: 200px;   /* track length */
+    transform: rotate(-90deg);
+    transform-origin: bottom right;
+    -webkit-appearance: none; /* remove default styling */
+    background:  rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* WebKit track (Chrome, Safari, Edge) */
+#hueSlider::-webkit-slider-runnable-track {
+    height: 12px;
+    border-radius: 6px;
+    background: inherit; /* use parent gradient */
+}
+
+/* Firefox track */
+#hueSlider::-moz-range-track {
+    height: 12px;
+    border-radius: 6px;
+background: rgba(255, 255, 255, 0.3);}
+
+/* WebKit thumb */
+#hueSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    background-color: none; /* solid white thumb */
+    border: 1px solid white;
+    border-radius: 50%;
+    cursor: grab;
+    margin-top: -2px; /* align thumb with track */
+    box-shadow: none;
+}
+
+/* Firefox thumb */
+#hueSlider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: none;
+}
+
+
 #albumArt {
     position: absolute;
     transform: translate(-1%, -1%);
@@ -223,41 +301,46 @@ body {
 }
 
 /* Overlay content */
-#selected-song-container,
-.controls-container {
+#selected-song-container {
     position: relative;
     z-index: 1;           /* in front of album art */
     color: white;         /* text contrast */
-    padding: 20px;
-    
-}
+    padding: 25px;
 
-.controls-right{
-    padding-left: 15px;
 }
-/* Position the song info above the controls */
 #selected-song-container {
     margin-bottom: 60px;  /* space above controls */
     
 }
 
+.controls-container {
+    display: inline-flex;      /* shrink container to content width */
+    flex-direction: column;    /* stack buttons and seekbar vertically */
+    align-items: flex-start;   /* left-align everything inside */
+    gap: 10px;  
+    
+}
+
+.controls-right {
+    display: flex;
+    flex-direction: row;   /* buttons in a horizontal line */
+    align-items: center;   /* vertically center buttons */
+    gap: 10px;             /* space between buttons */
+    z-index: 100;
+    margin-left: -420px;
+
+}
+/* Position the song info above the controls */
+
+
 #selected-song{
     color: white;
     font-family: "Poppins", sans-serif;
-  font-weight: 700;
+    font-weight: 700;
     text-shadow: 2px 2px 5px black;
     font-size: 50px;
-    position: relative;
-    top: 80px;
-}
-#selected-song-artist{
-    font-size: 30px;
-    font-family: "Poppins", sans-serif;
-  font-weight: 700;
-    text-shadow: 2px 2px 5px black;
-    position: relative;
-    top: 10px;
-
+    position: absolute;
+    top: 140px;
 }
 
 
@@ -294,7 +377,7 @@ body {
   font-weight: 700;
     color: white;
     top: 460px;
-    right: 650px;
+    right: 640px;
 
 
 }
@@ -400,13 +483,7 @@ body {
     background-color: rgba(97, 97, 97, 0.4); /* slightly darker on hover */
 }
 
-#audio-duration{
-    font-size: 15px;
-    font-family: "Poppins", sans-serif;
-    line-height: 1;          /* ensures no extra vertical spacing */
-    display: flex;            /* makes it a flex item */
-    align-items: center;      /* vertically centers the text */
-}
+
 
 /* Optional: style the repeat checkbox pill */
 #repeat-button span {
@@ -430,6 +507,7 @@ body {
 #playPauseButton {
     background-color: rgba(255, 255, 255);
     color: black;
+
 }
 
 #playPauseButton:hover {
@@ -437,19 +515,46 @@ body {
 }
 
 
+.song-info {
+    display: flex;             /* puts children in a row */
+    justify-content: left; /* pushes artist left, duration right */
+    align-items: center;       /* vertical alignment */
+    gap: 10px;                 /* optional spacing between them */
+    top: 140px;
+    position: relative;
+}
 
+#selected-song-artist{
+    font-size: 20px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
 
+}
 
 /* Container */
+
+#audio-duration{
+    font-size: 15px;
+    font-family: "Poppins", sans-serif;
+    line-height: 1;          /* ensures no extra vertical spacing */
+    z-index: 100;
+    position: relative;
+    color: white;
+}
+
 #seekbar {
     -webkit-appearance: none;  /* remove default styles */
-    width: 150px;
-    height: 8px;
+    width: 90%;
+    height: 1px;
     border-radius: 5px;
     background: rgba(255, 255, 255, 0.3);
     outline: none;
-
+    z-index: 100;
     cursor: pointer;
+
+    position: relative;
+    left: -30px;
+    top: 20px;
 }
 
 /* Track */
@@ -468,12 +573,12 @@ body {
 /* Thumb (the draggable part) */
 #seekbar::-webkit-slider-thumb {
     -webkit-appearance: none;
-    width: 16px;
-    height: 16px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
-    background: #ffffff;   /* blue */
-    border: 2px solid white;
-    margin-top: -4px;       /* center thumb vertically on track */
+    background: none;   
+    border: 1px solid white;
+    margin-top: -2px;       /* center thumb vertically on track */
     cursor: pointer;
     transition: transform 0.2s ease;
 }
@@ -483,11 +588,11 @@ body {
 }
 
 #seekbar::-moz-range-thumb {
-    width: 16px;
-    height: 16px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
-    background: #0078ff;
-    border: 2px solid white;
+    background: none;
+    border: 1px solid white;
     cursor: pointer;
     transition: transform 0.2s ease;
 }
@@ -500,3 +605,5 @@ body {
 #seekbar::-webkit-slider-runnable-track {
     background: linear-gradient(to right, #0078ff 0%, #0078ff var(--seek-value), rgba(255,255,255,0.3) var(--seek-value), rgba(255,255,255,0.3) 100%);
 }
+
+
