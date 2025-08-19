@@ -259,13 +259,13 @@ const playlist = {
     "一瞬のクオリア - しちごさん": ["Isshun_no_kuoria_Shi_chigosan","rgb(240 184 197)",["Japanese","Pop"]],
     "僕は鳥になる - Hitomi": ["Bokuwa_Tori_ni_Naru_Hitomi","rgb(209 147 155)",["Japanese","Pop"]],
     "Sugar Free - Tara": ["Sugar_Free_T_ara","rgb(236 174 184)",["Korean","Pop"]],
-    "라라라 - 이수영": ["rarara_lee_Sooyoung","rgb(50 74 138)",["Korean","Pop"]],
-    "휠릴리 - 이수영": ["Whistling_Lee_Sooyoung","rgb(39 74 164)",["Korean","Pop"]],
-    "덩그러니 - 이수영": ["this_time_Lee_sooyoung","rgb(53 129 196)",["Korean","Pop"]],
-    "Grace - 이수영": ["grace_leesooyoung","rgb(124 139 230)",["Korean","Pop"]],
-    "그리고 사랑해 - 이수영": ["made_in_winter_leesooyoung","rgb(69 119 211)",["Korean","Pop"]],
-    "얼마나 좋을까 - 이수영": ["finalfantasy_lee_sooyoung","rgb(26 75 177)",["Korean","Pop","OST"]],
-    "Never Again - 이수영": ["never_again_leesooyoung","rgb(30 83 100)",["Korean","Pop","OST"]],
+    "라라라 - 이수영": ["rarara_lee_Sooyoung","rgb(50 74 138)",["Korean","Pop","LSY"]],
+    "휠릴리 - 이수영": ["Whistling_Lee_Sooyoung","rgb(39 74 164)",["Korean","Pop","LSY"]],
+    "덩그러니 - 이수영": ["this_time_Lee_sooyoung","rgb(53 129 196)",["Korean","Pop","LSY"]],
+    "Grace - 이수영": ["grace_leesooyoung","rgb(124 139 230)",["Korean","Pop","LSY"]],
+    "그리고 사랑해 - 이수영": ["made_in_winter_leesooyoung","rgb(69 119 211)",["Korean","Pop","LSY"]],
+    "얼마나 좋을까 - 이수영": ["finalfantasy_lee_sooyoung","rgb(26 75 177)",["Korean","Pop","OST","LSY"]],
+    "Never Again - 이수영": ["never_again_leesooyoung","rgb(30 83 100)",["Korean","Pop","OST","LSY"]],
     "The Riddle (sped) - Termik": ["Riddle_sped_up","rgb(35 93 107)",["English","Pop","Remix"]],
     "Now - Trouble Maker": ["now_troublemaker","rgb(7 84 136)",["Korean","Pop"]],
     "Darkside - Alan Walker": ["Darkside_Alan_Walker","rgb(37 48 159)",["English","Pop"]],
@@ -451,6 +451,7 @@ function getActiveFilters() {
     if (document.getElementById('TXT-filter').checked) filters.push('TXT');
     if (document.getElementById('ONEUS-filter').checked) filters.push('ONEUS');
     if (document.getElementById('TEAM-filter').checked) filters.push('&TEAM');
+    if (document.getElementById('LSY-filter').checked) filters.push('LSY');
     return filters;
 }
 
@@ -468,6 +469,7 @@ function addRecentsTagToLast12() {
 
 // ======== PLAY SONG ========
 function playSong(index) {
+    showSongInfo(index);
     currentSongIndex = index;
     const songName = filteredSongTitles[index];
     const [songPath] = playlist[songName]; // this is like "我相信_楊培安"
@@ -552,6 +554,7 @@ function populatePlaylist() {
     if (document.getElementById('TXT-filter').checked) filters.push('TXT');
     if (document.getElementById('ONEUS-filter').checked) filters.push('ONEUS');
     if (document.getElementById('TEAM-filter').checked) filters.push('&TEAM');
+    if (document.getElementById('LSY-filter').checked) filters.push('LSY');
 
     addRecentsTagToLast12(); // make sure to tag last 12 songs as "Recents"
 
@@ -713,6 +716,7 @@ function playSongByTitle(songName) {
     albumArtElement.src = `albumArt/${songPath}.png`;
 
     loadLyrics(songPath);
+
 }
 
 // ======== FORMAT TIME FUNCTION ========
@@ -736,6 +740,31 @@ audioPlayer.addEventListener('timeupdate', () => {
         audioDurationElement.textContent = `${currentTime} / ${totalDuration}`;
     }
 });
+
+
+function showSongInfo(index) {
+    // use the globally updated filteredSongTitles
+    const songName = filteredSongTitles[index];
+    const songData = playlist[songName];
+    if (!songData) return; // safety check
+  
+    const artistEl = document.getElementById("selected-song-artist");
+    const tagContainer = document.getElementById("song-tags");
+  
+    // Update artist/song info
+    artistEl.textContent = songName;
+  
+    // Update tags
+    tagContainer.innerHTML = ""; // clear previous tags
+    const tags = Array.isArray(songData[2]) ? songData[2] : [];
+    tags.forEach(tag => {
+        const span = document.createElement("span");
+        span.textContent = tag;
+        span.classList.add("tag"); // style pill look with CSS
+        tagContainer.appendChild(span);
+    });
+}
+
 
 
 window.onload = () => {
