@@ -237,24 +237,44 @@ body {
     left: -2px;
     right: -2px;
     bottom: -2px;
-    background: url('albumArt/example.png') center/cover no-repeat;
+    background:
+        linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 40%),
+        url('albumArt/example.png') center/cover no-repeat;
     z-index: 0;
 }
 
+/* Blur + fade overlay */
 .current-song-container::after {
     content: "";
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 200px;  /* fade height */
-    background: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0));
+    height: 200px;
     pointer-events: none;
-    z-index: 0;   /* on top of album art */
-    border-bottom-left-radius: 30px;  /* match container corners */
+    z-index: 0;
+
+    /* stack two layers: solid black + blurred fade */
+    background: linear-gradient(to top,
+        rgba(0,0,0,1) 0%,       /* full black at bottom */
+        rgba(0,0,0,1) 10%,      /* keep black for a bit */
+        rgba(0,0,0,0) 100%      /* fade upward */
+    );
+
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+
+    border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
-    backdrop-filter: blur(5px);      /* optional blur effect */
 }
+
+
+
+
+
+
+
+  
 
 #hueSlider {
     z-index: 5;
@@ -571,6 +591,26 @@ background: rgba(255, 255, 255, 0.3);}
     top: 140px;
     position: relative;
 }
+
+.song-tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  
+  .song-tags span {
+    margin-top: -5px;
+    padding: 4px 10px;
+    border-radius: 999px; /* pill shape */
+    font-size: 12px;
+    font-weight: 500;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: white;
+    font-family: "Poppins",sans-serif;
+  }
 
 #selected-song-artist{
     font-size: 20px;
