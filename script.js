@@ -689,6 +689,7 @@ function populateRandomSongs() {
         // click plays song immediately
         item.addEventListener('click', () => {
             playSongByTitle(title);
+            showSongInfoByTitle(title);
         });
 
         container.appendChild(item);
@@ -754,6 +755,28 @@ function showSongInfo(index) {
     // Update artist/song info
     artistEl.textContent = songName;
   
+    // Update tags
+    tagContainer.innerHTML = ""; // clear previous tags
+    const tags = Array.isArray(songData[2]) ? songData[2] : [];
+    tags.forEach(tag => {
+        const span = document.createElement("span");
+        span.textContent = tag;
+        span.classList.add("tag"); // style pill look with CSS
+        tagContainer.appendChild(span);
+    });
+}
+
+function showSongInfoByTitle(title) {
+    // Use the globally defined playlist
+    const songData = playlist[title];
+    if (!songData) return; // safety check
+
+    const artistEl = document.getElementById("selected-song-artist");
+    const tagContainer = document.getElementById("song-tags");
+
+    // Update artist/song info
+    artistEl.textContent = title;
+
     // Update tags
     tagContainer.innerHTML = ""; // clear previous tags
     const tags = Array.isArray(songData[2]) ? songData[2] : [];
