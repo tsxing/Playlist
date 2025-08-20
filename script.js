@@ -392,10 +392,19 @@ const playlist = {
     "Don't Look At Me Like That - Song Ji Eun": ["Dont_Look_At_Me_Like_That_Song_Ji_Eun","rgb(251 114 168)",["Korean","Pop"]],
     "I NEED U - BTS": ["I_NEED_U_BTS","rgb(251 114 168)",["Korean","Pop"]],
     "静悄悄 - 大泫": ["静悄悄_大泫","rgb(251 114 168)",["Chinese","Pop"]],
-    "No Tears Left To Cry - Ariana Grande": ["No_Tears_Left_To_Cry_Ariana_Grande","rgb(251 114 168)",["English","Pop"]]
-
-
-    //No_Tears_Left_To_Cry_Ariana_Grande
+    "No Tears Left To Cry - Ariana Grande": ["No_Tears_Left_To_Cry_Ariana_Grande","rgb(251 114 168)",["English","Pop"]],
+    "HOME SWEET HOME - GDRAGON": ["HOME_SWEET_HOME_GDRAGON","rgb(251 114 168)",["Korean","Pop"]],
+    "手掌心 - Della丁噹": ["手掌心_Della丁噹","rgb(251 114 168)",["Chinese","Pop"]],
+    "爱殇 - 小時姑娘": ["爱殇_小時姑娘","rgb(251 114 168)",["Chinese","Pop"]],
+    "是你 - 梦然": ["是你_梦然","rgb(251 114 168)",["Chinese","Pop"]],
+    "月光情人 - 李玟": ["月光情人_李玟","rgb(251 114 168)",["Chinese","Pop"]],
+    "Castle - Clarx & Harddope": ["Castle_Clarx_Harddope","rgb(251 114 168)",["English","Pop"]],
+    "新不了情 - 萬芳": ["新不了情_萬芳","rgb(251 114 168)",["Chinese","Pop"]],
+    "卷珠帘 - Kiryo": ["卷珠帘_Kiryo","rgb(251 114 168)",["Chinese","Pop"]],
+    "赐我 - 一只白羊": ["赐我_一只白羊","rgb(251 114 168)",["Chinese","Pop"]],
+    "恋人心 - 魏新雨": ["恋人心_魏新雨","rgb(251 114 168)",["Chinese","Pop"]],
+    "사랑도 가끔 쉬어야죠 - 이수영": ["사랑도_가끔_쉬어야죠_LSY","rgb(251 114 168)",["Korean","Pop","LSY"]],
+    "More that I love you - 이수영": ["More_that_I_love_you_LSY","rgb(251 114 168)",["Korean","Pop","LSY"]],
 
 };
 
