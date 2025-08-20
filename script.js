@@ -492,10 +492,10 @@ function playSong(index) {
     const [title, artist] = songName.split(" - ");
     selectedSongElement.textContent = title.trim();
     selectedSongArtistElement.textContent = artist?.trim() || "Unknown Artist";
-    albumArtElement.src = `albumArt/${songPath}.png`;
+    albumArtElement.src = `albumArt/${songPath}.webp`;
 
     // set background
-    songContainer.style.backgroundImage = `url('albumArt/${songPath}.png')`;
+    songContainer.style.backgroundImage = `url('albumArt/${songPath}.webp')`;
     songContainer.style.backgroundSize = "cover";
     songContainer.style.backgroundPosition = "center";
     songContainer.style.backgroundRepeat = "no-repeat";
@@ -571,7 +571,7 @@ function populatePlaylist() {
             item.classList.add('song-item');
 
             // Set album art as background
-            item.style.backgroundImage = `url('albumArt/${song[0]}.png')`;
+            item.style.backgroundImage = `url('albumArt/${song[0]}.webp')`;
 
             item.innerHTML = `
                 <div class="song-description">
@@ -677,7 +677,7 @@ function populateRandomSongs() {
         item.classList.add('song-item');
         item.style.width = '220px'; // smaller for random container
         item.style.height = '120px';
-        item.style.backgroundImage = `url('albumArt/${songPath}.png')`;
+        item.style.backgroundImage = `url('albumArt/${songPath}.webp')`;
 
         item.innerHTML = `
             <div class="song-description">
@@ -714,7 +714,7 @@ function playSongByTitle(songName) {
     const [title, artist] = songName.split(" - ");
     selectedSongElement.textContent = title.trim();
     selectedSongArtistElement.textContent = artist?.trim() || "Unknown Artist";
-    albumArtElement.src = `albumArt/${songPath}.png`;
+    albumArtElement.src = `albumArt/${songPath}.webp`;
 
     loadLyrics(songPath);
 
