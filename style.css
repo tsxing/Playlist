@@ -355,12 +355,20 @@ background: rgba(255, 255, 255, 0.3);}
     z-index: 1;           /* in front of album art */
     color: white;         /* text contrast */
     padding: 25px;
+    margin-bottom: 60px;  /* space above controls */
 
 }
-#selected-song-container {
-    margin-bottom: 60px;  /* space above controls */
-    
-}
+
+#visualizer {
+    position: absolute;
+    background: transparent;
+    bottom: -300px;
+    left: -50px;
+    width: 900px;
+    height: 200px;   /* fills the container */
+    z-index: 0;     /* behind everything */
+    opacity: 0.9;   /* so it doesn’t overpower text */
+  }
 
 .controls-container {
     display: inline-flex;      /* shrink container to content width */
@@ -526,6 +534,7 @@ background: rgba(255, 255, 255, 0.3);}
         rgba(255, 255, 255, 0.4) 70%
     );
 
+
     backdrop-filter: blur(15px);
     color: white;
     padding: 10px 20px;       /* makes them pill-shaped */
@@ -557,7 +566,8 @@ background: rgba(255, 255, 255, 0.3);}
         rgba(255, 255, 255, 0.25),
         rgba(255, 255, 255, 0.4) 70%
     );
-    
+
+   
     align-items: center;
     justify-content: center;
     padding: 14px 20px;
@@ -580,6 +590,7 @@ background: rgba(255, 255, 255, 0.3);}
 
 #playPauseButton {
     background-color: rgba(255, 255, 255);
+    
     color: black;
 
 }
@@ -642,7 +653,7 @@ background: rgba(255, 255, 255, 0.3);}
     width: 90%;
     height: 1px;
     border-radius: 5px;
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(0, 0, 0, 0.9);
     outline: none;
     z-index: 100;
     cursor: pointer;
