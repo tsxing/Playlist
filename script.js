@@ -816,3 +816,75 @@ window.onload = () => {
 
 
 // Optionally, refresh random songs on button click or interval
+
+
+// ======== AUDIO VISUALIZER ========
+const canvas = document.getElementById("visualizer");
+const ctx = canvas.getContext("2d");
+
+function resizeCanvas() {
+  canvas.width = canvas.clientWidth;
+  canvas.height = canvas.clientHeight;
+}
+window.addEventListener("resize", resizeCanvas);
+resizeCanvas();
+
+const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+const source = audioCtx.createMediaElementSource(audioPlayer);
+const analyser = audioCtx.createAnalyser();
+analyser.fftSize = 512;
+const bufferLength = analyser.frequencyBinCount;
+const dataArray = new Uint8Array(bufferLength);
+
+// Connect graph: audio → analyser → speakers
+source.connect(analyser);
+analyser.connect(audioCtx.destination);
+
+let displayedHue = 240; // starting hue for bars (matches slider=0 = blue)
+
+function drawVisualizer() {
+  requestAnimationFrame(drawVisualizer);
+
+  analyser.getByteFrequencyData(dataArray);
+
+  // clear canvas
+
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+
+  const barWidth = (canvas.width / bufferLength) * 2.5;
+  let x = 0;
+
+  // target hue from slider
+  const hueTarget = parseInt(document.getElementById("hueSlider").value);
+
+  // smooth transition (like CSS filter)
+  displayedHue += (hueTarget - displayedHue) * 0.1; // smaller factor = slower
+
+  for (let i = 0; i < bufferLength; i++) {
+    const barHeight = dataArray[i] * 0.4;
+
+    // subtle variation per bar (optional)
+    const barHue = (displayedHue + 240)%360;
+    //ctx.fillStyle = `hsl(${barHue}, 80%, 50%)`;
+    ctx.fillStyle=`white`;
+    ctx.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
+
+    x += barWidth + 1;
+  }
+}
+
+
+drawVisualizer();
+
+// Some browsers (Chrome) require user interaction before AudioContext runs
+document.body.addEventListener("click", () => {
+  if (audioCtx.state === "suspended") {
+    audioCtx.resume();
+  }
+});
+
+
+const sliderValue = parseInt(document.getElementById("hueSlider").value); 
+const baseHue = 240; // 0 on slider = blue
+const hue = (baseHue + sliderValue) % 360; // wraps around 0–359
