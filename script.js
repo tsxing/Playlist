@@ -127,7 +127,7 @@ const playlist = {
     "monogram - Lucid Dream": ["monogram_Lucid_Dream","rgb(162 212 183)",["Korean"]],
     "Once Again - Mad Clown & Kim Nayoung": ["Once_Again_Mad_Clown","rgb(79 170 168)",["Korean","Theme/OST"]],
     "Done For Me - Punch Hotel Del Luna OST": ["Done_For_Me","rgb(196 173 221)",["Korean","Theme/OST"]],
-    "Fate - Lee Sun Hee": ["Fate","rgb(115 206 231)",["Korean","Theme/OST"]],
+    "Destiny (인연) - Lee Sun Hee": ["Fate","rgb(115 206 231)",["Korean","Theme/OST"]],
     "SBS Temptation of Wife - OST": ["Temptation_of_Wife","rgb(108 192 212)",["Korean","Theme/OST"]],
     "Scars leave beautiful trace - OST": ["Scars_leave_beautiful_trace","rgb(122 197 231)",["Korean","Theme/OST"]],
     "Suddenly - City Hunter": ["Suddenly_City_Hunter","rgb(197 220 85)",["Korean","Theme/OST"]],
@@ -742,14 +742,14 @@ function formatTime(seconds) {
 audioPlayer.addEventListener('loadedmetadata', () => {
     // When audio loads, show total duration
     const totalDuration = formatTime(audioPlayer.duration);
-    audioDurationElement.textContent = `0:00 / ${totalDuration}`;
+    audioDurationElement.textContent = `0:00 | ${totalDuration}`;
 });
 
 audioPlayer.addEventListener('timeupdate', () => {
     if (!isNaN(audioPlayer.currentTime) && !isNaN(audioPlayer.duration)) {
         const currentTime = formatTime(audioPlayer.currentTime);
         const totalDuration = formatTime(audioPlayer.duration);
-        audioDurationElement.textContent = `${currentTime} / ${totalDuration}`;
+        audioDurationElement.textContent = `${currentTime} | ${totalDuration}`;
     }
 });
 
@@ -807,7 +807,7 @@ window.onload = () => {
 
 
 
-    const initialSongName = "Caught In Our Thoughts - CMA"; // match the key in your playlist
+    const initialSongName = "卷珠帘 - Kiryo"; // match the key in your playlist
     const initialIndex = filteredSongTitles.findIndex(title => title.includes(initialSongName));
 
     if (initialIndex !== -1) {
