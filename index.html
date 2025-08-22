@@ -119,14 +119,20 @@
       
 
       <!-- Slider -->
-      <input type="range" id="hueSlider" min="0" max="360" value="0">
+      <input type="range" id="hueSlider" min="0" max="360" value="290">
 
       <script>
         const slider = document.getElementById("hueSlider");
+
+        // Set initial hue on page load
+        document.documentElement.style.setProperty("--hue", slider.value + "deg");
+
+        // Update hue when slider changes
         slider.addEventListener("input", () => {
-          document.body.style.setProperty("--hue", slider.value + "deg");
+          document.documentElement.style.setProperty("--hue", slider.value + "deg");
         });
       </script>
+
 
 
 
