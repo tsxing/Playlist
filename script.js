@@ -405,7 +405,9 @@ const playlist = {
     "恋人心 - 魏新雨": ["恋人心_魏新雨","rgb(251 114 168)",["Chinese","Pop"]],
     "사랑도 가끔 쉬어야죠 - 이수영": ["사랑도_가끔_쉬어야죠_LSY","rgb(251 114 168)",["Korean","Pop","LSY"]],
     "More that I love you - 이수영": ["More_that_I_love_you_LSY","rgb(251 114 168)",["Korean","Pop","LSY"]],
+    "林中鸟 - 苏仨": ["林中鸟_苏仨","rgb(251 114 168)",["Chinese","Pop"]]
 
+    //林中鸟_苏仨
 };
 
 
