@@ -38,7 +38,7 @@ const playlist = {
     "Rada - Thomas Bergersen":["Rada","rgb(228 178 117)",["Instrumental","Epic"]],
     "Rohan Theme - Lord of the Rings (LOTR)": ["Rohan_Theme_LOTR","rgb(145 157 158)",["Instrumental","Epic", "Theme/OST"]],
     "Rohan Rohirrim Soundtrack - LOTR": ["Rohan_Rohirrim_Soundtrack_LOTR","rgb(121 126 63)",["Instrumental","Epic","Theme/OST"]],
-    "Unravel Remix - Tokyo Ghoul (Samuel Kim)": ["Unravel_Tokyo_Ghoul","rgb(227 196 237)",["Instrumental","Epic","Theme/OST", "Anime","Japanese","SamuelKim","Remix"]],
+    "Unravel Remix - Samuel Kim": ["Unravel_Tokyo_Ghoul","rgb(227 196 237)",["Instrumental","Epic","Theme/OST", "Anime","Japanese","SamuelKim","Remix"]],
     "Kai's Theme - Kung Fu Panda (Samuel Kim)": ["Kai_Theme_Kung_Fu_Panda","rgb(2 232 154)",["Instrumental","Epic","Theme/OST","SamuelKim"]],
     "Rengoku Theme - Demon Slayer (Samuel Kim)": ["Rengoku_Theme_Demon_Slayer","rgb(225 150 97)",["Instrumental","Epic","Theme/OST","Japanese","Anime","SamuelKim"]],
     "Inosuke Theme V2 - Demon Slayer (Samuel Kim)": ["Inosuke_Theme_V2_Demon_Slayer","rgb(174 139 173)",["Instrumental","Epic","Theme/OST","Japanese","Anime","SamuelKim"]],
@@ -405,9 +405,14 @@ const playlist = {
     "恋人心 - 魏新雨": ["恋人心_魏新雨","rgb(251 114 168)",["Chinese","Pop"]],
     "사랑도 가끔 쉬어야죠 - 이수영": ["사랑도_가끔_쉬어야죠_LSY","rgb(251 114 168)",["Korean","Pop","LSY"]],
     "More that I love you - 이수영": ["More_that_I_love_you_LSY","rgb(251 114 168)",["Korean","Pop","LSY"]],
-    "林中鸟 - 苏仨": ["林中鸟_苏仨","rgb(251 114 168)",["Chinese","Pop"]]
+    "林中鸟 - 苏仨": ["林中鸟_苏仨","rgb(251 114 168)",["Chinese","Pop"]],
+    "빙글빙글 - Heize": ["빙글빙글_Heize","rgb(251 114 168)",["Korean","Pop"]],
+    "HAPPEN헤픈 (우연) - Heize": ["HAPPEN헤픈_우연_Heize","rgb(251 114 168)",["Korean","Pop"]],
+    "Burn Like A Star - AHN YEEUN": ["Burn_Like_A_Star_AHN_YEEUN","rgb(251 114 168)",["Korean","Pop"]],
+    "Entrancing - SIYEON": ["Entrancing_SIYEON","rgb(251 114 168)",["Korean","Pop"]]
 
-    //林中鸟_苏仨
+
+    //Burn_Like_A_Star_AHN_YEEUN
 };
 
 
