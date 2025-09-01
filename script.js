@@ -395,6 +395,7 @@ const playlist = {
     "No Tears Left To Cry - Ariana Grande": ["No_Tears_Left_To_Cry_Ariana_Grande","rgb(251 114 168)",["English","Pop"]],
     "HOME SWEET HOME - GDRAGON": ["HOME_SWEET_HOME_GDRAGON","rgb(251 114 168)",["Korean","Pop"]],
     "手掌心 - Della丁噹": ["手掌心_Della丁噹","rgb(251 114 168)",["Chinese","Pop"]],
+    "诀别诗_胡彦斌": ["诀别诗_胡彦斌","rgb(251 114 168)",["Chinese","Theme/OST"]],
     "爱殇 - 小時姑娘": ["爱殇_小時姑娘","rgb(251 114 168)",["Chinese","Pop"]],
     "是你 - 梦然": ["是你_梦然","rgb(251 114 168)",["Chinese","Pop"]],
     "月光情人 - 李玟": ["月光情人_李玟","rgb(251 114 168)",["Chinese","Pop"]],
@@ -410,7 +411,6 @@ const playlist = {
     "林中鸟 - 苏仨": ["林中鸟_苏仨","rgb(251 114 168)",["Chinese","Pop"]],
     "尘缘 - 陈思诚": ["尘缘_陈思诚","rgb(251 114 168)",["Chinese","Pop","Theme/OST"]],
     "千年缘 - 心然": ["千年缘_心然","rgb(251 114 168)",["Chinese","Theme/OST"]],
-
     "Burn Like A Star - AHN YEEUN": ["Burn_Like_A_Star_AHN_YEEUN","rgb(251 114 168)",["Korean","Pop"]],
     "Entrancing - SIYEON": ["Entrancing_SIYEON","rgb(251 114 168)",["Korean","Pop"]],
     "Entrancing - SIYEON (Rock Cover)": ["Entrancing_Siyeon_Rock","rgb(251 114 168)",["Korean","Pop","Remix"]],
@@ -418,7 +418,7 @@ const playlist = {
 
 
 
-    //千年缘_心然
+    //诀别诗_胡彦斌
 };
 
 
