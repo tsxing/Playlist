@@ -409,10 +409,13 @@ const playlist = {
     "빙글빙글 - Heize": ["빙글빙글_Heize","rgb(251 114 168)",["Korean","Pop"]],
     "HAPPEN헤픈 (우연) - Heize": ["HAPPEN헤픈_우연_Heize","rgb(251 114 168)",["Korean","Pop"]],
     "Burn Like A Star - AHN YEEUN": ["Burn_Like_A_Star_AHN_YEEUN","rgb(251 114 168)",["Korean","Pop"]],
-    "Entrancing - SIYEON": ["Entrancing_SIYEON","rgb(251 114 168)",["Korean","Pop"]]
+    "Entrancing - SIYEON": ["Entrancing_SIYEON","rgb(251 114 168)",["Korean","Pop"]],
+    "Entrancing - SIYEON (Rock Cover)": ["Entrancing_Siyeon_Rock","rgb(251 114 168)",["Korean","Pop","Remix"]],
+    "Paradise - SIYEON": ["Paradise_SIYEON","rgb(251 114 168)",["Korean","Pop"]]
 
 
-    //Burn_Like_A_Star_AHN_YEEUN
+
+    //Paradise_SIYEON
 };
 
 
