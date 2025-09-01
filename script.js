@@ -405,9 +405,11 @@ const playlist = {
     "恋人心 - 魏新雨": ["恋人心_魏新雨","rgb(251 114 168)",["Chinese","Pop"]],
     "사랑도 가끔 쉬어야죠 - 이수영": ["사랑도_가끔_쉬어야죠_LSY","rgb(251 114 168)",["Korean","Pop","LSY"]],
     "More that I love you - 이수영": ["More_that_I_love_you_LSY","rgb(251 114 168)",["Korean","Pop","LSY"]],
-    "林中鸟 - 苏仨": ["林中鸟_苏仨","rgb(251 114 168)",["Chinese","Pop"]],
     "빙글빙글 - Heize": ["빙글빙글_Heize","rgb(251 114 168)",["Korean","Pop"]],
     "HAPPEN헤픈 (우연) - Heize": ["HAPPEN헤픈_우연_Heize","rgb(251 114 168)",["Korean","Pop"]],
+    "林中鸟 - 苏仨": ["林中鸟_苏仨","rgb(251 114 168)",["Chinese","Pop"]],
+    "尘缘 - 陈思诚": ["尘缘_陈思诚","rgb(251 114 168)",["Chinese","Pop","Theme/OST"]],
+    
     "Burn Like A Star - AHN YEEUN": ["Burn_Like_A_Star_AHN_YEEUN","rgb(251 114 168)",["Korean","Pop"]],
     "Entrancing - SIYEON": ["Entrancing_SIYEON","rgb(251 114 168)",["Korean","Pop"]],
     "Entrancing - SIYEON (Rock Cover)": ["Entrancing_Siyeon_Rock","rgb(251 114 168)",["Korean","Pop","Remix"]],
@@ -415,7 +417,7 @@ const playlist = {
 
 
 
-    //Paradise_SIYEON
+    //尘缘_陈思诚
 };
 
 
