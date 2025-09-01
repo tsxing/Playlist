@@ -409,7 +409,8 @@ const playlist = {
     "HAPPEN헤픈 (우연) - Heize": ["HAPPEN헤픈_우연_Heize","rgb(251 114 168)",["Korean","Pop"]],
     "林中鸟 - 苏仨": ["林中鸟_苏仨","rgb(251 114 168)",["Chinese","Pop"]],
     "尘缘 - 陈思诚": ["尘缘_陈思诚","rgb(251 114 168)",["Chinese","Pop","Theme/OST"]],
-    
+    "千年缘 - 心然": ["千年缘_心然","rgb(251 114 168)",["Chinese","Theme/OST"]],
+
     "Burn Like A Star - AHN YEEUN": ["Burn_Like_A_Star_AHN_YEEUN","rgb(251 114 168)",["Korean","Pop"]],
     "Entrancing - SIYEON": ["Entrancing_SIYEON","rgb(251 114 168)",["Korean","Pop"]],
     "Entrancing - SIYEON (Rock Cover)": ["Entrancing_Siyeon_Rock","rgb(251 114 168)",["Korean","Pop","Remix"]],
@@ -417,7 +418,7 @@ const playlist = {
 
 
 
-    //尘缘_陈思诚
+    //千年缘_心然
 };
 
 
