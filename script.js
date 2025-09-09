@@ -412,6 +412,7 @@ const playlist = {
     "尘缘 - 陈思诚": ["尘缘_陈思诚","rgb(251 114 168)",["Chinese","Pop","Theme/OST"]],
     "千年缘 - 心然": ["千年缘_心然","rgb(251 114 168)",["Chinese","Theme/OST"]],
     "Burn Like A Star - AHN YEEUN": ["Burn_Like_A_Star_AHN_YEEUN","rgb(251 114 168)",["Korean","Pop"]],
+    "Burn Like A Star - Male Cover": ["Burn_Like_A_Star_AHN_YEEUN","rgb(251 114 168)",["Korean","Pop"]],
     "Entrancing - SIYEON": ["Entrancing_SIYEON","rgb(251 114 168)",["Korean","Pop"]],
     "Entrancing - SIYEON (Rock Cover)": ["Entrancing_Siyeon_Rock","rgb(251 114 168)",["Korean","Pop","Remix"]],
     "Paradise - SIYEON": ["Paradise_SIYEON","rgb(251 114 168)",["Korean","Pop"]]
