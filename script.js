@@ -415,11 +415,14 @@ const playlist = {
     "Burn Like A Star - Male Cover": ["Burn_Like_A_Star_Male_Version","rgb(251 114 168)",["Korean","Pop"]],
     "Entrancing - SIYEON": ["Entrancing_SIYEON","rgb(251 114 168)",["Korean","Pop"]],
     "Entrancing - SIYEON (Rock Cover)": ["Entrancing_Siyeon_Rock","rgb(251 114 168)",["Korean","Pop","Remix"]],
-    "Paradise - SIYEON": ["Paradise_SIYEON","rgb(251 114 168)",["Korean","Pop"]]
+    "Paradise - SIYEON": ["Paradise_SIYEON","rgb(251 114 168)",["Korean","Pop"]],
+    "Oort Cloud (오르트구름) - YOUNHA": ["Oort_Cloud_오르트구름_YOUNHA","rgb(251 114 168)",["Korean","Pop"]],
+    "浩瀚 - 张杰": ["浩瀚_张杰","rgb(251 114 168)",["Chinese","Pop","Theme/OST"]]
 
 
 
-    //诀别诗_胡彦斌
+
+    //Oort_Cloud_오르트구름_YOUNHA
 };
 
 
