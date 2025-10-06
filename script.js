@@ -420,13 +420,15 @@ const playlist = {
     "浩瀚 - 张杰": ["浩瀚_张杰","rgb(251 114 168)",["Chinese","Pop","Theme/OST"]],
     "红昭愿 - 音阙诗听": ["红昭愿_音阙诗听","rgb(251 114 168)",["Chinese","Pop"]],
     "RUNAWAY - NOVA-X": ["RUNAWAY_NOVAX","rgb(251 114 168)",["Korean","Pop"]],
-    "Fractured Sound - NOVA-X": ["Fractured_Sound_NOVAX","rgb(251 114 168)",["Korean","Pop"]]
+    "Fractured Sound - NOVA-X": ["Fractured_Sound_NOVAX","rgb(251 114 168)",["Korean","Pop"]],
+    "夜, 萤火虫和你 - Aniface": ["夜萤火虫和你_Aniface","rgb(251 114 168)",["Instrumental"]]
 
 
 
 
 
-    //RUNAWAY_NOVAX
+
+    //夜萤火虫和你_Aniface
 };
 
 
