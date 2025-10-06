@@ -418,13 +418,15 @@ const playlist = {
     "Paradise - SIYEON": ["Paradise_SIYEON","rgb(251 114 168)",["Korean","Pop"]],
     "Oort Cloud (오르트구름) - YOUNHA": ["Oort_Cloud_오르트구름_YOUNHA","rgb(251 114 168)",["Korean","Pop"]],
     "浩瀚 - 张杰": ["浩瀚_张杰","rgb(251 114 168)",["Chinese","Pop","Theme/OST"]],
-    "红昭愿 - 音阙诗听": ["红昭愿_音阙诗听","rgb(251 114 168)",["Chinese","Pop"]]
+    "红昭愿 - 音阙诗听": ["红昭愿_音阙诗听","rgb(251 114 168)",["Chinese","Pop"]],
+    "RUNAWAY - NOVA-X": ["RUNAWAY_NOVAX","rgb(251 114 168)",["Korean","Pop"]],
+    "Fractured Sound - NOVA-X": ["Fractured_Sound_NOVAX","rgb(251 114 168)",["Korean","Pop"]]
 
 
 
 
 
-    //红昭愿_音阙诗听
+    //RUNAWAY_NOVAX
 };
 
 
