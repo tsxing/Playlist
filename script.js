@@ -423,13 +423,14 @@ const playlist = {
     "红昭愿 - 音阙诗听": ["红昭愿_音阙诗听","rgb(251 114 168)",["Chinese","Pop"]],
     "RUNAWAY - NOVA-X": ["RUNAWAY_NOVAX","rgb(251 114 168)",["Korean","Pop"]],
     "Fractured Sound - NOVA-X": ["Fractured_Sound_NOVAX","rgb(251 114 168)",["Korean","Pop"]],
-    "ECHO (Remix) - NOVA-X": ["ECHO_NOVAX","rgb(251 114 168)",["Korean","Pop"]]
+    "ECHO (Remix) - NOVA-X": ["ECHO_NOVAX","rgb(251 114 168)",["Korean","Pop"]],
+    "What's wrong - BAE173": ["Whats_wrong_BAE173","rgb(251 114 168)",["Korean","Pop"]]
 
 
 
 
 
-    //ECHO_NOVAX
+    //Whats_wrong_BAE173
 };
 
 
