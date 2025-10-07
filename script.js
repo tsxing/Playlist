@@ -422,13 +422,14 @@ const playlist = {
     "Booming Silence - Wesley Koo": ["Booming_Silence_WesleyKoo","rgb(251 114 168)",["Instrumental"]],
     "红昭愿 - 音阙诗听": ["红昭愿_音阙诗听","rgb(251 114 168)",["Chinese","Pop"]],
     "RUNAWAY - NOVA-X": ["RUNAWAY_NOVAX","rgb(251 114 168)",["Korean","Pop"]],
-    "Fractured Sound - NOVA-X": ["Fractured_Sound_NOVAX","rgb(251 114 168)",["Korean","Pop"]]
-    
+    "Fractured Sound - NOVA-X": ["Fractured_Sound_NOVAX","rgb(251 114 168)",["Korean","Pop"]],
+    "ECHO (Remix) - NOVA-X": ["ECHO_NOVAX","rgb(251 114 168)",["Korean","Pop"]]
 
 
 
 
-    //Booming_Silence_WesleyKoo
+
+    //ECHO_NOVAX
 };
 
 
