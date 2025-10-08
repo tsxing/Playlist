@@ -424,13 +424,14 @@ const playlist = {
     "RUNAWAY - NOVA-X": ["RUNAWAY_NOVAX","rgb(251 114 168)",["Korean","Pop"]],
     "Fractured Sound - NOVA-X": ["Fractured_Sound_NOVAX","rgb(251 114 168)",["Korean","Pop"]],
     "ECHO (Remix) - NOVA-X": ["ECHO_NOVAX","rgb(251 114 168)",["Korean","Pop"]],
+    "What's wrong - T-ARA": ["Whats_wrong_T-ARA","rgb(251 114 168)",["Korean","Pop"]],
     "What's wrong - BAE173": ["Whats_wrong_BAE173","rgb(251 114 168)",["Korean","Pop"]]
 
 
 
 
 
-    //Whats_wrong_BAE173
+    //Whats_wrong_T-ARA
 };
 
 
