@@ -428,7 +428,8 @@ const playlist = {
     "What's wrong - BAE173": ["Whats_wrong_BAE173","rgb(251 114 168)",["Korean","Pop"]],
     "Annyeong - NOVA-X": ["Annyeong_NOVAX","rgb(251 114 168)",["Korean","Pop"]],
     "bittersweet - Madison Beer": ["bittersweet_Madison_Beer","rgb(251 114 168)",["English","Pop"]],
-    "yes baby - Madison Beer": ["yes_baby_Madison_Beer","rgb(251 114 168)",["English","Pop"]]
+    "yes baby - Madison Beer": ["yes_baby_Madison_Beer","rgb(251 114 168)",["English","Pop"]],
+    "Make You Mine - Madison Beer": ["MakeYouMine_Madison_Beer","rgb(251 114 168)",["English","Pop"]]
 
 
 
@@ -436,7 +437,7 @@ const playlist = {
 
 
 
-    //yes_baby_Madison_Beer
+    //MakeYouMine_Madison_Beer
 };
 
 
