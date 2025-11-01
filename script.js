@@ -429,7 +429,8 @@ const playlist = {
     "Annyeong - NOVA-X": ["Annyeong_NOVAX","rgb(251 114 168)",["Korean","Pop"]],
     "bittersweet - Madison Beer": ["bittersweet_Madison_Beer","rgb(251 114 168)",["English","Pop"]],
     "yes baby - Madison Beer": ["yes_baby_Madison_Beer","rgb(251 114 168)",["English","Pop"]],
-    "Make You Mine - Madison Beer": ["MakeYouMine_Madison_Beer","rgb(251 114 168)",["English","Pop"]]
+    "Make You Mine - Madison Beer": ["MakeYouMine_Madison_Beer","rgb(251 114 168)",["English","Pop"]],
+        "沈园外 - YueYue": ["沈园外_YueYue","rgb(251 114 168)",["Chinese","Pop"]]
 
 
 
@@ -437,7 +438,8 @@ const playlist = {
 
 
 
-    //MakeYouMine_Madison_Beer
+
+    //沈园外_YueYue
 };
 
 
